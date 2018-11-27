@@ -29,7 +29,7 @@ TEST_CASE( "Video Repository stores and fetches visuals", "" ) {
     REQUIRE(videoRepository.getAt(0).getPath() == absolutePath);
 }
 
-TEST_CASE( "Opening non existing video throws exception", "") {
+TEST_CASE( "Opening non existing video throws exception", "[open]") {
     Visuals::Video video;
     
     ofSetDataPathRoot("");

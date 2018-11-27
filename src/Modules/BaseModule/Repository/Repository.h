@@ -12,8 +12,7 @@ namespace Orange {
     namespace Base {
         
         /*!
-         Repository Template for implementing the Repository Pattern
-         using a vector as the data storage.
+         \brief Repository Template for implementing the Repository Pattern using a vector as the data storage.
         
         */
         template <class T>
@@ -23,7 +22,7 @@ namespace Orange {
         public:
             
             /*!
-             Get the number of stored entities
+             \brief Get the number of stored entities
              \return int The number of entities
              */
             unsigned int count() {
@@ -31,7 +30,7 @@ namespace Orange {
             }
             
             /*!
-             Get an entity at a given index
+             \brief Get an entity at a given index
              \return T The requested entity
              */
             T getAt(unsigned int index) {
@@ -39,11 +38,21 @@ namespace Orange {
             }
             
             /*!
-             Adds an entity at the end of the Repository
+             \brief Adds an entity at the end of the Repository
              \param T The entity to store
              */
             void add(T entity) {
                 entities.push_back(entity);
+            }
+            
+            /*!
+             \brief Traverse all stored entities and to each, run a lambda function with the entity as input
+             \param std::function<void (T)> the lambda
+             */
+            void forEach(std::function<void (T)> lambda) {
+                for(T entity:entities) {
+                    lambda(entity);
+                }
             }
         };
         

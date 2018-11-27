@@ -22,6 +22,7 @@
 		62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63A47AC60FFAFC3BF093EC0F /* OscOutboundPacketStream.cpp */; };
 		63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */; };
 		640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2FAC65C491D4231379F3298 /* ofxOscReceiver.cpp */; };
+		6504536721AE027B00CAC33D /* RepositoryTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6504536621AE027B00CAC33D /* RepositoryTest.cpp */; };
 		65A59D7521A0D16D00ADEE79 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7221A0D16100ADEE79 /* ofApp.cpp */; };
 		65A59D7621A0D16D00ADEE79 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7421A0D16100ADEE79 /* main.cpp */; };
 		65A59D8021A0D1CD00ADEE79 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7E21A0D1CD00ADEE79 /* Layer.cpp */; };
@@ -123,6 +124,7 @@
 		50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxXmlSettings.cpp; path = ../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
 		52AFA1F08C420992CAAAE648 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSlider.h; path = ../../../addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
 		63A47AC60FFAFC3BF093EC0F /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OscOutboundPacketStream.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.cpp; sourceTree = SOURCE_ROOT; };
+		6504536621AE027B00CAC33D /* RepositoryTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RepositoryTest.cpp; sourceTree = "<group>"; };
 		65A59D7221A0D16100ADEE79 /* ofApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		65A59D7321A0D16100ADEE79 /* ofApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		65A59D7421A0D16100ADEE79 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -500,6 +502,14 @@
 			name = posix;
 			sourceTree = "<group>";
 		};
+		6504536421AE024100CAC33D /* BaseModule */ = {
+			isa = PBXGroup;
+			children = (
+				6504536621AE027B00CAC33D /* RepositoryTest.cpp */,
+			);
+			path = BaseModule;
+			sourceTree = "<group>";
+		};
 		65A59D7021A0D16100ADEE79 /* Targets */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,6 +638,7 @@
 		65A59D9421A4C34200ADEE79 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				6504536421AE024100CAC33D /* BaseModule */,
 				65A59DA821A6185600ADEE79 /* LayersModule */,
 				65A59DA721A6183600ADEE79 /* VisualsModule */,
 				65A59D9521A4C38700ADEE79 /* tests.cpp */,
@@ -1330,6 +1341,7 @@
 				65A59DA421A4C3C700ADEE79 /* Video.cpp in Sources */,
 				65A59DA321A4C3C300ADEE79 /* EntityInterface.cpp in Sources */,
 				65A59DA221A4C3B900ADEE79 /* tests.cpp in Sources */,
+				6504536721AE027B00CAC33D /* RepositoryTest.cpp in Sources */,
 				65A59DAA21A6198500ADEE79 /* VideoTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
