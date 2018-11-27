@@ -1,0 +1,6 @@
+ofxGui
+ofxKinect
+ofxNetwork
+ofxOsc
+ofxUnitTests
+ofxXmlSettings
