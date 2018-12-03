@@ -4,10 +4,12 @@
 #include "Video.hpp"
 #include "Layer.hpp"
 #include "Repository.hpp"
+#include "LayerController.hpp"
 
 class ofApp : public ofBaseApp{
     //Orange::Visuals::Video video;
     Orange::Base::Repository<Orange::Layers::Layer> layers;
+    Orange::Layers::LayerController layerController;
     
 	public:
 		void setup();

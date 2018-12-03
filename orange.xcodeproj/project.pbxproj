@@ -25,6 +25,8 @@
 		6504536721AE027B00CAC33D /* RepositoryTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6504536621AE027B00CAC33D /* RepositoryTest.cpp */; };
 		6515455221B4A25200880443 /* BaseVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455021B4A25200880443 /* BaseVisual.cpp */; };
 		6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455021B4A25200880443 /* BaseVisual.cpp */; };
+		6515455621B5ED4000880443 /* LayerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455421B5ED4000880443 /* LayerController.cpp */; };
+		6515455721B5ED4000880443 /* LayerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455421B5ED4000880443 /* LayerController.cpp */; };
 		65A59D7521A0D16D00ADEE79 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7221A0D16100ADEE79 /* ofApp.cpp */; };
 		65A59D7621A0D16D00ADEE79 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7421A0D16100ADEE79 /* main.cpp */; };
 		65A59D8021A0D1CD00ADEE79 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7E21A0D1CD00ADEE79 /* Layer.cpp */; };
@@ -129,6 +131,8 @@
 		6515454F21B4A22100880443 /* PlayableInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayableInterface.h; sourceTree = "<group>"; };
 		6515455021B4A25200880443 /* BaseVisual.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BaseVisual.cpp; sourceTree = "<group>"; };
 		6515455121B4A25200880443 /* BaseVisual.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BaseVisual.hpp; sourceTree = "<group>"; };
+		6515455421B5ED4000880443 /* LayerController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LayerController.cpp; sourceTree = "<group>"; };
+		6515455521B5ED4000880443 /* LayerController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LayerController.hpp; sourceTree = "<group>"; };
 		65A59D7221A0D16100ADEE79 /* ofApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		65A59D7321A0D16100ADEE79 /* ofApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		65A59D7421A0D16100ADEE79 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -599,6 +603,8 @@
 		65A59D7D21A0D1B300ADEE79 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6515455421B5ED4000880443 /* LayerController.cpp */,
+				6515455521B5ED4000880443 /* LayerController.hpp */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1354,6 +1360,7 @@
 				6504536721AE027B00CAC33D /* RepositoryTest.cpp in Sources */,
 				6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */,
 				65A59DAA21A6198500ADEE79 /* VideoTest.cpp in Sources */,
+				6515455721B5ED4000880443 /* LayerController.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1370,6 +1377,7 @@
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
+				6515455621B5ED4000880443 /* LayerController.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
 				0F8F016776681D468C0D0949 /* audio.c in Sources */,

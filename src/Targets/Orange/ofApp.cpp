@@ -30,15 +30,17 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    layers.forEach([](Orange::Layers::Layer layer) {
-        layer.render();
+    layers.forEach([&](Orange::Layers::Layer layer) {
+        layerController.setLayer(layer);
+        layerController.render();
     });
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    layers.forEach([](Orange::Layers::Layer layer) {
-        layer.draw(0, 0, ofGetWidth(), ofGetHeight());
+    layers.forEach([&](Orange::Layers::Layer layer) {
+        layerController.setLayer(layer);
+        layerController.draw(0, 0, ofGetWidth(), ofGetHeight());
     });
 }
 

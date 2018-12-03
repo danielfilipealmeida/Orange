@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include "Repository.hpp"
 #include "BaseVisual.hpp"
-#include "DrawableInterface.h"
+
 
 
 // TODO: pass all methods to controllers and use Entities only to store data.
@@ -22,23 +22,12 @@ namespace Orange {
         /*!
          Implements a Layer entity
          */
-        class Layer : public Orange::Base::DrawableInterface
+        class Layer
         {
         public:
             float alpha;
             Orange::Base::Repository<Orange::Visuals::BaseVisual *> visuals;
             int currentVisual;
-
-            
-            /*!
-             Draws the video
-             */
-            void draw(float x, float y, float w, float h);
-            
-            /*!
-             Prepares the video
-             */
-            void render();
             
             /*!
              Adds a Visual
