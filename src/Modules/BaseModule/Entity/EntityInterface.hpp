@@ -10,11 +10,18 @@
 
 #include <stdio.h>
 
-/*!
- Implements the interface of an entity, to be used by repositories
- */
-class EntityInterface {
-    
-};
+namespace Orange {
+    namespace Base {
+        
+        /*!
+         Implements the interface of an entity, to be used by repositories
+         */
+        class EntityInterface {
+            
+        };
+    }
+}
+
+
 
 #endif /* EntityInterface_hpp */

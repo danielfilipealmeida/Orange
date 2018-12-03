@@ -2,10 +2,12 @@
 
 #include "ofMain.h"
 #include "Video.hpp"
+#include "Layer.hpp"
+#include "Repository.hpp"
 
 class ofApp : public ofBaseApp{
-    Orange::Visuals::Video video;
-    
+    //Orange::Visuals::Video video;
+    Orange::Base::Repository<Orange::Layers::Layer> layers;
     
 	public:
 		void setup();

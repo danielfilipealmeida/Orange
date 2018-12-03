@@ -2,10 +2,15 @@
 #include "Video.hpp"
 
 //--------------------------------------------------------------
-void ofApp::setup(){
+void ofApp::setup() {
+    Orange::Layers::Layer layer1, layer2;
+    Orange::Visuals::Video* video;
     
+
+    video = new Orange::Visuals::Video();
     try {
-        video.open(ofFilePath::getAbsolutePath("Bolas001.mov"));
+        video->open(ofFilePath::getAbsolutePath("Bolas001.mov"));
+        video->play();
     }
     catch (std::runtime_error *exception) {
         cout << exception->what();
@@ -13,16 +18,28 @@ void ofApp::setup(){
         ofExit(-1);
     }
     
+    
+    
+    layer1.add(video);
+    layer2.add(video);
+    
+    layer1.currentVisual = layer2.currentVisual = 0;
+    layers.add(layer1);
+    layers.add(layer2);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    video.render();
+    layers.forEach([](Orange::Layers::Layer layer) {
+        layer.render();
+    });
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    video.draw(0, 0, ofGetWidth(), ofGetHeight());
+    layers.forEach([](Orange::Layers::Layer layer) {
+        layer.draw(0, 0, ofGetWidth(), ofGetHeight());
+    });
 }
 
 //--------------------------------------------------------------

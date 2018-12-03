@@ -23,13 +23,13 @@
 		63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */; };
 		640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2FAC65C491D4231379F3298 /* ofxOscReceiver.cpp */; };
 		6504536721AE027B00CAC33D /* RepositoryTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6504536621AE027B00CAC33D /* RepositoryTest.cpp */; };
+		6515455221B4A25200880443 /* BaseVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455021B4A25200880443 /* BaseVisual.cpp */; };
+		6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455021B4A25200880443 /* BaseVisual.cpp */; };
 		65A59D7521A0D16D00ADEE79 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7221A0D16100ADEE79 /* ofApp.cpp */; };
 		65A59D7621A0D16D00ADEE79 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7421A0D16100ADEE79 /* main.cpp */; };
 		65A59D8021A0D1CD00ADEE79 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7E21A0D1CD00ADEE79 /* Layer.cpp */; };
 		65A59D8921A0D3CF00ADEE79 /* Video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D8721A0D3CF00ADEE79 /* Video.cpp */; };
-		65A59D9321A4BB1000ADEE79 /* EntityInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D9121A4BB1000ADEE79 /* EntityInterface.cpp */; };
 		65A59DA221A4C3B900ADEE79 /* tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D9521A4C38700ADEE79 /* tests.cpp */; };
-		65A59DA321A4C3C300ADEE79 /* EntityInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D9121A4BB1000ADEE79 /* EntityInterface.cpp */; };
 		65A59DA421A4C3C700ADEE79 /* Video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D8721A0D3CF00ADEE79 /* Video.cpp */; };
 		65A59DAA21A6198500ADEE79 /* VideoTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59DA921A6198500ADEE79 /* VideoTest.cpp */; };
 		65A59DB021A767AD00ADEE79 /* red.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65A59DAF21A7679100ADEE79 /* red.mp4 */; };
@@ -125,6 +125,10 @@
 		52AFA1F08C420992CAAAE648 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSlider.h; path = ../../../addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
 		63A47AC60FFAFC3BF093EC0F /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OscOutboundPacketStream.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.cpp; sourceTree = SOURCE_ROOT; };
 		6504536621AE027B00CAC33D /* RepositoryTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RepositoryTest.cpp; sourceTree = "<group>"; };
+		6515454E21B49C2400880443 /* DrawableInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawableInterface.h; sourceTree = "<group>"; };
+		6515454F21B4A22100880443 /* PlayableInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayableInterface.h; sourceTree = "<group>"; };
+		6515455021B4A25200880443 /* BaseVisual.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BaseVisual.cpp; sourceTree = "<group>"; };
+		6515455121B4A25200880443 /* BaseVisual.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BaseVisual.hpp; sourceTree = "<group>"; };
 		65A59D7221A0D16100ADEE79 /* ofApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		65A59D7321A0D16100ADEE79 /* ofApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		65A59D7421A0D16100ADEE79 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -133,12 +137,10 @@
 		65A59D8621A0D39600ADEE79 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		65A59D8721A0D3CF00ADEE79 /* Video.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Video.cpp; sourceTree = "<group>"; };
 		65A59D8821A0D3CF00ADEE79 /* Video.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Video.hpp; sourceTree = "<group>"; };
-		65A59D8B21A0D56F00ADEE79 /* VisualInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualInterface.h; sourceTree = "<group>"; };
-		65A59D9121A4BB1000ADEE79 /* EntityInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EntityInterface.cpp; sourceTree = "<group>"; };
 		65A59D9221A4BB1000ADEE79 /* EntityInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EntityInterface.hpp; sourceTree = "<group>"; };
 		65A59D9521A4C38700ADEE79 /* tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = tests.cpp; path = src/UnitTests/tests.cpp; sourceTree = SOURCE_ROOT; };
 		65A59D9A21A4C3B200ADEE79 /* UnitTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UnitTests; sourceTree = BUILT_PRODUCTS_DIR; };
-		65A59DA621A6155400ADEE79 /* Repository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		65A59DA621A6155400ADEE79 /* Repository.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Repository.hpp; sourceTree = "<group>"; };
 		65A59DA921A6198500ADEE79 /* VideoTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VideoTest.cpp; path = src/UnitTests/VisualsModule/VideoTest.cpp; sourceTree = SOURCE_ROOT; };
 		65A59DAF21A7679100ADEE79 /* red.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = red.mp4; sourceTree = "<group>"; };
 		65A59DB421AB5DE500ADEE79 /* Bolas001.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Bolas001.mov; path = ../Resources/Bolas001.mov; sourceTree = "<group>"; };
@@ -510,6 +512,15 @@
 			path = BaseModule;
 			sourceTree = "<group>";
 		};
+		6515454D21B49C1000880443 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				6515454E21B49C2400880443 /* DrawableInterface.h */,
+				6515454F21B4A22100880443 /* PlayableInterface.h */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
 		65A59D7021A0D16100ADEE79 /* Targets */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,7 +546,7 @@
 			children = (
 				65A59D7821A0D1B300ADEE79 /* BaseModule */,
 				65A59D8221A0D36C00ADEE79 /* VisualsModule */,
-				65A59D7A21A0D1B300ADEE79 /* LayerModule */,
+				65A59D7A21A0D1B300ADEE79 /* LayersModule */,
 			);
 			name = Modules;
 			path = src/Modules;
@@ -544,6 +555,7 @@
 		65A59D7821A0D1B300ADEE79 /* BaseModule */ = {
 			isa = PBXGroup;
 			children = (
+				6515454D21B49C1000880443 /* Interfaces */,
 				65A59D8A21A0D53700ADEE79 /* Repository */,
 				65A59D7921A0D1B300ADEE79 /* Entity */,
 			);
@@ -553,20 +565,19 @@
 		65A59D7921A0D1B300ADEE79 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				65A59D9121A4BB1000ADEE79 /* EntityInterface.cpp */,
 				65A59D9221A4BB1000ADEE79 /* EntityInterface.hpp */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		65A59D7A21A0D1B300ADEE79 /* LayerModule */ = {
+		65A59D7A21A0D1B300ADEE79 /* LayersModule */ = {
 			isa = PBXGroup;
 			children = (
 				65A59D7B21A0D1B300ADEE79 /* Entity */,
 				65A59D7C21A0D1B300ADEE79 /* Resources */,
 				65A59D7D21A0D1B300ADEE79 /* Controller */,
 			);
-			path = LayerModule;
+			path = LayersModule;
 			sourceTree = "<group>";
 		};
 		65A59D7B21A0D1B300ADEE79 /* Entity */ = {
@@ -606,9 +617,10 @@
 		65A59D8321A0D36C00ADEE79 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				65A59D8B21A0D56F00ADEE79 /* VisualInterface.h */,
 				65A59D8721A0D3CF00ADEE79 /* Video.cpp */,
 				65A59D8821A0D3CF00ADEE79 /* Video.hpp */,
+				6515455021B4A25200880443 /* BaseVisual.cpp */,
+				6515455121B4A25200880443 /* BaseVisual.hpp */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -630,7 +642,7 @@
 		65A59D8A21A0D53700ADEE79 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				65A59DA621A6155400ADEE79 /* Repository.h */,
+				65A59DA621A6155400ADEE79 /* Repository.hpp */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -675,8 +687,7 @@
 			children = (
 				65A59DB421AB5DE500ADEE79 /* Bolas001.mov */,
 			);
-			name = Resources;
-			path = "New Group";
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		6948EE371B920CB800B5AC1A /* local_addons */ = {
@@ -1339,9 +1350,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				65A59DA421A4C3C700ADEE79 /* Video.cpp in Sources */,
-				65A59DA321A4C3C300ADEE79 /* EntityInterface.cpp in Sources */,
 				65A59DA221A4C3B900ADEE79 /* tests.cpp in Sources */,
 				6504536721AE027B00CAC33D /* RepositoryTest.cpp in Sources */,
+				6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */,
 				65A59DAA21A6198500ADEE79 /* VideoTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1350,6 +1361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6515455221B4A25200880443 /* BaseVisual.cpp in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				853E0BA2F448076739446874 /* ofxColorPicker.cpp in Sources */,
@@ -1360,7 +1372,6 @@
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
-				65A59D9321A4BB1000ADEE79 /* EntityInterface.cpp in Sources */,
 				0F8F016776681D468C0D0949 /* audio.c in Sources */,
 				ACE7DC9A3223ED5EE1B80074 /* cameras.c in Sources */,
 				F4135EEFC911E9ED211FB6F9 /* core.c in Sources */,

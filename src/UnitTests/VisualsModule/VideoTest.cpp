@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include "catch.hpp"
-#include "Repository.h"
+#include "Repository.hpp"
 #include "Video.hpp"
 
 #include <iostream>
