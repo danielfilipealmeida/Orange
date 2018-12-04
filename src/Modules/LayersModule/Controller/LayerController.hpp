@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "Layer.hpp"
 #include "DrawableInterface.h"
+#include "ofMain.h"
 
 namespace Orange {
     namespace Layers {

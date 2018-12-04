@@ -12,7 +12,16 @@ class ofApp : public ofBaseApp{
     Orange::Layers::LayerController layerController;
     
 	public:
-		void setup();
+    
+    /*!
+     Loads a video from a path
+     \param string videoPath
+     \return Orange::Visuals::Video
+     */
+    Orange::Visuals::Video* loadVideo(string videoPath);
+    
+
+    void setup();
 		void update();
 		void draw();
 

@@ -27,6 +27,11 @@
 		6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455021B4A25200880443 /* BaseVisual.cpp */; };
 		6515455621B5ED4000880443 /* LayerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455421B5ED4000880443 /* LayerController.cpp */; };
 		6515455721B5ED4000880443 /* LayerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455421B5ED4000880443 /* LayerController.cpp */; };
+		6515455D21B7314C00880443 /* AnemicCinema001.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455821B730C100880443 /* AnemicCinema001.mp4 */; };
+		6515455E21B7314C00880443 /* AnemicCinema002.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455921B730C100880443 /* AnemicCinema002.mp4 */; };
+		6515455F21B7314C00880443 /* AnemicCinema003.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455A21B730C100880443 /* AnemicCinema003.mp4 */; };
+		6515456021B7314C00880443 /* AnemicCinema004.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455B21B730C100880443 /* AnemicCinema004.mp4 */; };
+		6515456121B7314C00880443 /* Bolas001.mov in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65A59DB421AB5DE500ADEE79 /* Bolas001.mov */; };
 		65A59D7521A0D16D00ADEE79 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7221A0D16100ADEE79 /* ofApp.cpp */; };
 		65A59D7621A0D16D00ADEE79 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7421A0D16100ADEE79 /* main.cpp */; };
 		65A59D8021A0D1CD00ADEE79 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7E21A0D1CD00ADEE79 /* Layer.cpp */; };
@@ -64,6 +69,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6515455C21B7311F00880443 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = data;
+			dstSubfolderSpec = 16;
+			files = (
+				6515455D21B7314C00880443 /* AnemicCinema001.mp4 in CopyFiles */,
+				6515455E21B7314C00880443 /* AnemicCinema002.mp4 in CopyFiles */,
+				6515455F21B7314C00880443 /* AnemicCinema003.mp4 in CopyFiles */,
+				6515456021B7314C00880443 /* AnemicCinema004.mp4 in CopyFiles */,
+				6515456121B7314C00880443 /* Bolas001.mov in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65A59D9821A4C3B200ADEE79 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -133,6 +152,10 @@
 		6515455121B4A25200880443 /* BaseVisual.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BaseVisual.hpp; sourceTree = "<group>"; };
 		6515455421B5ED4000880443 /* LayerController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LayerController.cpp; sourceTree = "<group>"; };
 		6515455521B5ED4000880443 /* LayerController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LayerController.hpp; sourceTree = "<group>"; };
+		6515455821B730C100880443 /* AnemicCinema001.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema001.mp4; sourceTree = "<group>"; };
+		6515455921B730C100880443 /* AnemicCinema002.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema002.mp4; sourceTree = "<group>"; };
+		6515455A21B730C100880443 /* AnemicCinema003.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema003.mp4; sourceTree = "<group>"; };
+		6515455B21B730C100880443 /* AnemicCinema004.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema004.mp4; sourceTree = "<group>"; };
 		65A59D7221A0D16100ADEE79 /* ofApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		65A59D7321A0D16100ADEE79 /* ofApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		65A59D7421A0D16100ADEE79 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -691,6 +714,10 @@
 		65A59DB321AB5DD400ADEE79 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6515455821B730C100880443 /* AnemicCinema001.mp4 */,
+				6515455921B730C100880443 /* AnemicCinema002.mp4 */,
+				6515455A21B730C100880443 /* AnemicCinema003.mp4 */,
+				6515455B21B730C100880443 /* AnemicCinema004.mp4 */,
 				65A59DB421AB5DE500ADEE79 /* Bolas001.mov */,
 			);
 			path = Resources;
@@ -1245,6 +1272,7 @@
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
 				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
 				8466F1851C04CA0E00918B1C /* ShellScript */,
+				6515455C21B7311F00880443 /* CopyFiles */,
 			);
 			buildRules = (
 			);

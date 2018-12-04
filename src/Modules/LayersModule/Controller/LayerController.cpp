@@ -39,6 +39,9 @@ void LayerController::draw(float x, float y, float w, float h) {
         return;
     }
     
+    ofEnableBlendMode(layer.blendMode);
+    ofSetColor(255,255,255, layer.alpha * 255);;
+
     currentVisual->draw(x, y, w, h);
 }
 

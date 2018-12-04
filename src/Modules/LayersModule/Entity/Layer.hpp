@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "Repository.hpp"
 #include "BaseVisual.hpp"
+#include "ofMain.h"
 
 
 
@@ -25,9 +26,29 @@ namespace Orange {
         class Layer
         {
         public:
+            /*!
+             Transparency value from 0.0 to 1.0
+             */
             float alpha;
+            
+            /*!
+             The blend mode of the layer.
+             
+             Available blend modes:
+                - OF_BLENDMODE_DISABLED
+                - OF_BLENDMODE_ALPHA
+                - OF_BLENDMODE_ADD
+                - OF_BLENDMODE_SUBTRACT
+                - OF_BLENDMODE_MULTIPLY
+                - OF_BLENDMODE_SCREEN
+             */
+            ofBlendMode blendMode;
+            
             Orange::Base::Repository<Orange::Visuals::BaseVisual *> visuals;
-            int currentVisual;
+            int currentVisual; // this should go to the Layer Controller
+            
+            
+            Layer();
             
             /*!
              Adds a Visual

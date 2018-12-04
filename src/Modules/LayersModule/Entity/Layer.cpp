@@ -10,6 +10,11 @@
 
 using namespace Orange::Layers;
 
+Layer::Layer()
+{
+    alpha = 0.5;
+    blendMode = OF_BLENDMODE_ALPHA;
+}
 
 void Layer::add(Orange::Visuals::BaseVisual* visual)
 {
