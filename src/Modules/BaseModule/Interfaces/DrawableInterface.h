@@ -16,6 +16,10 @@ namespace Orange {
         public:
             /*!
              Draws the drawable
+             \param float x
+             \param float y
+             \param float w
+             \param float h
              */
             virtual void draw(float x, float y, float w, float h) = 0;
             

@@ -1,55 +1,38 @@
 #include "ofApp.h"
 #include "Video.hpp"
 
-Orange::Visuals::Video* ofApp::loadVideo(string videoPath) {
-    Orange::Visuals::Video* video = new Orange::Visuals::Video();
-    try {
-        video->open(videoPath);
-        video->play();
-    }
-    catch (std::runtime_error *exception) {
-        cout << exception->what();
-        
-        ofExit(-1);
-    }
-    
-    return video;
-}
+
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-    Orange::Layers::Layer layer1, layer2;
-    Orange::Visuals::Video* video;
+    engineController = new Orange::Engine::EngineController();
+    
+    engineController->addLayer()
+        ->setLayerIndex(0)
+        ->addVideoToCurrentLayer("Bolas001.mov")
+        ->setVisualIndex(0);
+    
+    engineController->addLayer()
+        ->setLayerIndex(1)
+        ->addVideoToCurrentLayer("AnemicCinema001.mp4")
+        ->setVisualIndex(0);
     
     
-    layer1.add(loadVideo(ofFilePath::getAbsolutePath("Bolas001.mov")));
-    layer2.add(loadVideo(ofFilePath::getAbsolutePath("AnemicCinema001.mp4")));
-    layer1.blendMode = OF_BLENDMODE_SUBTRACT;
-    layer2.blendMode = OF_BLENDMODE_ALPHA;
-    layer1.alpha = 0.3;
-    layer2.alpha = 0.4;
-    
-    layer1.currentVisual = layer2.currentVisual = 0;
-    layers.add(layer1);
-    layers.add(layer2);
+    /* set up the gui */
+    guiFacade = new Orange::GUI::ofxGuiFacade();
+    guiController = new Orange::GUI::GUIController(guiFacade);
+    guiController->setup();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    layers.forEach([&](Orange::Layers::Layer layer) {
-        layerController.setLayer(layer);
-        layerController.render();
-    });
+    engineController->render();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofEnableAlphaBlending();
-    layers.forEach([&](Orange::Layers::Layer layer) {
-        layerController.setLayer(layer);
-        layerController.draw(0, 0, ofGetWidth(), ofGetHeight());
-    });
-    ofDisableAlphaBlending();
+    engineController->draw(0, 0, ofGetWidth(), ofGetHeight());
+    guiController->draw();
 }
 
 //--------------------------------------------------------------

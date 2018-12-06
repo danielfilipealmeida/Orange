@@ -5,11 +5,20 @@
 #include "Layer.hpp"
 #include "Repository.hpp"
 #include "LayerController.hpp"
+#include "GUIController.hpp"
+#include "ofxGuiFacade.hpp"
+#include "EngineController.hpp"
 
 class ofApp : public ofBaseApp{
-    //Orange::Visuals::Video video;
-    Orange::Base::Repository<Orange::Layers::Layer> layers;
-    Orange::Layers::LayerController layerController;
+    
+    Orange::Engine::EngineController *engineController;
+    
+    
+    /* GUI STUFF */
+    Orange::GUI::ofxGuiFacade *guiFacade;
+    Orange::GUI::GUIController *guiController;
+    
+    
     
 	public:
     

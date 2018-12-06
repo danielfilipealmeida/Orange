@@ -14,6 +14,7 @@ Layer::Layer()
 {
     alpha = 0.5;
     blendMode = OF_BLENDMODE_ALPHA;
+    currentVisual = -1;
 }
 
 void Layer::add(Orange::Visuals::BaseVisual* visual)

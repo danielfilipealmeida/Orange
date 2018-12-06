@@ -32,6 +32,10 @@
 		6515455F21B7314C00880443 /* AnemicCinema003.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455A21B730C100880443 /* AnemicCinema003.mp4 */; };
 		6515456021B7314C00880443 /* AnemicCinema004.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455B21B730C100880443 /* AnemicCinema004.mp4 */; };
 		6515456121B7314C00880443 /* Bolas001.mov in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65A59DB421AB5DE500ADEE79 /* Bolas001.mov */; };
+		65759E3421B73B0E006B6814 /* ofxGuiFacade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3221B73B0E006B6814 /* ofxGuiFacade.cpp */; };
+		65759E3721B73B2B006B6814 /* GUIController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3521B73B2B006B6814 /* GUIController.cpp */; };
+		65759E3D21B891FF006B6814 /* EngineController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3B21B891FF006B6814 /* EngineController.cpp */; };
+		65759E3E21B891FF006B6814 /* EngineController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3B21B891FF006B6814 /* EngineController.cpp */; };
 		65A59D7521A0D16D00ADEE79 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7221A0D16100ADEE79 /* ofApp.cpp */; };
 		65A59D7621A0D16D00ADEE79 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7421A0D16100ADEE79 /* main.cpp */; };
 		65A59D8021A0D1CD00ADEE79 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7E21A0D1CD00ADEE79 /* Layer.cpp */; };
@@ -156,6 +160,13 @@
 		6515455921B730C100880443 /* AnemicCinema002.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema002.mp4; sourceTree = "<group>"; };
 		6515455A21B730C100880443 /* AnemicCinema003.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema003.mp4; sourceTree = "<group>"; };
 		6515455B21B730C100880443 /* AnemicCinema004.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema004.mp4; sourceTree = "<group>"; };
+		65759E3121B73AF8006B6814 /* GUIFacadeInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GUIFacadeInterface.hpp; sourceTree = "<group>"; };
+		65759E3221B73B0E006B6814 /* ofxGuiFacade.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxGuiFacade.cpp; sourceTree = "<group>"; };
+		65759E3321B73B0E006B6814 /* ofxGuiFacade.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxGuiFacade.hpp; sourceTree = "<group>"; };
+		65759E3521B73B2B006B6814 /* GUIController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUIController.cpp; sourceTree = "<group>"; };
+		65759E3621B73B2B006B6814 /* GUIController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GUIController.hpp; sourceTree = "<group>"; };
+		65759E3B21B891FF006B6814 /* EngineController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EngineController.cpp; sourceTree = "<group>"; };
+		65759E3C21B891FF006B6814 /* EngineController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EngineController.hpp; sourceTree = "<group>"; };
 		65A59D7221A0D16100ADEE79 /* ofApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		65A59D7321A0D16100ADEE79 /* ofApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		65A59D7421A0D16100ADEE79 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -548,6 +559,51 @@
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
+		65759E2E21B73A94006B6814 /* GUIModule */ = {
+			isa = PBXGroup;
+			children = (
+				65759E3021B73AC5006B6814 /* Facades */,
+				65759E2F21B73AAD006B6814 /* Controller */,
+			);
+			path = GUIModule;
+			sourceTree = "<group>";
+		};
+		65759E2F21B73AAD006B6814 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				65759E3521B73B2B006B6814 /* GUIController.cpp */,
+				65759E3621B73B2B006B6814 /* GUIController.hpp */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		65759E3021B73AC5006B6814 /* Facades */ = {
+			isa = PBXGroup;
+			children = (
+				65759E3121B73AF8006B6814 /* GUIFacadeInterface.hpp */,
+				65759E3221B73B0E006B6814 /* ofxGuiFacade.cpp */,
+				65759E3321B73B0E006B6814 /* ofxGuiFacade.hpp */,
+			);
+			path = Facades;
+			sourceTree = "<group>";
+		};
+		65759E3821B891C3006B6814 /* EngineModule */ = {
+			isa = PBXGroup;
+			children = (
+				65759E3A21B891D6006B6814 /* Controller */,
+			);
+			path = EngineModule;
+			sourceTree = "<group>";
+		};
+		65759E3A21B891D6006B6814 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				65759E3B21B891FF006B6814 /* EngineController.cpp */,
+				65759E3C21B891FF006B6814 /* EngineController.hpp */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		65A59D7021A0D16100ADEE79 /* Targets */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +627,8 @@
 		65A59D7721A0D1B300ADEE79 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				65759E3821B891C3006B6814 /* EngineModule */,
+				65759E2E21B73A94006B6814 /* GUIModule */,
 				65A59D7821A0D1B300ADEE79 /* BaseModule */,
 				65A59D8221A0D36C00ADEE79 /* VisualsModule */,
 				65A59D7A21A0D1B300ADEE79 /* LayersModule */,
@@ -1387,6 +1445,7 @@
 				65A59DA221A4C3B900ADEE79 /* tests.cpp in Sources */,
 				6504536721AE027B00CAC33D /* RepositoryTest.cpp in Sources */,
 				6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */,
+				65759E3E21B891FF006B6814 /* EngineController.cpp in Sources */,
 				65A59DAA21A6198500ADEE79 /* VideoTest.cpp in Sources */,
 				6515455721B5ED4000880443 /* LayerController.cpp in Sources */,
 			);
@@ -1403,6 +1462,7 @@
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				852E0891794923EE7583C621 /* ofxInputField.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
+				65759E3421B73B0E006B6814 /* ofxGuiFacade.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				6515455621B5ED4000880443 /* LayerController.cpp in Sources */,
@@ -1437,8 +1497,10 @@
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,
 				65A59D8921A0D3CF00ADEE79 /* Video.cpp in Sources */,
+				65759E3721B73B2B006B6814 /* GUIController.cpp in Sources */,
 				640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */,
 				8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */,
+				65759E3D21B891FF006B6814 /* EngineController.cpp in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
