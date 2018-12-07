@@ -15,7 +15,10 @@ EngineController::EngineController()
     currentLayerIndex = -1;
 }
 
+// todo: work with an fbo
 void EngineController::render(){
+    ofClear(0, 0, 0);
+  
     layers.forEach([&](Orange::Layers::Layer *layer) {
         layerController.setLayer(*layer);
         layerController.render();
@@ -55,6 +58,10 @@ EngineController* EngineController::setVisualIndex(int visualIndex)
 Orange::Layers::Layer* EngineController::getCurrentLayer() {
     if (currentLayerIndex < 0) {
         throw new std::runtime_error("No selected Layer");
+    }
+    
+    if (currentLayerIndex >= layers.count()) {
+        throw new std::runtime_error("Invalid Layer");
     }
     
     return layers.getAt(currentLayerIndex);

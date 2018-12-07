@@ -25,8 +25,6 @@ namespace Orange {
 
             unsigned int currentLayerIndex;
             
-            Orange::Layers::Layer* getCurrentLayer();
-            
         public:
             EngineController();
             
@@ -41,12 +39,24 @@ namespace Orange {
             void render();
             
             /*!
+             Adds a new Layer with default configuration
+             \return EngineController*
              */
             EngineController* addLayer();
             
             /*!
+             Sets the index in the repository of the currently active layer.
+             \param int layerIndex
+             \return EngineController*
              */
             EngineController* setLayerIndex(int layerIndex);
+ 
+            /*!
+             Returns the currently selected layer for edit
+             \returns Orange::Layers::Layer*
+             */
+            Orange::Layers::Layer* getCurrentLayer();
+
             
             /*!
              */

@@ -11,11 +11,21 @@ To compile:
    - CATCHCPP_PATH
    - OF_PATH 
 
+## Instructions
+
+### Keys
+
+```
+1 - Layer 1
+2 - Layer 2
+3 - Layer 3
+4 - Layer 4
+```
+
 
 ## Work
 
 - Visuals Controller
-- Implement alpha and operations.
 - Create operations with GLSL.
 - Create `PlayModeInterface` for implementing Loop modes (forward loop, backward loop, ping ping, no loop) and random playing
 - Unit tests

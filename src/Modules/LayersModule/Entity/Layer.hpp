@@ -26,10 +26,13 @@ namespace Orange {
         class Layer
         {
         public:
+            
+            ofParameter<string> name;
+            
             /*!
              Transparency value from 0.0 to 1.0
              */
-            float alpha;
+            ofParameter<float> alpha;
             
             /*!
              The blend mode of the layer.

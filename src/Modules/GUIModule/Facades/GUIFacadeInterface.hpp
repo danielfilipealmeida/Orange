@@ -9,13 +9,21 @@
 #define GUIFacadeInterface_h
 
 #include <string>
+#include "ofMain.h"
 
 namespace Orange {
     namespace GUI {
         
         class GUIFacadeInterface {
+            
         public:
             
+            /*!
+             Sets the name of the GUI
+             \param ofParameter<string> name
+             */
+            virtual void setName(ofParameter<string> name) = 0;
+        
             /*!
              Creates a Slider in the GUI
              \param string title
@@ -23,13 +31,24 @@ namespace Orange {
              \param float minValue
              \param float maxValue
              */
-            virtual void createSlider(std::string title, float value, float minValue, float maxValue) = 0;
+            virtual void createSlider(ofParameter<float> parameter,
+                                      std::string title,
+                                      float minValue,
+                                      float maxValue) = 0;
+            
+            virtual void createLabel(ofParameter<string> parameter) = 0;
             
             /*!
              Draws the ofxGui
              */
             virtual void draw() = 0;
-        };
+            
+            /*!
+             Clears the gui
+             */
+            virtual void clear() = 0;
+            
+                    };
     }
 }
 #endif /* GUIFacadeInterface_h */

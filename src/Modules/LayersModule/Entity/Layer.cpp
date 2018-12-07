@@ -10,11 +10,16 @@
 
 using namespace Orange::Layers;
 
+unsigned int layerNumber = 0;
+
 Layer::Layer()
 {
+    name = "Layer " + std::to_string(layerNumber);
     alpha = 0.5;
     blendMode = OF_BLENDMODE_ALPHA;
     currentVisual = -1;
+    
+    layerNumber++;
 }
 
 void Layer::add(Orange::Visuals::BaseVisual* visual)

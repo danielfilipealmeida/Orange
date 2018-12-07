@@ -10,12 +10,14 @@
 
 #include <stdio.h>
 #include "GUIFacadeInterface.hpp"
-
+#include "Layer.hpp"
 
 namespace Orange {
     namespace GUI {
         class GUIController {
             GUIFacadeInterface *facade;
+            
+            Orange::Layers::Layer *layer;
         public:
             
             GUIController(GUIFacadeInterface *_facade);
@@ -30,6 +32,12 @@ namespace Orange {
              */
             void draw();
             
+            /*!
+             Sets the current selected layer and updates the
+             GUI
+             \param Orange::Layers::Layer *_layer
+             */
+            void setLayer(Orange::Layers::Layer *_layer);
         };
     }
 }

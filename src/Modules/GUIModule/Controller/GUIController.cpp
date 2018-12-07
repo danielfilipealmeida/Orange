@@ -19,7 +19,9 @@ GUIController::GUIController(GUIFacadeInterface *_facade)
 
 void GUIController::setup()
 {
-    facade->createSlider("Alpha", 0, 0, 1);
+    facade->clear();
+    facade->setName(layer->name);
+    facade->createSlider(layer->alpha, "Layer Alpha", 0, 1);
 }
 
 void GUIController::draw()
@@ -30,3 +32,10 @@ void GUIController::draw()
     facade->draw();
 }
 
+
+void GUIController::setLayer(Orange::Layers::Layer *_layer)
+{
+    layer = _layer;
+ 
+    setup();
+}

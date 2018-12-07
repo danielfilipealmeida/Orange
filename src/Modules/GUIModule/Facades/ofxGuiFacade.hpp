@@ -18,12 +18,17 @@ namespace Orange {
         
         class ofxGuiFacade : public GUIFacadeInterface {
             ofxPanel gui;
+            
+            string title;
         public:
             
             /*!
              Constructor. sets up all needed for the interface using ofxGUI
              */
             ofxGuiFacade();
+            
+            
+            void setName(ofParameter<string> name);
             
             /*!
              Creates a Slider in the GUI
@@ -32,12 +37,22 @@ namespace Orange {
              \param float minValue
              \param float maxValue
              */
-            void createSlider(std::string title, float value, float minValue, float maxValue);
+            void createSlider(ofParameter<float> parameter,
+                              std::string title,
+                              float minValue,
+                              float maxValue);
+            
+            /*!
+             Creates a label displaying information
+             */
+            void createLabel(ofParameter<string> parameter);
             
             /*!
              Draws the ofxGui
              */
             void draw();
+            
+            void clear();
             
         };
     }

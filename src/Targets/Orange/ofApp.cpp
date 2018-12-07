@@ -21,7 +21,9 @@ void ofApp::setup() {
     /* set up the gui */
     guiFacade = new Orange::GUI::ofxGuiFacade();
     guiController = new Orange::GUI::GUIController(guiFacade);
-    guiController->setup();
+
+    engineController->setLayerIndex(0);
+    guiController->setLayer(engineController->getCurrentLayer());
 }
 
 //--------------------------------------------------------------
@@ -35,10 +37,43 @@ void ofApp::draw(){
     guiController->draw();
 }
 
-//--------------------------------------------------------------
-void ofApp::keyPressed(int key){
 
+void ofApp::handleLayerSwitch(int key)
+{
+    switch (key) {
+        case ofApp::KEYCODE_SWITCH_LAYER_1:
+            engineController->setLayerIndex(0);
+            break;
+        
+        case ofApp::KEYCODE_SWITCH_LAYER_2:
+            engineController->setLayerIndex(1);
+            break;
+            
+        case ofApp::KEYCODE_SWITCH_LAYER_3:
+            engineController->setLayerIndex(2);
+            break;
+            
+        case ofApp::KEYCODE_SWITCH_LAYER_4:
+            engineController->setLayerIndex(3);
+            break;
+        default:
+            
+            break;
+    }
+    
+    try {
+         guiController->setLayer(engineController->getCurrentLayer());
+    } catch (std::runtime_error *exception) {
+        cout << exception->what() << endl;
+    }
+   
 }
+
+void ofApp::keyPressed(int key){
+    cout << key << endl;
+    handleLayerSwitch(key);
+}
+
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){

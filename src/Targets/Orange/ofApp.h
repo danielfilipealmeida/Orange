@@ -10,15 +10,18 @@
 #include "EngineController.hpp"
 
 class ofApp : public ofBaseApp{
+    /* Keys constants */
+    enum KEYCODES {
+        KEYCODE_SWITCH_LAYER_1 = 49,
+        KEYCODE_SWITCH_LAYER_2 = 50,
+        KEYCODE_SWITCH_LAYER_3 = 51,
+        KEYCODE_SWITCH_LAYER_4 = 52
+        
+    };
     
     Orange::Engine::EngineController *engineController;
-    
-    
-    /* GUI STUFF */
     Orange::GUI::ofxGuiFacade *guiFacade;
     Orange::GUI::GUIController *guiController;
-    
-    
     
 	public:
     
@@ -33,6 +36,8 @@ class ofApp : public ofBaseApp{
     void setup();
 		void update();
 		void draw();
+    
+    void handleLayerSwitch(int key);
 
 		void keyPressed(int key);
 		void keyReleased(int key);

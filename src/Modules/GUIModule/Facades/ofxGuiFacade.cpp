@@ -14,17 +14,40 @@ using namespace Orange::GUI;
 ofxGuiFacade::ofxGuiFacade()
 {
     gui.setup();
+    gui.setUseTTF(true);
 }
 
-void ofxGuiFacade::createSlider(std::string title, float value, float minValue, float maxValue)
+void ofxGuiFacade::setName(ofParameter<string> name)
+{
+    gui.setName(name);
+}
+
+void ofxGuiFacade::createSlider(ofParameter<float> parameter,
+                                std::string title,
+                                float minValue,
+                                float maxValue)
 {
     ofxFloatSlider* slider;
     slider = new ofxFloatSlider();
-    slider->setup(title, value, minValue, maxValue);
+    slider->setup(parameter.set(title, parameter, minValue, maxValue));
     gui.add(slider);
+}
+
+void ofxGuiFacade::createLabel(ofParameter<string> parameter)
+{
+    ofxLabel* label;
+    label = new ofxLabel();
+    label->setup(parameter);
+    gui.add(label);
 }
 
 void ofxGuiFacade::draw()
 {
     gui.draw();
+}
+
+
+void ofxGuiFacade::clear()
+{
+    gui.clear();
 }
