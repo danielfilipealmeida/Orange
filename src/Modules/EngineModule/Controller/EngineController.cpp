@@ -12,26 +12,42 @@ using namespace Orange::Engine;
 
 EngineController::EngineController()
 {
-    currentLayerIndex = -1;
+    setFbo();
+}
+
+void EngineController::setFbo()
+{
+    fbo.allocate(engine.width, engine.height, GL_RGB);
 }
 
 // todo: work with an fbo
 void EngineController::render(){
+    fbo.begin();
+    ofEnableAlphaBlending();
+    
     ofClear(0, 0, 0);
-  
     layers.forEach([&](Orange::Layers::Layer *layer) {
         layerController.setLayer(*layer);
         layerController.render();
+        layerController.draw(0, 0, engine.width, engine.height);
     });
-}
-
-void EngineController::draw(float x, float y, float w, float h) {
-    ofEnableAlphaBlending();
+    ofDisableAlphaBlending();
+    fbo.end();
+    
+    /*
     layers.forEach([&](Orange::Layers::Layer *layer) {
         layerController.setLayer(*layer);
         layerController.draw(x, y, w, h);
     });
-    ofDisableAlphaBlending();
+     */
+    
+}
+
+void EngineController::draw(float x, float y, float w, float h) {
+    ofColor(255,255,255);
+    ofClear(0, 0, 0);
+    
+    fbo.draw(x, y, w, h);
 }
 
 EngineController* EngineController::addLayer()
@@ -43,7 +59,7 @@ EngineController* EngineController::addLayer()
 
 EngineController* EngineController::setLayerIndex(int layerIndex)
 {
-    currentLayerIndex = layerIndex;
+    engine.currentLayerIndex = layerIndex;
     
     return this;
 }
@@ -56,15 +72,15 @@ EngineController* EngineController::setVisualIndex(int visualIndex)
 }
 
 Orange::Layers::Layer* EngineController::getCurrentLayer() {
-    if (currentLayerIndex < 0) {
+    if (engine.currentLayerIndex < 0) {
         throw new std::runtime_error("No selected Layer");
     }
     
-    if (currentLayerIndex >= layers.count()) {
+    if (engine.currentLayerIndex >= layers.count()) {
         throw new std::runtime_error("Invalid Layer");
     }
     
-    return layers.getAt(currentLayerIndex);
+    return layers.getAt(engine.currentLayerIndex);
 }
 
 EngineController* EngineController::addVideoToCurrentLayer(std::string path)

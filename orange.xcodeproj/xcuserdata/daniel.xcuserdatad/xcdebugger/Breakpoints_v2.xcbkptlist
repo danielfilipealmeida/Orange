@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/EngineModule/Controller/EngineController.cpp"
-            timestampString = "565835359.90467"
+            timestampString = "565920914.386189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "EngineController::addVideoToCurrentLayer(std::string path)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../of_v0.10.0_osx_release/apps/myApps/Orange/src/Modules/VisualsModule/Drawable/VideoDrawable.cpp"
+            timestampString = "565920573.26132"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "VideoDrawable::open(string filePath)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

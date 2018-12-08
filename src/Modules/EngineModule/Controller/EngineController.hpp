@@ -15,6 +15,8 @@
 #include "DrawableInterface.h"
 #include <string>
 #include "Video.hpp"
+#include "Engine.hpp"
+
 
 namespace Orange {
     namespace Engine {
@@ -22,11 +24,15 @@ namespace Orange {
         class EngineController : public Orange::Base::DrawableInterface {
             Orange::Base::Repository<Orange::Layers::Layer*> layers;
             Orange::Layers::LayerController layerController;
+            
 
-            unsigned int currentLayerIndex;
+            Engine engine;
+            ofFbo fbo;
             
         public:
             EngineController();
+            
+            void setFbo();
             
             /*!
              Draws the Engine content
