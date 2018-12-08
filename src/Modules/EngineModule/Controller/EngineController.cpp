@@ -66,7 +66,7 @@ EngineController* EngineController::setLayerIndex(int layerIndex)
 
 EngineController* EngineController::setVisualIndex(int visualIndex)
 {
-    getCurrentLayer()->currentVisual = visualIndex;
+    layerController.setVisual(visualIndex);
     
     return this;
 }
@@ -85,7 +85,14 @@ Orange::Layers::Layer* EngineController::getCurrentLayer() {
 
 EngineController* EngineController::addVideoToCurrentLayer(std::string path)
 {
-    Orange::Visuals::Video *video = loadVideo(path);
+    //Orange::Visuals::Video *video = loadVideo(path);
+    Orange::Visuals::Video *video;
+    
+    video->filePath = path;
+    
+    Visuals::VideoController *videoController = new Visuals::VideoController(video);
+    videoController[
+    
     return addVisualToCurrentLayer(video);
 }
 

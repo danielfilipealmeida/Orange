@@ -48,7 +48,7 @@ namespace Orange {
             ofBlendMode blendMode;
             
             Orange::Base::Repository<Orange::Visuals::BaseVisual *> visuals;
-            int currentVisual; // this should go to the Layer Controller
+            int currentVisual; 
             
             
             Layer();

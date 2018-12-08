@@ -16,16 +16,18 @@
 #include <string>
 #include "Video.hpp"
 #include "Engine.hpp"
-
+#include "VideoController.hpp"
 
 namespace Orange {
     namespace Engine {
         
-        class EngineController : public Orange::Base::DrawableInterface {
-            Orange::Base::Repository<Orange::Layers::Layer*> layers;
-            Orange::Layers::LayerController layerController;
-            
+        class EngineController : public
+            Base::DrawableInterface {
+            Base::Repository<Orange::Layers::Layer*> layers;
+            Layers::LayerController layerController;
+            std::vector<Visuals::VideoController *> videoControllers;
 
+                
             Engine engine;
             ofFbo fbo;
             
