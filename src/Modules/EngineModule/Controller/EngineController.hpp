@@ -30,13 +30,24 @@ namespace Orange {
             ofFbo fbo;
             
         public:
+            
+            /*!
+             Constructor
+             */
             EngineController();
             
+            /*!
+             Sets up the FBO
+             */
             void setFbo();
             
             /*!
              Draws the Engine content
-             */
+             \param float x
+             \param float y
+             \param float w
+             \param float xh
+            */
             void draw(float x, float y, float w, float h);
             
             /*!
@@ -62,14 +73,26 @@ namespace Orange {
              \returns Orange::Layers::Layer*
              */
             Orange::Layers::Layer* getCurrentLayer();
-
             
             /*!
-             */
+             Sets the the active video in the current selected layer
+             \param int visualIndex
+             \return EngineController*
+           */
             EngineController* setVisualIndex(int visualIndex);
             
+            /*!
+             Plays a visual in the currently selected layer.
+             The visual must be already loaded on the layer and it's define by it's index in the Visuals repository
+             \param int visualIndex
+             \return EngineController*
+             */
             EngineController* playVisual(int visualIndex);
             
+            /*!
+             Stops the visual currently playing on the Layer currently selected
+             \return EngineController*
+             */
             EngineController* stopVisual();
             
             /*!

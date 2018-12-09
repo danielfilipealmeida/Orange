@@ -26,7 +26,12 @@ namespace Orange {
         class Layer
         {
         public:
+
+#pragma mark public attributes
             
+            /*!
+             The Layer name, to be displayed on the gui
+            */
             ofParameter<string> name;
             
             /*!
@@ -47,12 +52,27 @@ namespace Orange {
              */
             ofBlendMode blendMode;
             
+            /*!
+             All the visuals in the layer
+             */
             Base::Repository<Visuals::BaseVisual *> visuals;
+            
+            /*!
+             The current visual. check if it's possible to transform this int a ofParameter
+             */
             int currentVisualIndex; 
             
+#pragma mark public methods
             
+            /*!
+             Constructor
+             */
             Layer();
             
+            /*!
+             Get the currently set visual or null if none
+             \return Orange::Visuals::BaseVisual|NULL
+             */
             Orange::Visuals::BaseVisual *getCurrentVisual();
             
             /*!

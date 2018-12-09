@@ -27,20 +27,12 @@ void EngineController::render(){
     
     ofClear(0, 0, 0);
     layers.forEach([&](Orange::Layers::Layer *layer) {
-        layerController.setLayer(*layer);
+        layerController.setLayer(layer);
         layerController.render();
         layerController.draw(0, 0, engine.width, engine.height);
     });
     ofDisableAlphaBlending();
     fbo.end();
-    
-    /*
-    layers.forEach([&](Orange::Layers::Layer *layer) {
-        layerController.setLayer(*layer);
-        layerController.draw(x, y, w, h);
-    });
-     */
-    
 }
 
 void EngineController::draw(float x, float y, float w, float h) {

@@ -9,21 +9,26 @@
 
 using namespace Orange::Layers;
 
+LayerController::LayerController() {
+    layer = NULL;
+}
 
-Orange::Visuals::BaseVisual *LayerController::getVisual(Orange::Layers::Layer &layer) {
-    if (layer.currentVisualIndex < 0 || layer.currentVisualIndex >= layer.visuals.count()) {
+Orange::Visuals::BaseVisual *LayerController::getVisual() {
+   
+    if (layer == NULL || layer->currentVisualIndex < 0 || layer->currentVisualIndex >= layer->visuals.count())
+    {
         return NULL;
     }
     
-    return layer.visuals.getAt(layer.currentVisualIndex);
+    return layer->visuals.getAt(layer->currentVisualIndex);
 }
 
-void LayerController::setLayer(Layer _layer) {
+void LayerController::setLayer(Layer *_layer) {
     layer = _layer;
 }
 
 void LayerController::render() {
-    Orange::Visuals::BaseVisual * currentVisual = getVisual(layer);
+    Orange::Visuals::BaseVisual * currentVisual = getVisual();
     
     if (currentVisual == NULL) {
         return;
@@ -33,14 +38,18 @@ void LayerController::render() {
 }
 
 void LayerController::draw(float x, float y, float w, float h) {
-    Orange::Visuals::BaseVisual * currentVisual = getVisual(layer);
+    if (layer == NULL) {
+        return;
+    }
+    
+    Orange::Visuals::BaseVisual * currentVisual = getVisual();
     
     if (currentVisual == NULL) {
         return;
     }
     
-    ofEnableBlendMode(layer.blendMode);
-    ofSetColor(255,255,255, layer.alpha * 255);;
+    ofEnableBlendMode(layer->blendMode);
+    ofSetColor(255,255,255, layer->alpha * 255);;
 
     currentVisual->draw(x, y, w, h);
 }

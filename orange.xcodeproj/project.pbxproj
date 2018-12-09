@@ -34,6 +34,9 @@
 		6515456121B7314C00880443 /* Bolas001.mov in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65A59DB421AB5DE500ADEE79 /* Bolas001.mov */; };
 		65337D0F21BB0E8D004FF3DA /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D0D21BB0E8D004FF3DA /* Engine.cpp */; };
 		65337D1021BB0E8D004FF3DA /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D0D21BB0E8D004FF3DA /* Engine.cpp */; };
+		65337D1F21BD5963004FF3DA /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7E21A0D1CD00ADEE79 /* Layer.cpp */; };
+		65337D2121BD59BC004FF3DA /* LayerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D2021BD59BC004FF3DA /* LayerTest.cpp */; };
+		65337D2421BDCD20004FF3DA /* LayerControllerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D2221BDCA41004FF3DA /* LayerControllerTest.cpp */; };
 		65759E3421B73B0E006B6814 /* ofxGuiFacade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3221B73B0E006B6814 /* ofxGuiFacade.cpp */; };
 		65759E3721B73B2B006B6814 /* GUIController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3521B73B2B006B6814 /* GUIController.cpp */; };
 		65759E3D21B891FF006B6814 /* EngineController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3B21B891FF006B6814 /* EngineController.cpp */; };
@@ -164,6 +167,8 @@
 		6515455B21B730C100880443 /* AnemicCinema004.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema004.mp4; sourceTree = "<group>"; };
 		65337D0D21BB0E8D004FF3DA /* Engine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Engine.cpp; sourceTree = "<group>"; };
 		65337D0E21BB0E8D004FF3DA /* Engine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Engine.hpp; sourceTree = "<group>"; };
+		65337D2021BD59BC004FF3DA /* LayerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LayerTest.cpp; sourceTree = "<group>"; };
+		65337D2221BDCA41004FF3DA /* LayerControllerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LayerControllerTest.cpp; sourceTree = "<group>"; };
 		65759E3121B73AF8006B6814 /* GUIFacadeInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GUIFacadeInterface.hpp; sourceTree = "<group>"; };
 		65759E3221B73B0E006B6814 /* ofxGuiFacade.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxGuiFacade.cpp; sourceTree = "<group>"; };
 		65759E3321B73B0E006B6814 /* ofxGuiFacade.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxGuiFacade.hpp; sourceTree = "<group>"; };
@@ -763,6 +768,8 @@
 		65A59DA821A6185600ADEE79 /* LayersModule */ = {
 			isa = PBXGroup;
 			children = (
+				65337D2021BD59BC004FF3DA /* LayerTest.cpp */,
+				65337D2221BDCA41004FF3DA /* LayerControllerTest.cpp */,
 			);
 			path = LayersModule;
 			sourceTree = "<group>";
@@ -1447,6 +1454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65337D1F21BD5963004FF3DA /* Layer.cpp in Sources */,
 				65A59DA421A4C3C700ADEE79 /* Video.cpp in Sources */,
 				65337D1021BB0E8D004FF3DA /* Engine.cpp in Sources */,
 				65A59DA221A4C3B900ADEE79 /* tests.cpp in Sources */,
@@ -1454,7 +1462,9 @@
 				6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */,
 				65759E3E21B891FF006B6814 /* EngineController.cpp in Sources */,
 				65A59DAA21A6198500ADEE79 /* VideoTest.cpp in Sources */,
+				65337D2421BDCD20004FF3DA /* LayerControllerTest.cpp in Sources */,
 				6515455721B5ED4000880443 /* LayerController.cpp in Sources */,
+				65337D2121BD59BC004FF3DA /* LayerTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
