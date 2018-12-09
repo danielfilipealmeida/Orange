@@ -68,6 +68,10 @@ namespace Orange {
              */
             EngineController* setVisualIndex(int visualIndex);
             
+            EngineController* playVisual(int visualIndex);
+            
+            EngineController* stopVisual();
+            
             /*!
              */
             EngineController* addVisualToCurrentLayer(Orange::Visuals::BaseVisual *visual);

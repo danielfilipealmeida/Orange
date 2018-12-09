@@ -66,13 +66,52 @@ EngineController* EngineController::setLayerIndex(int layerIndex)
 
 EngineController* EngineController::setVisualIndex(int visualIndex)
 {
-    getCurrentLayer()->currentVisual = visualIndex;
+    getCurrentLayer()->currentVisualIndex = visualIndex;
     
     return this;
 }
 
+EngineController* EngineController::playVisual(int visualIndex)
+{
+    if (visualIndex < 0 || getCurrentLayer()->getVisualsCount() <= visualIndex)
+    {
+        return this;
+    }
+    
+    
+    if (getCurrentLayer()->currentVisualIndex == visualIndex) {
+        // todo: retrigger!
+    }
+    
+    
+    Visuals::BaseVisual *previousVisual = getCurrentLayer()->getCurrentVisual();
+    if (previousVisual != NULL)
+    {
+        previousVisual->stop();
+    }
+    
+    setVisualIndex(visualIndex);
+    
+    Visuals::BaseVisual *currentVisual = getCurrentLayer()->getCurrentVisual();
+    
+    if (currentVisual != NULL) {
+        currentVisual->play();
+    }
+    
+    return this;
+}
+
+
+EngineController* EngineController::stopVisual()
+{
+    setVisualIndex(0);
+    
+    return this;
+}
+
+
 Orange::Layers::Layer* EngineController::getCurrentLayer() {
-    if (engine.currentLayerIndex < 0) {
+    if (engine.currentLayerIndex < 0 || engine.currentLayerIndex >= layers.count()) {
         throw new std::runtime_error("No selected Layer");
     }
     
@@ -99,12 +138,9 @@ Orange::Visuals::Video* EngineController::loadVideo(string videoPath) {
     Orange::Visuals::Video* video = new Orange::Visuals::Video();
     try {
         video->open(videoPath);
-        video->play();
     }
     catch (std::runtime_error *exception) {
         cout << exception->what();
-        
-        ofExit(-1);
     }
     
     return video;

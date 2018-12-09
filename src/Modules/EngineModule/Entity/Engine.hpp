@@ -20,7 +20,7 @@ namespace Orange {
             
             
         public:
-            ofParameter<int> currentLayerIndex;
+            int currentLayerIndex;
             
             int width, height;
             

@@ -17,7 +17,7 @@ Layer::Layer()
     name = "Layer " + std::to_string(layerNumber);
     alpha = 0.5;
     blendMode = OF_BLENDMODE_ALPHA;
-    currentVisual = -1;
+    currentVisualIndex = -1;
     
     layerNumber++;
 }
@@ -25,4 +25,17 @@ Layer::Layer()
 void Layer::add(Orange::Visuals::BaseVisual* visual)
 {
     visuals.add(visual);
+}
+
+unsigned int Layer::getVisualsCount()
+{
+    return visuals.count();
+}
+
+Orange::Visuals::BaseVisual* Layer::getCurrentVisual()
+{
+    if (currentVisualIndex < 0 || visuals.count() <= currentVisualIndex) {
+        return NULL;
+    }
+    return visuals[currentVisualIndex];
 }

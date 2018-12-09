@@ -16,7 +16,24 @@ class ofApp : public ofBaseApp{
         KEYCODE_SWITCH_LAYER_2 = 50,
         KEYCODE_SWITCH_LAYER_3 = 51,
         KEYCODE_SWITCH_LAYER_4 = 52
+    };
+    
+    enum VISUALS_TRIGGER_CODES {
+        KEYCODE_TRIGGER_LAYER1_VISUAL1 = 113,
+        KEYCODE_TRIGGER_LAYER1_VISUAL2 = 119,
+        KEYCODE_TRIGGER_LAYER1_VISUAL3 = 101,
+        KEYCODE_TRIGGER_LAYER1_VISUAL4 = 114,
         
+        KEYCODE_TRIGGER_LAYER2_VISUAL1 = 97,
+        KEYCODE_TRIGGER_LAYER2_VISUAL2 = 115,
+        KEYCODE_TRIGGER_LAYER2_VISUAL3 = 100,
+        KEYCODE_TRIGGER_LAYER2_VISUAL4 = 102,
+
+        KEYCODE_TRIGGER_LAYER3_VISUAL1 = 122,
+        KEYCODE_TRIGGER_LAYER3_VISUAL2 = 120,
+        KEYCODE_TRIGGER_LAYER3_VISUAL3 = 99,
+        KEYCODE_TRIGGER_LAYER3_VISUAL4 = 118,
+
     };
     
     Orange::Engine::EngineController *engineController;
@@ -38,6 +55,7 @@ class ofApp : public ofBaseApp{
 		void draw();
     
     void handleLayerSwitch(int key);
+    void handleVisualsTrigger(int key);
 
 		void keyPressed(int key);
 		void keyReleased(int key);

@@ -11,11 +11,11 @@ using namespace Orange::Layers;
 
 
 Orange::Visuals::BaseVisual *LayerController::getVisual(Orange::Layers::Layer &layer) {
-    if (layer.currentVisual < 0 || layer.currentVisual >= layer.visuals.count()) {
+    if (layer.currentVisualIndex < 0 || layer.currentVisualIndex >= layer.visuals.count()) {
         return NULL;
     }
     
-    return  layer.visuals.getAt(layer.currentVisual);
+    return layer.visuals.getAt(layer.currentVisualIndex);
 }
 
 void LayerController::setLayer(Layer _layer) {

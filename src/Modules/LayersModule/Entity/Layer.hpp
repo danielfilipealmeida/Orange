@@ -47,16 +47,25 @@ namespace Orange {
              */
             ofBlendMode blendMode;
             
-            Orange::Base::Repository<Orange::Visuals::BaseVisual *> visuals;
-            int currentVisual; // this should go to the Layer Controller
+            Base::Repository<Visuals::BaseVisual *> visuals;
+            int currentVisualIndex; 
             
             
             Layer();
             
+            Orange::Visuals::BaseVisual *getCurrentVisual();
+            
             /*!
              Adds a Visual
+             \param Orange::Visuals::BaseVisual* visual
              */
             void add(Orange::Visuals::BaseVisual* visual);
+            
+            /*!
+             Returns the total ammount of visuals in this layer
+             \returns unsigned int
+             */
+            unsigned int getVisualsCount();
         };
         
     }

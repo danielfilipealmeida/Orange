@@ -40,6 +40,10 @@ namespace Orange {
                 return entities[index];
             }
             
+            T &operator[](unsigned int index) {
+                return entities[index];
+            }
+            
             /*!
              \brief Adds an entity at the end of the Repository
              \param T The entity to store
