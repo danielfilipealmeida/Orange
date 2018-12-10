@@ -32,6 +32,7 @@
 		6515455F21B7314C00880443 /* AnemicCinema003.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455A21B730C100880443 /* AnemicCinema003.mp4 */; };
 		6515456021B7314C00880443 /* AnemicCinema004.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455B21B730C100880443 /* AnemicCinema004.mp4 */; };
 		6515456121B7314C00880443 /* Bolas001.mov in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65A59DB421AB5DE500ADEE79 /* Bolas001.mov */; };
+		651AD4DA21BF17F20091D71D /* EngineControllerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 651AD4D821BF17F20091D71D /* EngineControllerTest.cpp */; };
 		65337D0F21BB0E8D004FF3DA /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D0D21BB0E8D004FF3DA /* Engine.cpp */; };
 		65337D1021BB0E8D004FF3DA /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D0D21BB0E8D004FF3DA /* Engine.cpp */; };
 		65337D1F21BD5963004FF3DA /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7E21A0D1CD00ADEE79 /* Layer.cpp */; };
@@ -165,6 +166,7 @@
 		6515455921B730C100880443 /* AnemicCinema002.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema002.mp4; sourceTree = "<group>"; };
 		6515455A21B730C100880443 /* AnemicCinema003.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema003.mp4; sourceTree = "<group>"; };
 		6515455B21B730C100880443 /* AnemicCinema004.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema004.mp4; sourceTree = "<group>"; };
+		651AD4D821BF17F20091D71D /* EngineControllerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EngineControllerTest.cpp; sourceTree = "<group>"; };
 		65337D0D21BB0E8D004FF3DA /* Engine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Engine.cpp; sourceTree = "<group>"; };
 		65337D0E21BB0E8D004FF3DA /* Engine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Engine.hpp; sourceTree = "<group>"; };
 		65337D2021BD59BC004FF3DA /* LayerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LayerTest.cpp; sourceTree = "<group>"; };
@@ -568,6 +570,14 @@
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
+		651AD4D721BF17A80091D71D /* EngineModule */ = {
+			isa = PBXGroup;
+			children = (
+				651AD4D821BF17F20091D71D /* EngineControllerTest.cpp */,
+			);
+			path = EngineModule;
+			sourceTree = "<group>";
+		};
 		65337D0C21BB0E60004FF3DA /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -748,6 +758,7 @@
 		65A59D9421A4C34200ADEE79 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				651AD4D721BF17A80091D71D /* EngineModule */,
 				6504536421AE024100CAC33D /* BaseModule */,
 				65A59DA821A6185600ADEE79 /* LayersModule */,
 				65A59DA721A6183600ADEE79 /* VisualsModule */,
@@ -1457,6 +1468,7 @@
 				65337D1F21BD5963004FF3DA /* Layer.cpp in Sources */,
 				65A59DA421A4C3C700ADEE79 /* Video.cpp in Sources */,
 				65337D1021BB0E8D004FF3DA /* Engine.cpp in Sources */,
+				651AD4DA21BF17F20091D71D /* EngineControllerTest.cpp in Sources */,
 				65A59DA221A4C3B900ADEE79 /* tests.cpp in Sources */,
 				6504536721AE027B00CAC33D /* RepositoryTest.cpp in Sources */,
 				6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */,

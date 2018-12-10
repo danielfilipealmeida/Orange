@@ -22,6 +22,7 @@ namespace Orange {
     namespace Engine {
         
         class EngineController : public Orange::Base::DrawableInterface {
+        private:
             Orange::Base::Repository<Orange::Layers::Layer*> layers;
             Orange::Layers::LayerController layerController;
             
@@ -78,7 +79,7 @@ namespace Orange {
              Sets the the active video in the current selected layer
              \param int visualIndex
              \return EngineController*
-           */
+            */
             EngineController* setVisualIndex(int visualIndex);
             
             /*!
@@ -96,20 +97,28 @@ namespace Orange {
             EngineController* stopVisual();
             
             /*!
+             Adds a new visual to the currently selected layer.
+             \param Orange::Visuals::BaseVisual *visual
+             \return EngineController*
              */
             EngineController* addVisualToCurrentLayer(Orange::Visuals::BaseVisual *visual);
             
             /*!
+             Adds a Video to the current layer.
+             \param string path
+             \return EngineController*
              */
-            EngineController* addVideoToCurrentLayer(std::string path);
+            EngineController* addVideoToCurrentLayer(string path);
             
             /*!
              Loads a video from a path.
              This probly should go somewhere else and
              be a static method on another module
-             that handles IO
+             that handles IO.
+             \param string videoPath
+             \return Orange::Visuals::Video*
              */
-            Orange::Visuals::Video* loadVideo(string videoPath);
+            Orange::Visuals::Video* loadVideo(string path);
 
         };
     }

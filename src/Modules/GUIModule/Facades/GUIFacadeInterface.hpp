@@ -36,6 +36,9 @@ namespace Orange {
                                       float minValue,
                                       float maxValue) = 0;
             
+            /*!
+             Creates a label to show information
+             */
             virtual void createLabel(ofParameter<string> parameter) = 0;
             
             /*!
@@ -48,7 +51,7 @@ namespace Orange {
              */
             virtual void clear() = 0;
             
-                    };
+        };
     }
 }
 #endif /* GUIFacadeInterface_h */

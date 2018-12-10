@@ -51,6 +51,9 @@ EngineController* EngineController::addLayer()
 
 EngineController* EngineController::setLayerIndex(int layerIndex)
 {
+    if (layerIndex >= layers.count()) {
+        throw new std::runtime_error("Layer doesn't exist.");
+    }
     engine.currentLayerIndex = layerIndex;
     
     return this;
@@ -114,7 +117,7 @@ Orange::Layers::Layer* EngineController::getCurrentLayer() {
     return layers.getAt(engine.currentLayerIndex);
 }
 
-EngineController* EngineController::addVideoToCurrentLayer(std::string path)
+EngineController* EngineController::addVideoToCurrentLayer(string path)
 {
     Orange::Visuals::Video *video = loadVideo(path);
     return addVisualToCurrentLayer(video);
@@ -126,10 +129,10 @@ EngineController* EngineController::addVisualToCurrentLayer(Orange::Visuals::Bas
     return this;
 }
 
-Orange::Visuals::Video* EngineController::loadVideo(string videoPath) {
+Orange::Visuals::Video* EngineController::loadVideo(string path) {
     Orange::Visuals::Video* video = new Orange::Visuals::Video();
     try {
-        video->open(videoPath);
+        video->open(path);
     }
     catch (std::runtime_error *exception) {
         cout << exception->what();

@@ -14,9 +14,11 @@ LayerController::LayerController() {
 }
 
 Orange::Visuals::BaseVisual *LayerController::getVisual() {
-   
-    if (layer == NULL || layer->currentVisualIndex < 0 || layer->currentVisualIndex >= layer->visuals.count())
-    {
+    if (
+        layer == NULL ||
+        layer->currentVisualIndex < 0 ||
+        layer->currentVisualIndex >= layer->visuals.count()
+        ) {
         return NULL;
     }
     

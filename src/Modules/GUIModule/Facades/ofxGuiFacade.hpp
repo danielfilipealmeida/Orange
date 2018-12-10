@@ -52,6 +52,9 @@ namespace Orange {
              */
             void draw();
             
+            /*!
+             Clears the current GUI
+             */
             void clear();
             
         };
