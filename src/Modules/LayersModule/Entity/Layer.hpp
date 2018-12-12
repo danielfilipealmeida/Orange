@@ -55,14 +55,14 @@ namespace Orange {
              The blend mode of the layer.
              
              Available blend modes:
-                - OF_BLENDMODE_DISABLED
-                - OF_BLENDMODE_ALPHA
-                - OF_BLENDMODE_ADD
-                - OF_BLENDMODE_SUBTRACT
-                - OF_BLENDMODE_MULTIPLY
-                - OF_BLENDMODE_SCREEN
+                - OF_BLENDMODE_DISABLED - 0
+                - OF_BLENDMODE_ALPHA    - 1
+                - OF_BLENDMODE_ADD      - 2
+                - OF_BLENDMODE_SUBTRACT - 3
+                - OF_BLENDMODE_MULTIPLY - 4
+                - OF_BLENDMODE_SCREEN   - 5
              */
-            ofBlendMode blendMode;
+            ofParameter<int> blendMode;
             
             /*!
              All the visuals in the layer

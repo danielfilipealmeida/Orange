@@ -42,6 +42,11 @@ namespace Orange {
                               float minValue,
                               float maxValue);
             
+            void createSlider(ofParameter<int> parameter,
+                              std::string title,
+                              int minValue,
+                              int maxValue);
+            
             /*!
              Creates a label displaying information
              */

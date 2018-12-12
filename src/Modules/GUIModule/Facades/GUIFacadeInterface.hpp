@@ -25,9 +25,9 @@ namespace Orange {
             virtual void setName(ofParameter<string> name) = 0;
         
             /*!
-             Creates a Slider in the GUI
+             Creates a Float Slider in the GUI
+             \param ofParameter<float> parameter
              \param string title
-             \param float value
              \param float minValue
              \param float maxValue
              */
@@ -35,6 +35,19 @@ namespace Orange {
                                       std::string title,
                                       float minValue,
                                       float maxValue) = 0;
+            
+            /*!
+             Creates an Int Slider in the GUI
+             \param ofParameter<int> parameter
+             \param string title
+             \param int minValue
+             \param int maxValue
+             */
+            virtual void createSlider(ofParameter<int> parameter,
+                                      std::string title,
+                                      int minValue,
+                                      int maxValue) = 0;
+            
             
             /*!
              Creates a label to show information

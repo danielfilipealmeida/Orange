@@ -34,6 +34,17 @@ void ofxGuiFacade::createSlider(ofParameter<float> parameter,
     gui.add(slider);
 }
 
+void ofxGuiFacade::createSlider(ofParameter<int> parameter,
+                                std::string title,
+                                int minValue,
+                                int maxValue)
+{
+    ofxIntSlider* slider;
+    slider = new ofxIntSlider();
+    slider->setup(parameter.set(title, parameter, minValue, maxValue));
+    gui.add(slider);
+}
+
 void ofxGuiFacade::createLabel(ofParameter<string> parameter)
 {
     ofxLabel* label;
