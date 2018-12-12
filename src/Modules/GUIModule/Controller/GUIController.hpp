@@ -33,8 +33,7 @@ namespace Orange {
             void draw();
             
             /*!
-             Sets the current selected layer and updates the
-             GUI
+             Sets the current selected layer and updates the GUI
              \param Orange::Layers::Layer *_layer
              */
             void setLayer(Orange::Layers::Layer *_layer);

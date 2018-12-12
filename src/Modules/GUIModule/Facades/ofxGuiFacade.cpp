@@ -10,6 +10,7 @@
 
 using namespace Orange::GUI;
 
+#include "ofxPreview.hpp"
 
 ofxGuiFacade::ofxGuiFacade()
 {
@@ -39,6 +40,15 @@ void ofxGuiFacade::createLabel(ofParameter<string> parameter)
     label = new ofxLabel();
     label->setup(parameter);
     gui.add(label);
+}
+
+void ofxGuiFacade::createPreview(ofFbo *fbo)
+{
+    ofxPreview* preview;
+    
+    preview = new ofxPreview();
+    preview->setup(fbo);
+    gui.add(preview);
 }
 
 void ofxGuiFacade::draw()

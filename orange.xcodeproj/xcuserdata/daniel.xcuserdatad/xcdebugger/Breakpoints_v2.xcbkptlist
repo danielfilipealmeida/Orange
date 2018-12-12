@@ -74,12 +74,211 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/EngineModule/Controller/EngineController.cpp"
-            timestampString = "566175823.75132"
+            timestampString = "566346907.759236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "EngineController::getCurrentLayer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../addons/ofxGui/src/ofxSlider.cpp"
+            timestampString = "566346907.759361"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "setup(ofParameter&lt;Type&gt; _val, float width, float height)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofxSlider&lt;signed char&gt;::setup(ofParameter&lt;signed char&gt;, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/addons/ofxGui/src/ofxSlider.cpp"
+                  timestampString = "566346575.370666"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofxSlider&lt;unsigned char&gt;::setup(ofParameter&lt;unsigned char&gt;, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/addons/ofxGui/src/ofxSlider.cpp"
+                  timestampString = "566346575.374092"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofxSlider&lt;short&gt;::setup(ofParameter&lt;short&gt;, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/addons/ofxGui/src/ofxSlider.cpp"
+                  timestampString = "566346575.3769"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofxSlider&lt;unsigned short&gt;::setup(ofParameter&lt;unsigned short&gt;, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/addons/ofxGui/src/ofxSlider.cpp"
+                  timestampString = "566346575.38019"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofxSlider&lt;int&gt;::setup(ofParameter&lt;int&gt;, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/addons/ofxGui/src/ofxSlider.cpp"
+                  timestampString = "566346575.3841"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofxSlider&lt;unsigned int&gt;::setup(ofParameter&lt;unsigned int&gt;, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/addons/ofxGui/src/ofxSlider.cpp"
+                  timestampString = "566346575.387346"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofxSlider&lt;long long&gt;::setup(ofParameter&lt;long long&gt;, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/addons/ofxGui/src/ofxSlider.cpp"
+                  timestampString = "566346575.390499"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofxSlider&lt;unsigned long long&gt;::setup(ofParameter&lt;unsigned long long&gt;, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/addons/ofxGui/src/ofxSlider.cpp"
+                  timestampString = "566346575.39338"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofxSlider&lt;float&gt;::setup(ofParameter&lt;float&gt;, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/addons/ofxGui/src/ofxSlider.cpp"
+                  timestampString = "566346575.3966449"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofxSlider&lt;double&gt;::setup(ofParameter&lt;double&gt;, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/addons/ofxGui/src/ofxSlider.cpp"
+                  timestampString = "566346575.40029"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofxSlider&lt;unsigned long&gt;::setup(ofParameter&lt;unsigned long&gt;, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/addons/ofxGui/src/ofxSlider.cpp"
+                  timestampString = "566346575.402848"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "439">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Modules/GUIModule/Facades/ofxGuiFacade.cpp"
+            timestampString = "566346907.760061"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "ofxGuiFacade::createSlider(ofParameter&lt;float&gt; parameter, std::string title, float minValue, float maxValue)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

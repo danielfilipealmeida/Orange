@@ -29,9 +29,12 @@ namespace Orange {
              Fetches the current selected visual.
              */
              Orange::Visuals::BaseVisual *getVisual();
-       
+        
         public:
             
+            /*!
+             Constructor
+             */
             LayerController();
             
             /*!

@@ -25,9 +25,21 @@ namespace Orange {
          */
         class Layer
         {
+            unsigned int width, height;
         public:
 
 #pragma mark public attributes
+   
+            ofFbo fbo;
+            
+            unsigned int getWidth();
+            
+            unsigned int getHeight();
+
+            /*!
+             Sets up the FBO
+             */
+            void setFbo(unsigned int _width, unsigned int _height);
             
             /*!
              The Layer name, to be displayed on the gui

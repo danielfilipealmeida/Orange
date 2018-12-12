@@ -37,6 +37,12 @@ void LayerController::render() {
     }
     
     currentVisual->render();
+    
+    layer->fbo.begin();
+    ofClear(0, 0, 0);
+    ofSetColor(255,255,255, 255);
+    currentVisual->draw(0, 0, layer->getWidth(), layer->getHeight());
+    layer->fbo.end();
 }
 
 void LayerController::draw(float x, float y, float w, float h) {
@@ -44,15 +50,8 @@ void LayerController::draw(float x, float y, float w, float h) {
         return;
     }
     
-    Orange::Visuals::BaseVisual * currentVisual = getVisual();
-    
-    if (currentVisual == NULL) {
-        return;
-    }
-    
     ofEnableBlendMode(layer->blendMode);
-    ofSetColor(255,255,255, layer->alpha * 255);;
-
-    currentVisual->draw(x, y, w, h);
+    ofSetColor(255,255,255, layer->alpha * 255);
+    layer->fbo.draw(x, y, w, h);
 }
 

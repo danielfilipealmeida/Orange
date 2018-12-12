@@ -41,6 +41,8 @@ namespace Orange {
              */
             virtual void createLabel(ofParameter<string> parameter) = 0;
             
+            virtual void createPreview(ofFbo *fbo) = 0;
+            
             /*!
              Draws the ofxGui
              */

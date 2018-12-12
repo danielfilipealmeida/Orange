@@ -22,16 +22,18 @@ void EngineController::setFbo()
 
 // todo: work with an fbo
 void EngineController::render(){
-    fbo.begin();
-    ofEnableAlphaBlending();
     
-    ofClear(0, 0, 0);
     layers.forEach([&](Orange::Layers::Layer *layer) {
         layerController.setLayer(layer);
         layerController.render();
+    });
+    
+    fbo.begin();
+    ofClear(0, 0, 0);
+    layers.forEach([&](Orange::Layers::Layer *layer) {
+        layerController.setLayer(layer);
         layerController.draw(0, 0, engine.width, engine.height);
     });
-    ofDisableAlphaBlending();
     fbo.end();
 }
 
@@ -44,7 +46,10 @@ void EngineController::draw(float x, float y, float w, float h) {
 
 EngineController* EngineController::addLayer()
 {
-    layers.add(new Orange::Layers::Layer());
+    Layers::Layer *layer = new Orange::Layers::Layer();
+    layer->setFbo(engine.width, engine.height);
+    
+    layers.add(layer);
     
     return this;
 }
