@@ -35,7 +35,7 @@ void GUIController::draw()
 }
 
 
-void GUIController::setLayer(Orange::Layers::Layer *_layer)
+void GUIController::setLayer(shared_ptr<Orange::Layers::Layer> _layer)
 {
     layer = _layer;
  

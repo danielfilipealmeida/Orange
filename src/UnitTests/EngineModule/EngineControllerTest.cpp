@@ -31,7 +31,7 @@ TEST_CASE("EngineController can add layer", "" ) {
     REQUIRE_THROWS(engineController.getCurrentLayer());
     
     engineController.setLayerIndex(0);
-    REQUIRE(engineController.getCurrentLayer() != NULL);
+    REQUIRE(engineController.getCurrentLayer());
     
     REQUIRE_THROWS(engineController.setLayerIndex(1));
 }

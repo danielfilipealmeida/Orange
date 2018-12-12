@@ -25,7 +25,7 @@ Orange::Visuals::BaseVisual *LayerController::getVisual() {
     return layer->visuals.getAt(layer->currentVisualIndex);
 }
 
-void LayerController::setLayer(Layer *_layer) {
+void LayerController::setLayer(shared_ptr<Layer> _layer) {
     layer = _layer;
 }
 

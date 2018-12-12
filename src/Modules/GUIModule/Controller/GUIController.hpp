@@ -17,7 +17,7 @@ namespace Orange {
         class GUIController {
             GUIFacadeInterface *facade;
             
-            Orange::Layers::Layer *layer;
+            shared_ptr<Layers::Layer> layer;
         public:
             
             GUIController(GUIFacadeInterface *_facade);
@@ -36,7 +36,7 @@ namespace Orange {
              Sets the current selected layer and updates the GUI
              \param Orange::Layers::Layer *_layer
              */
-            void setLayer(Orange::Layers::Layer *_layer);
+            void setLayer(shared_ptr<Orange::Layers::Layer> _layer);
         };
     }
 }

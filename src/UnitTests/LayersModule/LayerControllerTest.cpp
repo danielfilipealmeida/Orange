@@ -20,14 +20,14 @@ using namespace Orange;
 TEST_CASE("LayerController initiates without a layer set", "" ) {
     Layers::LayerController layerControler;
 
-    REQUIRE(layerControler.layer == NULL);
+    REQUIRE(layerControler.layer.get() == NULL);
     REQUIRE(layerControler.getVisual() == NULL);
 }
 
 
 TEST_CASE("Can fetch visuals from Layer", "") {
     Layers::LayerController layerControler;
-    Layers::Layer *layer = new Layers::Layer();
+    shared_ptr<Layers::Layer> layer = make_shared<Layers::Layer>();
     Visuals::Video *video = new Visuals::Video();
     
     layer->add(video);

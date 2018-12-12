@@ -23,7 +23,7 @@ namespace Orange {
         
         class EngineController : public Orange::Base::DrawableInterface {
         private:
-            Orange::Base::Repository<Orange::Layers::Layer*> layers;
+            Orange::Base::Repository<shared_ptr<Orange::Layers::Layer> > layers;
             Orange::Layers::LayerController layerController;
             
 
@@ -73,7 +73,7 @@ namespace Orange {
              Returns the currently selected layer for edit
              \returns Orange::Layers::Layer*
              */
-            Orange::Layers::Layer* getCurrentLayer();
+            shared_ptr<Orange::Layers::Layer> getCurrentLayer();
             
             /*!
              Sets the the active video in the current selected layer

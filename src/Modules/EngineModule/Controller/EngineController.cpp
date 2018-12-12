@@ -20,17 +20,16 @@ void EngineController::setFbo()
     fbo.allocate(engine.width, engine.height, GL_RGB);
 }
 
-// todo: work with an fbo
 void EngineController::render(){
     
-    layers.forEach([&](Orange::Layers::Layer *layer) {
+    layers.forEach([&](shared_ptr<Orange::Layers::Layer> layer) {
         layerController.setLayer(layer);
         layerController.render();
     });
     
     fbo.begin();
     ofClear(0, 0, 0);
-    layers.forEach([&](Orange::Layers::Layer *layer) {
+    layers.forEach([&](shared_ptr<Orange::Layers::Layer> layer) {
         layerController.setLayer(layer);
         layerController.draw(0, 0, engine.width, engine.height);
     });
@@ -46,7 +45,7 @@ void EngineController::draw(float x, float y, float w, float h) {
 
 EngineController* EngineController::addLayer()
 {
-    Layers::Layer *layer = new Orange::Layers::Layer();
+    shared_ptr<Layers::Layer> layer = std::make_shared<Layers::Layer>();
     layer->setFbo(engine.width, engine.height);
     
     layers.add(layer);
@@ -110,7 +109,7 @@ EngineController* EngineController::stopVisual()
 }
 
 
-Orange::Layers::Layer* EngineController::getCurrentLayer() {
+shared_ptr<Orange::Layers::Layer> EngineController::getCurrentLayer() {
     if (engine.currentLayerIndex < 0 || engine.currentLayerIndex >= layers.count()) {
         throw new std::runtime_error("No selected Layer");
     }

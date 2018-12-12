@@ -21,9 +21,8 @@ namespace Orange {
             
             /*!
              The layer that the controller is getting data from
-             todo. move this to a pointer
              */
-            Layer *layer;
+            shared_ptr<Layer> layer;
             
             /*!
              Fetches the current selected visual.
@@ -41,7 +40,7 @@ namespace Orange {
              Sets the layer that will be affected by the controller actions
              \param Layer _layer
              */
-            void setLayer(Layer *_layer);
+            void setLayer(shared_ptr<Layer> _layer);
             
             /*!
              Draws the video
