@@ -43,38 +43,32 @@ void EngineController::draw(float x, float y, float w, float h) {
     fbo.draw(x, y, w, h);
 }
 
-EngineController* EngineController::addLayer()
+void EngineController::addLayer()
 {
     shared_ptr<Layers::Layer> layer = std::make_shared<Layers::Layer>();
     layer->setFbo(engine.width, engine.height);
     
     layers.add(layer);
-    
-    return this;
 }
 
-EngineController* EngineController::setLayerIndex(int layerIndex)
+void EngineController::setLayerIndex(int layerIndex)
 {
     if (layerIndex >= layers.count()) {
         throw new std::runtime_error("Layer doesn't exist.");
     }
     engine.currentLayerIndex = layerIndex;
-    
-    return this;
 }
 
-EngineController* EngineController::setVisualIndex(int visualIndex)
+void EngineController::setVisualIndex(int visualIndex)
 {
     getCurrentLayer()->currentVisualIndex = visualIndex;
-    
-    return this;
 }
 
-EngineController* EngineController::playVisual(int visualIndex)
+void EngineController::playVisual(int visualIndex)
 {
     if (visualIndex < 0 || getCurrentLayer()->getVisualsCount() <= visualIndex)
     {
-        return this;
+        return;
     }
     
     
@@ -96,16 +90,12 @@ EngineController* EngineController::playVisual(int visualIndex)
     if (currentVisual != NULL) {
         currentVisual->play();
     }
-    
-    return this;
 }
 
 
-EngineController* EngineController::stopVisual()
+void EngineController::stopVisual()
 {
     setVisualIndex(0);
-    
-    return this;
 }
 
 
@@ -121,16 +111,14 @@ shared_ptr<Orange::Layers::Layer> EngineController::getCurrentLayer() {
     return layers.getAt(engine.currentLayerIndex);
 }
 
-EngineController* EngineController::addVideoToCurrentLayer(string path)
+void EngineController::addVideoToCurrentLayer(string path)
 {
     shared_ptr<Visuals::Video> video = loadVideo(path);
     return addVisualToCurrentLayer(video);
 }
 
-EngineController* EngineController::addVisualToCurrentLayer(shared_ptr<Orange::Visuals::BaseVisual> visual) {
+void EngineController::addVisualToCurrentLayer(shared_ptr<Orange::Visuals::BaseVisual> visual) {
     getCurrentLayer()->add(visual);
-    
-    return this;
 }
 
 shared_ptr<Orange::Visuals::Video> EngineController::loadVideo(string path) {

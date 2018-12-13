@@ -9,15 +9,15 @@ void ofApp::setup() {
     
     engineController = new Orange::Engine::EngineController();
     
-    engineController->addLayer()
-        ->setLayerIndex(0)
-        ->addVideoToCurrentLayer("Bolas001.mov")
-        ->addVideoToCurrentLayer("AnemicCinema001.mp4");
+    engineController->addLayer();
+    engineController->setLayerIndex(0);
+    engineController->addVideoToCurrentLayer("Bolas001.mov");
+    engineController->addVideoToCurrentLayer("AnemicCinema001.mp4");
     
-    engineController->addLayer()
-        ->setLayerIndex(1)
-        ->addVideoToCurrentLayer("AnemicCinema002.mp4")
-        ->addVideoToCurrentLayer("AnemicCinema003.mp4");
+    engineController->addLayer();
+    engineController->setLayerIndex(1);
+    engineController->addVideoToCurrentLayer("AnemicCinema002.mp4");
+    engineController->addVideoToCurrentLayer("AnemicCinema003.mp4");
     
     /* set up the gui */
     guiFacade = new Orange::GUI::ofxGuiFacade();
@@ -77,47 +77,58 @@ void ofApp::handleVisualsTrigger(int key)
             break;
 
         case ofApp::KEYCODE_TRIGGER_LAYER1_VISUAL2:
-            engineController->setLayerIndex(0)->playVisual(1);
+            engineController->setLayerIndex(0);
+            engineController->playVisual(1);
             break;
 
         case ofApp::KEYCODE_TRIGGER_LAYER1_VISUAL3:
-            engineController->setLayerIndex(0)->playVisual(2);
+            engineController->setLayerIndex(0);
+            engineController->playVisual(2);
             break;
 
         case ofApp::KEYCODE_TRIGGER_LAYER1_VISUAL4:
-            engineController->setLayerIndex(0)->playVisual(3);
+            engineController->setLayerIndex(0);
+            engineController->playVisual(3);
             break;
 
         case ofApp::KEYCODE_TRIGGER_LAYER2_VISUAL1:
-            engineController->setLayerIndex(1)->playVisual(0);
+            engineController->setLayerIndex(1);
+            engineController->playVisual(0);
             break;
             
         case ofApp::KEYCODE_TRIGGER_LAYER2_VISUAL2:
-            engineController->setLayerIndex(1)->playVisual(1);
+            engineController->setLayerIndex(1);
+            engineController->playVisual(1);
             break;
             
         case ofApp::KEYCODE_TRIGGER_LAYER2_VISUAL3:
-            engineController->setLayerIndex(1)->playVisual(2);
+            engineController->setLayerIndex(1);
+            engineController->playVisual(2);
             break;
             
         case ofApp::KEYCODE_TRIGGER_LAYER2_VISUAL4:
-            engineController->setLayerIndex(1)->playVisual(3);
+            engineController->setLayerIndex(1);
+            engineController->playVisual(3);
             break;
 
         case ofApp::KEYCODE_TRIGGER_LAYER3_VISUAL1:
-            engineController->setLayerIndex(2)->playVisual(0);
+            engineController->setLayerIndex(2);
+            engineController->playVisual(0);
             break;
             
         case ofApp::KEYCODE_TRIGGER_LAYER3_VISUAL2:
-            engineController->setLayerIndex(2)->playVisual(1);
+            engineController->setLayerIndex(2);
+            engineController->playVisual(1);
             break;
             
         case ofApp::KEYCODE_TRIGGER_LAYER3_VISUAL3:
-            engineController->setLayerIndex(2)->playVisual(2);
+            engineController->setLayerIndex(2);
+            engineController->playVisual(2);
             break;
             
         case ofApp::KEYCODE_TRIGGER_LAYER3_VISUAL4:
-            engineController->setLayerIndex(2)->playVisual(3);
+            engineController->setLayerIndex(2);
+            engineController->playVisual(3);
             break;
 
         default:

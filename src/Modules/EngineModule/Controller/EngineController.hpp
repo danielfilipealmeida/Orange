@@ -58,16 +58,14 @@ namespace Orange {
             
             /*!
              Adds a new Layer with default configuration
-             \return EngineController*
              */
-            EngineController* addLayer();
+            void addLayer();
             
             /*!
              Sets the index in the repository of the currently active layer.
              \param int layerIndex
-             \return EngineController*
              */
-            EngineController* setLayerIndex(int layerIndex);
+            void setLayerIndex(int layerIndex);
  
             /*!
              Returns the currently selected layer for edit
@@ -78,37 +76,32 @@ namespace Orange {
             /*!
              Sets the the active video in the current selected layer
              \param int visualIndex
-             \return EngineController*
-            */
-            EngineController* setVisualIndex(int visualIndex);
+             */
+            void setVisualIndex(int visualIndex);
             
             /*!
              Plays a visual in the currently selected layer.
              The visual must be already loaded on the layer and it's define by it's index in the Visuals repository
              \param int visualIndex
-             \return EngineController*
              */
-            EngineController* playVisual(int visualIndex);
+            void playVisual(int visualIndex);
             
             /*!
              Stops the visual currently playing on the Layer currently selected
-             \return EngineController*
              */
-            EngineController* stopVisual();
+            void stopVisual();
             
             /*!
              Adds a new visual to the currently selected layer.
              \param Orange::Visuals::BaseVisual *visual
-             \return EngineController*
              */
-            EngineController* addVisualToCurrentLayer(shared_ptr<Orange::Visuals::BaseVisual> visual);
+            void addVisualToCurrentLayer(shared_ptr<Orange::Visuals::BaseVisual> visual);
             
             /*!
              Adds a Video to the current layer.
              \param string path
-             \return EngineController*
              */
-            EngineController* addVideoToCurrentLayer(string path);
+            void addVideoToCurrentLayer(string path);
             
             /*!
              Loads a video from a path.
