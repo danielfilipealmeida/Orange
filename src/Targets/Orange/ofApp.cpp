@@ -1,6 +1,6 @@
 #include "ofApp.h"
 #include "Video.hpp"
-
+#include "OSX.hpp"
 
 
 //--------------------------------------------------------------
@@ -19,9 +19,7 @@ void ofApp::setup() {
     engineController->addVideoToCurrentLayer("AnemicCinema002.mp4");
     engineController->addVideoToCurrentLayer("AnemicCinema003.mp4");
     
-    /* set up the gui */
-    guiFacade = new Orange::GUI::ofxGuiFacade();
-    guiController = new Orange::GUI::GUIController(guiFacade);
+    guiController = new Orange::GUI::GUIController(new Orange::GUI::ofxGuiFacade(), new Orange::GUI::OSX());
 
     engineController->setLayerIndex(0);
     guiController->setLayer(engineController->getCurrentLayer());

@@ -44,6 +44,8 @@
 		65759E3E21B891FF006B6814 /* EngineController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3B21B891FF006B6814 /* EngineController.cpp */; };
 		657D74FF21BFF7A5004329EF /* ofxButtonGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657D74FD21BFF7A5004329EF /* ofxButtonGroup.cpp */; };
 		657D750221BFFB79004329EF /* ofxPreview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657D750021BFFB79004329EF /* ofxPreview.cpp */; };
+		657D750621C31DF6004329EF /* OSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 657D750421C31DF6004329EF /* OSX.mm */; };
+		657D750721C31DF6004329EF /* OSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 657D750421C31DF6004329EF /* OSX.mm */; };
 		65A59D7521A0D16D00ADEE79 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7221A0D16100ADEE79 /* ofApp.cpp */; };
 		65A59D7621A0D16D00ADEE79 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7421A0D16100ADEE79 /* main.cpp */; };
 		65A59D8021A0D1CD00ADEE79 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7E21A0D1CD00ADEE79 /* Layer.cpp */; };
@@ -184,6 +186,9 @@
 		657D74FE21BFF7A5004329EF /* ofxButtonGroup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxButtonGroup.hpp; sourceTree = "<group>"; };
 		657D750021BFFB79004329EF /* ofxPreview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxPreview.cpp; sourceTree = "<group>"; };
 		657D750121BFFB79004329EF /* ofxPreview.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxPreview.hpp; sourceTree = "<group>"; };
+		657D750321C31DAF004329EF /* OSInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OSInterface.hpp; sourceTree = "<group>"; };
+		657D750421C31DF6004329EF /* OSX.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OSX.mm; sourceTree = "<group>"; };
+		657D750521C31DF6004329EF /* OSX.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OSX.hpp; sourceTree = "<group>"; };
 		65A59D7221A0D16100ADEE79 /* ofApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		65A59D7321A0D16100ADEE79 /* ofApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		65A59D7421A0D16100ADEE79 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -618,6 +623,9 @@
 				65759E3121B73AF8006B6814 /* GUIFacadeInterface.hpp */,
 				65759E3221B73B0E006B6814 /* ofxGuiFacade.cpp */,
 				65759E3321B73B0E006B6814 /* ofxGuiFacade.hpp */,
+				657D750321C31DAF004329EF /* OSInterface.hpp */,
+				657D750421C31DF6004329EF /* OSX.mm */,
+				657D750521C31DF6004329EF /* OSX.hpp */,
 			);
 			path = Facades;
 			sourceTree = "<group>";
@@ -1492,6 +1500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65337D1F21BD5963004FF3DA /* Layer.cpp in Sources */,
+				657D750721C31DF6004329EF /* OSX.mm in Sources */,
 				65A59DA421A4C3C700ADEE79 /* Video.cpp in Sources */,
 				65337D1021BB0E8D004FF3DA /* Engine.cpp in Sources */,
 				651AD4DA21BF17F20091D71D /* EngineControllerTest.cpp in Sources */,
@@ -1516,6 +1525,7 @@
 				853E0BA2F448076739446874 /* ofxColorPicker.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				852E0891794923EE7583C621 /* ofxInputField.cpp in Sources */,
+				657D750621C31DF6004329EF /* OSX.mm in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				65759E3421B73B0E006B6814 /* ofxGuiFacade.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,

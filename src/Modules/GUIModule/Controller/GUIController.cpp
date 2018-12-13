@@ -11,9 +11,10 @@
 
 using namespace Orange::GUI;
 
-GUIController::GUIController(GUIFacadeInterface *_facade)
+GUIController::GUIController(GUIFacadeInterface *_facade, OSInterface *_os)
 {
     facade = _facade;
+    os = _os;
 }
 
 
@@ -40,4 +41,10 @@ void GUIController::setLayer(shared_ptr<Orange::Layers::Layer> _layer)
     layer = _layer;
  
     setup();
+}
+
+
+void GUIController::setupMenu()
+{
+    os->setupMenuBar();
 }
