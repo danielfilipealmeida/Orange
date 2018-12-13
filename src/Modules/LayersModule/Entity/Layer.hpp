@@ -32,8 +32,16 @@ namespace Orange {
    
             ofFbo fbo;
             
+            /*!
+             Gets the width of the layer
+             \param unsigned int
+             */
             unsigned int getWidth();
             
+            /*!
+             Gets the height of the layer
+             \param unsigned int
+             */
             unsigned int getHeight();
 
             /*!
@@ -67,7 +75,7 @@ namespace Orange {
             /*!
              All the visuals in the layer
              */
-            Base::Repository<Visuals::BaseVisual *> visuals;
+            Base::Repository<shared_ptr<Visuals::BaseVisual> > visuals;
             
             /*!
              The current visual. check if it's possible to transform this int a ofParameter
@@ -85,13 +93,13 @@ namespace Orange {
              Get the currently set visual or null if none
              \return Orange::Visuals::BaseVisual|NULL
              */
-            Orange::Visuals::BaseVisual *getCurrentVisual();
+            shared_ptr<Orange::Visuals::BaseVisual> getCurrentVisual();
             
             /*!
              Adds a Visual
              \param Orange::Visuals::BaseVisual* visual
              */
-            void add(Orange::Visuals::BaseVisual* visual);
+            void add(shared_ptr<Orange::Visuals::BaseVisual> visual);
             
             /*!
              Returns the total ammount of visuals in this layer

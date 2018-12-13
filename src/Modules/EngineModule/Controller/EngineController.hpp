@@ -101,7 +101,7 @@ namespace Orange {
              \param Orange::Visuals::BaseVisual *visual
              \return EngineController*
              */
-            EngineController* addVisualToCurrentLayer(Orange::Visuals::BaseVisual *visual);
+            EngineController* addVisualToCurrentLayer(shared_ptr<Orange::Visuals::BaseVisual> visual);
             
             /*!
              Adds a Video to the current layer.
@@ -118,7 +118,7 @@ namespace Orange {
              \param string videoPath
              \return Orange::Visuals::Video*
              */
-            Orange::Visuals::Video* loadVideo(string path);
+            shared_ptr<Visuals::Video> loadVideo(string path);
 
         };
     }

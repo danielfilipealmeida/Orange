@@ -21,14 +21,14 @@ TEST_CASE("LayerController initiates without a layer set", "" ) {
     Layers::LayerController layerControler;
 
     REQUIRE(layerControler.layer.get() == NULL);
-    REQUIRE(layerControler.getVisual() == NULL);
+    REQUIRE(layerControler.getVisual().get() == NULL);
 }
 
 
 TEST_CASE("Can fetch visuals from Layer", "") {
     Layers::LayerController layerControler;
     shared_ptr<Layers::Layer> layer = make_shared<Layers::Layer>();
-    Visuals::Video *video = new Visuals::Video();
+    shared_ptr<Visuals::Video> video = std::make_shared<Visuals::Video>();
     
     layer->add(video);
     layer->currentVisualIndex = 0;

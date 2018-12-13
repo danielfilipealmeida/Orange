@@ -83,7 +83,7 @@ EngineController* EngineController::playVisual(int visualIndex)
     }
     
     
-    Visuals::BaseVisual *previousVisual = getCurrentLayer()->getCurrentVisual();
+    shared_ptr<Visuals::BaseVisual> previousVisual = getCurrentLayer()->getCurrentVisual();
     if (previousVisual != NULL)
     {
         previousVisual->stop();
@@ -91,7 +91,7 @@ EngineController* EngineController::playVisual(int visualIndex)
     
     setVisualIndex(visualIndex);
     
-    Visuals::BaseVisual *currentVisual = getCurrentLayer()->getCurrentVisual();
+    shared_ptr<Visuals::BaseVisual> currentVisual = getCurrentLayer()->getCurrentVisual();
     
     if (currentVisual != NULL) {
         currentVisual->play();
@@ -123,18 +123,18 @@ shared_ptr<Orange::Layers::Layer> EngineController::getCurrentLayer() {
 
 EngineController* EngineController::addVideoToCurrentLayer(string path)
 {
-    Orange::Visuals::Video *video = loadVideo(path);
+    shared_ptr<Visuals::Video> video = loadVideo(path);
     return addVisualToCurrentLayer(video);
 }
 
-EngineController* EngineController::addVisualToCurrentLayer(Orange::Visuals::BaseVisual *visual) {
+EngineController* EngineController::addVisualToCurrentLayer(shared_ptr<Orange::Visuals::BaseVisual> visual) {
     getCurrentLayer()->add(visual);
     
     return this;
 }
 
-Orange::Visuals::Video* EngineController::loadVideo(string path) {
-    Orange::Visuals::Video* video = new Orange::Visuals::Video();
+shared_ptr<Orange::Visuals::Video> EngineController::loadVideo(string path) {
+    shared_ptr<Orange::Visuals::Video> video = std::make_shared<Orange::Visuals::Video>(Orange::Visuals::Video());
     try {
         video->open(path);
     }

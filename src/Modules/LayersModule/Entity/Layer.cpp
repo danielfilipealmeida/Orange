@@ -39,7 +39,7 @@ unsigned int Layer::getHeight()
     return height;
 }
 
-void Layer::add(Orange::Visuals::BaseVisual* visual)
+void Layer::add(shared_ptr<Orange::Visuals::BaseVisual> visual)
 {
     visuals.add(visual);
 }
@@ -49,7 +49,7 @@ unsigned int Layer::getVisualsCount()
     return visuals.count();
 }
 
-Orange::Visuals::BaseVisual* Layer::getCurrentVisual()
+shared_ptr<Orange::Visuals::BaseVisual> Layer::getCurrentVisual()
 {
     if (currentVisualIndex < 0 || visuals.count() <= currentVisualIndex) {
         return NULL;

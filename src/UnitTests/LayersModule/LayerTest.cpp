@@ -16,7 +16,7 @@ using namespace Orange;
 TEST_CASE( "Layer is initiated without visuals", "" ) {
 
     Layers::Layer *layer;
-    Visuals::BaseVisual *visual;
+    shared_ptr<Visuals::BaseVisual> visual;
     
     layer = new Layers::Layer();
     
@@ -24,17 +24,17 @@ TEST_CASE( "Layer is initiated without visuals", "" ) {
     
     visual = layer->getCurrentVisual();
     
-    REQUIRE(visual == NULL);
+    REQUIRE(visual.get() == NULL);
 }
 
 
 TEST_CASE("Can add Visual to Layer", "") {
     Layers::Layer *layer;
-    Visuals::BaseVisual *visual;
+    shared_ptr<Visuals::BaseVisual> visual;
     
     layer = new Layers::Layer();
     
-    visual = new Visuals::Video();
+    visual = std::make_shared<Visuals::Video>();
     layer->add(visual);
     
     REQUIRE(layer->getVisualsCount() == 1);
@@ -42,11 +42,11 @@ TEST_CASE("Can add Visual to Layer", "") {
 
 TEST_CASE("Can get Visual from Layer", "") {
     Layers::Layer *layer;
-    Visuals::BaseVisual *visual;
+    shared_ptr<Visuals::BaseVisual> visual;
     
     layer = new Layers::Layer();
     
-    visual = new Visuals::Video();
+    visual = std::make_shared<Visuals::Video>();
     layer->add(visual);
     layer->currentVisualIndex = 0;
     REQUIRE(layer->getCurrentVisual() == visual);
@@ -54,14 +54,14 @@ TEST_CASE("Can get Visual from Layer", "") {
 
 TEST_CASE("Can unset visual on Layer", "") {
     Layers::Layer *layer;
-    Visuals::BaseVisual *visual;
+    shared_ptr<Visuals::BaseVisual> visual;
     
     layer = new Layers::Layer();
     
-    visual = new Visuals::Video();
+    visual = std::make_shared<Visuals::Video>();
     layer->add(visual);
     
     layer->currentVisualIndex = 0;
     layer->currentVisualIndex = -1;
-    REQUIRE(layer->getCurrentVisual() == NULL);
+    REQUIRE(layer->getCurrentVisual().get() == NULL);
 }

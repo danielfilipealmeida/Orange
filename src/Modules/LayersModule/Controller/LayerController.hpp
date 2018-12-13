@@ -27,7 +27,7 @@ namespace Orange {
             /*!
              Fetches the current selected visual.
              */
-             Orange::Visuals::BaseVisual *getVisual();
+             shared_ptr<Orange::Visuals::BaseVisual> getVisual();
         
         public:
             

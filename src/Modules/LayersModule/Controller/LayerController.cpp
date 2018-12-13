@@ -13,7 +13,7 @@ LayerController::LayerController() {
     layer = NULL;
 }
 
-Orange::Visuals::BaseVisual *LayerController::getVisual() {
+shared_ptr<Orange::Visuals::BaseVisual> LayerController::getVisual() {
     if (
         layer == NULL ||
         layer->currentVisualIndex < 0 ||
@@ -30,7 +30,7 @@ void LayerController::setLayer(shared_ptr<Layer> _layer) {
 }
 
 void LayerController::render() {
-    Orange::Visuals::BaseVisual * currentVisual = getVisual();
+   shared_ptr<Orange::Visuals::BaseVisual> currentVisual = getVisual();
     
     if (currentVisual == NULL) {
         return;
