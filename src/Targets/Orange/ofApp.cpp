@@ -6,7 +6,9 @@
 //--------------------------------------------------------------
 void ofApp::setup() {
     ofSetFrameRate(30);
+    ofSetWindowTitle("OrangeVJ");
     
+    ofEnableSetupScreen();
     engineController = new Orange::Engine::EngineController();
     
     engineController->addLayer();
@@ -19,7 +21,9 @@ void ofApp::setup() {
     engineController->addVideoToCurrentLayer("AnemicCinema002.mp4");
     engineController->addVideoToCurrentLayer("AnemicCinema003.mp4");
     
-    guiController = new Orange::GUI::GUIController(new Orange::GUI::ofxGuiFacade(), new Orange::GUI::OSX());
+    guiFacade = new Orange::GUI::ofxGuiFacade();
+    os = new Orange::GUI::OSX();
+    guiController = new Orange::GUI::GUIController(guiFacade, os);
 
     engineController->setLayerIndex(0);
     guiController->setLayer(engineController->getCurrentLayer());

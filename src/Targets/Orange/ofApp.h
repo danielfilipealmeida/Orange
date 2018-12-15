@@ -8,6 +8,7 @@
 #include "GUIController.hpp"
 #include "ofxGuiFacade.hpp"
 #include "EngineController.hpp"
+#include "OSInterface.hpp"
 
 class ofApp : public ofBaseApp{
     /* Keys constants */
@@ -38,6 +39,7 @@ class ofApp : public ofBaseApp{
     
     Orange::Engine::EngineController *engineController;
     Orange::GUI::ofxGuiFacade *guiFacade;
+    Orange::GUI::OSInterface *os;
     Orange::GUI::GUIController *guiController;
     
 	public:

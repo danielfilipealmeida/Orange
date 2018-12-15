@@ -25,6 +25,8 @@ void GUIController::setup()
     facade->createPreview(&(layer->fbo));
     facade->createSlider(layer->alpha, "Layer Alpha", 0, 1);
     facade->createSlider(layer->blendMode, "Blend Mode", 0, 4);
+    
+    setupMenu();
 }
 
 void GUIController::draw()

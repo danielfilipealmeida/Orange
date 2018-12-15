@@ -1,6 +1,8 @@
 #include "ofMain.h"
 #include "ofApp.h"
 
+
+#define _GLFW_USE_MENUBAR
 //========================================================================
 int main( ){
 	ofSetupOpenGL(1024,768,OF_WINDOW);			// <-------- setup the GL context
