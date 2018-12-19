@@ -11,7 +11,7 @@
 
 using namespace Orange::GUI;
 
-GUIController::GUIController(GUIFacadeInterface *_facade, OSInterface *_os)
+GUIController::GUIController(GUIFacadeInterface *_facade, OSFacadeInterface *_os)
 {
     facade = _facade;
     os = _os;

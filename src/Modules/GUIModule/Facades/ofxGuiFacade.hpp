@@ -27,11 +27,14 @@ namespace Orange {
              */
             ofxGuiFacade();
             
-            
+            /*!
+             Sets the name of the current panel
+             \param ofParameter<string> name
+             */
             void setName(ofParameter<string> name);
             
             /*!
-             Creates a Slider in the GUI
+             Creates a float Slider in the GUI
              \param string title
              \param float value
              \param float minValue
@@ -42,6 +45,13 @@ namespace Orange {
                               float minValue,
                               float maxValue);
             
+            /*!
+             Creates an integer Slider in the GUI
+             \param string title
+             \param int value
+             \param int minValue
+             \param int maxValue
+             */
             void createSlider(ofParameter<int> parameter,
                               std::string title,
                               int minValue,
@@ -52,6 +62,10 @@ namespace Orange {
              */
             void createLabel(ofParameter<string> parameter);
             
+            /*!
+             Creates a preview of the passed fbo
+             \param ofFbo *fbo
+             */
             void createPreview(ofFbo *fbo);
             
             /*!

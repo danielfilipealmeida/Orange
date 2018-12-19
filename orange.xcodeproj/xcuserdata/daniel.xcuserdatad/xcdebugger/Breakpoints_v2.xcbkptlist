@@ -273,7 +273,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/GUIModule/Controller/GUIController.cpp"
-            timestampString = "566530018.181869"
+            timestampString = "566763194.814986"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"

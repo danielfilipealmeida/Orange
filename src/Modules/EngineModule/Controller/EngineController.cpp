@@ -132,3 +132,14 @@ shared_ptr<Orange::Visuals::Video> EngineController::loadVideo(string path) {
     
     return video;
 }
+
+
+void EngineController::save(std::string filepath)
+{
+    
+}
+
+void EngineController::open(std::string filepath)
+{
+    
+}

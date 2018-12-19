@@ -10,19 +10,19 @@
 
 #include <stdio.h>
 #include "GUIFacadeInterface.hpp"
-#include "OSInterface.hpp"
+#include "OSFacadeInterface.hpp"
 #include "Layer.hpp"
 
 namespace Orange {
     namespace GUI {
         class GUIController {
             GUIFacadeInterface *facade;
-            OSInterface *os;
+            OSFacadeInterface *os;
             
             shared_ptr<Layers::Layer> layer;
         public:
             
-            GUIController(GUIFacadeInterface *_facade, OSInterface *_os);
+            GUIController(GUIFacadeInterface *_facade, OSFacadeInterface *_os);
             
             /*!
              Sets up the Graphic User Interface

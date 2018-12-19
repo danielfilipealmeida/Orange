@@ -1,6 +1,7 @@
 #include "ofApp.h"
 #include "Video.hpp"
-#include "OSX.hpp"
+#include "OSXFacade.hpp"
+#include "GLFW/glfw3.h"
 
 
 //--------------------------------------------------------------
@@ -22,9 +23,11 @@ void ofApp::setup() {
     engineController->addVideoToCurrentLayer("AnemicCinema003.mp4");
     
     guiFacade = new Orange::GUI::ofxGuiFacade();
-    os = new Orange::GUI::OSX();
+    os = new Orange::GUI::OSXFacade();
+    os->setEngineController(engineController);
     guiController = new Orange::GUI::GUIController(guiFacade, os);
 
+    
     engineController->setLayerIndex(0);
     guiController->setLayer(engineController->getCurrentLayer());
 }
@@ -140,7 +143,10 @@ void ofApp::handleVisualsTrigger(int key)
 }
 
 void ofApp::keyPressed(int key){
-    cout << key << endl;
+    cout << "in:  "  << key << endl;
+    
+    //int state = glfwGetKey(ofGetCocoaWindow(), GLFW_KEY_LEFT_SHIFT);
+    //cout << state << endl;
     
     try {
         handleLayerSwitch(key);
@@ -155,7 +161,7 @@ void ofApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-
+    cout << "out: "  << key << endl;
 }
 
 //--------------------------------------------------------------

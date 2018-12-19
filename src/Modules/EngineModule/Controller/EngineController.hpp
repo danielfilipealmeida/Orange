@@ -113,6 +113,20 @@ namespace Orange {
              */
             shared_ptr<Visuals::Video> loadVideo(string path);
 
+#pragma mark File methods
+            
+            /*!
+             Saves a file into the given path
+             \param string filepath
+             */
+            void save(std::string filepath);
+            
+            /*!
+             Open the file stored in the given path
+             */
+            void open(std::string filepath);
+            
+            
         };
     }
 }
