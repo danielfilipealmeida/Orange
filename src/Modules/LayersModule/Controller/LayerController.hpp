@@ -55,6 +55,7 @@ namespace Orange {
              Prepares the video
              */
             void render();
+            
         };
     }
 }

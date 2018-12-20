@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include "ofJson.h"
 
 using namespace Orange;
 
@@ -45,4 +46,19 @@ TEST_CASE( "Opening non existing video throws exception", "[open]") {
         REQUIRE(exception->what() == "File '" + absolutePath +"' not found.");
     }
     
+}
+
+
+TEST_CASE("Can get Video json", "toJson") {
+    Visuals::Video video;
+    
+    string absolutePath = ofFilePath::getAbsolutePath("data/red.mp4");
+    video.open(absolutePath);
+    
+    ofJson json = video.toJson();
+    
+    //std::cout << json.dump(4) << std::endl;
+    
+    std::string filePath = json["filePath"];
+    REQUIRE(filePath.rfind("orange/bin/data/red.mp4") != std::string::npos);
 }

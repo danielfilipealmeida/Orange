@@ -59,7 +59,7 @@ namespace Orange {
             /*!
              Adds a new Layer with default configuration
              */
-            void addLayer();
+            shared_ptr<Orange::Layers::Layer> addLayer();
             
             /*!
              Sets the index in the repository of the currently active layer.

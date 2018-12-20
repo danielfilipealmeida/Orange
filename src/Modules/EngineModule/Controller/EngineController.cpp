@@ -43,12 +43,14 @@ void EngineController::draw(float x, float y, float w, float h) {
     fbo.draw(x, y, w, h);
 }
 
-void EngineController::addLayer()
+shared_ptr<Orange::Layers::Layer> EngineController::addLayer()
 {
     shared_ptr<Layers::Layer> layer = std::make_shared<Layers::Layer>();
     layer->setFbo(engine.width, engine.height);
     
     layers.add(layer);
+    
+    return layer;
 }
 
 void EngineController::setLayerIndex(int layerIndex)

@@ -12,12 +12,12 @@ void ofApp::setup() {
     ofEnableSetupScreen();
     engineController = new Orange::Engine::EngineController();
     
-    engineController->addLayer();
+    engineController->addLayer()->name="Layer 1";
     engineController->setLayerIndex(0);
     engineController->addVideoToCurrentLayer("Bolas001.mov");
     engineController->addVideoToCurrentLayer("AnemicCinema001.mp4");
     
-    engineController->addLayer();
+    engineController->addLayer()->name="Layer 2";
     engineController->setLayerIndex(1);
     engineController->addVideoToCurrentLayer("AnemicCinema002.mp4");
     engineController->addVideoToCurrentLayer("AnemicCinema003.mp4");

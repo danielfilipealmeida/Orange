@@ -23,7 +23,7 @@ namespace Orange {
         /*!
          Implements a Layer entity
          */
-        class Layer
+        class Layer : public Orange::Base::EntityInterface
         {
             unsigned int width, height;
         public:
@@ -106,6 +106,12 @@ namespace Orange {
              \returns unsigned int
              */
             unsigned int getVisualsCount();
+            
+            /*!
+             Returns the Layer information in JSON format.
+             \returns ofJson
+             */
+            ofJson toJson();
         };
         
     }

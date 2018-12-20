@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/BaseModule/Repository/Repository.hpp"
-            timestampString = "566088943.0237139"
+            timestampString = "567042153.372949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "getAt(unsigned int index)"
             landmarkType = "7">
             <Locations>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/EngineModule/Controller/EngineController.cpp"
-            timestampString = "566438861.480486"
+            timestampString = "567042153.373318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "EngineController::getCurrentLayer()"
             landmarkType = "7">
          </BreakpointContent>
@@ -279,6 +279,22 @@
             startingLineNumber = "27"
             endingLineNumber = "27"
             landmarkName = "GUIController::setup()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../of_v0.10.0_osx_release/apps/myApps/Orange/src/Modules/VisualsModule/Entity/Video.cpp"
+            timestampString = "567042153.373677"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "Video::toJson()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

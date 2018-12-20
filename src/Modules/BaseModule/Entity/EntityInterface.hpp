@@ -9,6 +9,7 @@
 #define EntityInterface_hpp
 
 #include <stdio.h>
+#include "ofJson.h"
 
 namespace Orange {
     namespace Base {
@@ -17,7 +18,8 @@ namespace Orange {
          Implements the interface of an entity, to be used by repositories
          */
         class EntityInterface {
-            
+        public:
+            virtual ofJson toJson() = 0;
         };
     }
 }

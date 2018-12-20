@@ -16,3 +16,12 @@ Engine::Engine()
     width = 640;
     height = 480;
 }
+
+ofJson Engine::toJson()
+{
+    return {
+        {"width", width},
+        {"height", height},
+        {"currentLayerIndex", currentLayerIndex}
+    };
+}

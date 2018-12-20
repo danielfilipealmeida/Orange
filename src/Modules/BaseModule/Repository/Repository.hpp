@@ -8,6 +8,7 @@
 #ifndef Repository_h
 #define Repository_h
 
+#include "ofMain.h"
 #include <vector>
 #include <functional>
 
@@ -60,6 +61,20 @@ namespace Orange {
                 for(T entity:entities) {
                     lambda(entity);
                 }
+            }
+            
+            /*!
+             Returns the Layer information in JSON format.
+             \returns ofJson
+             */
+            ofJson toJson() {
+                ofJson json;
+                
+                for(T entity:entities) {
+                    json.push_back(entity->toJson());
+                }
+                
+                return json;
             }
         };
         

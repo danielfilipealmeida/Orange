@@ -39,6 +39,7 @@
 		65337D1F21BD5963004FF3DA /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7E21A0D1CD00ADEE79 /* Layer.cpp */; };
 		65337D2121BD59BC004FF3DA /* LayerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D2021BD59BC004FF3DA /* LayerTest.cpp */; };
 		65337D2421BDCD20004FF3DA /* LayerControllerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D2221BDCA41004FF3DA /* LayerControllerTest.cpp */; };
+		656BD49421CC4EB6000463B3 /* EngineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 656BD49321CC4EB6000463B3 /* EngineTest.cpp */; };
 		65759E3421B73B0E006B6814 /* ofxGuiFacade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3221B73B0E006B6814 /* ofxGuiFacade.cpp */; };
 		65759E3721B73B2B006B6814 /* GUIController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3521B73B2B006B6814 /* GUIController.cpp */; };
 		65759E3D21B891FF006B6814 /* EngineController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3B21B891FF006B6814 /* EngineController.cpp */; };
@@ -46,7 +47,6 @@
 		657D74FF21BFF7A5004329EF /* ofxButtonGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657D74FD21BFF7A5004329EF /* ofxButtonGroup.cpp */; };
 		657D750221BFFB79004329EF /* ofxPreview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657D750021BFFB79004329EF /* ofxPreview.cpp */; };
 		657D750621C31DF6004329EF /* OSXFacade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 657D750421C31DF6004329EF /* OSXFacade.mm */; };
-		657D750721C31DF6004329EF /* OSXFacade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 657D750421C31DF6004329EF /* OSXFacade.mm */; };
 		65A59D7521A0D16D00ADEE79 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7221A0D16100ADEE79 /* ofApp.cpp */; };
 		65A59D7621A0D16D00ADEE79 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7421A0D16100ADEE79 /* main.cpp */; };
 		65A59D8021A0D1CD00ADEE79 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D7E21A0D1CD00ADEE79 /* Layer.cpp */; };
@@ -178,6 +178,7 @@
 		65337D0E21BB0E8D004FF3DA /* Engine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Engine.hpp; sourceTree = "<group>"; };
 		65337D2021BD59BC004FF3DA /* LayerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LayerTest.cpp; sourceTree = "<group>"; };
 		65337D2221BDCA41004FF3DA /* LayerControllerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LayerControllerTest.cpp; sourceTree = "<group>"; };
+		656BD49321CC4EB6000463B3 /* EngineTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EngineTest.cpp; sourceTree = "<group>"; };
 		65759E3121B73AF8006B6814 /* GUIFacadeInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GUIFacadeInterface.hpp; sourceTree = "<group>"; };
 		65759E3221B73B0E006B6814 /* ofxGuiFacade.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxGuiFacade.cpp; sourceTree = "<group>"; };
 		65759E3321B73B0E006B6814 /* ofxGuiFacade.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxGuiFacade.hpp; sourceTree = "<group>"; };
@@ -605,6 +606,7 @@
 			isa = PBXGroup;
 			children = (
 				651AD4D821BF17F20091D71D /* EngineControllerTest.cpp */,
+				656BD49321CC4EB6000463B3 /* EngineTest.cpp */,
 			);
 			path = EngineModule;
 			sourceTree = "<group>";
@@ -711,9 +713,9 @@
 		65A59D7721A0D1B300ADEE79 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				65A59D7821A0D1B300ADEE79 /* BaseModule */,
 				65759E3821B891C3006B6814 /* EngineModule */,
 				65759E2E21B73A94006B6814 /* GUIModule */,
-				65A59D7821A0D1B300ADEE79 /* BaseModule */,
 				65A59D8221A0D36C00ADEE79 /* VisualsModule */,
 				65A59D7A21A0D1B300ADEE79 /* LayersModule */,
 			);
@@ -1520,8 +1522,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				656BD49421CC4EB6000463B3 /* EngineTest.cpp in Sources */,
 				65337D1F21BD5963004FF3DA /* Layer.cpp in Sources */,
-				657D750721C31DF6004329EF /* OSXFacade.mm in Sources */,
 				65A59DA421A4C3C700ADEE79 /* Video.cpp in Sources */,
 				65337D1021BB0E8D004FF3DA /* Engine.cpp in Sources */,
 				651AD4DA21BF17F20091D71D /* EngineControllerTest.cpp in Sources */,

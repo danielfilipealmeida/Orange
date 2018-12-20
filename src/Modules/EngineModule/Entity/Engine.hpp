@@ -16,7 +16,7 @@
 namespace Orange {
     namespace Engine {
         
-        class Engine : public Orange::Base::EntityInterface {
+        class Engine : public Base::EntityInterface {
             
             
         public:
@@ -37,6 +37,9 @@ namespace Orange {
              Sets up some default data
              */
             Engine();
+            
+            
+            ofJson toJson();
         };
         
     }

@@ -65,3 +65,35 @@ TEST_CASE("Can unset visual on Layer", "") {
     layer->currentVisualIndex = -1;
     REQUIRE(layer->getCurrentVisual().get() == NULL);
 }
+
+
+TEST_CASE("Can get layer json", "toJson") {    
+    Layers::Layer *layer;
+    shared_ptr<Visuals::Video> visual;
+    
+    layer = new Layers::Layer();
+    layer->setFbo(320, 240);
+    
+    ofSetDataPathRoot("");
+    
+    visual = std::make_shared<Visuals::Video>();
+    string absolutePath = ofFilePath::getAbsolutePath("data/red.mp4");
+    visual->open(absolutePath);
+
+    layer->add(visual);
+    layer->currentVisualIndex = 0;
+    layer->name = "Layer 1";
+    
+    ofJson json = layer->toJson();
+    
+    REQUIRE(json["alpha"] == 0.5 );
+    REQUIRE(json["blendMode"] == OF_BLENDMODE_ALPHA );
+    REQUIRE(json["currentVisualIndex"] == 0);
+    REQUIRE(json["width"] == 320);
+    REQUIRE(json["height"] == 240);
+    REQUIRE(json["visuals"].size() == 1);
+    REQUIRE(json["visuals"][0]["filePath"] == absolutePath);
+    REQUIRE(json["name"] == "Layer 1");
+    
+    std::cout << json.dump(4) << std::endl;
+}

@@ -35,3 +35,4 @@ TEST_CASE("EngineController can add layer", "" ) {
     
     REQUIRE_THROWS(engineController.setLayerIndex(1));
 }
+

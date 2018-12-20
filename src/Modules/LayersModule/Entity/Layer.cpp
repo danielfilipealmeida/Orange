@@ -10,16 +10,12 @@
 
 using namespace Orange::Layers;
 
-unsigned int layerNumber = 0;
-
 Layer::Layer()
 {
-    name = "Layer " + std::to_string(layerNumber + 1);
+    name = "Layer";
     alpha = 0.5;
     blendMode = OF_BLENDMODE_ALPHA;
     currentVisualIndex = -1;
-    
-    layerNumber++;
 }
 
 void Layer::setFbo(unsigned int _width, unsigned int _height)
@@ -55,4 +51,21 @@ shared_ptr<Orange::Visuals::BaseVisual> Layer::getCurrentVisual()
         return NULL;
     }
     return visuals[currentVisualIndex];
+}
+
+
+/*
+ TODO: add all the visuals using the repository to get all jsons
+ */
+ofJson Layer::toJson()
+{
+    return {
+        {"width", width},
+        {"height", height},
+        {"name", name.get()},
+        {"alpha", alpha.get()},
+        {"blendMode", blendMode.get()},
+        {"visuals", visuals.toJson()},
+        {"currentVisualIndex", currentVisualIndex}
+    };
 }
