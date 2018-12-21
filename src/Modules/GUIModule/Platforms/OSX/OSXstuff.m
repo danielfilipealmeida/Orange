@@ -8,67 +8,44 @@
 #import "OSXstuff.h"
 
 
-
 @implementation OSXstuff
 
-
-- (void) setOpenHandler: ( void (^)(char* path)) _openLambda
+- (void) setFacade:(Orange::GUI::OSXFacade *) _facade
 {
-    openHandler = _openLambda;
+    facade = _facade;
 }
 
 - (IBAction) openFile:(id) sender
 {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel setAllowedFileTypes:@[@"vjs"]];
-    [panel beginWithCompletionHandler:^(NSInteger result){
-        if (result == NSFileHandlingPanelOKButton) {
-            NSURL* path = [[panel URLs] objectAtIndex:0];
-            //((OSXstuff *) sender)->openDile
-            
-            //facadeChannel();
-        }
-    }];
     
-    
-}
-
-- (IBAction) saveFile:(id) sender
-{
-    
-    NSSavePanel *panel = [NSSavePanel savePanel];
-    [panel setAllowedFileTypes:@[@"vjs"]];
-    /*
-    [panel beginWithCompletionHandler:^(NSInteger result){
-        if (result == NSFileHandlingPanelOKButton) {
-            NSURL* path = [panel URL];
-            //((OSXstuff *) sender)->openDile
-            NSDictionary *data = @{
-                                   @"action": @"saveSet",
-                                   @"filePath": path
-                                   };
-            openLambda((char *)[[path absoluteString] cStringUsingEncoding:NSASCIIStringEncoding]);
-        
-        // cStringUsingEncoding:NSASCIIStringEncoding
-        }
-    }];
-    */
     if ([panel runModal] == NSModalResponseOK) {
         NSURL* url = [panel URL];
         NSString *path = [[url absoluteString] stringByReplacingOccurrencesOfString:@"file://" withString:@""];
         
         char *pathChar = (char *)[path cStringUsingEncoding:NSASCIIStringEncoding];
-        openHandler(pathChar);
-        //NSLog([path absoluteString]);
+        facade->saveFile(pathChar);
+    };
+}
+
+- (IBAction) saveFile:(id) sender
+{
+    NSSavePanel *panel = [NSSavePanel savePanel];
+    [panel setAllowedFileTypes:@[@"vjs"]];
+   
+    if ([panel runModal] == NSModalResponseOK) {
+        NSURL* url = [panel URL];
+        NSString *path = [[url absoluteString] stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+        
+        char *pathChar = (char *)[path cStringUsingEncoding:NSASCIIStringEncoding];
+        facade->saveFile(pathChar);
     };
     
 }
 
 - (void) setMenu:(NSWindow *) window
 {
-    
-    
-    
     NSMenu* bar = [[NSApplication sharedApplication] mainMenu];
     [bar removeAllItems];
     
@@ -94,7 +71,6 @@
     [[fileMenu addItemWithTitle:@"Save As..." action:@selector(saveFile:) keyEquivalent:@"S"] setTarget: self];
     
     // Window Menu
-    
     NSMenuItem* windowMenuItem =
     [bar addItemWithTitle:@"" action:NULL keyEquivalent:@""];
     NSMenu* windowMenu = [[NSMenu alloc] initWithTitle:@"Window"];

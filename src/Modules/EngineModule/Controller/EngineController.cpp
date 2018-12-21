@@ -138,10 +138,22 @@ shared_ptr<Orange::Visuals::Video> EngineController::loadVideo(string path) {
 
 void EngineController::save(std::string filepath)
 {
+    ofJson json = toJson();
     
+    ofSaveJson(filepath, json);
 }
 
 void EngineController::open(std::string filepath)
 {
     
+}
+
+ofJson EngineController::toJson()
+{
+    ofJson json;
+    
+    json["engine"] = engine.toJson();
+    json["layers"] = layers.toJson();
+    
+    return json;
 }

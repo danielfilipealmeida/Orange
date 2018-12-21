@@ -43,6 +43,18 @@ namespace Orange {
              Sets up the Menu Bar
              */
             void setupMenuBar();
+            
+            /*!
+             Opens a file using the engine, after an open event originated from the menu
+             \param char *filepaeh
+             */
+            void saveFile(char *filepath);
+            
+            /*!
+             Saves a file using the engine, after an open event originated from the menu
+             \param char *filepaeh
+             */
+            void openFile(char *filepath);
         };
     }
 }

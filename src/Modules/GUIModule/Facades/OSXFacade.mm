@@ -15,18 +15,29 @@
 using namespace Orange::GUI;
 
 OSXstuff *osxStuff;
+OSXFacade *osxFacade;
 
 OSXFacade::OSXFacade() {
     osxStuff = [[OSXstuff alloc] init];
-    [osxStuff setOpenHandler: ^(char *path) {
-        std::string pathStr(path);
-        engineController->save(pathStr);
-    }];
+    [osxStuff setFacade:this];
+    osxFacade = this;
 }
 
 void OSXFacade::setEngineController(Engine::EngineController *_engineController)
 {
     engineController = _engineController;
+}
+
+void OSXFacade::saveFile(char *filepath)
+{
+    std::string pathStr(filepath);
+    engineController->save(pathStr);
+}
+
+void OSXFacade::openFile(char *filepath)
+{
+    std::string pathStr(filepath);
+    engineController->save(pathStr);
 }
 
 /* check here:

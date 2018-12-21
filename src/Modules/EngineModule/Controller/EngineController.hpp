@@ -126,7 +126,11 @@ namespace Orange {
              */
             void open(std::string filepath);
             
-            
+            /*!
+             Serialize all current data into a json variable
+             \return ofJson
+             */
+            ofJson toJson();
         };
     }
 }
