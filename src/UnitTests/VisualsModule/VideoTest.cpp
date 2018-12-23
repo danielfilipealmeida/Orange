@@ -57,8 +57,21 @@ TEST_CASE("Can get Video json", "toJson") {
     
     ofJson json = video.toJson();
     
-    //std::cout << json.dump(4) << std::endl;
-    
     std::string filePath = json["filePath"];
     REQUIRE(filePath.rfind("orange/bin/data/red.mp4") != std::string::npos);
+}
+
+TEST_CASE("Can set Video attributes from json", "")
+{
+    Visuals::Video video;
+    
+    string absolutePath = ofFilePath::getAbsolutePath("data/red.mp4");
+    video.setFromJson({
+        {"path", absolutePath}
+    });
+
+    cout << video.toJson().dump(4) << endl;
+    
+    REQUIRE(video.getPath() == absolutePath);
+
 }

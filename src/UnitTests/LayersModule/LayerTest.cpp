@@ -94,6 +94,43 @@ TEST_CASE("Can get layer json", "toJson") {
     REQUIRE(json["visuals"].size() == 1);
     REQUIRE(json["visuals"][0]["filePath"] == absolutePath);
     REQUIRE(json["name"] == "Layer 1");
+}
+
+
+TEST_CASE("Can set data from json", "setFromJson") {
+    Layers::Layer layer;
     
-    std::cout << json.dump(4) << std::endl;
+    layer.setFromJson({
+        {"width", 120},
+        {"height", 80},
+        {"name", "test layer"},
+        {"alpha", 0.01f},
+        {"blendMode", OF_BLENDMODE_SCREEN},
+        {"currentVisualIndex", 1}
+    });
+    
+    REQUIRE(layer.getWidth() == 120);
+    REQUIRE(layer.getHeight() == 80);
+    REQUIRE(layer.name.get() == "test layer");
+    REQUIRE(layer.alpha.get() == 0.01f);
+    REQUIRE(layer.blendMode == OF_BLENDMODE_SCREEN);
+    REQUIRE(layer.currentVisualIndex == 1 );
+}
+
+TEST_CASE("Can create and set data from json", "Layer") {
+    Layers::Layer *layer = new Layers::Layer({
+        {"width", 240},
+        {"height", 180},
+        {"name", "test layer 2"},
+        {"alpha", 0.11f},
+        {"blendMode", OF_BLENDMODE_MULTIPLY},
+        {"currentVisualIndex", 2}
+    });
+    
+    REQUIRE(layer->getWidth() == 240);
+    REQUIRE(layer->getHeight() == 180);
+    REQUIRE(layer->name.get() == "test layer 2");
+    REQUIRE(layer->alpha.get() == 0.11f);
+    REQUIRE(layer->blendMode == OF_BLENDMODE_MULTIPLY);
+    REQUIRE(layer->currentVisualIndex == 2 );
 }

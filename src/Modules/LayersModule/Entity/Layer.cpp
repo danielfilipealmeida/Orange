@@ -18,6 +18,11 @@ Layer::Layer()
     currentVisualIndex = -1;
 }
 
+Layer::Layer(ofJson json)
+{
+    setFromJson(json);
+}
+
 void Layer::setFbo(unsigned int _width, unsigned int _height)
 {
     width = _width;
@@ -68,4 +73,16 @@ ofJson Layer::toJson()
         {"visuals", visuals.toJson()},
         {"currentVisualIndex", currentVisualIndex}
     };
+}
+
+
+void Layer::setFromJson(ofJson json)
+{
+    setFbo(json["width"], json["height"]);
+    name.set(json["name"]);
+    alpha.set(json["alpha"]);
+    blendMode.set(json["blendMode"]);
+    currentVisualIndex = json["currentVisualIndex"];
+    
+    // todo: visuals
 }

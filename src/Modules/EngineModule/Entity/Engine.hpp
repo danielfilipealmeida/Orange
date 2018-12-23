@@ -38,8 +38,17 @@ namespace Orange {
              */
             Engine();
             
+            Engine(ofJson json);
             
+            /*!
+             Returns all engine attributes serialized in a json varible
+             */
             ofJson toJson();
+            
+            /*!
+             Sets the engine attributes from a json variable
+             */
+            void setFromJson(ofJson json);
         };
         
     }

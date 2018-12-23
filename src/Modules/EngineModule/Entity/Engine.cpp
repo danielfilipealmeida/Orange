@@ -17,6 +17,11 @@ Engine::Engine()
     height = 480;
 }
 
+Engine::Engine(ofJson json)
+{
+    setFromJson(json);
+}
+
 ofJson Engine::toJson()
 {
     return {
@@ -25,3 +30,11 @@ ofJson Engine::toJson()
         {"currentLayerIndex", currentLayerIndex}
     };
 }
+
+void Engine::setFromJson(ofJson json)
+{
+    width = json["width"];
+    height = json["height"];
+    currentLayerIndex = json["currentLayerIndex"];
+}
+

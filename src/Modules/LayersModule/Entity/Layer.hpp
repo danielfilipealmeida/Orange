@@ -33,6 +33,12 @@ namespace Orange {
             ofFbo fbo;
             
             /*!
+             Constructor that receives a json
+             \param ofJson json
+             */
+            Layer(ofJson json);
+            
+            /*!
              Gets the width of the layer
              \param unsigned int
              */
@@ -112,6 +118,8 @@ namespace Orange {
              \returns ofJson
              */
             ofJson toJson();
+            
+            void setFromJson(ofJson json);
         };
         
     }

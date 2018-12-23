@@ -19,7 +19,17 @@ namespace Orange {
          */
         class EntityInterface {
         public:
+            /*!
+             Get all entity attributes encoded in a json variable
+             \return ofJson
+             */
             virtual ofJson toJson() = 0;
+            
+            /*!
+            Sets all the entity's attributes from a json variable
+             \param ofJson json
+             */
+            virtual void setFromJson(ofJson json) = 0;
         };
     }
 }
