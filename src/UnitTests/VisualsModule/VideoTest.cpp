@@ -67,7 +67,7 @@ TEST_CASE("Can set Video attributes from json", "")
     
     string absolutePath = ofFilePath::getAbsolutePath("data/red.mp4");
     video.setFromJson({
-        {"path", absolutePath}
+        {"filePath", absolutePath}
     });
 
     cout << video.toJson().dump(4) << endl;

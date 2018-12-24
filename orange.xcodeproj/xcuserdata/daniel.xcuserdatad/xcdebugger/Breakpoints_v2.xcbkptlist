@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/BaseModule/Repository/Repository.hpp"
-            timestampString = "567298936.117982"
+            timestampString = "567388267.507677"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/EngineModule/Controller/EngineController.cpp"
-            timestampString = "567298936.118574"
+            timestampString = "567388267.507959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
@@ -285,17 +285,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Modules/GUIModule/Facades/OSXFacade.hpp"
+            timestampString = "567388267.5085829"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../../of_v0.10.0_osx_release/apps/myApps/Orange/src/Modules/VisualsModule/Entity/Video.cpp"
-            timestampString = "567298936.119058"
+            filePath = "src/UnitTests/EngineModule/EngineControllerTest.cpp"
+            timestampString = "567388267.508808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "Video::toJson()"
-            landmarkType = "7">
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "TEST_CASE(&quot;Can Load Set&quot;, &quot;load&quot; )"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -304,14 +320,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "src/Modules/GUIModule/Facades/OSXFacade.hpp"
-            timestampString = "567298936.1205961"
+            filePath = "src/Modules/EngineModule/Controller/EngineController.cpp"
+            timestampString = "567388267.509006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "EngineController::setFromJson(ofJson json)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

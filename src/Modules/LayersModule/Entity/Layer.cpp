@@ -7,6 +7,7 @@
 
 #include "Layer.hpp"
 #include "BaseVisual.hpp"
+#include "Video.hpp"
 
 using namespace Orange::Layers;
 
@@ -84,5 +85,10 @@ void Layer::setFromJson(ofJson json)
     blendMode.set(json["blendMode"]);
     currentVisualIndex = json["currentVisualIndex"];
     
-    // todo: visuals
+    for (auto& visualJson : json["visuals"]) {
+        shared_ptr<Visuals::Video> video = std::make_shared<Visuals::Video>(Visuals::Video());
+        
+        video->open(visualJson["filePath"]);
+        add(video);
+    }
 }

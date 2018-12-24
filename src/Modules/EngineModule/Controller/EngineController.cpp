@@ -124,7 +124,7 @@ void EngineController::addVisualToCurrentLayer(shared_ptr<Orange::Visuals::BaseV
 }
 
 shared_ptr<Orange::Visuals::Video> EngineController::loadVideo(string path) {
-    shared_ptr<Orange::Visuals::Video> video = std::make_shared<Orange::Visuals::Video>(Orange::Visuals::Video());
+    shared_ptr<Visuals::Video> video = std::make_shared<Visuals::Video>(Visuals::Video());
     try {
         video->open(path);
     }
@@ -145,6 +145,24 @@ void EngineController::save(std::string filepath)
 
 void EngineController::open(std::string filepath)
 {
+    close();
+    
+    try {
+        ofJson json = ofLoadJson(filepath);
+        if (json.is_null()) {
+            throw new std::runtime_error("File " + filepath+ " not found");
+        }
+        setFromJson(json);
+    }
+    catch(std::runtime_error *exception)
+    {
+        ofLog(OF_LOG_WARNING, exception->what());
+        ofMessage(exception->what());
+    }
+}
+
+void EngineController::close()
+{
     
 }
 
@@ -156,4 +174,15 @@ ofJson EngineController::toJson()
     json["layers"] = layers.toJson();
     
     return json;
+}
+
+void EngineController::setFromJson(ofJson json)
+{
+    engine.setFromJson(json["engine"]);
+    
+    for (auto& layerJson : json["layers"]) {
+        shared_ptr<Layers::Layer> newLayer = addLayer();
+        
+        newLayer->setFromJson(layerJson);
+    }
 }

@@ -36,3 +36,21 @@ TEST_CASE("EngineController can add layer", "" ) {
     REQUIRE_THROWS(engineController.setLayerIndex(1));
 }
 
+TEST_CASE("Can Load Set", "load" ) {
+    Engine::EngineController engineController;
+    
+    ofSetDataPathRoot("");
+    
+    engineController.open("data/TestSet01.vjs");
+    
+    ofJson json = engineController.toJson();
+    
+    REQUIRE(json["engine"].is_null() == false);
+    REQUIRE(json["engine"]["width"] == 640);
+    REQUIRE(json["engine"]["height"] == 480);
+    REQUIRE(json["layers"].is_null() == false);
+    REQUIRE(json["layers"].is_array() == true);
+    REQUIRE(json["layers"].size() == 2 );
+    REQUIRE(json["layers"].at(0)["visuals"].size() == 2 );
+    REQUIRE(json["layers"].at(1)["visuals"].size() == 2 );
+}

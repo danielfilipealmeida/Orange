@@ -127,10 +127,23 @@ namespace Orange {
             void open(std::string filepath);
             
             /*!
+             Destroys all layers and visuals.
+             Gets to an empty state
+             */
+            void close();
+            
+            /*!
              Serialize all current data into a json variable
              \return ofJson
              */
             ofJson toJson();
+            
+            /*!
+             Sets all data on the Engine using a json variable.
+             This expects the engine to be completly clean
+             \param ofJson json
+             */
+            void setFromJson(ofJson json);
         };
     }
 }
