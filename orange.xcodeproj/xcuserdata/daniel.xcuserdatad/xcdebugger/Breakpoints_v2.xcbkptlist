@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/BaseModule/Repository/Repository.hpp"
-            timestampString = "567444621.253871"
+            timestampString = "567466622.3565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "getAt(unsigned int index)"
             landmarkType = "7">
             <Locations>
@@ -273,7 +273,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/GUIModule/Facades/OSXFacade.hpp"
-            timestampString = "567444621.254263"
+            timestampString = "567466622.356668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -289,13 +289,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/UnitTests/EngineModule/EngineControllerTest.cpp"
-            timestampString = "567449041.62638"
+            timestampString = "567466622.35675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "TEST_CASE(&quot;Can Load Set&quot;, &quot;load&quot; )"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Modules/GUIModule/Platforms/OSX/OSXstuff.m"
+            timestampString = "567466622.3568701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-newFile:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

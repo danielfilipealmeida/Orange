@@ -25,6 +25,7 @@ namespace Orange {
             
         public:
             
+            
             /*!
              \brief Get the number of stored entities
              \return int The number of entities
@@ -76,7 +77,28 @@ namespace Orange {
                 
                 return json;
             }
+            
+            /*!
+             Returns true if the repository is empty
+             \return boll
+             */
+            bool empty() {
+                return entities.empty();
+            }
+            
+            /*!
+             Releases all entities in repository
+             */
+            void clear() {
+                /*
+                for(T entity:entities) {
+                    delete entity;
+                }
+                 */
+                entities.clear();
+            }
         };
+        
         
     }
     

@@ -18,7 +18,13 @@
 - (void) setFacade:(Orange::GUI::OSXFacade *) _facade;
 - (IBAction) openFile:(id) sender;
 - (IBAction) saveFile:(id) sender;
+- (IBAction) newFile:(id) sender;
+- (IBAction) quit:(id) sender;
 - (void) setMenu:(NSWindow *) window;
+- (void) setApplicationMenu:(NSMenu *)bar;
+- (void) setFileMenu:(NSMenu *)bar;
+- (void) setLayersMenu: (NSMenu *)bar;
+- (void) setWindowMenu:(NSMenu *)bar;
 @end
 
 

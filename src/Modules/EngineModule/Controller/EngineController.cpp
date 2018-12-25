@@ -147,7 +147,7 @@ void EngineController::saveSet(std::string filepath)
 {
     ofJson json = toJson();
     
-    ofSaveJson(filepath, json);
+    ofSavePrettyJson(filepath, json);
 }
 
 bool EngineController::openSet(std::string filepath)
@@ -176,7 +176,11 @@ bool EngineController::openSet(std::string filepath)
 
 void EngineController::closeSet()
 {
+    if (layers.empty()) {
+        return;
+    }
     
+    layers.clear();
 }
 
 ofJson EngineController::toJson()

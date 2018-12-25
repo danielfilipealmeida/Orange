@@ -6,18 +6,21 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
+    ofSetLogLevel(OF_LOG_VERBOSE);
+    ofSetEscapeQuitsApp(false);
     ofSetFrameRate(30);
     ofSetWindowTitle("OrangeVJ");
     
     ofEnableSetupScreen();
   
+    engineController = new Orange::Engine::EngineController();
+    
     guiFacade = new Orange::GUI::ofxGuiFacade();
     os = new Orange::GUI::OSXFacade();
     os->setEngineController(engineController);
     guiController = new Orange::GUI::GUIController(guiFacade, os);
 
     
-    engineController = new Orange::Engine::EngineController();
     
     if (!engineController->openSet("SimpleSet.vjs")) {
         return;

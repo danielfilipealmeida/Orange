@@ -40,6 +40,11 @@ void OSXFacade::openFile(char *filepath)
     engineController->saveSet(pathStr);
 }
 
+void OSXFacade::newFile()
+{
+    engineController->newSet();
+}
+
 /* check here:
  https://github.com/glfw/glfw/blob/76afd4172727892286fe5728580021a26d198c49/src/cocoa_window.m#L738
  */

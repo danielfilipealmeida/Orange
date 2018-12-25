@@ -55,6 +55,11 @@ namespace Orange {
              \param char *filepaeh
              */
             void openFile(char *filepath);
+            
+            /*!
+             Creates a new set by removing the current set from memory.
+             */
+            void newFile();
         };
     }
 }
