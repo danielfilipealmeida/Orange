@@ -65,6 +65,16 @@ void ofApp::draw(){
     guiController->draw();
 }
 
+void ofApp::drawProjector(ofEventArgs & args)
+{
+    //ofSetColor(255,255,255, 0);
+    engineController->draw(0, 0, ofGetWidth(), ofGetHeight());
+}
+
+void ofApp::keyPressedProjector(ofKeyEventArgs & args)
+{
+    keyPressed(args.key);
+}
 
 void ofApp::handleLayerSwitch(int key)
 {
@@ -230,4 +240,9 @@ void ofApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
 
+}
+
+void ofApp::setProjectorWindow(shared_ptr<ofAppBaseWindow> _projectorWindow)
+{
+    projectorWindow = _projectorWindow;
 }
