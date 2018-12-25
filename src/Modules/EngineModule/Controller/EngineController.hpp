@@ -116,21 +116,26 @@ namespace Orange {
 #pragma mark File methods
             
             /*!
+             Sets up a new VJing set
+             */
+            void newSet();
+            
+            /*!
              Saves a file into the given path
              \param string filepath
              */
-            void save(std::string filepath);
+            void saveSet(std::string filepath);
             
             /*!
              Open the file stored in the given path
              */
-            void open(std::string filepath);
+            bool openSet(std::string filepath);
             
             /*!
              Destroys all layers and visuals.
              Gets to an empty state
              */
-            void close();
+            void closeSet();
             
             /*!
              Serialize all current data into a json variable

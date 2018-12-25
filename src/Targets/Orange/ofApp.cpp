@@ -10,31 +10,45 @@ void ofApp::setup() {
     ofSetWindowTitle("OrangeVJ");
     
     ofEnableSetupScreen();
-    
-    engineController = new Orange::Engine::EngineController();
-    
-    
-    engineController->addLayer()->name="Layer 1";
-    engineController->setLayerIndex(0);
-    engineController->addVideoToCurrentLayer("Bolas001.mov");
-    engineController->addVideoToCurrentLayer("AnemicCinema001.mp4");
-    
-    engineController->addLayer()->name="Layer 2";
-    engineController->setLayerIndex(1);
-    engineController->addVideoToCurrentLayer("AnemicCinema002.mp4");
-    engineController->addVideoToCurrentLayer("AnemicCinema003.mp4");
-    
-    
-    
-    
+  
     guiFacade = new Orange::GUI::ofxGuiFacade();
     os = new Orange::GUI::OSXFacade();
     os->setEngineController(engineController);
     guiController = new Orange::GUI::GUIController(guiFacade, os);
 
     
+    engineController = new Orange::Engine::EngineController();
+    
+    if (!engineController->openSet("SimpleSet.vjs")) {
+        return;
+    };
+    guiController->setLayer(engineController->getCurrentLayer());
+}
+
+void ofApp::setTestData()
+{
+    engineController->setLayerIndex(0);
+    engineController->addVideoToCurrentLayer("Bolas001.mov");
+    engineController->addVideoToCurrentLayer("AnemicCinema001.mp4");
+    
+    engineController->setLayerIndex(1);
+    engineController->addVideoToCurrentLayer("AnemicCinema002.mp4");
+    engineController->addVideoToCurrentLayer("AnemicCinema003.mp4");
+
     engineController->setLayerIndex(0);
     guiController->setLayer(engineController->getCurrentLayer());
+
+}
+
+void ofApp::setAppTitle()
+{
+    std::string title = defaultAppTitleTemplate;
+    
+    shared_ptr<Orange::Layers::Layer> currentLayer = engineController->getCurrentLayer();
+    ofStringReplace(title, "<layer>", currentLayer->name.get());
+    int playingVideoIndex = engineController->getCurrentLayer()->currentVisualIndex;
+    ofStringReplace(title, "<visual>", playingVideoIndex >= 0 ? ("Visual " + ofToString(playingVideoIndex + 1)) : "No Visual");
+    ofSetWindowTitle(title);
 }
 
 //--------------------------------------------------------------
@@ -161,6 +175,7 @@ void ofApp::keyPressed(int key){
         cout << exception->what();
     }
     
+    setAppTitle();
 }
 
 

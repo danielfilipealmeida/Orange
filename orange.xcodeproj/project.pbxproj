@@ -41,6 +41,7 @@
 		65337D2421BDCD20004FF3DA /* LayerControllerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D2221BDCA41004FF3DA /* LayerControllerTest.cpp */; };
 		656BD49421CC4EB6000463B3 /* EngineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 656BD49321CC4EB6000463B3 /* EngineTest.cpp */; };
 		656BD49821D19ED0000463B3 /* TestSet01.vjs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 656BD49621D19D58000463B3 /* TestSet01.vjs */; };
+		656BD49A21D25B29000463B3 /* SimpleSet.vjs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 656BD49921D25B13000463B3 /* SimpleSet.vjs */; };
 		65759E3421B73B0E006B6814 /* ofxGuiFacade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3221B73B0E006B6814 /* ofxGuiFacade.cpp */; };
 		65759E3721B73B2B006B6814 /* GUIController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3521B73B2B006B6814 /* GUIController.cpp */; };
 		65759E3D21B891FF006B6814 /* EngineController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3B21B891FF006B6814 /* EngineController.cpp */; };
@@ -91,6 +92,7 @@
 			dstPath = data;
 			dstSubfolderSpec = 16;
 			files = (
+				656BD49A21D25B29000463B3 /* SimpleSet.vjs in CopyFiles */,
 				6515455D21B7314C00880443 /* AnemicCinema001.mp4 in CopyFiles */,
 				6515455E21B7314C00880443 /* AnemicCinema002.mp4 in CopyFiles */,
 				6515455F21B7314C00880443 /* AnemicCinema003.mp4 in CopyFiles */,
@@ -182,6 +184,7 @@
 		65337D2221BDCA41004FF3DA /* LayerControllerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LayerControllerTest.cpp; sourceTree = "<group>"; };
 		656BD49321CC4EB6000463B3 /* EngineTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EngineTest.cpp; sourceTree = "<group>"; };
 		656BD49621D19D58000463B3 /* TestSet01.vjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestSet01.vjs; sourceTree = "<group>"; };
+		656BD49921D25B13000463B3 /* SimpleSet.vjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleSet.vjs; sourceTree = "<group>"; };
 		65759E3121B73AF8006B6814 /* GUIFacadeInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GUIFacadeInterface.hpp; sourceTree = "<group>"; };
 		65759E3221B73B0E006B6814 /* ofxGuiFacade.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxGuiFacade.cpp; sourceTree = "<group>"; };
 		65759E3321B73B0E006B6814 /* ofxGuiFacade.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxGuiFacade.hpp; sourceTree = "<group>"; };
@@ -865,6 +868,7 @@
 		65A59DB321AB5DD400ADEE79 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				656BD49921D25B13000463B3 /* SimpleSet.vjs */,
 				6515455821B730C100880443 /* AnemicCinema001.mp4 */,
 				6515455921B730C100880443 /* AnemicCinema002.mp4 */,
 				6515455A21B730C100880443 /* AnemicCinema003.mp4 */,

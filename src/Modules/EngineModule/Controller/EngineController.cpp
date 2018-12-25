@@ -135,17 +135,24 @@ shared_ptr<Orange::Visuals::Video> EngineController::loadVideo(string path) {
     return video;
 }
 
+void EngineController::newSet()
+{
+    closeSet();
+    
+    addLayer()->name="Layer 1";
+    addLayer()->name="Layer 2";
+}
 
-void EngineController::save(std::string filepath)
+void EngineController::saveSet(std::string filepath)
 {
     ofJson json = toJson();
     
     ofSaveJson(filepath, json);
 }
 
-void EngineController::open(std::string filepath)
+bool EngineController::openSet(std::string filepath)
 {
-    close();
+    closeSet();
     
     try {
         ofJson json = ofLoadJson(filepath);
@@ -153,15 +160,21 @@ void EngineController::open(std::string filepath)
             throw new std::runtime_error("File " + filepath+ " not found");
         }
         setFromJson(json);
+        
+        setLayerIndex(0);
     }
     catch(std::runtime_error *exception)
     {
-        ofLog(OF_LOG_WARNING, exception->what());
-        ofMessage(exception->what());
+        ofLog(OF_LOG_WARNING, "%s", exception->what());
+        ofSystemAlertDialog(exception->what());
+        
+        return false;
     }
+    
+    return true;
 }
 
-void EngineController::close()
+void EngineController::closeSet()
 {
     
 }

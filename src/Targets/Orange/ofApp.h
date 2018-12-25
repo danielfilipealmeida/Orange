@@ -37,6 +37,8 @@ class ofApp : public ofBaseApp{
 
     };
     
+    const std::string defaultAppTitleTemplate = "OrangeVj | <layer> | <visual>";
+    
     Orange::Engine::EngineController *engineController;
     Orange::GUI::ofxGuiFacade *guiFacade;
     Orange::GUI::OSFacadeInterface *os;
@@ -55,6 +57,10 @@ class ofApp : public ofBaseApp{
     void setup();
 		void update();
 		void draw();
+    
+    void setTestData();
+    
+    void setAppTitle();
     
     void handleLayerSwitch(int key);
     void handleVisualsTrigger(int key);

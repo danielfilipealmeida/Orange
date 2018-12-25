@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/BaseModule/Repository/Repository.hpp"
-            timestampString = "567388267.507677"
+            timestampString = "567444621.253871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -65,22 +65,6 @@
                   offsetFromSymbolStart = "15">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Modules/EngineModule/Controller/EngineController.cpp"
-            timestampString = "567388267.507959"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "EngineController::getCurrentLayer()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -289,7 +273,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/GUIModule/Facades/OSXFacade.hpp"
-            timestampString = "567388267.5085829"
+            timestampString = "567444621.254263"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -305,29 +289,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/UnitTests/EngineModule/EngineControllerTest.cpp"
-            timestampString = "567388267.508808"
+            timestampString = "567449041.62638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "TEST_CASE(&quot;Can Load Set&quot;, &quot;load&quot; )"
             landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Modules/EngineModule/Controller/EngineController.cpp"
-            timestampString = "567388267.509006"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "EngineController::setFromJson(ofJson json)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

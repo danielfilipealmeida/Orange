@@ -31,13 +31,13 @@ void OSXFacade::setEngineController(Engine::EngineController *_engineController)
 void OSXFacade::saveFile(char *filepath)
 {
     std::string pathStr(filepath);
-    engineController->save(pathStr);
+    engineController->saveSet(pathStr);
 }
 
 void OSXFacade::openFile(char *filepath)
 {
     std::string pathStr(filepath);
-    engineController->save(pathStr);
+    engineController->saveSet(pathStr);
 }
 
 /* check here:

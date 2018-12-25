@@ -41,7 +41,7 @@ TEST_CASE("Can Load Set", "load" ) {
     
     ofSetDataPathRoot("");
     
-    engineController.open("data/TestSet01.vjs");
+    engineController.openSet("data/TestSet01.vjs");
     
     ofJson json = engineController.toJson();
     
