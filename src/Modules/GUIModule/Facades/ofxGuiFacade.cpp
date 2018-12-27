@@ -14,7 +14,18 @@ using namespace Orange::GUI;
 
 ofxGuiFacade::ofxGuiFacade()
 {
-    gui.setup();
+    width = 320;
+    height = 32;
+    x = 10;
+    y = 10;
+    title = "gui";
+}
+
+void ofxGuiFacade::createPanel()
+{
+    gui.setup(title);
+    gui.setPosition(x, y);
+    gui.setWidthElements((float) width);
     gui.setUseTTF(true);
 }
 
@@ -30,7 +41,7 @@ void ofxGuiFacade::createSlider(ofParameter<float> parameter,
 {
     ofxFloatSlider* slider;
     slider = new ofxFloatSlider();
-    slider->setup(parameter.set(title, parameter, minValue, maxValue));
+    slider->setup(parameter.set(title, parameter, minValue, maxValue), width, height);
     gui.add(slider);
 }
 
@@ -41,7 +52,7 @@ void ofxGuiFacade::createSlider(ofParameter<int> parameter,
 {
     ofxIntSlider* slider;
     slider = new ofxIntSlider();
-    slider->setup(parameter.set(title, parameter, minValue, maxValue));
+    slider->setup(parameter.set(title, parameter, minValue, maxValue), width, height);
     gui.add(slider);
 }
 
@@ -49,7 +60,7 @@ void ofxGuiFacade::createLabel(ofParameter<string> parameter)
 {
     ofxLabel* label;
     label = new ofxLabel();
-    label->setup(parameter);
+    label->setup(parameter, width, height);
     gui.add(label);
 }
 
@@ -58,7 +69,7 @@ void ofxGuiFacade::createPreview(ofFbo *fbo)
     ofxPreview* preview;
     
     preview = new ofxPreview();
-    preview->setup(fbo);
+    preview->setup(fbo, width);
     gui.add(preview);
 }
 

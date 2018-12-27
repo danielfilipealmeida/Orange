@@ -56,3 +56,12 @@ shift + (z,x,c,v) - Load a visual in a Layer 3 visual slot
 - Create operations with GLSL.
 - Create `PlayModeInterface` for implementing Loop modes (forward loop, backward loop, ping ping, no loop) and random playing
 - Unit tests
+
+## TODO
+
+- Split GUI into panels
+- have a panel for all the loaded videos, that is a list of visuals with a thumbnail and a name
+- decorate a int slider to have multiple selections with multiple titles
+- have a visual panel
+- have a panel with all the visuals in a layer -> layer matrix panel
+- decorate panels? to remove options/add options

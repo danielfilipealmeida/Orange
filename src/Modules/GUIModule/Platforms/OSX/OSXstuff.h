@@ -20,6 +20,7 @@
 - (IBAction) saveFile:(id) sender;
 - (IBAction) newFile:(id) sender;
 - (IBAction) quit:(id) sender;
+- (IBAction) about:(id) sender;
 - (void) setMenu:(NSWindow *) window;
 - (void) setApplicationMenu:(NSMenu *)bar;
 - (void) setFileMenu:(NSMenu *)bar;

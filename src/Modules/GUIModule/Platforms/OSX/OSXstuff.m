@@ -83,10 +83,14 @@
     [NSApp terminate:self];
 }
 
+- (IBAction) about:(id) sender
+{    
+}
+
 - (void)setApplicationMenu:(NSMenu *)bar {
     NSMenuItem* appMenuItem = [bar addItemWithTitle:@"" action:NULL keyEquivalent:@""];
     NSMenu* appMenu = [[NSMenu alloc] init];
-    [appMenu addItemWithTitle:@"About" action:NULL keyEquivalent:@"?"];
+    [[appMenu addItemWithTitle:@"About" action:NULL keyEquivalent:@"?"] setTarget: self];
     [appMenu addItem:[NSMenuItem separatorItem]];
     [appMenu addItemWithTitle:@"Preferences" action:NULL keyEquivalent:@"P"];
     [appMenu addItem:[NSMenuItem separatorItem]];

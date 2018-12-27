@@ -14,6 +14,11 @@
 namespace Orange {
     namespace GUI {
         
+        typedef enum {
+            LayerPanel = 0,
+            VisualPanel
+        } PanelNames;
+        
         class GUIFacadeInterface {
             
         public:
@@ -24,6 +29,8 @@ namespace Orange {
              */
             virtual void setName(ofParameter<string> name) = 0;
         
+            virtual void createPanel() = 0;
+            
             /*!
              Creates a Float Slider in the GUI
              \param ofParameter<float> parameter

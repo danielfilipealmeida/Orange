@@ -18,14 +18,21 @@ namespace Orange {
         
         class ofxGuiFacade : public GUIFacadeInterface {
             ofxPanel gui;
-            
             string title;
+            float width;
+            float height;
+            float x, y;
         public:
             
             /*!
-             Constructor. sets up all needed for the interface using ofxGUI
+             Constructor. sets up all needed data interface using ofxGUI
              */
             ofxGuiFacade();
+            
+            /*!
+             Creates the panel
+             */
+            void createPanel();
             
             /*!
              Sets the name of the current panel
