@@ -13,15 +13,16 @@
 #include "ofxGui.h"
 #include "GUIFacadeInterface.hpp"
 
+#define PANEL_WIDTH 200
+
+
 namespace Orange {
     namespace GUI {
         
         class ofxGuiFacade : public GUIFacadeInterface {
-            ofxPanel gui;
-            string title;
-            float width;
-            float height;
-            float x, y;
+            ofxPanel layerPanel, visualPanel;
+            ofxPanel *currentPanel;
+            
         public:
             
             /*!
@@ -30,9 +31,9 @@ namespace Orange {
             ofxGuiFacade();
             
             /*!
-             Creates the panel
+             Sets the currently selected panel
              */
-            void createPanel();
+            void setupPanel();
             
             /*!
              Sets the name of the current panel
@@ -84,7 +85,7 @@ namespace Orange {
              Clears the current GUI
              */
             void clear();
-            
+    
         };
     }
 }

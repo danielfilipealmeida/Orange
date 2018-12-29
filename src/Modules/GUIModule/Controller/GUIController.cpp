@@ -15,17 +15,20 @@ GUIController::GUIController(GUIFacadeInterface *_facade, OSFacadeInterface *_os
 {
     facade = _facade;
     os = _os;
-    facade->createPanel();
+    facade->setupPanel();
+    
 }
 
 
 void GUIController::setup()
 {
+    // Layer Panel setup. move to method
     facade->clear();
     facade->setName(layer->name);
     facade->createPreview(&(layer->fbo));
     facade->createSlider(layer->alpha, "Layer Alpha", 0, 1);
     facade->createSlider(layer->blendMode, "Blend Mode", 0, 4);
+
     
     setupMenu();
 }

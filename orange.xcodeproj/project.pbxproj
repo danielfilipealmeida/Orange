@@ -57,6 +57,7 @@
 		65A59DA421A4C3C700ADEE79 /* Video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D8721A0D3CF00ADEE79 /* Video.cpp */; };
 		65A59DAA21A6198500ADEE79 /* VideoTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59DA921A6198500ADEE79 /* VideoTest.cpp */; };
 		65A59DB021A767AD00ADEE79 /* red.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65A59DAF21A7679100ADEE79 /* red.mp4 */; };
+		65D167E421D53141006B6163 /* ofxPanelDecorator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65D167E221D53141006B6163 /* ofxPanelDecorator.cpp */; };
 		661A1991F5CE4CCC2919D8E7 /* ofxNetworkUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE30B18B42BAF0E92CB140E5 /* ofxNetworkUtils.cpp */; };
 		66CA411C5A9664E27326BF36 /* ofxTCPServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C085E327DAB912CFA2A443D /* ofxTCPServer.cpp */; };
 		67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361208CD4107E479F04E7B /* NetworkingUtils.cpp */; };
@@ -214,6 +215,8 @@
 		65A59DA921A6198500ADEE79 /* VideoTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VideoTest.cpp; path = src/UnitTests/VisualsModule/VideoTest.cpp; sourceTree = SOURCE_ROOT; };
 		65A59DAF21A7679100ADEE79 /* red.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = red.mp4; sourceTree = "<group>"; };
 		65A59DB421AB5DE500ADEE79 /* Bolas001.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Bolas001.mov; path = ../Resources/Bolas001.mov; sourceTree = "<group>"; };
+		65D167E221D53141006B6163 /* ofxPanelDecorator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxPanelDecorator.cpp; sourceTree = "<group>"; };
+		65D167E321D53141006B6163 /* ofxPanelDecorator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxPanelDecorator.hpp; sourceTree = "<group>"; };
 		65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscBundle.cpp; path = ../../../addons/ofxOsc/src/ofxOscBundle.cpp; sourceTree = SOURCE_ROOT; };
 		682082DEC78C75C8FB18B7DB /* flags.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = flags.c; path = ../../../addons/ofxKinect/libs/libfreenect/src/flags.c; sourceTree = SOURCE_ROOT; };
 		6B65E6930994CC4B2D2B8B33 /* OscPacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscPacketListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPacketListener.h; sourceTree = SOURCE_ROOT; };
@@ -701,6 +704,8 @@
 				657D74FE21BFF7A5004329EF /* ofxButtonGroup.hpp */,
 				657D750021BFFB79004329EF /* ofxPreview.cpp */,
 				657D750121BFFB79004329EF /* ofxPreview.hpp */,
+				65D167E221D53141006B6163 /* ofxPanelDecorator.cpp */,
+				65D167E321D53141006B6163 /* ofxPanelDecorator.hpp */,
 			);
 			path = ofxGui;
 			sourceTree = "<group>";
@@ -1588,6 +1593,7 @@
 				960D20B191346612D5C05A6A /* ofxTCPClient.cpp in Sources */,
 				125506CD3E5F428AAFE5CC65 /* ofxTCPManager.cpp in Sources */,
 				66CA411C5A9664E27326BF36 /* ofxTCPServer.cpp in Sources */,
+				65D167E421D53141006B6163 /* ofxPanelDecorator.cpp in Sources */,
 				65A59D7621A0D16D00ADEE79 /* main.cpp in Sources */,
 				E2564CF7DDB3713772BB682E /* ofxUDPManager.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,

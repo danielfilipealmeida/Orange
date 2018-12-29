@@ -14,24 +14,25 @@ using namespace Orange::GUI;
 
 ofxGuiFacade::ofxGuiFacade()
 {
-    width = 320;
-    height = 32;
-    x = 10;
-    y = 10;
-    title = "gui";
+    currentPanel = &layerPanel;
 }
 
-void ofxGuiFacade::createPanel()
+void ofxGuiFacade::setupPanel()
 {
-    gui.setup(title);
-    gui.setPosition(x, y);
-    gui.setWidthElements((float) width);
-    gui.setUseTTF(true);
+    layerPanel.setWidthElements(PANEL_WIDTH);
+    layerPanel.setup("Layer");
+    layerPanel.setPosition(0, 0);
+    layerPanel.setUseTTF(true);
+    
+    visualPanel.setWidthElements(PANEL_WIDTH);
+    visualPanel.setup("Visual");
+    visualPanel.setPosition(PANEL_WIDTH, 0);
+    visualPanel.setUseTTF(true);
 }
 
 void ofxGuiFacade::setName(ofParameter<string> name)
 {
-    gui.setName(name);
+    currentPanel->setName(name);
 }
 
 void ofxGuiFacade::createSlider(ofParameter<float> parameter,
@@ -41,8 +42,8 @@ void ofxGuiFacade::createSlider(ofParameter<float> parameter,
 {
     ofxFloatSlider* slider;
     slider = new ofxFloatSlider();
-    slider->setup(parameter.set(title, parameter, minValue, maxValue), width, height);
-    gui.add(slider);
+    slider->setup(parameter.set(title, parameter, minValue, maxValue));
+    currentPanel->add(slider);
 }
 
 void ofxGuiFacade::createSlider(ofParameter<int> parameter,
@@ -52,16 +53,16 @@ void ofxGuiFacade::createSlider(ofParameter<int> parameter,
 {
     ofxIntSlider* slider;
     slider = new ofxIntSlider();
-    slider->setup(parameter.set(title, parameter, minValue, maxValue), width, height);
-    gui.add(slider);
+    slider->setup(parameter.set(title, parameter, minValue, maxValue));
+    currentPanel->add(slider);
 }
 
 void ofxGuiFacade::createLabel(ofParameter<string> parameter)
 {
     ofxLabel* label;
     label = new ofxLabel();
-    label->setup(parameter, width, height);
-    gui.add(label);
+    label->setup(parameter);
+    currentPanel->add(label);
 }
 
 void ofxGuiFacade::createPreview(ofFbo *fbo)
@@ -69,17 +70,19 @@ void ofxGuiFacade::createPreview(ofFbo *fbo)
     ofxPreview* preview;
     
     preview = new ofxPreview();
-    preview->setup(fbo, width);
-    gui.add(preview);
+    preview->setup(fbo);
+    currentPanel->add(preview);
 }
 
 void ofxGuiFacade::draw()
 {
-    gui.draw();
+    layerPanel.draw();
+    visualPanel.draw();
 }
 
 
 void ofxGuiFacade::clear()
 {
-    gui.clear();
+    currentPanel->clear();
 }
+

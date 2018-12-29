@@ -29,7 +29,7 @@ namespace Orange {
              */
             virtual void setName(ofParameter<string> name) = 0;
         
-            virtual void createPanel() = 0;
+            virtual void setupPanel() = 0;
             
             /*!
              Creates a Float Slider in the GUI
@@ -72,6 +72,7 @@ namespace Orange {
              Clears the gui
              */
             virtual void clear() = 0;
+            
             
         };
     }
