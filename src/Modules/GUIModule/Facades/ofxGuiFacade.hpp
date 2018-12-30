@@ -20,7 +20,7 @@ namespace Orange {
     namespace GUI {
         
         class ofxGuiFacade : public GUIFacadeInterface {
-            ofxPanel layerPanel, visualPanel;
+            ofxPanel previewsPanel, layerPanel, visualPanel;
             ofxPanel *currentPanel;
             
         public:
@@ -67,8 +67,15 @@ namespace Orange {
             
             /*!
              Creates a label displaying information
+             \param ofParameter<string> parameter
              */
             void createLabel(ofParameter<string> parameter);
+            
+            /*!
+             Creates a label using a string
+             \param string text
+             */
+            void createLabel(string text);
             
             /*!
              Creates a preview of the passed fbo
@@ -86,6 +93,11 @@ namespace Orange {
              */
             void clear();
     
+            /*!
+             Sets the currently active panel to receive actions
+             \param PanelNames panelName
+             */
+            void setCurrentPanel(PanelNames panelName);
         };
     }
 }

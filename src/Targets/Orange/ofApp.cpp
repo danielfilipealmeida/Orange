@@ -13,12 +13,13 @@ void ofApp::setup() {
     
     ofEnableSetupScreen();
   
-    engineController = new Orange::Engine::EngineController();
+    engineController = make_shared<Orange::Engine::EngineController>();
     
     guiFacade = new Orange::GUI::ofxGuiFacade();
     os = new Orange::GUI::OSXFacade();
     os->setEngineController(engineController);
     guiController = new Orange::GUI::GUIController(guiFacade, os);
+    guiController->setEngineController(engineController);
 
     
     
@@ -61,7 +62,8 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    engineController->draw(0, 0, ofGetWidth(), ofGetHeight());
+    ofClear(0, 0, 0);
+    //engineController->draw(0, 0, ofGetWidth(), ofGetHeight());
     guiController->draw();
 }
 

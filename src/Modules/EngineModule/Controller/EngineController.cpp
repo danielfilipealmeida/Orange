@@ -53,6 +53,11 @@ shared_ptr<Orange::Layers::Layer> EngineController::addLayer()
     return layer;
 }
 
+void EngineController::forEachLayer(std::function<void (shared_ptr<Orange::Layers::Layer>)> lambda)
+{
+    layers.forEach(lambda);
+}
+
 void EngineController::setLayerIndex(int layerIndex)
 {
     if (layerIndex >= layers.count()) {

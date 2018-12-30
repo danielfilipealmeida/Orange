@@ -14,19 +14,24 @@ using namespace Orange::GUI;
 
 ofxGuiFacade::ofxGuiFacade()
 {
-    currentPanel = &layerPanel;
+    setCurrentPanel(PreviewsPanel);
 }
 
 void ofxGuiFacade::setupPanel()
 {
+    previewsPanel.setWidthElements(PANEL_WIDTH);
+    previewsPanel.setup("Previews");
+    previewsPanel.setPosition(0, 0);
+    previewsPanel.setUseTTF(true);
+    
     layerPanel.setWidthElements(PANEL_WIDTH);
     layerPanel.setup("Layer");
-    layerPanel.setPosition(0, 0);
+    layerPanel.setPosition(PANEL_WIDTH, 0);
     layerPanel.setUseTTF(true);
     
     visualPanel.setWidthElements(PANEL_WIDTH);
     visualPanel.setup("Visual");
-    visualPanel.setPosition(PANEL_WIDTH, 0);
+    visualPanel.setPosition(PANEL_WIDTH * 2, 0);
     visualPanel.setUseTTF(true);
 }
 
@@ -65,6 +70,14 @@ void ofxGuiFacade::createLabel(ofParameter<string> parameter)
     currentPanel->add(label);
 }
 
+void ofxGuiFacade::createLabel(string text)
+{
+    ofxLabel* label;
+    label = new ofxLabel();
+    label->setup(text);
+    currentPanel->add(label);
+}
+
 void ofxGuiFacade::createPreview(ofFbo *fbo)
 {
     ofxPreview* preview;
@@ -76,6 +89,7 @@ void ofxGuiFacade::createPreview(ofFbo *fbo)
 
 void ofxGuiFacade::draw()
 {
+    previewsPanel.draw();
     layerPanel.draw();
     visualPanel.draw();
 }
@@ -86,3 +100,19 @@ void ofxGuiFacade::clear()
     currentPanel->clear();
 }
 
+void ofxGuiFacade::setCurrentPanel(PanelNames panelName)
+{
+    switch (panelName) {
+        case PreviewsPanel:
+            currentPanel = &previewsPanel;
+            break;
+            
+        case LayerPanel:
+            currentPanel = &layerPanel;
+            break;
+            
+        case VisualPanel:
+            currentPanel = &visualPanel;
+            break;
+    }
+}

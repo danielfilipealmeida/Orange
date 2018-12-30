@@ -15,7 +15,8 @@ namespace Orange {
     namespace GUI {
         
         typedef enum {
-            LayerPanel = 0,
+            PreviewsPanel = 0,
+            LayerPanel,
             VisualPanel
         } PanelNames;
         
@@ -72,6 +73,12 @@ namespace Orange {
              Clears the gui
              */
             virtual void clear() = 0;
+            
+            /*!
+             Sets the currently active panel to receive actions
+             \param PanelNames panelName
+             */
+            virtual void setCurrentPanel(PanelNames panelName) = 0;
             
             
         };

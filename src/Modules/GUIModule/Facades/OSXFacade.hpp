@@ -24,7 +24,7 @@ namespace Orange {
         */
         class OSXFacade : public OSFacadeInterface {
          
-            Engine::EngineController *engineController;
+            shared_ptr<Engine::EngineController> engineController;
         public:
             
             /*!
@@ -37,7 +37,7 @@ namespace Orange {
              This is needed to communicate with the engine
              \param Engine::EngineController *_engineController
              */
-            void setEngineController(Engine::EngineController *_engineController);
+            void setEngineController(shared_ptr<Engine::EngineController> _engineController);
             
             /*!
              Sets up the Menu Bar

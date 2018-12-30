@@ -32,7 +32,7 @@ namespace Orange {
              This is needed to communicate with the engine
              \param Engine::EngineController *_engineController
              */
-            virtual void setEngineController(Engine::EngineController *_engineController) = 0;
+            virtual void setEngineController(shared_ptr<Engine::EngineController> _engineController) = 0;
             
         
         };

@@ -39,10 +39,12 @@ class ofApp : public ofBaseApp{
     
     const std::string defaultAppTitleTemplate = "OrangeVj | <layer> | <visual>";
     
-    Orange::Engine::EngineController *engineController;
+    /* TODO: move these pointers to shared pointers? */
+    shared_ptr<Orange::Engine::EngineController> engineController;
     Orange::GUI::ofxGuiFacade *guiFacade;
     Orange::GUI::OSFacadeInterface *os;
     Orange::GUI::GUIController *guiController;
+    
     shared_ptr<ofAppBaseWindow> projectorWindow;
     
 	public:

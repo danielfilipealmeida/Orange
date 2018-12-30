@@ -23,7 +23,7 @@ OSXFacade::OSXFacade() {
     osxFacade = this;
 }
 
-void OSXFacade::setEngineController(Engine::EngineController *_engineController)
+void OSXFacade::setEngineController(shared_ptr<Engine::EngineController> _engineController)
 {
     engineController = _engineController;
 }

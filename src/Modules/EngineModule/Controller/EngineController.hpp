@@ -18,6 +18,7 @@
 #include "Engine.hpp"
 
 
+
 namespace Orange {
     namespace Engine {
         
@@ -28,9 +29,10 @@ namespace Orange {
             
 
             Engine engine;
-            ofFbo fbo;
             
         public:
+            ofFbo fbo;
+            
             
             /*!
              Constructor
@@ -60,6 +62,12 @@ namespace Orange {
              Adds a new Layer with default configuration
              */
             shared_ptr<Orange::Layers::Layer> addLayer();
+            
+            /*!
+             Apply a lambda for each layer in the layer repository
+             \param std::function<void (T)> lambda
+             */
+            void forEachLayer(std::function<void (shared_ptr<Orange::Layers::Layer>)> lambda);
             
             /*!
              Sets the index in the repository of the currently active layer.
