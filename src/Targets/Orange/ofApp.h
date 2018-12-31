@@ -45,7 +45,7 @@ class ofApp : public ofBaseApp{
     Orange::GUI::OSFacadeInterface *os;
     Orange::GUI::GUIController *guiController;
     
-    shared_ptr<ofAppBaseWindow> projectorWindow;
+    shared_ptr<ofAppBaseWindow> mainWindow, projectorWindow;
     
 	public:
     
@@ -84,6 +84,15 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
+    /*!
+     Sets the main window
+     \param shared_ptr<ofAppBaseWindow> _mainWindow
+     */
+    void setMainWindow(shared_ptr<ofAppBaseWindow> _mainWindow);
     
+    /*!
+     Sets the projector window
+     \param shared_ptr<ofAppBaseWindow> _projectorWindow
+     */
     void setProjectorWindow(shared_ptr<ofAppBaseWindow> _projectorWindow);
 };

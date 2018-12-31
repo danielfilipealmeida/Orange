@@ -48,11 +48,13 @@ namespace Orange {
              \param float value
              \param float minValue
              \param float maxValue
+             \param string name
              */
             void createSlider(ofParameter<float> parameter,
                               std::string title,
                               float minValue,
-                              float maxValue);
+                              float maxValue,
+                              string name = "");
             
             /*!
              Creates an integer Slider in the GUI
@@ -60,30 +62,35 @@ namespace Orange {
              \param int value
              \param int minValue
              \param int maxValue
+             \param string name
              */
             void createSlider(ofParameter<int> parameter,
                               std::string title,
                               int minValue,
-                              int maxValue);
+                              int maxValue,
+                              string name = "");
             
             /*!
              Creates a label displaying information
              \param ofParameter<string> parameter
+             \param string name
              */
-            void createLabel(ofParameter<string> parameter);
+            void createLabel(ofParameter<string> parameter, string name = "");
             
             /*!
              Creates a label using a string
              \param string text
+             \param string name
              */
-            void createLabel(string text);
+            void createLabel(string text, string name = "");
             
             /*!
              Creates and returns a preview of the passed fbo
              \param ofFbo *fbo
+             \param string name
              \return ofxPreview*
              */
-            ofxPreview* createPreview(ofFbo *fbo);
+            ofxPreview* createPreview(ofFbo *fbo, string name = "");
             
             /*!
              Draws the ofxGui

@@ -73,7 +73,7 @@ void EngineController::setVisualIndex(int visualIndex)
 
 void EngineController::playVisual(int visualIndex)
 {
-    if (visualIndex < 0 || getCurrentLayer()->getVisualsCount() <= visualIndex)
+    if (visualIndex < 0)
     {
         return;
     }
@@ -88,6 +88,11 @@ void EngineController::playVisual(int visualIndex)
     if (previousVisual != NULL)
     {
         previousVisual->stop();
+    }
+    
+    // return if the current selected visual isn't loaded
+    if (getCurrentLayer()->getVisualsCount() <= visualIndex) {
+        return;
     }
     
     setVisualIndex(visualIndex);

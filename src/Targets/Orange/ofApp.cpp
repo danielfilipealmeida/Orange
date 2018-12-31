@@ -52,7 +52,8 @@ void ofApp::setAppTitle()
     ofStringReplace(title, "<layer>", currentLayer->name.get());
     int playingVideoIndex = engineController->getCurrentLayer()->currentVisualIndex;
     ofStringReplace(title, "<visual>", playingVideoIndex >= 0 ? ("Visual " + ofToString(playingVideoIndex + 1)) : "No Visual");
-    ofSetWindowTitle(title);
+    
+    mainWindow->setWindowTitle(title);
 }
 
 //--------------------------------------------------------------
@@ -112,6 +113,7 @@ void ofApp::handleVisualsTrigger(int key)
 {
     switch (key) {
         case ofApp::KEYCODE_TRIGGER_LAYER1_VISUAL1:
+            engineController->setLayerIndex(0);
             engineController->playVisual(0);
             break;
 
@@ -242,6 +244,11 @@ void ofApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
 
+}
+
+void ofApp::setMainWindow(shared_ptr<ofAppBaseWindow> _mainWindow)
+{
+    mainWindow = _mainWindow;
 }
 
 void ofApp::setProjectorWindow(shared_ptr<ofAppBaseWindow> _projectorWindow)

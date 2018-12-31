@@ -43,7 +43,8 @@ void ofxGuiFacade::setName(ofParameter<string> name)
 void ofxGuiFacade::createSlider(ofParameter<float> parameter,
                                 std::string title,
                                 float minValue,
-                                float maxValue)
+                                float maxValue,
+                                string name)
 {
     ofxFloatSlider* slider;
     slider = new ofxFloatSlider();
@@ -54,7 +55,8 @@ void ofxGuiFacade::createSlider(ofParameter<float> parameter,
 void ofxGuiFacade::createSlider(ofParameter<int> parameter,
                                 std::string title,
                                 int minValue,
-                                int maxValue)
+                                int maxValue,
+                                string name)
 {
     ofxIntSlider* slider;
     slider = new ofxIntSlider();
@@ -62,7 +64,7 @@ void ofxGuiFacade::createSlider(ofParameter<int> parameter,
     currentPanel->add(slider);
 }
 
-void ofxGuiFacade::createLabel(ofParameter<string> parameter)
+void ofxGuiFacade::createLabel(ofParameter<string> parameter, string name)
 {
     ofxLabel* label;
     label = new ofxLabel();
@@ -70,7 +72,7 @@ void ofxGuiFacade::createLabel(ofParameter<string> parameter)
     currentPanel->add(label);
 }
 
-void ofxGuiFacade::createLabel(string text)
+void ofxGuiFacade::createLabel(string text, string name)
 {
     ofxLabel* label;
     label = new ofxLabel();
@@ -78,12 +80,13 @@ void ofxGuiFacade::createLabel(string text)
     currentPanel->add(label);
 }
 
-ofxPreview* ofxGuiFacade::createPreview(ofFbo *fbo)
+ofxPreview* ofxGuiFacade::createPreview(ofFbo *fbo, string name)
 {
     ofxPreview* preview;
     
     preview = new ofxPreview();
     preview->setup(fbo);
+    preview->setName(name);
     currentPanel->add(preview);
     
     return preview;

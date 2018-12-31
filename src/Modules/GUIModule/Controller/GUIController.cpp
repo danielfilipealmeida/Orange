@@ -25,7 +25,7 @@ void GUIController::setupPreviewsPanel() {
     facade->clear();
     facade->createPreview(&(engineController->fbo))->setTitle(std::string("Output"));
     engineController->forEachLayer([&](shared_ptr<Orange::Layers::Layer> layer) {
-        facade->createPreview(&(layer->fbo))->setTitle(std::string(layer->name));
+        facade->createPreview(&(layer->fbo),std::string(layer->name))->setTitle(std::string(layer->name));
     });
 }
 

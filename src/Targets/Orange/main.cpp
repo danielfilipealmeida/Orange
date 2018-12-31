@@ -47,9 +47,11 @@ int main( ){
     ofGLFWWindowSettings projectorWindowSettings = getProjectorWindowSettings(mainWindow);
     shared_ptr<ofAppBaseWindow> projectorWindow = ofCreateWindow(projectorWindowSettings);
     projectorWindow->setVerticalSync(false);
+    projectorWindow->setWindowTitle("Projector");
     
     /* Sets up the app, the listeners of the projector and the position of the windows */
     shared_ptr<ofApp> mainApp(new ofApp);
+    mainApp->setMainWindow(mainWindow);
     mainApp->setProjectorWindow(projectorWindow);
     setupProjectorWindowListeners(mainApp, projectorWindow);
     setupWindowsPositions(mainWindow, projectorWindow);
