@@ -12,9 +12,10 @@
 
 #include "ofxGui.h"
 #include "GUIFacadeInterface.hpp"
+#include "ofxPreview.hpp"
 
 #define PANEL_WIDTH 200
-
+#define PANEL_HEIGHT 16
 
 namespace Orange {
     namespace GUI {
@@ -78,10 +79,11 @@ namespace Orange {
             void createLabel(string text);
             
             /*!
-             Creates a preview of the passed fbo
+             Creates and returns a preview of the passed fbo
              \param ofFbo *fbo
+             \return ofxPreview*
              */
-            void createPreview(ofFbo *fbo);
+            ofxPreview* createPreview(ofFbo *fbo);
             
             /*!
              Draws the ofxGui

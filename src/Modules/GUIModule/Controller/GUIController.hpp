@@ -33,6 +33,21 @@ namespace Orange {
             void setup();
             
             /*!
+             Sets up the Previews Panel
+             */
+            void setupPreviewsPanel();
+            
+            /*!
+             Sets up the Layer Panel
+             */
+            void setupLayerPanel();
+
+            /*!
+             Sets up the Visual Panel
+             */
+            void setupVisualPanel();
+            
+            /*!
              Draws the GUI
              */
             void draw();

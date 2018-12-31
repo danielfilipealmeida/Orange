@@ -20,39 +20,40 @@ GUIController::GUIController(GUIFacadeInterface *_facade, OSFacadeInterface *_os
 }
 
 
-void GUIController::setup()
-{
-    // Previews Panel setup. move to method. Also, this doesn't need to be recreated everytime!
+void GUIController::setupPreviewsPanel() {
     facade->setCurrentPanel(PreviewsPanel);
     facade->clear();
-    //facade->setName("Previews");
-    facade->createLabel(std::string("Output"));
-    facade->createPreview(&(engineController->fbo));
+    facade->createPreview(&(engineController->fbo))->setTitle(std::string("Output"));
     engineController->forEachLayer([&](shared_ptr<Orange::Layers::Layer> layer) {
-         facade->createLabel(layer->name);
-        facade->createPreview(&(layer->fbo));
+        facade->createPreview(&(layer->fbo))->setTitle(std::string(layer->name));
     });
-    
-    // Layer Panel setup. move to method
+}
+
+void GUIController::setupLayerPanel() {
     facade->setCurrentPanel(LayerPanel);
     facade->clear();
     facade->setName(layer->name);
     facade->createPreview(&(layer->fbo));
     facade->createSlider(layer->alpha, "Layer Alpha", 0, 1);
     facade->createSlider(layer->blendMode, "Blend Mode", 0, 4);
-    
-    
-    // Visual Panel setup. move to method
+}
+
+void GUIController::setupVisualPanel() {
     facade->setCurrentPanel(VisualPanel);
     facade->clear();
-
+    
     shared_ptr<Visuals::BaseVisual> currentVisual = layer->getCurrentVisual();
     if (dynamic_cast<Visuals::Video*>(currentVisual.get())) {
         shared_ptr<Visuals::Video> currentVideo = std::dynamic_pointer_cast<Visuals::Video>(currentVisual);
         facade->createSlider(currentVideo->currentFrame, "Current Frame", 0, currentVideo->getNumberOfFrames());
     }
-    
-    
+}
+
+void GUIController::setup()
+{
+    setupPreviewsPanel();
+    setupLayerPanel();
+    setupVisualPanel();
 }
 
 void GUIController::draw()

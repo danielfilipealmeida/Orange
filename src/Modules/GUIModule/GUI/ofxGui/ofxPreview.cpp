@@ -61,11 +61,29 @@ bool  ofxPreview::mouseScrolled(ofMouseEventArgs & args)
     
 }
 
+void ofxPreview::drawTitle() {
+    ofSetColor(0,0,0, 128);
+    ofFill();
+    ofDrawRectangle(b.x, b.y, b.width, 16);
+    
+    ofSetColor(textColor);
+    bindFontTexture();
+    textMesh.draw();
+    unbindFontTexture();
+    ofSetColor(255, 255, 255, 0);
+}
+
 void ofxPreview::render()
 {
+    ofSetColor(255, 255, 255, 255);
     ofFbo *fbo = (ofFbo*) value.get();
     
     fbo->draw(b.getX(), b.getY(), b.getWidth(), b.getHeight());
+    
+    if (title.empty()) {
+        return;
+    }
+    drawTitle();
 }
 
 bool ofxPreview::setValue(float mx, float my, bool bCheckBounds)
@@ -76,4 +94,10 @@ bool ofxPreview::setValue(float mx, float my, bool bCheckBounds)
 void ofxPreview::generateDraw()
 {
     
+}
+
+void ofxPreview::setTitle(std::string _title)
+{
+    title = _title;
+    textMesh = getTextMesh(title, b.x + textPadding, b.y + 12);
 }

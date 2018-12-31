@@ -47,7 +47,7 @@ void ofxGuiFacade::createSlider(ofParameter<float> parameter,
 {
     ofxFloatSlider* slider;
     slider = new ofxFloatSlider();
-    slider->setup(parameter.set(title, parameter, minValue, maxValue));
+    slider->setup(parameter.set(title, parameter, minValue, maxValue), PANEL_WIDTH, PANEL_HEIGHT);
     currentPanel->add(slider);
 }
 
@@ -58,7 +58,7 @@ void ofxGuiFacade::createSlider(ofParameter<int> parameter,
 {
     ofxIntSlider* slider;
     slider = new ofxIntSlider();
-    slider->setup(parameter.set(title, parameter, minValue, maxValue));
+    slider->setup(parameter.set(title, parameter, minValue, maxValue), PANEL_WIDTH, PANEL_HEIGHT);
     currentPanel->add(slider);
 }
 
@@ -66,7 +66,7 @@ void ofxGuiFacade::createLabel(ofParameter<string> parameter)
 {
     ofxLabel* label;
     label = new ofxLabel();
-    label->setup(parameter);
+    label->setup(parameter, PANEL_WIDTH, PANEL_HEIGHT);
     currentPanel->add(label);
 }
 
@@ -74,17 +74,19 @@ void ofxGuiFacade::createLabel(string text)
 {
     ofxLabel* label;
     label = new ofxLabel();
-    label->setup(text);
+    label->setup(text, PANEL_WIDTH, PANEL_HEIGHT);
     currentPanel->add(label);
 }
 
-void ofxGuiFacade::createPreview(ofFbo *fbo)
+ofxPreview* ofxGuiFacade::createPreview(ofFbo *fbo)
 {
     ofxPreview* preview;
     
     preview = new ofxPreview();
     preview->setup(fbo);
     currentPanel->add(preview);
+    
+    return preview;
 }
 
 void ofxGuiFacade::draw()

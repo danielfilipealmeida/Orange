@@ -10,6 +10,7 @@
 
 #include <string>
 #include "ofMain.h"
+#include "ofxPreview.hpp"
 
 namespace Orange {
     namespace GUI {
@@ -62,7 +63,12 @@ namespace Orange {
              */
             virtual void createLabel(ofParameter<string> parameter) = 0;
             
-            virtual void createPreview(ofFbo *fbo) = 0;
+            /*!
+             Creates and returns a preview of the passed fbo
+             \param ofFbo *fbo
+             \return ofxPreview*
+             */
+            virtual ofxPreview* createPreview(ofFbo *fbo) = 0;
             
             /*!
              Draws the ofxGui

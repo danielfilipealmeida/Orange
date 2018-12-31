@@ -15,6 +15,8 @@
 class ofxPreview : public ofxBaseGui{
     friend class ofPanel;
     ofParameter<ofFbo*> value;
+    std::string title;
+    ofVboMesh textMesh;
     
 public:
     ofxPreview();
@@ -31,6 +33,9 @@ public:
     void render();
     bool setValue(float mx, float my, bool bCheckBounds) ;
     void generateDraw();
+    void setTitle(std::string _title);
+    void drawTitle();
+
 };
 
 #endif /* ofxPreview_hpp */
