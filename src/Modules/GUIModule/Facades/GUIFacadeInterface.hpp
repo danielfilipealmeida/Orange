@@ -31,6 +31,9 @@ namespace Orange {
              */
             virtual void setName(ofParameter<string> name) = 0;
         
+            /*!
+             
+             */
             virtual void setupPanel() = 0;
             
             /*!
@@ -43,8 +46,7 @@ namespace Orange {
             virtual void createSlider(ofParameter<float> parameter,
                                       std::string title,
                                       float minValue,
-                                      float maxValue,
-                                      string name = "") = 0;
+                                      float maxValue) = 0;
             
             /*!
              Creates an Int Slider in the GUI
@@ -56,8 +58,7 @@ namespace Orange {
             virtual void createSlider(ofParameter<int> parameter,
                                       std::string title,
                                       int minValue,
-                                      int maxValue,
-                                      string name = "") = 0;
+                                      int maxValue) = 0;
             
             
             /*!

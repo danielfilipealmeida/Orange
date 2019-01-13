@@ -26,6 +26,7 @@ namespace Orange {
             
         public:
             
+            
             /*!
              Constructor. sets up all needed data interface using ofxGUI
              */
@@ -53,8 +54,7 @@ namespace Orange {
             void createSlider(ofParameter<float> parameter,
                               std::string title,
                               float minValue,
-                              float maxValue,
-                              string name = "");
+                              float maxValue);
             
             /*!
              Creates an integer Slider in the GUI
@@ -67,8 +67,7 @@ namespace Orange {
             void createSlider(ofParameter<int> parameter,
                               std::string title,
                               int minValue,
-                              int maxValue,
-                              string name = "");
+                              int maxValue);
             
             /*!
              Creates a label displaying information
@@ -82,7 +81,7 @@ namespace Orange {
              \param string text
              \param string name
              */
-            void createLabel(string text, string name = "");
+            void createLabel(string text);
             
             /*!
              Creates and returns a preview of the passed fbo

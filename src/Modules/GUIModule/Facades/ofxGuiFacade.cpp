@@ -43,9 +43,12 @@ void ofxGuiFacade::setName(ofParameter<string> name)
 void ofxGuiFacade::createSlider(ofParameter<float> parameter,
                                 std::string title,
                                 float minValue,
-                                float maxValue,
-                                string name)
+                                float maxValue)
 {
+    if (currentPanel->getControl(title)) {
+        return;
+    }
+    
     ofxFloatSlider* slider;
     slider = new ofxFloatSlider();
     slider->setup(parameter.set(title, parameter, minValue, maxValue), PANEL_WIDTH, PANEL_HEIGHT);
@@ -55,9 +58,12 @@ void ofxGuiFacade::createSlider(ofParameter<float> parameter,
 void ofxGuiFacade::createSlider(ofParameter<int> parameter,
                                 std::string title,
                                 int minValue,
-                                int maxValue,
-                                string name)
+                                int maxValue)
 {
+    if (currentPanel->getControl(title)) {
+        return;
+    }
+    
     ofxIntSlider* slider;
     slider = new ofxIntSlider();
     slider->setup(parameter.set(title, parameter, minValue, maxValue), PANEL_WIDTH, PANEL_HEIGHT);
@@ -69,10 +75,14 @@ void ofxGuiFacade::createLabel(ofParameter<string> parameter, string name)
     ofxLabel* label;
     label = new ofxLabel();
     label->setup(parameter, PANEL_WIDTH, PANEL_HEIGHT);
+    if (!name.empty()) {
+        label->setName(name);
+    }
+    
     currentPanel->add(label);
 }
 
-void ofxGuiFacade::createLabel(string text, string name)
+void ofxGuiFacade::createLabel(string text)
 {
     ofxLabel* label;
     label = new ofxLabel();
@@ -102,6 +112,11 @@ void ofxGuiFacade::draw()
 
 void ofxGuiFacade::clear()
 {
+    for (auto controlName : currentPanel->getControlNames())
+    {
+        ofxBaseGui *control = currentPanel->getControl(controlName);
+        //control->getParameter().
+    }
     currentPanel->clear();
 }
 

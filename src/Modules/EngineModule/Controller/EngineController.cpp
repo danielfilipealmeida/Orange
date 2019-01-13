@@ -73,8 +73,7 @@ void EngineController::setVisualIndex(int visualIndex)
 
 void EngineController::playVisual(int visualIndex)
 {
-    if (visualIndex < 0)
-    {
+    if (visualIndex < 0) {
         return;
     }
     
@@ -85,8 +84,7 @@ void EngineController::playVisual(int visualIndex)
     
     
     shared_ptr<Visuals::BaseVisual> previousVisual = getCurrentLayer()->getCurrentVisual();
-    if (previousVisual != NULL)
-    {
+    if (previousVisual != NULL && getCurrentLayer()->currentVisualIndex != visualIndex) {
         previousVisual->stop();
     }
     

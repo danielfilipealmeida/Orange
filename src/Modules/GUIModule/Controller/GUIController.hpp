@@ -23,7 +23,10 @@ namespace Orange {
             shared_ptr<Layers::Layer> layer;
             
             shared_ptr<Engine::EngineController> engineController;
+            shared_ptr<Visuals::BaseVisual> currentVisual;
         public:
+            
+            ofParameter<int> currentFrame;
             
             GUIController(GUIFacadeInterface *_facade, OSFacadeInterface *_os);
             
@@ -48,6 +51,11 @@ namespace Orange {
             void setupVisualPanel();
             
             /*!
+             Updates the GUI
+             */
+            void update();
+            
+            /*!
              Draws the GUI
              */
             void draw();
@@ -69,7 +77,14 @@ namespace Orange {
              */
             void setupMenu();
             
+          
+            shared_ptr<Orange::Visuals::Video> getCurrentVideo();
             
+            /*!
+             method executed when the param is changed
+             \param unsigned int & currentFrame
+             */
+            void currentFrameChanged(int & currentFrame);
         };
     }
 }

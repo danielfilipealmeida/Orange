@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../../of_v0.10.0_osx_release/apps/myApps/Orange/src/Modules/VisualsModule/Entity/Video.cpp"
-            timestampString = "567988926.779797"
+            filePath = "src/Modules/GUIModule/Controller/GUIController.cpp"
+            timestampString = "568929754.746425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
-            landmarkName = "Video::render()"
+            landmarkName = "GUIController::setupLayerPanel()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

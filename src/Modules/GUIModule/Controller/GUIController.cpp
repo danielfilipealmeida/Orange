@@ -7,6 +7,7 @@
 
 #include "GUIController.hpp"
 #include "ofMain.h"
+#include "ofxGui.h"
 
 
 using namespace Orange::GUI;
@@ -17,6 +18,8 @@ GUIController::GUIController(GUIFacadeInterface *_facade, OSFacadeInterface *_os
     os = _os;
     facade->setupPanel();
     setupMenu();
+    
+    currentFrame.addListener(this, &GUIController::currentFrameChanged);
 }
 
 
@@ -32,20 +35,28 @@ void GUIController::setupPreviewsPanel() {
 void GUIController::setupLayerPanel() {
     facade->setCurrentPanel(LayerPanel);
     facade->clear();
-    facade->setName(layer->name);
+    
+    facade->setName(std::string("Layers"));
+    /*
     facade->createPreview(&(layer->fbo));
     facade->createSlider(layer->alpha, "Layer Alpha", 0, 1);
     facade->createSlider(layer->blendMode, "Blend Mode", 0, 4);
+     */
+    
+    engineController->forEachLayer([&](shared_ptr<Orange::Layers::Layer> layer) {
+        facade->createLabel(std::string(layer->name));
+        facade->createSlider(layer->alpha, std::string(layer->name) + " Alpha", 0, 1);
+        facade->createSlider(layer->blendMode, std::string(layer->name) + "Blend Mode", 0, 4);
+    });
 }
 
 void GUIController::setupVisualPanel() {
     facade->setCurrentPanel(VisualPanel);
     facade->clear();
-    
-    shared_ptr<Visuals::BaseVisual> currentVisual = layer->getCurrentVisual();
+    currentVisual = layer->getCurrentVisual();
     if (dynamic_cast<Visuals::Video*>(currentVisual.get())) {
         shared_ptr<Visuals::Video> currentVideo = std::dynamic_pointer_cast<Visuals::Video>(currentVisual);
-        facade->createSlider(currentVideo->currentFrame, "Current Frame", 0, currentVideo->getNumberOfFrames());
+        facade->createSlider(currentFrame, "Current Frame", 0, currentVideo->getNumberOfFrames());
     }
 }
 
@@ -54,6 +65,24 @@ void GUIController::setup()
     setupPreviewsPanel();
     setupLayerPanel();
     setupVisualPanel();
+}
+
+void GUIController::update()
+{
+    shared_ptr<Visuals::Video> currentVideo = getCurrentVideo();
+    
+    if(currentVideo == NULL) {
+        return;
+    }
+    if (currentVideo->isLoaded() == false) {
+        return;
+    }
+    
+    currentFrame.removeListener(this, &GUIController::currentFrameChanged);
+    currentFrame.set(currentVideo->getCurrentFrame());
+    currentFrame.addListener(this, &GUIController::currentFrameChanged);
+    
+    //cout << "number of listeners " << ofToString(currentFrame.getNumListeners()) << endl;
 }
 
 void GUIController::draw()
@@ -81,4 +110,32 @@ void GUIController::setEngineController(shared_ptr<Engine::EngineController> _en
 void GUIController::setupMenu()
 {
     os->setupMenuBar();
+}
+
+
+shared_ptr<Orange::Visuals::Video> GUIController::getCurrentVideo()
+{
+    if (!dynamic_cast<Visuals::Video*>(currentVisual.get())) {
+        return NULL;
+    }
+    
+    shared_ptr<Visuals::Video> currentVideo = std::dynamic_pointer_cast<Visuals::Video>(currentVisual);
+    
+    return currentVideo;
+}
+
+void GUIController::currentFrameChanged(int & currentFrame)
+{
+    shared_ptr<Visuals::Video> currentVideo = getCurrentVideo();
+    
+    if(currentVideo == NULL) {
+        return;
+    }
+    
+    cout << (currentVideo->isLoaded() ? "LOADED" : "NOT LOADED" ) << std::endl;
+    if (currentVideo->isLoaded() == false) {
+        return;
+    }
+    
+    currentVideo->setFrame(currentFrame);
 }
