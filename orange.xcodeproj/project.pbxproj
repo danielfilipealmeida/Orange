@@ -28,11 +28,47 @@
 		6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455021B4A25200880443 /* BaseVisual.cpp */; };
 		6515455621B5ED4000880443 /* LayerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455421B5ED4000880443 /* LayerController.cpp */; };
 		6515455721B5ED4000880443 /* LayerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455421B5ED4000880443 /* LayerController.cpp */; };
-		6515455D21B7314C00880443 /* AnemicCinema001.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455821B730C100880443 /* AnemicCinema001.mp4 */; };
-		6515455E21B7314C00880443 /* AnemicCinema002.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455921B730C100880443 /* AnemicCinema002.mp4 */; };
-		6515455F21B7314C00880443 /* AnemicCinema003.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455A21B730C100880443 /* AnemicCinema003.mp4 */; };
-		6515456021B7314C00880443 /* AnemicCinema004.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455B21B730C100880443 /* AnemicCinema004.mp4 */; };
-		6515456121B7314C00880443 /* Bolas001.mov in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65A59DB421AB5DE500ADEE79 /* Bolas001.mov */; };
+		6515455D21B7314C00880443 /* AnemicCinema001.mp4 in Copy Files */ = {isa = PBXBuildFile; fileRef = 6515455821B730C100880443 /* AnemicCinema001.mp4 */; };
+		6515455E21B7314C00880443 /* AnemicCinema002.mp4 in Copy Files */ = {isa = PBXBuildFile; fileRef = 6515455921B730C100880443 /* AnemicCinema002.mp4 */; };
+		6515455F21B7314C00880443 /* AnemicCinema003.mp4 in Copy Files */ = {isa = PBXBuildFile; fileRef = 6515455A21B730C100880443 /* AnemicCinema003.mp4 */; };
+		6515456021B7314C00880443 /* AnemicCinema004.mp4 in Copy Files */ = {isa = PBXBuildFile; fileRef = 6515455B21B730C100880443 /* AnemicCinema004.mp4 */; };
+		6515456121B7314C00880443 /* Bolas001.mov in Copy Files */ = {isa = PBXBuildFile; fileRef = 65A59DB421AB5DE500ADEE79 /* Bolas001.mov */; };
+		6516EB7D21EAD54C0070D93E /* FFPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB6C21EAD54C0070D93E /* FFPlugin.cpp */; };
+		6516EB7E21EAD54C0070D93E /* FFPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB6C21EAD54C0070D93E /* FFPlugin.cpp */; };
+		6516EB7F21EAD54C0070D93E /* FFGLPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7021EAD54C0070D93E /* FFGLPlugin.cpp */; };
+		6516EB8021EAD54C0070D93E /* FFGLPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7021EAD54C0070D93E /* FFGLPlugin.cpp */; };
+		6516EB8121EAD54C0070D93E /* ofxFFGLInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7521EAD54C0070D93E /* ofxFFGLInstance.cpp */; };
+		6516EB8221EAD54C0070D93E /* ofxFFGLInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7521EAD54C0070D93E /* ofxFFGLInstance.cpp */; };
+		6516EB8321EAD54C0070D93E /* ofxFFInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7621EAD54C0070D93E /* ofxFFInstance.cpp */; };
+		6516EB8421EAD54C0070D93E /* ofxFFInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7621EAD54C0070D93E /* ofxFFInstance.cpp */; };
+		6516EB8521EAD54C0070D93E /* ofxFFHost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7721EAD54C0070D93E /* ofxFFHost.cpp */; };
+		6516EB8621EAD54C0070D93E /* ofxFFHost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7721EAD54C0070D93E /* ofxFFHost.cpp */; };
+		6516EB8721EAD54C0070D93E /* ofxFFBaseInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7821EAD54C0070D93E /* ofxFFBaseInstance.cpp */; };
+		6516EB8821EAD54C0070D93E /* ofxFFBaseInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7821EAD54C0070D93E /* ofxFFBaseInstance.cpp */; };
+		6516EB8921EAD54C0070D93E /* ofxFFPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7C21EAD54C0070D93E /* ofxFFPlugin.cpp */; };
+		6516EB8A21EAD54C0070D93E /* ofxFFPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7C21EAD54C0070D93E /* ofxFFPlugin.cpp */; };
+		6516EB9821EB51440070D93E /* EffectsController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB9621EB51440070D93E /* EffectsController.cpp */; };
+		6516EB9921EB51440070D93E /* EffectsController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB9621EB51440070D93E /* EffectsController.cpp */; };
+		6516EB9D21EB542D0070D93E /* FreeFrameEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB9B21EB542D0070D93E /* FreeFrameEffect.cpp */; };
+		6516EB9E21EB542D0070D93E /* FreeFrameEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB9B21EB542D0070D93E /* FreeFrameEffect.cpp */; };
+		6516EBA321EBA90F0070D93E /* FreeFrameHostAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EBA121EBA90F0070D93E /* FreeFrameHostAdapter.cpp */; };
+		6516EBA421EBA90F0070D93E /* FreeFrameHostAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EBA121EBA90F0070D93E /* FreeFrameHostAdapter.cpp */; };
+		6516EBB421EBBE640070D93E /* FFGLHeat.bundle in Copy FreeFrame Plugins */ = {isa = PBXBuildFile; fileRef = 6516EBA821EBAFBB0070D93E /* FFGLHeat.bundle */; };
+		6516EBB521EBBE640070D93E /* FFGLMirror.bundle in Copy FreeFrame Plugins */ = {isa = PBXBuildFile; fileRef = 6516EBA921EBAFBB0070D93E /* FFGLMirror.bundle */; };
+		6516EBB621EBBE640070D93E /* FFGLTile.bundle in Copy FreeFrame Plugins */ = {isa = PBXBuildFile; fileRef = 6516EBAA21EBAFBB0070D93E /* FFGLTile.bundle */; };
+		6516EBB721EBBE640070D93E /* FFGLTime.bundle in Copy FreeFrame Plugins */ = {isa = PBXBuildFile; fileRef = 6516EBAB21EBAFBB0070D93E /* FFGLTime.bundle */; };
+		6516EBB821EBBE640070D93E /* FFGLBrightness.bundle in Copy FreeFrame Plugins */ = {isa = PBXBuildFile; fileRef = 6516EBAC21EBAFBB0070D93E /* FFGLBrightness.bundle */; };
+		6516EBBF21EBD1070070D93E /* FreeFrameHostAdapterTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EBBE21EBD1070070D93E /* FreeFrameHostAdapterTest.cpp */; };
+		6516EBC121EC118E0070D93E /* FFGLHeat.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6516EBA821EBAFBB0070D93E /* FFGLHeat.bundle */; };
+		6516EBC221EC118E0070D93E /* FFGLMirror.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6516EBA921EBAFBB0070D93E /* FFGLMirror.bundle */; };
+		6516EBC321EC118E0070D93E /* FFGLTile.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6516EBAA21EBAFBB0070D93E /* FFGLTile.bundle */; };
+		6516EBC421EC118E0070D93E /* FFGLTime.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6516EBAB21EBAFBB0070D93E /* FFGLTime.bundle */; };
+		6516EBC521EC118E0070D93E /* FFGLBrightness.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6516EBAC21EBAFBB0070D93E /* FFGLBrightness.bundle */; };
+		6516EBC621EC11F00070D93E /* Bolas001.mov in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65A59DB421AB5DE500ADEE79 /* Bolas001.mov */; };
+		6516EBC721EC12140070D93E /* AnemicCinema001.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455821B730C100880443 /* AnemicCinema001.mp4 */; };
+		6516EBC821EC12140070D93E /* AnemicCinema002.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455921B730C100880443 /* AnemicCinema002.mp4 */; };
+		6516EBC921EC12140070D93E /* AnemicCinema003.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455A21B730C100880443 /* AnemicCinema003.mp4 */; };
+		6516EBCA21EC12140070D93E /* AnemicCinema004.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455B21B730C100880443 /* AnemicCinema004.mp4 */; };
 		651AD4DA21BF17F20091D71D /* EngineControllerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 651AD4D821BF17F20091D71D /* EngineControllerTest.cpp */; };
 		65337D0F21BB0E8D004FF3DA /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D0D21BB0E8D004FF3DA /* Engine.cpp */; };
 		65337D1021BB0E8D004FF3DA /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D0D21BB0E8D004FF3DA /* Engine.cpp */; };
@@ -41,7 +77,7 @@
 		65337D2421BDCD20004FF3DA /* LayerControllerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D2221BDCA41004FF3DA /* LayerControllerTest.cpp */; };
 		656BD49421CC4EB6000463B3 /* EngineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 656BD49321CC4EB6000463B3 /* EngineTest.cpp */; };
 		656BD49821D19ED0000463B3 /* TestSet01.vjs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 656BD49621D19D58000463B3 /* TestSet01.vjs */; };
-		656BD49A21D25B29000463B3 /* SimpleSet.vjs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 656BD49921D25B13000463B3 /* SimpleSet.vjs */; };
+		656BD49A21D25B29000463B3 /* SimpleSet.vjs in Copy Files */ = {isa = PBXBuildFile; fileRef = 656BD49921D25B13000463B3 /* SimpleSet.vjs */; };
 		65759E3421B73B0E006B6814 /* ofxGuiFacade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3221B73B0E006B6814 /* ofxGuiFacade.cpp */; };
 		65759E3721B73B2B006B6814 /* GUIController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3521B73B2B006B6814 /* GUIController.cpp */; };
 		65759E3D21B891FF006B6814 /* EngineController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3B21B891FF006B6814 /* EngineController.cpp */; };
@@ -87,18 +123,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6515455C21B7311F00880443 /* CopyFiles */ = {
+		6515455C21B7311F00880443 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = data;
 			dstSubfolderSpec = 16;
 			files = (
-				656BD49A21D25B29000463B3 /* SimpleSet.vjs in CopyFiles */,
-				6515455D21B7314C00880443 /* AnemicCinema001.mp4 in CopyFiles */,
-				6515455E21B7314C00880443 /* AnemicCinema002.mp4 in CopyFiles */,
-				6515455F21B7314C00880443 /* AnemicCinema003.mp4 in CopyFiles */,
-				6515456021B7314C00880443 /* AnemicCinema004.mp4 in CopyFiles */,
-				6515456121B7314C00880443 /* Bolas001.mov in CopyFiles */,
+				656BD49A21D25B29000463B3 /* SimpleSet.vjs in Copy Files */,
+				6515455D21B7314C00880443 /* AnemicCinema001.mp4 in Copy Files */,
+				6515455E21B7314C00880443 /* AnemicCinema002.mp4 in Copy Files */,
+				6515455F21B7314C00880443 /* AnemicCinema003.mp4 in Copy Files */,
+				6515456021B7314C00880443 /* AnemicCinema004.mp4 in Copy Files */,
+				6515456121B7314C00880443 /* Bolas001.mov in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6516EBB321EBBE330070D93E /* Copy FreeFrame Plugins */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = data/effects/freeframe;
+			dstSubfolderSpec = 16;
+			files = (
+				6516EBB421EBBE640070D93E /* FFGLHeat.bundle in Copy FreeFrame Plugins */,
+				6516EBB521EBBE640070D93E /* FFGLMirror.bundle in Copy FreeFrame Plugins */,
+				6516EBB621EBBE640070D93E /* FFGLTile.bundle in Copy FreeFrame Plugins */,
+				6516EBB721EBBE640070D93E /* FFGLTime.bundle in Copy FreeFrame Plugins */,
+				6516EBB821EBBE640070D93E /* FFGLBrightness.bundle in Copy FreeFrame Plugins */,
+			);
+			name = "Copy FreeFrame Plugins";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6516EBC021EC11720070D93E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = effects/freeframe;
+			dstSubfolderSpec = 16;
+			files = (
+				6516EBC121EC118E0070D93E /* FFGLHeat.bundle in CopyFiles */,
+				6516EBC221EC118E0070D93E /* FFGLMirror.bundle in CopyFiles */,
+				6516EBC321EC118E0070D93E /* FFGLTile.bundle in CopyFiles */,
+				6516EBC421EC118E0070D93E /* FFGLTime.bundle in CopyFiles */,
+				6516EBC521EC118E0070D93E /* FFGLBrightness.bundle in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +176,11 @@
 			files = (
 				65A59DB021A767AD00ADEE79 /* red.mp4 in CopyFiles */,
 				656BD49821D19ED0000463B3 /* TestSet01.vjs in CopyFiles */,
+				6516EBC621EC11F00070D93E /* Bolas001.mov in CopyFiles */,
+				6516EBC721EC12140070D93E /* AnemicCinema001.mp4 in CopyFiles */,
+				6516EBC821EC12140070D93E /* AnemicCinema002.mp4 in CopyFiles */,
+				6516EBC921EC12140070D93E /* AnemicCinema003.mp4 in CopyFiles */,
+				6516EBCA21EC12140070D93E /* AnemicCinema004.mp4 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,8 +239,8 @@
 		6504536621AE027B00CAC33D /* RepositoryTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RepositoryTest.cpp; sourceTree = "<group>"; };
 		650C40D221C5D0090094365F /* OSXstuff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSXstuff.h; sourceTree = "<group>"; };
 		650C40D321C5D0090094365F /* OSXstuff.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = OSXstuff.m; sourceTree = "<group>"; };
-		6515454E21B49C2400880443 /* DrawableInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawableInterface.h; sourceTree = "<group>"; };
-		6515454F21B4A22100880443 /* PlayableInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayableInterface.h; sourceTree = "<group>"; };
+		6515454E21B49C2400880443 /* DrawableInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DrawableInterface.hpp; sourceTree = "<group>"; };
+		6515454F21B4A22100880443 /* PlayableInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PlayableInterface.hpp; sourceTree = "<group>"; };
 		6515455021B4A25200880443 /* BaseVisual.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BaseVisual.cpp; sourceTree = "<group>"; };
 		6515455121B4A25200880443 /* BaseVisual.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BaseVisual.hpp; sourceTree = "<group>"; };
 		6515455421B5ED4000880443 /* LayerController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LayerController.cpp; sourceTree = "<group>"; };
@@ -178,6 +249,35 @@
 		6515455921B730C100880443 /* AnemicCinema002.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema002.mp4; sourceTree = "<group>"; };
 		6515455A21B730C100880443 /* AnemicCinema003.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema003.mp4; sourceTree = "<group>"; };
 		6515455B21B730C100880443 /* AnemicCinema004.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnemicCinema004.mp4; sourceTree = "<group>"; };
+		6516EB6C21EAD54C0070D93E /* FFPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FFPlugin.cpp; sourceTree = "<group>"; };
+		6516EB6D21EAD54C0070D93E /* FFGLPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGLPlugin.h; sourceTree = "<group>"; };
+		6516EB6E21EAD54C0070D93E /* FFGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGL.h; sourceTree = "<group>"; };
+		6516EB6F21EAD54C0070D93E /* FreeFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeFrame.h; sourceTree = "<group>"; };
+		6516EB7021EAD54C0070D93E /* FFGLPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FFGLPlugin.cpp; sourceTree = "<group>"; };
+		6516EB7121EAD54C0070D93E /* FFPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFPlugin.h; sourceTree = "<group>"; };
+		6516EB7321EAD54C0070D93E /* ofxFFGLInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxFFGLInstance.h; sourceTree = "<group>"; };
+		6516EB7421EAD54C0070D93E /* ofxFFHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxFFHost.h; sourceTree = "<group>"; };
+		6516EB7521EAD54C0070D93E /* ofxFFGLInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxFFGLInstance.cpp; sourceTree = "<group>"; };
+		6516EB7621EAD54C0070D93E /* ofxFFInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxFFInstance.cpp; sourceTree = "<group>"; };
+		6516EB7721EAD54C0070D93E /* ofxFFHost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxFFHost.cpp; sourceTree = "<group>"; };
+		6516EB7821EAD54C0070D93E /* ofxFFBaseInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxFFBaseInstance.cpp; sourceTree = "<group>"; };
+		6516EB7921EAD54C0070D93E /* ofxFFPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxFFPlugin.h; sourceTree = "<group>"; };
+		6516EB7A21EAD54C0070D93E /* ofxFFInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxFFInstance.h; sourceTree = "<group>"; };
+		6516EB7B21EAD54C0070D93E /* ofxFFBaseInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxFFBaseInstance.h; sourceTree = "<group>"; };
+		6516EB7C21EAD54C0070D93E /* ofxFFPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxFFPlugin.cpp; sourceTree = "<group>"; };
+		6516EB9621EB51440070D93E /* EffectsController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EffectsController.cpp; sourceTree = "<group>"; };
+		6516EB9721EB51440070D93E /* EffectsController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EffectsController.hpp; sourceTree = "<group>"; };
+		6516EB9A21EB51C00070D93E /* EffectBase.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EffectBase.hpp; sourceTree = "<group>"; };
+		6516EB9B21EB542D0070D93E /* FreeFrameEffect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FreeFrameEffect.cpp; sourceTree = "<group>"; };
+		6516EB9C21EB542D0070D93E /* FreeFrameEffect.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FreeFrameEffect.hpp; sourceTree = "<group>"; };
+		6516EBA121EBA90F0070D93E /* FreeFrameHostAdapter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FreeFrameHostAdapter.cpp; sourceTree = "<group>"; };
+		6516EBA221EBA90F0070D93E /* FreeFrameHostAdapter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FreeFrameHostAdapter.hpp; sourceTree = "<group>"; };
+		6516EBA821EBAFBB0070D93E /* FFGLHeat.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FFGLHeat.bundle; sourceTree = "<group>"; };
+		6516EBA921EBAFBB0070D93E /* FFGLMirror.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FFGLMirror.bundle; sourceTree = "<group>"; };
+		6516EBAA21EBAFBB0070D93E /* FFGLTile.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FFGLTile.bundle; sourceTree = "<group>"; };
+		6516EBAB21EBAFBB0070D93E /* FFGLTime.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FFGLTime.bundle; sourceTree = "<group>"; };
+		6516EBAC21EBAFBB0070D93E /* FFGLBrightness.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FFGLBrightness.bundle; sourceTree = "<group>"; };
+		6516EBBE21EBD1070070D93E /* FreeFrameHostAdapterTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FreeFrameHostAdapterTest.cpp; sourceTree = "<group>"; };
 		651AD4D821BF17F20091D71D /* EngineControllerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EngineControllerTest.cpp; sourceTree = "<group>"; };
 		65337D0D21BB0E8D004FF3DA /* Engine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Engine.cpp; sourceTree = "<group>"; };
 		65337D0E21BB0E8D004FF3DA /* Engine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Engine.hpp; sourceTree = "<group>"; };
@@ -605,10 +705,126 @@
 		6515454D21B49C1000880443 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				6515454E21B49C2400880443 /* DrawableInterface.h */,
-				6515454F21B4A22100880443 /* PlayableInterface.h */,
+				6515454E21B49C2400880443 /* DrawableInterface.hpp */,
+				6515454F21B4A22100880443 /* PlayableInterface.hpp */,
 			);
 			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		6516EB6921EAD5360070D93E /* ofxFreeFrame */ = {
+			isa = PBXGroup;
+			children = (
+				6516EB6A21EAD54C0070D93E /* libs */,
+				6516EB7221EAD54C0070D93E /* src */,
+			);
+			name = ofxFreeFrame;
+			sourceTree = "<group>";
+		};
+		6516EB6A21EAD54C0070D93E /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				6516EB6B21EAD54C0070D93E /* FreeFrame */,
+			);
+			name = libs;
+			path = ../../../addons/ofxFreeFrame/libs;
+			sourceTree = "<group>";
+		};
+		6516EB6B21EAD54C0070D93E /* FreeFrame */ = {
+			isa = PBXGroup;
+			children = (
+				6516EB6C21EAD54C0070D93E /* FFPlugin.cpp */,
+				6516EB6D21EAD54C0070D93E /* FFGLPlugin.h */,
+				6516EB6E21EAD54C0070D93E /* FFGL.h */,
+				6516EB6F21EAD54C0070D93E /* FreeFrame.h */,
+				6516EB7021EAD54C0070D93E /* FFGLPlugin.cpp */,
+				6516EB7121EAD54C0070D93E /* FFPlugin.h */,
+			);
+			path = FreeFrame;
+			sourceTree = "<group>";
+		};
+		6516EB7221EAD54C0070D93E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				6516EB7B21EAD54C0070D93E /* ofxFFBaseInstance.h */,
+				6516EB7821EAD54C0070D93E /* ofxFFBaseInstance.cpp */,
+				6516EB7321EAD54C0070D93E /* ofxFFGLInstance.h */,
+				6516EB7521EAD54C0070D93E /* ofxFFGLInstance.cpp */,
+				6516EB7A21EAD54C0070D93E /* ofxFFInstance.h */,
+				6516EB7621EAD54C0070D93E /* ofxFFInstance.cpp */,
+				6516EB7421EAD54C0070D93E /* ofxFFHost.h */,
+				6516EB7721EAD54C0070D93E /* ofxFFHost.cpp */,
+				6516EB7921EAD54C0070D93E /* ofxFFPlugin.h */,
+				6516EB7C21EAD54C0070D93E /* ofxFFPlugin.cpp */,
+			);
+			name = src;
+			path = ../../../addons/ofxFreeFrame/src;
+			sourceTree = "<group>";
+		};
+		6516EB9321EB51030070D93E /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				6516EBA521EBAF4A0070D93E /* Resources */,
+				6516EBA021EBA8F90070D93E /* Adapter */,
+				6516EB9521EB511C0070D93E /* Controller */,
+				6516EB9421EB51120070D93E /* Entity */,
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
+		6516EB9421EB51120070D93E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				6516EB9A21EB51C00070D93E /* EffectBase.hpp */,
+				6516EB9B21EB542D0070D93E /* FreeFrameEffect.cpp */,
+				6516EB9C21EB542D0070D93E /* FreeFrameEffect.hpp */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		6516EB9521EB511C0070D93E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6516EB9621EB51440070D93E /* EffectsController.cpp */,
+				6516EB9721EB51440070D93E /* EffectsController.hpp */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6516EBA021EBA8F90070D93E /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				6516EBA121EBA90F0070D93E /* FreeFrameHostAdapter.cpp */,
+				6516EBA221EBA90F0070D93E /* FreeFrameHostAdapter.hpp */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		6516EBA521EBAF4A0070D93E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6516EBA721EBAFBB0070D93E /* OSX */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6516EBA721EBAFBB0070D93E /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				6516EBA821EBAFBB0070D93E /* FFGLHeat.bundle */,
+				6516EBA921EBAFBB0070D93E /* FFGLMirror.bundle */,
+				6516EBAA21EBAFBB0070D93E /* FFGLTile.bundle */,
+				6516EBAB21EBAFBB0070D93E /* FFGLTime.bundle */,
+				6516EBAC21EBAFBB0070D93E /* FFGLBrightness.bundle */,
+			);
+			path = OSX;
+			sourceTree = "<group>";
+		};
+		6516EBBD21EBD0D10070D93E /* EffectsModule */ = {
+			isa = PBXGroup;
+			children = (
+				6516EBBE21EBD1070070D93E /* FreeFrameHostAdapterTest.cpp */,
+			);
+			path = EffectsModule;
 			sourceTree = "<group>";
 		};
 		651AD4D721BF17A80091D71D /* EngineModule */ = {
@@ -738,6 +954,7 @@
 				65759E2E21B73A94006B6814 /* GUIModule */,
 				65A59D8221A0D36C00ADEE79 /* VisualsModule */,
 				65A59D7A21A0D1B300ADEE79 /* LayersModule */,
+				6516EB9321EB51030070D93E /* Effects */,
 			);
 			name = Modules;
 			path = src/Modules;
@@ -835,6 +1052,7 @@
 		65A59D9421A4C34200ADEE79 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				6516EBBD21EBD0D10070D93E /* EffectsModule */,
 				651AD4D721BF17A80091D71D /* EngineModule */,
 				6504536421AE024100CAC33D /* BaseModule */,
 				65A59DA821A6185600ADEE79 /* LayersModule */,
@@ -977,6 +1195,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				6516EB6921EAD5360070D93E /* ofxFreeFrame */,
 				480A780D8D0308AE4A368801 /* ofxGui */,
 				9683228C705CA3FF4F2EA945 /* ofxKinect */,
 				18240ECCE4076FB0833A8578 /* ofxNetwork */,
@@ -1413,6 +1632,7 @@
 				65A59D9821A4C3B200ADEE79 /* CopyFiles */,
 				65A59DAB21A61E3400ADEE79 /* ShellScript */,
 				65A59DAD21A762BF00ADEE79 /* CopyFiles */,
+				6516EBC021EC11720070D93E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1432,7 +1652,9 @@
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
 				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
 				8466F1851C04CA0E00918B1C /* ShellScript */,
-				6515455C21B7311F00880443 /* CopyFiles */,
+				6516EBB221EBBDC80070D93E /* ShellScript */,
+				6515455C21B7311F00880443 /* Copy Files */,
+				6516EBB321EBBE330070D93E /* Copy FreeFrame Plugins */,
 			);
 			buildRules = (
 			);
@@ -1480,6 +1702,23 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6516EBB221EBBDC80070D93E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "Echo \"Creating Folders\"\nmkdir -p \"$TARGET_BUILD_DIR/data/demoset\"\nmkdir -p \"$TARGET_BUILD_DIR/data/effects/freeframe\"\n\n";
+		};
 		65A59DAB21A61E3400ADEE79 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1521,7 +1760,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "xcodebuild -project \"$OF_PATH/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj\" -target openFrameworks -configuration \"${CONFIGURATION}\"";
+			shellScript = "xcodebuild -project \"$OF_PATH/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj\" -target openFrameworks -configuration \"${CONFIGURATION}\"\n";
 		};
 		E4B6FFFD0C3F9AB9008CF71C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1548,14 +1787,25 @@
 				65A59DA421A4C3C700ADEE79 /* Video.cpp in Sources */,
 				65337D1021BB0E8D004FF3DA /* Engine.cpp in Sources */,
 				651AD4DA21BF17F20091D71D /* EngineControllerTest.cpp in Sources */,
+				6516EB8221EAD54C0070D93E /* ofxFFGLInstance.cpp in Sources */,
 				65A59DA221A4C3B900ADEE79 /* tests.cpp in Sources */,
+				6516EB7E21EAD54C0070D93E /* FFPlugin.cpp in Sources */,
+				6516EB8A21EAD54C0070D93E /* ofxFFPlugin.cpp in Sources */,
+				6516EB9921EB51440070D93E /* EffectsController.cpp in Sources */,
 				6504536721AE027B00CAC33D /* RepositoryTest.cpp in Sources */,
+				6516EB8821EAD54C0070D93E /* ofxFFBaseInstance.cpp in Sources */,
 				6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */,
 				65759E3E21B891FF006B6814 /* EngineController.cpp in Sources */,
 				65A59DAA21A6198500ADEE79 /* VideoTest.cpp in Sources */,
+				6516EB8021EAD54C0070D93E /* FFGLPlugin.cpp in Sources */,
+				6516EB8421EAD54C0070D93E /* ofxFFInstance.cpp in Sources */,
+				6516EBBF21EBD1070070D93E /* FreeFrameHostAdapterTest.cpp in Sources */,
 				65337D2421BDCD20004FF3DA /* LayerControllerTest.cpp in Sources */,
 				6515455721B5ED4000880443 /* LayerController.cpp in Sources */,
 				65337D2121BD59BC004FF3DA /* LayerTest.cpp in Sources */,
+				6516EB9E21EB542D0070D93E /* FreeFrameEffect.cpp in Sources */,
+				6516EB8621EAD54C0070D93E /* ofxFFHost.cpp in Sources */,
+				6516EBA421EBA90F0070D93E /* FreeFrameHostAdapter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1571,6 +1821,7 @@
 				852E0891794923EE7583C621 /* ofxInputField.cpp in Sources */,
 				657D750621C31DF6004329EF /* OSXFacade.mm in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
+				6516EB8921EAD54C0070D93E /* ofxFFPlugin.cpp in Sources */,
 				65759E3421B73B0E006B6814 /* ofxGuiFacade.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
@@ -1582,26 +1833,34 @@
 				F4135EEFC911E9ED211FB6F9 /* core.c in Sources */,
 				E55DEEF784A10419E444669E /* flags.c in Sources */,
 				FCC16AB16073FF0581F50ED7 /* loader.c in Sources */,
+				6516EB8521EAD54C0070D93E /* ofxFFHost.cpp in Sources */,
+				6516EB7F21EAD54C0070D93E /* FFGLPlugin.cpp in Sources */,
 				65A59D8021A0D1CD00ADEE79 /* Layer.cpp in Sources */,
 				D31F5C1B140C59B2AF1533A8 /* registration.c in Sources */,
 				49BEEB2DFA5319D55AA6899F /* tilt.c in Sources */,
 				255A7B680DC81E543C875794 /* usb_libusb10.c in Sources */,
 				7ADB04AF67C568EAFAEBA546 /* ofxKinectExtras.cpp in Sources */,
+				6516EBA321EBA90F0070D93E /* FreeFrameHostAdapter.cpp in Sources */,
 				686B0DF6249B52E1A85B39EC /* ofxKinect.cpp in Sources */,
 				661A1991F5CE4CCC2919D8E7 /* ofxNetworkUtils.cpp in Sources */,
 				65337D0F21BB0E8D004FF3DA /* Engine.cpp in Sources */,
 				960D20B191346612D5C05A6A /* ofxTCPClient.cpp in Sources */,
 				125506CD3E5F428AAFE5CC65 /* ofxTCPManager.cpp in Sources */,
 				66CA411C5A9664E27326BF36 /* ofxTCPServer.cpp in Sources */,
+				6516EB8121EAD54C0070D93E /* ofxFFGLInstance.cpp in Sources */,
 				65D167E421D53141006B6163 /* ofxPanelDecorator.cpp in Sources */,
 				65A59D7621A0D16D00ADEE79 /* main.cpp in Sources */,
+				6516EB9D21EB542D0070D93E /* FreeFrameEffect.cpp in Sources */,
 				E2564CF7DDB3713772BB682E /* ofxUDPManager.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
 				650C40D421C5D0090094365F /* OSXstuff.m in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
 				510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */,
 				65A59D7521A0D16D00ADEE79 /* ofApp.cpp in Sources */,
+				6516EB9821EB51440070D93E /* EffectsController.cpp in Sources */,
+				6516EB8721EAD54C0070D93E /* ofxFFBaseInstance.cpp in Sources */,
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
+				6516EB7D21EAD54C0070D93E /* FFPlugin.cpp in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
@@ -1612,6 +1871,7 @@
 				65A59D8921A0D3CF00ADEE79 /* Video.cpp in Sources */,
 				657D750221BFFB79004329EF /* ofxPreview.cpp in Sources */,
 				65759E3721B73B2B006B6814 /* GUIController.cpp in Sources */,
+				6516EB8321EAD54C0070D93E /* ofxFFInstance.cpp in Sources */,
 				640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */,
 				8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */,
 				65759E3D21B891FF006B6814 /* EngineController.cpp in Sources */,
@@ -1631,9 +1891,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -1641,7 +1901,6 @@
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -1650,30 +1909,28 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/tests/";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				EXTRA_HEADERS_PATHS = "$(CATCHCPP_PATH)/single_include/catch2";
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -1694,9 +1951,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -1704,7 +1961,6 @@
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -1713,26 +1969,24 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/tests/";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXTRA_HEADERS_PATHS = "$(CATCHCPP_PATH)/single_include/catch2";
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -1753,9 +2007,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -1763,7 +2017,6 @@
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -1772,26 +2025,24 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/tests/";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXTRA_HEADERS_PATHS = "$(CATCHCPP_PATH)/single_include/catch2";
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -1939,6 +2190,7 @@
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = TARGET_OS_MAC;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
@@ -2000,6 +2252,7 @@
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = TARGET_OS_MAC;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_UNROLL_LOOPS = YES;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;

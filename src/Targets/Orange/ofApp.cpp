@@ -22,6 +22,7 @@ void ofApp::setup() {
     guiController->setEngineController(engineController);
 
     
+    ffHostAdapter = new Orange::Effects::FreeFrameHostAdapter();
     
     if (!engineController->openSet("SimpleSet.vjs")) {
         return;

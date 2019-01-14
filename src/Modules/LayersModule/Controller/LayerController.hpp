@@ -10,7 +10,7 @@
 
 #include <stdio.h>
 #include "Layer.hpp"
-#include "DrawableInterface.h"
+#include "DrawableInterface.hpp"
 #include "ofMain.h"
 
 namespace Orange {

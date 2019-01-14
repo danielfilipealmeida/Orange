@@ -12,7 +12,7 @@
 #include "Repository.hpp"
 #include "Layer.hpp"
 #include "LayerController.hpp"
-#include "DrawableInterface.h"
+#include "DrawableInterface.hpp"
 #include <string>
 #include "Video.hpp"
 #include "Engine.hpp"

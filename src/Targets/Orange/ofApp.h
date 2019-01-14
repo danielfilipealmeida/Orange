@@ -9,6 +9,7 @@
 #include "ofxGuiFacade.hpp"
 #include "EngineController.hpp"
 #include "OSFacadeInterface.hpp"
+#include "FreeFrameHostAdapter.hpp"
 
 class ofApp : public ofBaseApp{
     /* Keys constants */
@@ -44,6 +45,8 @@ class ofApp : public ofBaseApp{
     Orange::GUI::ofxGuiFacade *guiFacade;
     Orange::GUI::OSFacadeInterface *os;
     Orange::GUI::GUIController *guiController;
+    
+    Orange::Effects::FreeFrameHostAdapter *ffHostAdapter;
     
     shared_ptr<ofAppBaseWindow> mainWindow, projectorWindow;
     
