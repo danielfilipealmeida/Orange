@@ -41,6 +41,7 @@ FreeFrameEffect FreeFrameHostAdapter::getFreeFameEffectByName(string name)
 }
 
 ofxFFPlugin *FreeFrameHostAdapter::getFreeFramePluginByName(string name) {
+    /*
     for(auto plugin : host.loadedPlugins) {
         if (plugin->getName().compare(name) != 0) {
             continue;
@@ -50,4 +51,12 @@ ofxFFPlugin *FreeFrameHostAdapter::getFreeFramePluginByName(string name) {
     }
     
     return NULL;
+     */
+    return host.getPlugin(name);
 }
+
+/*
+void FreeFrameHostAdapter::loadAllPlugins() {
+    host->loadAllPlugins();
+}
+ */

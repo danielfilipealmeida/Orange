@@ -34,7 +34,7 @@ namespace Orange {
             /*!
              Loads all Plugins and get them into the app
              */
-            void loadAllPlugins();
+            //void loadAllPlugins();
         };
     }
 }

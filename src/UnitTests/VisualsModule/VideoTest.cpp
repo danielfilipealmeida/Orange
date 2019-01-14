@@ -58,7 +58,7 @@ TEST_CASE("Can get Video json", "toJson") {
     ofJson json = video.toJson();
     
     std::string filePath = json["filePath"];
-    REQUIRE(filePath.rfind("orange/bin/data/red.mp4") != std::string::npos);
+    REQUIRE(filePath.rfind("tests/data/red.mp4") != std::string::npos);
 }
 
 TEST_CASE("Can set Video attributes from json", "")
