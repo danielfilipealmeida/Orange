@@ -10,7 +10,23 @@
 
 using namespace Orange::Effects;
 
-void EffectsController::setFreeFrameHostAdapter(FreeFrameHostAdapter *_adapter)
+EffectsController::EffectsController(shared_ptr<FreeFrameHostAdapter> _adapter)
 {
-    freeFrameHostAdapter = _adapter;
+    adapter = _adapter;
+}
+
+void EffectsController::newFreeFameEffect(string name)
+{
+    effects.add(adapter->newFreeFrameEffectByName(name, width, height));
+}
+
+void EffectsController::process(ofFbo &fbo)
+{
+    ofTexture &tex = fbo.getTexture();
+    
+    fbo.begin();
+    effects.forEach([&tex](shared_ptr<EffectBase> effect) {
+        effect->process(tex);
+    });
+    fbo.end();
 }

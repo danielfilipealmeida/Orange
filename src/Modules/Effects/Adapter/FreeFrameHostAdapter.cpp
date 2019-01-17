@@ -14,22 +14,12 @@ FreeFrameHostAdapter::FreeFrameHostAdapter() {
     host.addPluginFolder("effects/freeframe");
     host.listPluginFiles();
     host.loadAllPlugins();
+    ofDisableArbTex();
 }
 
 ofxFFHost* FreeFrameHostAdapter::getHost() {
     return &host;
 }
-
-/*
-FreeFramePlugin *FreeFrameHostAdapter::createFreeFramePluginByName(string name) {
-    FreeFramePlugin *ffPlugin;
-    
-    ffPlugin = new FreeFramePlugin(&host, name);
-    
-    return ffPlugin;
-}
- */
-
 
 FreeFrameEffect FreeFrameHostAdapter::getFreeFameEffectByName(string name)
 {
@@ -41,18 +31,26 @@ FreeFrameEffect FreeFrameHostAdapter::getFreeFameEffectByName(string name)
 }
 
 ofxFFPlugin *FreeFrameHostAdapter::getFreeFramePluginByName(string name) {
-    /*
-    for(auto plugin : host.loadedPlugins) {
-        if (plugin->getName().compare(name) != 0) {
-            continue;
-        }
-        
-        return plugin;
+    return host.getPlugin(name);
+}
+
+shared_ptr<FreeFrameEffect>FreeFrameHostAdapter::newFreeFrameEffectByName(string name,
+                                                                float width,
+                                                                float height)
+{
+    shared_ptr<FreeFrameEffect> ffFx = make_shared<FreeFrameEffect>();
+    
+    ofxFFPlugin *plugin = getFreeFramePluginByName(name);
+    plugin->init();
+    
+    if (plugin->getCaps(FF_CAP_PROCESSOPENGL)) {
+        ofxFFGLInstance *instance = plugin->createGLInstance(width, height);
+        instance->setParameter(0, 1);
+        ffFx->setInstance(instance);
     }
     
-    return NULL;
-     */
-    return host.getPlugin(name);
+    cout << "parameter count: " << plugin->getParameterCount() << endl;
+    return ffFx;
 }
 
 /*

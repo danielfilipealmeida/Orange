@@ -12,7 +12,7 @@
 
 #include "ofxFFHost.h"
 #include "FreeFrameEffect.hpp"
-
+#include "FreeFrameEffect.hpp"
 
 namespace Orange {
     namespace Effects {
@@ -24,6 +24,10 @@ namespace Orange {
             
             /*! THIS SHOULD NOT BE NEEDED!!! WORK TO HAVE THIS ELIMINATED*/
             ofxFFHost* getHost();
+            
+            shared_ptr<FreeFrameEffect>newFreeFrameEffectByName(string name,
+                                                      float width,
+                                                      float height);
             
         private:
             

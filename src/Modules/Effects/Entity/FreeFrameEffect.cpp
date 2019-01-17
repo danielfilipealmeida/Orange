@@ -20,3 +20,8 @@ void FreeFrameEffect::draw(float x, float y, float w, float h) {
 void FreeFrameEffect::render() {
     
 }
+
+void FreeFrameEffect::process(ofTexture &tex)
+{
+    instance->processFrame(tex);
+}

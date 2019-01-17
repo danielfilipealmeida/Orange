@@ -13,7 +13,11 @@ void ofApp::setup() {
     
     ofEnableSetupScreen();
   
-    engineController = make_shared<Orange::Engine::EngineController>();
+    
+    ffHostAdapter = make_shared<Orange::Effects::FreeFrameHostAdapter>();
+    effectsController = make_shared<Orange::Effects::EffectsController>(ffHostAdapter);
+    
+    engineController = make_shared<Orange::Engine::EngineController>(effectsController);
     
     guiFacade = new Orange::GUI::ofxGuiFacade();
     os = new Orange::GUI::OSXFacade();
@@ -22,7 +26,6 @@ void ofApp::setup() {
     guiController->setEngineController(engineController);
 
     
-    ffHostAdapter = new Orange::Effects::FreeFrameHostAdapter();
     
     if (!engineController->openSet("SimpleSet.vjs")) {
         return;
@@ -59,6 +62,7 @@ void ofApp::setAppTitle()
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    
     engineController->render();
     guiController->update();
 }

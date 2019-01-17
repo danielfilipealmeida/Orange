@@ -9,11 +9,13 @@
 #define EffectBase_h
 
 #include "DrawableInterface.hpp"
+#include "ofMain.h"
 
 namespace Orange {
     namespace Effects {
         class EffectBase : public  Base::DrawableInterface {
-            
+        public:
+            virtual void process(ofTexture &tex) = 0;
         };
     }
 }

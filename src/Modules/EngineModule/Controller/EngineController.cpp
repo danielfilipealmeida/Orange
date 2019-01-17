@@ -10,8 +10,13 @@
 using namespace Orange::Engine;
 
 
-EngineController::EngineController()
+EngineController::EngineController(shared_ptr<Orange::Effects::EffectsController> _effectsController)
 {
+    effectsController = _effectsController;
+    effectsController->width = engine.width;
+    effectsController->height = engine.height;
+    
+    effectsController->newFreeFameEffect("FFGLHeat");
     setFbo();
 }
 
@@ -20,8 +25,8 @@ void EngineController::setFbo()
     fbo.allocate(engine.width, engine.height, GL_RGB);
 }
 
-void EngineController::render(){
-    
+void EngineController::render()
+{
     layers.forEach([&](shared_ptr<Orange::Layers::Layer> layer) {
         layerController.setLayer(layer);
         layerController.render();
@@ -34,6 +39,8 @@ void EngineController::render(){
         layerController.draw(0, 0, engine.width, engine.height);
     });
     fbo.end();
+    
+    effectsController->process(fbo);
 }
 
 void EngineController::draw(float x, float y, float w, float h) {

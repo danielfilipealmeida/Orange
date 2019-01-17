@@ -29,6 +29,12 @@ namespace Orange {
              renders current frame of the drawable
              */
             void render();
+            
+            /*!
+             Process
+             \param ofFbo& fbo
+             */
+            void process(ofTexture &tex);
         };
     }
 }

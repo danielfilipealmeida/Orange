@@ -25,62 +25,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "src/Modules/Effects/Adapter/FreeFrameHostAdapter.cpp"
-            timestampString = "569119256.697053"
+            filePath = "../../../addons/ofxFreeFrame/src/ofxFFHost.cpp"
+            timestampString = "569456525.578813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "FreeFrameHostAdapter::FreeFrameHostAdapter()"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "ofxFFHost::loadPlugin(ofFile file)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Modules/Effects/Entity/FreeFrameEffect.hpp"
-            timestampString = "569119256.6980129"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "unknown"
-            landmarkType = "0">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Orange::Effects::FreeFrameEffect::FreeFrameEffect()"
-                  moduleName = "UnitTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/apps/myApps/orange/src/Modules/Effects/Entity/FreeFrameEffect.hpp"
-                  timestampString = "569119256.9085979"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Orange::Effects::FreeFrameEffect::FreeFrameEffect()"
-                  moduleName = "UnitTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/daniel/Work/XCode/of_v0.10.1_osx_release/apps/myApps/orange/src/Modules/Effects/Entity/FreeFrameEffect.hpp"
-                  timestampString = "569119256.911867"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
