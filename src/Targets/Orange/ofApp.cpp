@@ -24,8 +24,6 @@ void ofApp::setup() {
     os->setEngineController(engineController);
     guiController = new Orange::GUI::GUIController(guiFacade, os);
     guiController->setEngineController(engineController);
-
-    
     
     if (!engineController->openSet("SimpleSet.vjs")) {
         return;
@@ -70,7 +68,6 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofClear(0, 0, 0);
-    //engineController->draw(0, 0, ofGetWidth(), ofGetHeight());
     guiController->draw();
 }
 

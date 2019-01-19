@@ -18,7 +18,6 @@ namespace Orange {
     namespace Effects {
         class EffectsController {
             shared_ptr<FreeFrameHostAdapter> adapter;
-            
             Orange::Base::Repository<shared_ptr<Orange::Effects::EffectBase>> effects;
           
         public:
@@ -36,11 +35,19 @@ namespace Orange {
              */
             void newFreeFameEffect(string name);
             
+            /*!
+             Proccess all the fbo using all the effects
+             \param ofFbo &fbo
+             */
             void process(ofFbo &fbo);
+            
+            /*!
+             Apply a lambda to all effects
+             \param std::function<void (Orange::Effects::EffectBase)> lambda
+             */
+            void forEachEffect(std::function<void (shared_ptr<Orange::Effects::EffectBase>)> lambda);
         };
     }
 }
-
-
 
 #endif /* EffectsController_hpp */

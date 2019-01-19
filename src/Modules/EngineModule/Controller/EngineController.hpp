@@ -30,11 +30,11 @@ namespace Orange {
             
             Engine engine;
             
-            shared_ptr<Orange::Effects::EffectsController> effectsController;
+           
             
         public:
             ofFbo fbo;
-            
+            shared_ptr<Orange::Effects::EffectsController> effectsController;
             
             /*!
              Constructor

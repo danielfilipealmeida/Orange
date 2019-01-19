@@ -30,3 +30,8 @@ void EffectsController::process(ofFbo &fbo)
     });
     fbo.end();
 }
+
+void EffectsController::forEachEffect(std::function<void (shared_ptr<Orange::Effects::EffectBase>)> lambda)
+{
+    effects.forEach(lambda);
+}

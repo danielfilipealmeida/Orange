@@ -40,6 +40,14 @@ void ofxGuiFacade::setName(ofParameter<string> name)
     currentPanel->setName(name);
 }
 
+void ofxGuiFacade::createSlider(ofParameter<float> parameter)
+{
+    ofxFloatSlider* slider;
+    slider = new ofxFloatSlider();
+    slider->setup(parameter);
+    currentPanel->add(slider);
+}
+
 void ofxGuiFacade::createSlider(ofParameter<float> parameter,
                                 std::string title,
                                 float minValue,

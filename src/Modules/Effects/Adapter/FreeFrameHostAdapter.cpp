@@ -46,7 +46,7 @@ shared_ptr<FreeFrameEffect>FreeFrameHostAdapter::newFreeFrameEffectByName(string
     if (plugin->getCaps(FF_CAP_PROCESSOPENGL)) {
         ofxFFGLInstance *instance = plugin->createGLInstance(width, height);
         instance->setParameter(0, 1);
-        ffFx->setInstance(instance);
+        ffFx->setPluginAndInstance(plugin, instance);
     }
     
     cout << "parameter count: " << plugin->getParameterCount() << endl;

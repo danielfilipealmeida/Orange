@@ -16,25 +16,64 @@
 
 namespace Orange {
     namespace Effects {
+        
+        /*!
+         Class that implement the listener of each parameter
+         */
+        class FreeFrameEffectListener  {
+            unsigned int parameterNumber;
+            ofxFFGLInstance *instance;
+        public:
+            FreeFrameEffectListener(ofxFFGLInstance *_instance, unsigned int _parameterNumber) {
+                instance = _instance;
+                parameterNumber = _parameterNumber;
+            };
+            void update(float &value) {
+                instance->setParameter(parameterNumber, value);
+            };
+        };
+        
+        
         class FreeFrameEffect : public  EffectBase {
             ofxFFGLInstance *instance;
+            ofxFFPlugin *plugin;
+            
+            vector<FreeFrameEffectListener *>listeners;
+            
+            /*!
+             Cleans all the currently set listeners
+             */
+            void clearListeners();
+            
+            /*!
+             Update all parameters and their listeners
+             */
+            void updateParameters();
             
         public:
             
-            void setInstance(ofxFFGLInstance *_instance);
+            ofParameter<string> name;
+            vector<ofParameter<float>> parameters;
             
-            void draw(float x, float y, float w, float h);
             
             /*!
-             renders current frame of the drawable
+             Configures this FreeFrameEffect
+             \param ofxFFPlugin *_plugin
+             \param ofxFFGLInstance *_instance
              */
-            void render();
+            void setPluginAndInstance(ofxFFPlugin *_plugin, ofxFFGLInstance *_instance);
             
             /*!
              Process
              \param ofFbo& fbo
              */
             void process(ofTexture &tex);
+            
+            /*!
+             Apply a lambda to each parameter
+             \param
+             */
+            void forEachParameter(std::function<void (ofParameter<float>)> lambda);
         };
     }
 }

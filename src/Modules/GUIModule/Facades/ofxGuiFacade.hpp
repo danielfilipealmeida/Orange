@@ -46,6 +46,12 @@ namespace Orange {
             /*!
              Creates a float Slider in the GUI
              \param string title
+             */
+            void createSlider(ofParameter<float> parameter);
+            
+            /*!
+             Creates a float Slider in the GUI
+             \param string title
              \param float value
              \param float minValue
              \param float maxValue

@@ -37,16 +37,21 @@ void GUIController::setupLayerPanel() {
     facade->clear();
     
     facade->setName(std::string("Layers"));
-    /*
-    facade->createPreview(&(layer->fbo));
-    facade->createSlider(layer->alpha, "Layer Alpha", 0, 1);
-    facade->createSlider(layer->blendMode, "Blend Mode", 0, 4);
-     */
-    
     engineController->forEachLayer([&](shared_ptr<Orange::Layers::Layer> layer) {
         facade->createLabel(std::string(layer->name));
         facade->createSlider(layer->alpha, std::string(layer->name) + " Alpha", 0, 1);
         facade->createSlider(layer->blendMode, std::string(layer->name) + "Blend Mode", 0, 4);
+    });
+    
+    // adding effects here... needs to move this somewhere else
+    engineController->effectsController->forEachEffect([&](shared_ptr<Orange::Effects::EffectBase> effect) {
+        shared_ptr<Orange::Effects::FreeFrameEffect> ffEffect = dynamic_pointer_cast<Orange::Effects::FreeFrameEffect>(effect);
+        if (ffEffect) {
+            facade->createLabel(std::string(ffEffect->name));
+            ffEffect->forEachParameter([&](ofParameter<float> parameter) {
+                facade->createSlider(parameter);
+            });
+        }
     });
 }
 

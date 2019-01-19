@@ -13,7 +13,7 @@
 
 namespace Orange {
     namespace Effects {
-        class EffectBase : public  Base::DrawableInterface {
+        class EffectBase {
         public:
             virtual void process(ofTexture &tex) = 0;
         };

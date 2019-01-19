@@ -37,6 +37,12 @@ namespace Orange {
             virtual void setupPanel() = 0;
             
             /*!
+             Creates a float Slider in the GUI
+             \param string title
+             */
+            virtual void createSlider(ofParameter<float> parameter) = 0;
+            
+            /*!
              Creates a Float Slider in the GUI
              \param ofParameter<float> parameter
              \param string title
