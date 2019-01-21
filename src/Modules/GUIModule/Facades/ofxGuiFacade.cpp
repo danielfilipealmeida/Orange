@@ -98,6 +98,15 @@ void ofxGuiFacade::createLabel(string text)
     currentPanel->add(label);
 }
 
+void ofxGuiFacade::createImageMatrix(ofParameter<vector<ofTexture *>> value)
+{
+    ofxMatrix<ofTexture *> *matrix;
+    
+    matrix = new ofxMatrix<ofTexture *>();
+    matrix->setup(value, PANEL_WIDTH, PANEL_WIDTH * 3.0 / 4.0);
+    currentPanel->add(matrix);
+}
+
 ofxPreview* ofxGuiFacade::createPreview(ofFbo *fbo, string name)
 {
     ofxPreview* preview;

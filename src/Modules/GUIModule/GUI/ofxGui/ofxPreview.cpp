@@ -62,6 +62,10 @@ bool  ofxPreview::mouseScrolled(ofMouseEventArgs & args)
 }
 
 void ofxPreview::drawTitle() {
+    if (title.empty()) {
+        return;
+    }
+    
     ofSetColor(0,0,0, 128);
     ofFill();
     ofDrawRectangle(b.x, b.y, b.width, 16);
@@ -80,9 +84,6 @@ void ofxPreview::render()
     
     fbo->draw(b.getX(), b.getY(), b.getWidth(), b.getHeight());
     
-    if (title.empty()) {
-        return;
-    }
     drawTitle();
 }
 

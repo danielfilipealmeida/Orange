@@ -79,6 +79,8 @@ namespace Orange {
              */
             virtual ofxPreview* createPreview(ofFbo *fbo, string name = "") = 0;
             
+            virtual void createImageMatrix(ofParameter<vector<ofTexture *>> value) = 0;
+            
             /*!
              Draws the ofxGui
              */
@@ -96,6 +98,7 @@ namespace Orange {
             virtual void setCurrentPanel(PanelNames panelName) = 0;
             
             
+
         };
     }
 }

@@ -53,6 +53,7 @@ void LayerController::draw(float x, float y, float w, float h) {
     ofEnableBlendMode((ofBlendMode) layer->blendMode.get());
     ofSetColor(255,255,255, layer->alpha * 255);
     layer->fbo.draw(x, y, w, h);
+    ofDisableBlendMode();
 }
 
 

@@ -27,6 +27,7 @@ void EngineController::setFbo()
 
 void EngineController::render()
 {
+    ofFill();
     layers.forEach([&](shared_ptr<Orange::Layers::Layer> layer) {
         layerController.setLayer(layer);
         layerController.render();

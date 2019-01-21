@@ -41,6 +41,8 @@ void GUIController::setupLayerPanel() {
         facade->createLabel(std::string(layer->name));
         facade->createSlider(layer->alpha, std::string(layer->name) + " Alpha", 0, 1);
         facade->createSlider(layer->blendMode, std::string(layer->name) + "Blend Mode", 0, 4);
+        
+        setupVisualsMatrixForLayer(layer);
     });
     
     // adding effects here... needs to move this somewhere else
@@ -53,6 +55,9 @@ void GUIController::setupLayerPanel() {
             });
         }
     });
+    
+    
+    
 }
 
 void GUIController::setupVisualPanel() {
@@ -143,4 +148,17 @@ void GUIController::currentFrameChanged(int & currentFrame)
     }
     
     currentVideo->setFrame(currentFrame);
+}
+
+
+void GUIController::setupVisualsMatrixForLayer(shared_ptr<Orange::Layers::Layer> layer)
+{
+    if (layer == NULL) {
+        return;
+    }
+    vector<ofTexture *> thumbnails = layer->getVisualsThumbs();
+    ofParameter<vector<ofTexture *>> parameter = thumbnails;
+    
+    facade->createImageMatrix(parameter);
+    
 }

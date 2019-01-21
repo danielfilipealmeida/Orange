@@ -13,6 +13,7 @@
 #include "ofxGui.h"
 #include "GUIFacadeInterface.hpp"
 #include "ofxPreview.hpp"
+#include "ofxMatrix.hpp"
 
 #define PANEL_WIDTH 200
 #define PANEL_HEIGHT 16
@@ -97,6 +98,10 @@ namespace Orange {
              */
             ofxPreview* createPreview(ofFbo *fbo, string name = "");
             
+            /*!
+             */
+            void createImageMatrix(ofParameter<vector<ofTexture *>> value);
+
             /*!
              Draws the ofxGui
              */

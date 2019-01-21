@@ -92,3 +92,16 @@ void Layer::setFromJson(ofJson json)
         add(video);
     }
 }
+
+
+vector<ofTexture*> Layer::getVisualsThumbs()
+{
+    vector<ofTexture*> visualsThumbs;
+    
+    visuals.forEach([&visualsThumbs](shared_ptr<Visuals::BaseVisual>  visual) {
+        visualsThumbs.push_back(&visual->getTexture());
+    });
+    
+    return visualsThumbs;
+}
+

@@ -51,6 +51,12 @@ namespace Orange {
             void setupVisualPanel();
             
             /*!
+             
+             */
+            void setupVisualsMatrixForLayer(shared_ptr<Orange::Layers::Layer> layer);
+            
+            
+            /*!
              Updates the GUI
              */
             void update();

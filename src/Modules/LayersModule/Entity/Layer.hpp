@@ -119,7 +119,12 @@ namespace Orange {
              */
             ofJson toJson();
             
+            /*!
+             
+             */
             void setFromJson(ofJson json);
+            
+            vector<ofTexture *> getVisualsThumbs();
         };
         
     }
