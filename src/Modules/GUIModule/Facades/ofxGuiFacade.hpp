@@ -14,6 +14,7 @@
 #include "GUIFacadeInterface.hpp"
 #include "ofxPreview.hpp"
 #include "ofxMatrix.hpp"
+#include "ofxNavigator.hpp"
 
 #define PANEL_WIDTH 200
 #define PANEL_HEIGHT 16
@@ -99,9 +100,16 @@ namespace Orange {
             ofxPreview* createPreview(ofFbo *fbo, string name = "");
             
             /*!
+             Creates a matrix of textures
+             \param ofParameter<vector<ofTexture *>>
+             \return ofxMatrix<ofTexture *>*
              */
-            void createImageMatrix(ofParameter<vector<ofTexture *>> value);
+            ofxMatrix<ofTexture *>* createImageMatrix(ofParameter<vector<ofTexture *>> value);
 
+            /*!
+             */
+            void createNavigator(ofParameter<ofxPaginatedInterface *> element);
+            
             /*!
              Draws the ofxGui
              */

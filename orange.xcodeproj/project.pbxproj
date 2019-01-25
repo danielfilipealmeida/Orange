@@ -69,6 +69,7 @@
 		6516EBC821EC12140070D93E /* AnemicCinema002.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455921B730C100880443 /* AnemicCinema002.mp4 */; };
 		6516EBC921EC12140070D93E /* AnemicCinema003.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455A21B730C100880443 /* AnemicCinema003.mp4 */; };
 		6516EBCA21EC12140070D93E /* AnemicCinema004.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6515455B21B730C100880443 /* AnemicCinema004.mp4 */; };
+		65182DCA21F89C5800BD281C /* ofxNavigator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65182DC821F89C5800BD281C /* ofxNavigator.cpp */; };
 		651AD4DA21BF17F20091D71D /* EngineControllerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 651AD4D821BF17F20091D71D /* EngineControllerTest.cpp */; };
 		65337D0F21BB0E8D004FF3DA /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D0D21BB0E8D004FF3DA /* Engine.cpp */; };
 		65337D1021BB0E8D004FF3DA /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65337D0D21BB0E8D004FF3DA /* Engine.cpp */; };
@@ -280,6 +281,9 @@
 		6516EBAB21EBAFBB0070D93E /* FFGLTime.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FFGLTime.bundle; sourceTree = "<group>"; };
 		6516EBAC21EBAFBB0070D93E /* FFGLBrightness.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FFGLBrightness.bundle; sourceTree = "<group>"; };
 		6516EBBE21EBD1070070D93E /* FreeFrameHostAdapterTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FreeFrameHostAdapterTest.cpp; sourceTree = "<group>"; };
+		65182DC821F89C5800BD281C /* ofxNavigator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxNavigator.cpp; sourceTree = "<group>"; };
+		65182DC921F89C5800BD281C /* ofxNavigator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxNavigator.hpp; sourceTree = "<group>"; };
+		65182DCB21F9140200BD281C /* ofxPaginatedInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxPaginatedInterface.h; sourceTree = "<group>"; };
 		651AD4D821BF17F20091D71D /* EngineControllerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EngineControllerTest.cpp; sourceTree = "<group>"; };
 		65337D0D21BB0E8D004FF3DA /* Engine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Engine.cpp; sourceTree = "<group>"; };
 		65337D0E21BB0E8D004FF3DA /* Engine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Engine.hpp; sourceTree = "<group>"; };
@@ -926,8 +930,11 @@
 				657D750121BFFB79004329EF /* ofxPreview.hpp */,
 				65D167E221D53141006B6163 /* ofxPanelDecorator.cpp */,
 				65D167E321D53141006B6163 /* ofxPanelDecorator.hpp */,
+				65182DCB21F9140200BD281C /* ofxPaginatedInterface.h */,
 				65A9F44A21F3775500AFB193 /* ofxMatrix.hpp */,
 				65A9F44621F375A200AFB193 /* ofxMatrix.cpp */,
+				65182DC821F89C5800BD281C /* ofxNavigator.cpp */,
+				65182DC921F89C5800BD281C /* ofxNavigator.hpp */,
 			);
 			path = ofxGui;
 			sourceTree = "<group>";
@@ -1853,6 +1860,7 @@
 				65337D0F21BB0E8D004FF3DA /* Engine.cpp in Sources */,
 				960D20B191346612D5C05A6A /* ofxTCPClient.cpp in Sources */,
 				125506CD3E5F428AAFE5CC65 /* ofxTCPManager.cpp in Sources */,
+				65182DCA21F89C5800BD281C /* ofxNavigator.cpp in Sources */,
 				66CA411C5A9664E27326BF36 /* ofxTCPServer.cpp in Sources */,
 				6516EB8121EAD54C0070D93E /* ofxFFGLInstance.cpp in Sources */,
 				65D167E421D53141006B6163 /* ofxPanelDecorator.cpp in Sources */,

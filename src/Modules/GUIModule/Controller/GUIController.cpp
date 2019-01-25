@@ -159,6 +159,7 @@ void GUIController::setupVisualsMatrixForLayer(shared_ptr<Orange::Layers::Layer>
     vector<ofTexture *> thumbnails = layer->getVisualsThumbs();
     ofParameter<vector<ofTexture *>> parameter = thumbnails;
     
-    facade->createImageMatrix(parameter);
+    ofxMatrix<ofTexture *> *matrix = facade->createImageMatrix(parameter);
+    facade->createNavigator(matrix);
     
 }

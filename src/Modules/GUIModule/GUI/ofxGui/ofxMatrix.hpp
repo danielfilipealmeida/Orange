@@ -13,9 +13,10 @@
 #include "ofxBaseGui.h"
 #include "ofParameter.h"
 #include "ofxInputField.h"
+#include "ofxPaginatedInterface.h"
 
 template <class T>
-class ofxMatrix : public ofxBaseGui{
+class ofxMatrix : public ofxBaseGui, public ofxPaginatedInterface {
     friend class ofPanel;
     ofParameter<vector<T>> value;
     
@@ -38,10 +39,29 @@ public:
     }
     
     void render() {
+        auto shrink = [](ofRectangle &rectangle){
+            rectangle.x++;
+            rectangle.y++;
+            rectangle.width -= 2;
+            rectangle.height -= 2;
+        };
+        
+        auto drawSelection = [shrink](ofRectangle rectangle) {
+            ofSetLineWidth(2);
+            ofSetColor(255,255,255);
+            ofNoFill();
+            shrink(rectangle);
+            ofDrawRectangle(rectangle);
+            ofSetColor(0,0,0, 96);
+            shrink(rectangle);
+            ofDrawRectangle(rectangle);
+            ofSetColor(255,255,255);
+            ofFill();
+        };
         
         ofSetColor(255, 255, 255);
         
-        auto iterator = value.get().begin();
+        auto iterator = value.get().begin() + page * (rows * columns);
         float x = b.getX();
         float y = b.getY();
         float w = b.getWidth() / columns;
@@ -54,19 +74,8 @@ public:
                     obj->draw(rectangle);
                     
                     if (selectedCell == (row * columns + column) + (page * rows * columns)) {
-                        ofSetLineWidth(2);
-                        ofSetColor(255,255,255);
-                        ofNoFill();
-                        ofDrawRectangle(rectangle);
-                        ofSetColor(0,0,0);
-
-                        ofDrawRectangle(ofRectangle(rectangle.x + 1, rectangle.y + 1, rectangle.width - 2, rectangle.height - 2));
-                        
-                        ofSetColor(255,255,255);
-                        ofFill();
+                        drawSelection(rectangle);
                     }
-                    
-                    
                     iterator++;
                 }
             }
@@ -94,6 +103,33 @@ public:
     bool mouseScrolled(ofMouseEventArgs & args) {};
     bool setValue(float mx, float my, bool bCheckBounds) {};
     void generateDraw() {};
+    
+    void setNumberOfPages(unsigned int _numberOfPages)
+    {
+        // do nothing
+    }
+    
+    unsigned int getNumberOfPages()
+    {
+        unsigned int nItems = value.get().size();
+        unsigned int result = (unsigned int) ceil ((float) nItems / (float)(columns  * rows));
+        
+        return result;
+    }
+    
+    void setPage(unsigned int _page)
+    {
+        if (page > getNumberOfPages()) {
+            return;
+        }
+        
+        page = _page;
+    }
+    
+    unsigned int getPage()
+    {
+        return page;
+    }
 
 };
 

@@ -11,6 +11,7 @@
 #include <string>
 #include "ofMain.h"
 #include "ofxPreview.hpp"
+#include "ofxMatrix.hpp"
 
 namespace Orange {
     namespace GUI {
@@ -78,9 +79,18 @@ namespace Orange {
              \return ofxPreview*
              */
             virtual ofxPreview* createPreview(ofFbo *fbo, string name = "") = 0;
+        
+            /*!
+             Creates a matrix of textures
+             \param ofParameter<vector<ofTexture *>>
+             \return ofxMatrix<ofTexture *>*
+             */
+            virtual ofxMatrix<ofTexture *>* createImageMatrix(ofParameter<vector<ofTexture *>> value) = 0;
             
-            virtual void createImageMatrix(ofParameter<vector<ofTexture *>> value) = 0;
-            
+            /*!
+             
+             */
+            virtual void createNavigator(ofParameter<ofxPaginatedInterface *> element) = 0;
             /*!
              Draws the ofxGui
              */

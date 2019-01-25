@@ -98,13 +98,17 @@ void ofxGuiFacade::createLabel(string text)
     currentPanel->add(label);
 }
 
-void ofxGuiFacade::createImageMatrix(ofParameter<vector<ofTexture *>> value)
+
+
+ofxMatrix<ofTexture *>* ofxGuiFacade::createImageMatrix(ofParameter<vector<ofTexture *>> value)
 {
     ofxMatrix<ofTexture *> *matrix;
     
     matrix = new ofxMatrix<ofTexture *>();
     matrix->setup(value, PANEL_WIDTH, PANEL_WIDTH * 3.0 / 4.0);
     currentPanel->add(matrix);
+    
+    return matrix;
 }
 
 ofxPreview* ofxGuiFacade::createPreview(ofFbo *fbo, string name)
@@ -119,6 +123,15 @@ ofxPreview* ofxGuiFacade::createPreview(ofFbo *fbo, string name)
     return preview;
 }
 
+void ofxGuiFacade::createNavigator(ofParameter<ofxPaginatedInterface *> element)
+{
+    ofxNavigator* navigator;
+    
+    navigator = new ofxNavigator();
+    navigator->setup(element);
+    currentPanel->add(navigator);
+    
+}
 void ofxGuiFacade::draw()
 {
     previewsPanel.draw();
