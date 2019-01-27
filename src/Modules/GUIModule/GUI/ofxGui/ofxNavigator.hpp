@@ -24,6 +24,12 @@ class ofxNavigator : public ofxBaseGui{
     ofVboMesh textMesh;
     Boolean hoverPrevious, hoverNext;
     Boolean clickPrevious, clickNext;
+    
+    void clear();
+    void printText();
+    void drawTriangles();
+    
+    
 public:
     ofxNavigator();
     ~ofxNavigator();
@@ -36,6 +42,7 @@ public:
     bool mouseDragged(ofMouseEventArgs & args);
     bool mouseReleased(ofMouseEventArgs & args);
     bool mouseScrolled(ofMouseEventArgs & args);
+    
     void render();
     bool setValue(float mx, float my, bool bCheckBounds) ;
     void generateDraw();

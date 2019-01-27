@@ -8,7 +8,7 @@
 #include "ofxNavigator.hpp"
 
 
-auto addToRect = [](ofRectangle rectangle, ofPoint point) ->  ofRectangle{
+auto addToRect = [](ofRectangle rectangle, ofPoint point) -> ofRectangle {
     ofRectangle result = rectangle;
     
     rectangle.x += point.x;
@@ -20,13 +20,10 @@ auto addToRect = [](ofRectangle rectangle, ofPoint point) ->  ofRectangle{
 ofxNavigator::ofxNavigator()
 {
     hoverPrevious = hoverNext = clickPrevious = clickNext = FALSE;
-    
 }
 
 ofxNavigator::~ofxNavigator()
-{
-    
-}
+{}
 
 void ofxNavigator::setup(ofParameter<ofxPaginatedInterface *> _element, float width, float height)
 {
@@ -36,11 +33,9 @@ void ofxNavigator::setup(ofParameter<ofxPaginatedInterface *> _element, float wi
     b.width = width;
     b.height = height;
     setNeedsRedraw();
-    
-    
+
     previousRect.set(width - (2*height), 0, height, height);
     nextRect.set(width - height, 0, height, height);
-    
 }
 
 
@@ -51,7 +46,6 @@ ofAbstractParameter & ofxNavigator::getParameter()
 
 bool  ofxNavigator::mouseMoved(ofMouseEventArgs & args)
 {
-    
     hoverPrevious = addToRect(previousRect, ofPoint(b.x, b.y)).inside(args.x, args.y);
     hoverNext = addToRect(nextRect, ofPoint(b.x, b.y)).inside(args.x, args.y);
 }
@@ -99,38 +93,46 @@ bool  ofxNavigator::mouseScrolled(ofMouseEventArgs & args)
 }
 
 
-void ofxNavigator::render()
-{
-    std::string text;
-    text = ofToString(element.get()->getPage() + 1) + " of " + ofToString(element.get()->getNumberOfPages());
+void ofxNavigator::clear() {
     ofSetColor(0, 0, 0, 255);
     ofFill();
     ofDrawRectangle(b);
-    
-    ofSetColor(0,0,0, 128);
-    ofFill();
-    ofDrawRectangle(b.x, b.y, b.width, 16);
-    
+}
+
+void ofxNavigator::printText() {
+    std::string text;
+    text = ofToString(element.get()->getPage() + 1) + " of " + ofToString(element.get()->getNumberOfPages());
     ofSetColor(textColor);
     bindFontTexture();
     textMesh = getTextMesh(text, b.x + textPadding, b.y + 12);
     textMesh.draw();
     unbindFontTexture();
-  
+}
+
+void ofxNavigator::drawTriangles() {
+    ofSetLineWidth(1);
+    
     ofSetColor(textColor, clickPrevious ? 128 : 255);
     hoverPrevious ? ofFill() : ofNoFill();
     
     float space = 3;
     ofDrawTriangle(b.x + previousRect.x + space, b.y + previousRect.y + (previousRect.height / 2.0),
-                  b.x + previousRect.x + previousRect.width - space, b.y + previousRect.y +  previousRect.height - space,
+                   b.x + previousRect.x + previousRect.width - space, b.y + previousRect.y +  previousRect.height - space,
                    b.x + previousRect.x + previousRect.width - space , b.y + previousRect.y + space);
-
+    
     ofSetColor(textColor, clickNext ? 128 : 255);
     hoverNext ? ofFill() : ofNoFill();
     ofDrawTriangle(
                    b.x + nextRect.x + space, b.y + nextRect.y +  nextRect.height - space,
                    b.x + nextRect.x + + nextRect.width - space, b.y + nextRect.y + (nextRect.height / 2.0),
                    b.x + nextRect.x + space , b.y + nextRect.y + space);
+}
+
+void ofxNavigator::render()
+{
+    clear();
+    printText();
+    drawTriangles();
 }
 
 ofPath ofxNavigator::getPathFromRect(float x, float y, float w, float h)
