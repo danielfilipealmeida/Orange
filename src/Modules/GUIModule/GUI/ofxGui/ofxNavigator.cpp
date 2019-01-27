@@ -19,6 +19,7 @@ auto addToRect = [](ofRectangle rectangle, ofPoint point) ->  ofRectangle{
 
 ofxNavigator::ofxNavigator()
 {
+    hoverPrevious = hoverNext = clickPrevious = clickNext = FALSE;
     
 }
 
@@ -102,7 +103,9 @@ void ofxNavigator::render()
 {
     std::string text;
     text = ofToString(element.get()->getPage() + 1) + " of " + ofToString(element.get()->getNumberOfPages());
-    ofSetColor(255, 255, 255, 255);
+    ofSetColor(0, 0, 0, 255);
+    ofFill();
+    ofDrawRectangle(b);
     
     ofSetColor(0,0,0, 128);
     ofFill();
@@ -115,15 +118,15 @@ void ofxNavigator::render()
     unbindFontTexture();
   
     ofSetColor(textColor, clickPrevious ? 128 : 255);
-
-    hoverPrevious ? ofFill() : ofNoFill();;
+    hoverPrevious ? ofFill() : ofNoFill();
+    
     float space = 3;
     ofDrawTriangle(b.x + previousRect.x + space, b.y + previousRect.y + (previousRect.height / 2.0),
                   b.x + previousRect.x + previousRect.width - space, b.y + previousRect.y +  previousRect.height - space,
                    b.x + previousRect.x + previousRect.width - space , b.y + previousRect.y + space);
 
     ofSetColor(textColor, clickNext ? 128 : 255);
-    hoverNext ? ofFill() : ofNoFill();;
+    hoverNext ? ofFill() : ofNoFill();
     ofDrawTriangle(
                    b.x + nextRect.x + space, b.y + nextRect.y +  nextRect.height - space,
                    b.x + nextRect.x + + nextRect.width - space, b.y + nextRect.y + (nextRect.height / 2.0),

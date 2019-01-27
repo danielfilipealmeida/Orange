@@ -59,6 +59,10 @@ public:
             ofFill();
         };
         
+        ofSetColor(0, 0, 0);
+        ofFill();
+        ofDrawRectangle(b);
+        
         ofSetColor(255, 255, 255);
         
         auto iterator = value.get().begin() + page * (rows * columns);
@@ -71,7 +75,10 @@ public:
                 if(iterator != value.get().end()) {
                     T obj = *iterator;
                     ofRectangle rectangle = ofRectangle(x + (column * w), y + (row * h), w, h);
-                    obj->draw(rectangle);
+                    if (obj->isAllocated()) {
+                        obj->draw(rectangle);
+                    }
+                    
                     
                     if (selectedCell == (row * columns + column) + (page * rows * columns)) {
                         drawSelection(rectangle);

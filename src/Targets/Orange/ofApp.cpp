@@ -182,7 +182,7 @@ void ofApp::handleVisualsTrigger(int key)
 }
 
 void ofApp::keyPressed(int key){
-    cout << "in:  "  << key << endl;
+    //cout << "in:  "  << key << endl;
     
     //int state = glfwGetKey(ofGetCocoaWindow(), GLFW_KEY_LEFT_SHIFT);
     //cout << state << endl;
@@ -201,7 +201,7 @@ void ofApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-    cout << "out: "  << key << endl;
+    //cout << "out: "  << key << endl;
 }
 
 //--------------------------------------------------------------

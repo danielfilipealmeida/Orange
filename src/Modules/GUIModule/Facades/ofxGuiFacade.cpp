@@ -12,6 +12,10 @@ using namespace Orange::GUI;
 
 #include "ofxPreview.hpp"
 
+#define USE_DEFINED_STRING(str1, str2) !str1.empty() ? str1 : str2
+
+#define NAME_OR_RANDOM(name) !name.empty() ? name : "element_" + ofToString(time(NULL))
+
 ofxGuiFacade::ofxGuiFacade()
 {
     setCurrentPanel(PreviewsPanel);
@@ -40,11 +44,13 @@ void ofxGuiFacade::setName(ofParameter<string> name)
     currentPanel->setName(name);
 }
 
-void ofxGuiFacade::createSlider(ofParameter<float> parameter)
+void ofxGuiFacade::createSlider(ofParameter<float> parameter,
+                                string name)
 {
     ofxFloatSlider* slider;
     slider = new ofxFloatSlider();
     slider->setup(parameter);
+    slider->setName(NAME_OR_RANDOM(name));
     currentPanel->add(slider);
 }
 
@@ -59,7 +65,8 @@ void ofxGuiFacade::createSlider(ofParameter<float> parameter,
     
     ofxFloatSlider* slider;
     slider = new ofxFloatSlider();
-    slider->setup(parameter.set(title, parameter, minValue, maxValue), PANEL_WIDTH, PANEL_HEIGHT);
+    slider->setup(parameter.set(NAME_OR_RANDOM(title), parameter, minValue, maxValue), PANEL_WIDTH, PANEL_HEIGHT);
+    
     currentPanel->add(slider);
 }
 
@@ -74,18 +81,18 @@ void ofxGuiFacade::createSlider(ofParameter<int> parameter,
     
     ofxIntSlider* slider;
     slider = new ofxIntSlider();
-    slider->setup(parameter.set(title, parameter, minValue, maxValue), PANEL_WIDTH, PANEL_HEIGHT);
+    slider->setup(parameter.set(NAME_OR_RANDOM(title), parameter, minValue, maxValue), PANEL_WIDTH, PANEL_HEIGHT);
+    
     currentPanel->add(slider);
 }
 
-void ofxGuiFacade::createLabel(ofParameter<string> parameter, string name)
+void ofxGuiFacade::createLabel(ofParameter<string> parameter)
 {
     ofxLabel* label;
+   
     label = new ofxLabel();
     label->setup(parameter, PANEL_WIDTH, PANEL_HEIGHT);
-    if (!name.empty()) {
-        label->setName(name);
-    }
+    label->setName(parameter.get());
     
     currentPanel->add(label);
 }
@@ -95,17 +102,20 @@ void ofxGuiFacade::createLabel(string text)
     ofxLabel* label;
     label = new ofxLabel();
     label->setup(text, PANEL_WIDTH, PANEL_HEIGHT);
+    label->setName(text);
+    
     currentPanel->add(label);
 }
 
 
 
-ofxMatrix<ofTexture *>* ofxGuiFacade::createImageMatrix(ofParameter<vector<ofTexture *>> value)
+ofxMatrix<ofTexture *>* ofxGuiFacade::createImageMatrix(ofParameter<vector<ofTexture *>> value, string name)
 {
     ofxMatrix<ofTexture *> *matrix;
     
     matrix = new ofxMatrix<ofTexture *>();
     matrix->setup(value, PANEL_WIDTH, PANEL_WIDTH * 3.0 / 4.0);
+    matrix->setName(NAME_OR_RANDOM(name));
     currentPanel->add(matrix);
     
     return matrix;
@@ -123,12 +133,13 @@ ofxPreview* ofxGuiFacade::createPreview(ofFbo *fbo, string name)
     return preview;
 }
 
-void ofxGuiFacade::createNavigator(ofParameter<ofxPaginatedInterface *> element)
+void ofxGuiFacade::createNavigator(ofParameter<ofxPaginatedInterface *> element, string name)
 {
     ofxNavigator* navigator;
     
     navigator = new ofxNavigator();
     navigator->setup(element);
+    navigator->setName(NAME_OR_RANDOM(name));
     currentPanel->add(navigator);
     
 }

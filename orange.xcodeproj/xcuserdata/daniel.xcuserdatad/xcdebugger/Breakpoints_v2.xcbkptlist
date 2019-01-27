@@ -25,22 +25,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "src/Modules/GUIModule/Facades/ofxGuiFacade.cpp"
-            timestampString = "570148387.012087"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "ofxGuiFacade::createImageMatrix(ofParameter&lt;vector&lt;ofTexture *&gt;&gt; value)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "src/Modules/LayersModule/Entity/Layer.cpp"
             timestampString = "569969421.090169"
             startingColumnNumber = "9223372036854775807"

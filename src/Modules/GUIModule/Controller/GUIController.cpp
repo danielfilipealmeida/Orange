@@ -45,13 +45,14 @@ void GUIController::setupLayerPanel() {
         setupVisualsMatrixForLayer(layer);
     });
     
+    
     // adding effects here... needs to move this somewhere else
     engineController->effectsController->forEachEffect([&](shared_ptr<Orange::Effects::EffectBase> effect) {
         shared_ptr<Orange::Effects::FreeFrameEffect> ffEffect = dynamic_pointer_cast<Orange::Effects::FreeFrameEffect>(effect);
         if (ffEffect) {
             facade->createLabel(std::string(ffEffect->name));
             ffEffect->forEachParameter([&](ofParameter<float> parameter) {
-                facade->createSlider(parameter);
+                facade->createSlider(parameter, parameter.getName());
             });
         }
     });
@@ -142,7 +143,6 @@ void GUIController::currentFrameChanged(int & currentFrame)
         return;
     }
     
-    cout << (currentVideo->isLoaded() ? "LOADED" : "NOT LOADED" ) << std::endl;
     if (currentVideo->isLoaded() == false) {
         return;
     }
@@ -159,7 +159,7 @@ void GUIController::setupVisualsMatrixForLayer(shared_ptr<Orange::Layers::Layer>
     vector<ofTexture *> thumbnails = layer->getVisualsThumbs();
     ofParameter<vector<ofTexture *>> parameter = thumbnails;
     
-    ofxMatrix<ofTexture *> *matrix = facade->createImageMatrix(parameter);
-    facade->createNavigator(matrix);
+    ofxMatrix<ofTexture *> *matrix = facade->createImageMatrix(parameter, std::string(layer->name) + " Visual Matrix");
+    facade->createNavigator(matrix, std::string(layer->name) + " Visual Matrix Navigator");
     
 }

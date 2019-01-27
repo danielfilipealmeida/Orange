@@ -48,8 +48,9 @@ namespace Orange {
             /*!
              Creates a float Slider in the GUI
              \param string title
+             \param string name
              */
-            void createSlider(ofParameter<float> parameter);
+            void createSlider(ofParameter<float> parameter, string name = "");
             
             /*!
              Creates a float Slider in the GUI
@@ -82,7 +83,7 @@ namespace Orange {
              \param ofParameter<string> parameter
              \param string name
              */
-            void createLabel(ofParameter<string> parameter, string name = "");
+            void createLabel(ofParameter<string> parameter);
             
             /*!
              Creates a label using a string
@@ -104,11 +105,11 @@ namespace Orange {
              \param ofParameter<vector<ofTexture *>>
              \return ofxMatrix<ofTexture *>*
              */
-            ofxMatrix<ofTexture *>* createImageMatrix(ofParameter<vector<ofTexture *>> value);
+            ofxMatrix<ofTexture *>* createImageMatrix(ofParameter<vector<ofTexture *>> value, string name = "");
 
             /*!
              */
-            void createNavigator(ofParameter<ofxPaginatedInterface *> element);
+            void createNavigator(ofParameter<ofxPaginatedInterface *> element, string name = "");
             
             /*!
              Draws the ofxGui

@@ -65,3 +65,13 @@ shift + (z,x,c,v) - Load a visual in a Layer 3 visual slot
 - have a visual panel
 - have a panel with all the visuals in a layer -> layer matrix panel
 - decorate panels? to remove options/add options
+
+
+## Bugs
+
+- Cannot generate thumbnail or get a frame for a videoplayer after load
+- `[warning] ofGLRenderer: draw(): texture is not allocated`
+- `[warning] Adding another parameter with same name '' to group 'Layers'`
+- `[verbose] ofTrueTypeFont: loadFontFace(): ""Menlo Regular"" not a file in data loading system font from ""/System/Library/Fonts/Menlo.ttc""`
+
+
