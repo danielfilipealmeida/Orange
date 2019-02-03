@@ -156,10 +156,10 @@ void GUIController::setupVisualsMatrixForLayer(shared_ptr<Orange::Layers::Layer>
     if (layer == NULL) {
         return;
     }
-    vector<ofFbo *> thumbnails = layer->getVisualsThumbs();
-    ofParameter<vector<ofFbo *>> parameter = thumbnails;
+    vector<ofImage *> thumbnails = layer->getVisualsThumbs();
+    ofParameter<vector<ofImage *>> parameter = thumbnails;
     
-    ofxMatrix<ofFbo *> *matrix = facade->createImageMatrix(parameter, std::string(layer->name) + " Visual Matrix");
+    ofxMatrix<ofImage *> *matrix = facade->createImageMatrix(parameter, std::string(layer->name) + " Visual Matrix");
     facade->createNavigator(matrix, std::string(layer->name) + " Visual Matrix Navigator");
     
 }

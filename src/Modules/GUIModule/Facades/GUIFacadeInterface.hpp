@@ -86,7 +86,7 @@ namespace Orange {
              \param ofParameter<vector<ofFbo *>>
              \return ofxMatrix<ofFbo *>*
              */
-            virtual ofxMatrix<ofFbo *>* createImageMatrix(ofParameter<vector<ofFbo *>> value, string name = "") = 0;
+            virtual ofxMatrix<ofImage *>* createImageMatrix(ofParameter<vector<ofImage *>> value, string name = "") = 0;
             
             /*!
              

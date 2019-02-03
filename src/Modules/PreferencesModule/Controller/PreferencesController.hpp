@@ -20,7 +20,9 @@ namespace Orange {
         public:
             
             PreferencesController(std::string _appName);
-            void saveThumbnail(ofFbo fbo, std::string filename);
+            
+            void saveThumbnail(ofImage input, std::string filename);
+        
             ofPixels loadThumbnail(std::string filename);
             
         private:

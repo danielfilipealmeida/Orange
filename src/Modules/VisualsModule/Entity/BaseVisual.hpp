@@ -54,7 +54,7 @@ namespace Orange {
              Returns a thumbnail of the video
              \returns ofImage
              */
-            virtual ofFbo& getThumbnail() = 0;
+            virtual ofImage& getThumbnail() = 0;
             
             /*!
              Returns the texture of the video

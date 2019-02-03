@@ -16,7 +16,7 @@ using namespace Orange::Visuals;
 Video::Video(){
     ofLog(OF_LOG_VERBOSE, "Creating Video");
     
-    thumbnail.allocate(THUMB_WIDTH, THUMB_HEIGHT);
+    //thumbnail.allocate(THUMB_WIDTH, THUMB_HEIGHT);
     
     hasThumbnail = false;
 }
@@ -79,12 +79,13 @@ void Video::loadThumbnail() {
         return;
     }
     
-    ofImage image;
-    image.setFromPixels(pixels);
+    thumbnail.setFromPixels(pixels);
     
+    /*
     thumbnail.begin();
     image.draw(0,0,thumbnail.getWidth(), thumbnail.getHeight());
     thumbnail.end();
+*/
 }
 
 void Video::generateThumbnail() {
@@ -93,10 +94,19 @@ void Video::generateThumbnail() {
     player.play();
     player.setPosition(0.5);
     player.update();
+    
+    ofPixels pixels = player.getPixels();
+    pixels.resize(THUMB_WIDTH, THUMB_HEIGHT);
+    ofImage image;
+    thumbnail.setFromPixels(pixels);
+    
+    /*
     ofSetColor(255,255,255, 255);
     thumbnail.begin();
-    player.draw(0,0, thumbnail.getWidth(), thumbnail.getHeight());
+    //player.draw(0,0, thumbnail.getWidth(), thumbnail.getHeight());
+    image.draw(0,0,thumbnail.getWidth(), thumbnail.getHeight());
     thumbnail.end();
+    */
     
     player.stop();
     player.setPosition(0);
@@ -181,7 +191,7 @@ void Video::setFrame(int frame)
     player.setFrame(frame);
 }
 
-ofFbo& Video::getThumbnail()
+ofImage& Video::getThumbnail()
 {
     return thumbnail;
 }

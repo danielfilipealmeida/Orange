@@ -126,7 +126,7 @@ namespace Orange {
              */
             void setFromJson(ofJson json);
             
-            vector<ofFbo *> getVisualsThumbs();
+            vector<ofImage *> getVisualsThumbs();
             
             void setPreferencesController(shared_ptr<Orange::Preferences::PreferencesController> _preferencesController);
         };

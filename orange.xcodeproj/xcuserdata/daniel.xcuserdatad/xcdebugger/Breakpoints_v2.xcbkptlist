@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/LayersModule/Entity/Layer.cpp"
-            timestampString = "570900892.3201669"
+            timestampString = "570926332.142855"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
@@ -80,22 +80,6 @@
             startingLineNumber = "200"
             endingLineNumber = "200"
             landmarkName = "ofVideoPlayer::update()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Modules/PreferencesModule/Controller/PreferencesController.cpp"
-            timestampString = "570900892.320446"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "PreferencesController::loadThumbnail(std::string filename)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

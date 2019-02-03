@@ -74,10 +74,11 @@ std::string PreferencesController::getThumbnailPath(std::string filename) {
 }
 
 
-void PreferencesController::saveThumbnail(ofFbo fbo, std::string filename) {
+void PreferencesController::saveThumbnail(ofImage input, std::string filename) {
     ofPixels pixels;
     
-    fbo.readToPixels(pixels);
+    //input.readToPixels(pixels);
+    pixels = input.getPixels();
     
     std::string thumbnailFilePath = getThumbnailPath(filename);
     ofFilePath::createEnclosingDirectory(thumbnailFilePath);

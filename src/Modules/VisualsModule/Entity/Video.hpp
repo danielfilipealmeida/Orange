@@ -24,7 +24,7 @@ namespace Orange {
         public BaseVisual
         {
             ofVideoPlayer player;
-            ofFbo thumbnail;
+            ofImage thumbnail;
             Boolean hasThumbnail;
             shared_ptr<Orange::Preferences::PreferencesController> preferencesController;
             
@@ -141,7 +141,7 @@ namespace Orange {
              Returns a thumbnail of the video
              \returns ofTexture
              */
-            ofFbo& getThumbnail();
+            ofImage& getThumbnail();
 
             /*!
              Gets a reference to the texture of the videoplayer

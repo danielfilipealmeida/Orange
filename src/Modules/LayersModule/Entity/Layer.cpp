@@ -97,9 +97,9 @@ void Layer::setFromJson(ofJson json)
 }
 
 
-vector<ofFbo *> Layer::getVisualsThumbs()
+vector<ofImage *> Layer::getVisualsThumbs()
 {
-    vector<ofFbo *> visualsThumbs;
+    vector<ofImage *> visualsThumbs;
     
     visuals.forEach([&visualsThumbs](shared_ptr<Visuals::BaseVisual>  visual) {
         visualsThumbs.push_back(&visual->getThumbnail());

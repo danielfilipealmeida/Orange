@@ -105,7 +105,7 @@ namespace Orange {
              \param ofParameter<vector<ofTexture *>>
              \return ofxMatrix<ofTexture *>*
              */
-            ofxMatrix<ofFbo *>* createImageMatrix(ofParameter<vector<ofFbo *>> value, string name = "");
+            ofxMatrix<ofImage *>* createImageMatrix(ofParameter<vector<ofImage *>> value, string name = "");
 
             /*!
              */
