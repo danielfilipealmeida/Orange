@@ -15,14 +15,6 @@ PreferencesController::PreferencesController(std::string _appName)
     appName = _appName;
 }
 
-ofImage& PreferencesController::loadThumbnail()
-{
-    ofImage thumbnail;
-    
-    
-    return thumbnail;
-}
-
 
 std::string PreferencesController::getHash(std::string value)
 {
@@ -97,6 +89,9 @@ ofPixels PreferencesController::loadThumbnail(std::string filename) {
     ofPixels pixels;
     
     std::string thumbnailFilePath = getThumbnailPath(filename);
+    if (!ofFile::doesFileExist(thumbnailFilePath)) {
+        throw new std::runtime_error("File "  + thumbnailFilePath + " doesn't exist.");
+    }
     ofLoadImage(pixels, thumbnailFilePath);
     
     return pixels;

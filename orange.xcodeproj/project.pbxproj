@@ -1039,8 +1039,7 @@
 				65A59D8321A0D36C00ADEE79 /* Entity */,
 				65A59D8421A0D36C00ADEE79 /* Resources */,
 			);
-			name = VisualsModule;
-			path = ../../../../../../of_v0.10.0_osx_release/apps/myApps/Orange/src/Modules/VisualsModule;
+			path = VisualsModule;
 			sourceTree = "<group>";
 		};
 		65A59D8321A0D36C00ADEE79 /* Entity */ = {
