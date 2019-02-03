@@ -17,7 +17,7 @@
 #include "Video.hpp"
 #include "Engine.hpp"
 #include "EffectsController.hpp"
-
+#include "PreferencesController.hpp"
 
 
 namespace Orange {
@@ -28,9 +28,9 @@ namespace Orange {
             Orange::Base::Repository<shared_ptr<Orange::Layers::Layer> > layers;
             Orange::Layers::LayerController layerController;
             
-            Engine engine;
+            shared_ptr<Orange::Preferences::PreferencesController> preferencesController;
             
-           
+            Engine engine;
             
         public:
             ofFbo fbo;
@@ -39,7 +39,8 @@ namespace Orange {
             /*!
              Constructor
              */
-            EngineController(shared_ptr<Orange::Effects::EffectsController> _effectsController);
+            EngineController(shared_ptr<Orange::Preferences::PreferencesController> _preferencesController,
+                             shared_ptr<Orange::Effects::EffectsController> _effectsController);
             
             /*!
              Sets up the FBO

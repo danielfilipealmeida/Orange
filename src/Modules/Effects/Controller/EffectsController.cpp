@@ -17,7 +17,11 @@ EffectsController::EffectsController(shared_ptr<FreeFrameHostAdapter> _adapter)
 
 void EffectsController::newFreeFameEffect(string name)
 {
-    effects.add(adapter->newFreeFrameEffectByName(name, width, height));
+    shared_ptr<Orange::Effects::FreeFrameEffect> effect;
+    
+    effect = adapter->newFreeFrameEffectByName(name, width, height);
+    
+    effects.add(effect);
 }
 
 void EffectsController::process(ofFbo &fbo)

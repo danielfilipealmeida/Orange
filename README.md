@@ -59,6 +59,8 @@ shift + (z,x,c,v) - Load a visual in a Layer 3 visual slot
 
 ## TODO
 
+- make all Entitities structs
+- create a Video Controller for controlling videos.
 - Split GUI into panels
 - have a panel for all the loaded videos, that is a list of visuals with a thumbnail and a name
 - decorate a int slider to have multiple selections with multiple titles

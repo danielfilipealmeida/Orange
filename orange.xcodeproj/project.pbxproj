@@ -96,6 +96,9 @@
 		65A59DB021A767AD00ADEE79 /* red.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65A59DAF21A7679100ADEE79 /* red.mp4 */; };
 		65A9F44821F375A200AFB193 /* ofxMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A9F44621F375A200AFB193 /* ofxMatrix.cpp */; };
 		65A9F44921F375A200AFB193 /* ofxMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A9F44621F375A200AFB193 /* ofxMatrix.cpp */; };
+		65C979312205C20C005C08E0 /* PreferencesController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C9792F2205C20C005C08E0 /* PreferencesController.cpp */; };
+		65C979322205C20C005C08E0 /* PreferencesController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C9792F2205C20C005C08E0 /* PreferencesController.cpp */; };
+		65C979352205C488005C08E0 /* PreferencesControllerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C979342205C488005C08E0 /* PreferencesControllerTest.cpp */; };
 		65D167E421D53141006B6163 /* ofxPanelDecorator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65D167E221D53141006B6163 /* ofxPanelDecorator.cpp */; };
 		661A1991F5CE4CCC2919D8E7 /* ofxNetworkUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE30B18B42BAF0E92CB140E5 /* ofxNetworkUtils.cpp */; };
 		66CA411C5A9664E27326BF36 /* ofxTCPServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C085E327DAB912CFA2A443D /* ofxTCPServer.cpp */; };
@@ -323,6 +326,9 @@
 		65A59DB421AB5DE500ADEE79 /* Bolas001.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Bolas001.mov; path = ../Resources/Bolas001.mov; sourceTree = "<group>"; };
 		65A9F44621F375A200AFB193 /* ofxMatrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMatrix.cpp; sourceTree = "<group>"; };
 		65A9F44A21F3775500AFB193 /* ofxMatrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ofxMatrix.hpp; sourceTree = "<group>"; };
+		65C9792F2205C20C005C08E0 /* PreferencesController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PreferencesController.cpp; sourceTree = "<group>"; };
+		65C979302205C20C005C08E0 /* PreferencesController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PreferencesController.hpp; sourceTree = "<group>"; };
+		65C979342205C488005C08E0 /* PreferencesControllerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PreferencesControllerTest.cpp; sourceTree = "<group>"; };
 		65D167E221D53141006B6163 /* ofxPanelDecorator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxPanelDecorator.cpp; sourceTree = "<group>"; };
 		65D167E321D53141006B6163 /* ofxPanelDecorator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxPanelDecorator.hpp; sourceTree = "<group>"; };
 		65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscBundle.cpp; path = ../../../addons/ofxOsc/src/ofxOscBundle.cpp; sourceTree = SOURCE_ROOT; };
@@ -962,6 +968,7 @@
 		65A59D7721A0D1B300ADEE79 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				65C9792D2205C00C005C08E0 /* PreferencesModule */,
 				65A59D7821A0D1B300ADEE79 /* BaseModule */,
 				65759E3821B891C3006B6814 /* EngineModule */,
 				65759E2E21B73A94006B6814 /* GUIModule */,
@@ -1065,6 +1072,7 @@
 		65A59D9421A4C34200ADEE79 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				65C979332205C461005C08E0 /* PreferencesModule */,
 				6516EBBD21EBD0D10070D93E /* EffectsModule */,
 				651AD4D721BF17A80091D71D /* EngineModule */,
 				6504536421AE024100CAC33D /* BaseModule */,
@@ -1112,6 +1120,31 @@
 				65A59DB421AB5DE500ADEE79 /* Bolas001.mov */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		65C9792D2205C00C005C08E0 /* PreferencesModule */ = {
+			isa = PBXGroup;
+			children = (
+				65C9792E2205C1F5005C08E0 /* Controller */,
+			);
+			path = PreferencesModule;
+			sourceTree = "<group>";
+		};
+		65C9792E2205C1F5005C08E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				65C9792F2205C20C005C08E0 /* PreferencesController.cpp */,
+				65C979302205C20C005C08E0 /* PreferencesController.hpp */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		65C979332205C461005C08E0 /* PreferencesModule */ = {
+			isa = PBXGroup;
+			children = (
+				65C979342205C488005C08E0 /* PreferencesControllerTest.cpp */,
+			);
+			path = PreferencesModule;
 			sourceTree = "<group>";
 		};
 		6948EE371B920CB800B5AC1A /* local_addons */ = {
@@ -1798,6 +1831,7 @@
 				656BD49421CC4EB6000463B3 /* EngineTest.cpp in Sources */,
 				65337D1F21BD5963004FF3DA /* Layer.cpp in Sources */,
 				65A59DA421A4C3C700ADEE79 /* Video.cpp in Sources */,
+				65C979352205C488005C08E0 /* PreferencesControllerTest.cpp in Sources */,
 				65337D1021BB0E8D004FF3DA /* Engine.cpp in Sources */,
 				651AD4DA21BF17F20091D71D /* EngineControllerTest.cpp in Sources */,
 				6516EB8221EAD54C0070D93E /* ofxFFGLInstance.cpp in Sources */,
@@ -1817,6 +1851,7 @@
 				65337D2421BDCD20004FF3DA /* LayerControllerTest.cpp in Sources */,
 				6515455721B5ED4000880443 /* LayerController.cpp in Sources */,
 				65337D2121BD59BC004FF3DA /* LayerTest.cpp in Sources */,
+				65C979322205C20C005C08E0 /* PreferencesController.cpp in Sources */,
 				6516EB9E21EB542D0070D93E /* FreeFrameEffect.cpp in Sources */,
 				6516EB8621EAD54C0070D93E /* ofxFFHost.cpp in Sources */,
 				6516EBA421EBA90F0070D93E /* FreeFrameHostAdapter.cpp in Sources */,
@@ -1887,6 +1922,7 @@
 				65A59D8921A0D3CF00ADEE79 /* Video.cpp in Sources */,
 				657D750221BFFB79004329EF /* ofxPreview.cpp in Sources */,
 				65759E3721B73B2B006B6814 /* GUIController.cpp in Sources */,
+				65C979312205C20C005C08E0 /* PreferencesController.cpp in Sources */,
 				6516EB8321EAD54C0070D93E /* ofxFFInstance.cpp in Sources */,
 				640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */,
 				8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */,

@@ -11,6 +11,7 @@
 #include "OSFacadeInterface.hpp"
 #include "FreeFrameHostAdapter.hpp"
 #include "EffectsController.hpp"
+#include "PreferencesController.hpp"
 
 class ofApp : public ofBaseApp{
     /* Keys constants */
@@ -46,6 +47,7 @@ class ofApp : public ofBaseApp{
     Orange::GUI::ofxGuiFacade *guiFacade;
     Orange::GUI::OSFacadeInterface *os;
     Orange::GUI::GUIController *guiController;
+    shared_ptr<Orange::Preferences::PreferencesController> preferencesController;
     
     shared_ptr<Orange::Effects::FreeFrameHostAdapter> ffHostAdapter;
     shared_ptr<Orange::Effects::EffectsController> effectsController;

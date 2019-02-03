@@ -86,7 +86,10 @@ void Layer::setFromJson(ofJson json)
     currentVisualIndex = json["currentVisualIndex"];
     
     for (auto& visualJson : json["visuals"]) {
-        shared_ptr<Visuals::Video> video = std::make_shared<Visuals::Video>(Visuals::Video());
+        shared_ptr<Visuals::Video> video;
+        
+        video = std::make_shared<Visuals::Video>(Visuals::Video());
+        video->setPreferencesController(preferencesController);
         
         video->open(visualJson["filePath"]);
         add(video);
@@ -94,14 +97,18 @@ void Layer::setFromJson(ofJson json)
 }
 
 
-vector<ofTexture*> Layer::getVisualsThumbs()
+vector<ofFbo *> Layer::getVisualsThumbs()
 {
-    vector<ofTexture*> visualsThumbs;
+    vector<ofFbo *> visualsThumbs;
     
     visuals.forEach([&visualsThumbs](shared_ptr<Visuals::BaseVisual>  visual) {
-        visualsThumbs.push_back(&visual->getTexture());
+        visualsThumbs.push_back(&visual->getThumbnail());
     });
     
     return visualsThumbs;
 }
 
+void Layer::setPreferencesController(shared_ptr<Orange::Preferences::PreferencesController> _preferencesController)
+{
+    preferencesController = _preferencesController;
+}

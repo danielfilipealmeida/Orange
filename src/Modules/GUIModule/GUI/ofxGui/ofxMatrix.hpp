@@ -95,7 +95,7 @@ public:
     bool mouseMoved(ofMouseEventArgs & args) {};
     bool mousePressed(ofMouseEventArgs & args) {
         if (!getShape().inside(args)) {
-            return;
+            return false;
         }
         
         float x = args.x - b.getX();

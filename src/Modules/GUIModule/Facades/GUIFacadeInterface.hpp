@@ -83,10 +83,10 @@ namespace Orange {
         
             /*!
              Creates a matrix of textures
-             \param ofParameter<vector<ofTexture *>>
-             \return ofxMatrix<ofTexture *>*
+             \param ofParameter<vector<ofFbo *>>
+             \return ofxMatrix<ofFbo *>*
              */
-            virtual ofxMatrix<ofTexture *>* createImageMatrix(ofParameter<vector<ofTexture *>> value, string name = "") = 0;
+            virtual ofxMatrix<ofFbo *>* createImageMatrix(ofParameter<vector<ofFbo *>> value, string name = "") = 0;
             
             /*!
              

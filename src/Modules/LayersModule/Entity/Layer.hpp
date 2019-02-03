@@ -12,7 +12,7 @@
 #include "Repository.hpp"
 #include "BaseVisual.hpp"
 #include "ofMain.h"
-
+#include "PreferencesController.hpp"
 
 
 // TODO: pass all methods to controllers and use Entities only to store data.
@@ -26,6 +26,8 @@ namespace Orange {
         class Layer : public Orange::Base::EntityInterface
         {
             unsigned int width, height;
+            shared_ptr<Orange::Preferences::PreferencesController> preferencesController;
+            
         public:
 
 #pragma mark public attributes
@@ -124,7 +126,9 @@ namespace Orange {
              */
             void setFromJson(ofJson json);
             
-            vector<ofTexture *> getVisualsThumbs();
+            vector<ofFbo *> getVisualsThumbs();
+            
+            void setPreferencesController(shared_ptr<Orange::Preferences::PreferencesController> _preferencesController);
         };
         
     }

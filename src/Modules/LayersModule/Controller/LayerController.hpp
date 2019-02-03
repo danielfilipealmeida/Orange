@@ -12,6 +12,7 @@
 #include "Layer.hpp"
 #include "DrawableInterface.hpp"
 #include "ofMain.h"
+#include "PreferencesController.hpp"
 
 namespace Orange {
     namespace Layers {
@@ -28,6 +29,8 @@ namespace Orange {
              Fetches the current selected visual.
              */
              shared_ptr<Orange::Visuals::BaseVisual> getVisual();
+            
+            
         
         public:
             

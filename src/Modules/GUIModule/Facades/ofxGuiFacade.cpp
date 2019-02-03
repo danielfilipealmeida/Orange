@@ -109,11 +109,11 @@ void ofxGuiFacade::createLabel(string text)
 
 
 
-ofxMatrix<ofTexture *>* ofxGuiFacade::createImageMatrix(ofParameter<vector<ofTexture *>> value, string name)
+ofxMatrix<ofFbo *>* ofxGuiFacade::createImageMatrix(ofParameter<vector<ofFbo *>> value, string name)
 {
-    ofxMatrix<ofTexture *> *matrix;
+    ofxMatrix<ofFbo *> *matrix;
     
-    matrix = new ofxMatrix<ofTexture *>();
+    matrix = new ofxMatrix<ofFbo *>();
     matrix->setup(value, PANEL_WIDTH, PANEL_WIDTH * 3.0 / 4.0);
     matrix->setName(NAME_OR_RANDOM(name));
     currentPanel->add(matrix);

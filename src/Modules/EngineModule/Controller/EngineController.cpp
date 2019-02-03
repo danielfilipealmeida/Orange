@@ -10,13 +10,14 @@
 using namespace Orange::Engine;
 
 
-EngineController::EngineController(shared_ptr<Orange::Effects::EffectsController> _effectsController)
+EngineController::EngineController(shared_ptr<Orange::Preferences::PreferencesController> _preferencesController,
+                                   shared_ptr<Orange::Effects::EffectsController> _effectsController)
 {
+    preferencesController = _preferencesController;
     effectsController = _effectsController;
     effectsController->width = engine.width;
     effectsController->height = engine.height;
-    
-    effectsController->newFreeFameEffect("FFGLHeat");
+
     setFbo();
 }
 
@@ -54,6 +55,7 @@ void EngineController::draw(float x, float y, float w, float h) {
 shared_ptr<Orange::Layers::Layer> EngineController::addLayer()
 {
     shared_ptr<Layers::Layer> layer = std::make_shared<Layers::Layer>();
+    layer->setPreferencesController(preferencesController);
     layer->setFbo(engine.width, engine.height);
     
     layers.add(layer);
@@ -84,7 +86,6 @@ void EngineController::playVisual(int visualIndex)
     if (visualIndex < 0) {
         return;
     }
-    
     
     if (getCurrentLayer()->currentVisualIndex == visualIndex) {
         // todo: retrigger!

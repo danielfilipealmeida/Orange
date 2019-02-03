@@ -13,11 +13,13 @@ void ofApp::setup() {
     
     ofEnableSetupScreen();
   
-    
+    preferencesController = make_shared<Orange::Preferences::PreferencesController>("OrangeVJ");
     ffHostAdapter = make_shared<Orange::Effects::FreeFrameHostAdapter>();
     effectsController = make_shared<Orange::Effects::EffectsController>(ffHostAdapter);
     
-    engineController = make_shared<Orange::Engine::EngineController>(effectsController);
+    engineController = make_shared<Orange::Engine::EngineController>(preferencesController, effectsController);
+    
+    effectsController->newFreeFameEffect("FFGLHeat");
     
     guiFacade = new Orange::GUI::ofxGuiFacade();
     os = new Orange::GUI::OSXFacade();

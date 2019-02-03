@@ -17,33 +17,54 @@ using namespace Orange;
 
 
 TEST_CASE("EngineController sets the FBO on construction", "" ) {
-    Engine::EngineController engineController;
-    ofFbo fbo = engineController.fbo;
+    Engine::EngineController *engineController;
+    shared_ptr<Effects::EffectsController> effectsController;
+    shared_ptr<Effects::FreeFrameHostAdapter> ffAdapter;
+
+    ffAdapter = make_shared<Effects::FreeFrameHostAdapter>();
+    effectsController = make_shared<Effects::EffectsController>(ffAdapter);
     
-    REQUIRE(fbo.getWidth() == engineController.engine.width);
-    REQUIRE(fbo.getHeight() == engineController.engine.height);
+    engineController = new Engine::EngineController(effectsController);
+    
+    ofFbo fbo = engineController->fbo;
+    
+    REQUIRE(fbo.getWidth() == engineController->engine.width);
+    REQUIRE(fbo.getHeight() == engineController->engine.height);
 }
 
 TEST_CASE("EngineController can add layer", "" ) {
-    Engine::EngineController engineController;
+    Engine::EngineController *engineController;
+    shared_ptr<Effects::EffectsController> effectsController;
+    shared_ptr<Effects::FreeFrameHostAdapter> ffAdapter;
     
-    engineController.addLayer();
-    REQUIRE_THROWS(engineController.getCurrentLayer());
+    ffAdapter = make_shared<Effects::FreeFrameHostAdapter>();
+    effectsController = make_shared<Effects::EffectsController>(ffAdapter);
     
-    engineController.setLayerIndex(0);
-    REQUIRE(engineController.getCurrentLayer());
+    engineController = new Engine::EngineController(effectsController);
     
-    REQUIRE_THROWS(engineController.setLayerIndex(1));
+    engineController->addLayer();
+    REQUIRE_THROWS(engineController->getCurrentLayer());
+    
+    engineController->setLayerIndex(0);
+    REQUIRE(engineController->getCurrentLayer());
+    
+    REQUIRE_THROWS(engineController->setLayerIndex(1));
 }
 
 TEST_CASE("Can Load Set", "load" ) {
-    Engine::EngineController engineController;
+    Engine::EngineController *engineController;
+    shared_ptr<Effects::EffectsController> effectsController;
+    shared_ptr<Effects::FreeFrameHostAdapter> ffAdapter;
     
     ofSetDataPathRoot("");
     
-    engineController.openSet("data/TestSet01.vjs");
+    ffAdapter = make_shared<Effects::FreeFrameHostAdapter>();
+    effectsController = make_shared<Effects::EffectsController>(ffAdapter);
     
-    ofJson json = engineController.toJson();
+    engineController = new Engine::EngineController(effectsController);
+    engineController->openSet("data/TestSet01.vjs");
+    
+    ofJson json = engineController->toJson();
     
     REQUIRE(json["engine"].is_null() == false);
     REQUIRE(json["engine"]["width"] == 640);
