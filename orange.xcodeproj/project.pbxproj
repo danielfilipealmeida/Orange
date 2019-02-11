@@ -22,7 +22,11 @@
 		62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63A47AC60FFAFC3BF093EC0F /* OscOutboundPacketStream.cpp */; };
 		63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */; };
 		640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2FAC65C491D4231379F3298 /* ofxOscReceiver.cpp */; };
+		6500B0AA2210A1D90082C756 /* Layer.frag in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 6500B0A82210A1B90082C756 /* Layer.frag */; };
+		6500B0AB2210A1D90082C756 /* Layer.vert in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 6500B0A92210A1B90082C756 /* Layer.vert */; };
 		6504536721AE027B00CAC33D /* RepositoryTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6504536621AE027B00CAC33D /* RepositoryTest.cpp */; };
+		65086DC3220CA30600CB7C57 /* Invert.frag in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 65086DC1220CA2E300CB7C57 /* Invert.frag */; };
+		65086DC4220CA30600CB7C57 /* Invert.vert in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 65086DC2220CA2E400CB7C57 /* Invert.vert */; };
 		650C40D421C5D0090094365F /* OSXstuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C40D321C5D0090094365F /* OSXstuff.m */; };
 		6515455221B4A25200880443 /* BaseVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455021B4A25200880443 /* BaseVisual.cpp */; };
 		6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455021B4A25200880443 /* BaseVisual.cpp */; };
@@ -49,15 +53,6 @@
 		6516EB8A21EAD54C0070D93E /* ofxFFPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB7C21EAD54C0070D93E /* ofxFFPlugin.cpp */; };
 		6516EB9821EB51440070D93E /* EffectsController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB9621EB51440070D93E /* EffectsController.cpp */; };
 		6516EB9921EB51440070D93E /* EffectsController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB9621EB51440070D93E /* EffectsController.cpp */; };
-		6516EB9D21EB542D0070D93E /* FreeFrameEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB9B21EB542D0070D93E /* FreeFrameEffect.cpp */; };
-		6516EB9E21EB542D0070D93E /* FreeFrameEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EB9B21EB542D0070D93E /* FreeFrameEffect.cpp */; };
-		6516EBA321EBA90F0070D93E /* FreeFrameHostAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EBA121EBA90F0070D93E /* FreeFrameHostAdapter.cpp */; };
-		6516EBA421EBA90F0070D93E /* FreeFrameHostAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EBA121EBA90F0070D93E /* FreeFrameHostAdapter.cpp */; };
-		6516EBB421EBBE640070D93E /* FFGLHeat.bundle in Copy FreeFrame Plugins */ = {isa = PBXBuildFile; fileRef = 6516EBA821EBAFBB0070D93E /* FFGLHeat.bundle */; };
-		6516EBB521EBBE640070D93E /* FFGLMirror.bundle in Copy FreeFrame Plugins */ = {isa = PBXBuildFile; fileRef = 6516EBA921EBAFBB0070D93E /* FFGLMirror.bundle */; };
-		6516EBB621EBBE640070D93E /* FFGLTile.bundle in Copy FreeFrame Plugins */ = {isa = PBXBuildFile; fileRef = 6516EBAA21EBAFBB0070D93E /* FFGLTile.bundle */; };
-		6516EBB721EBBE640070D93E /* FFGLTime.bundle in Copy FreeFrame Plugins */ = {isa = PBXBuildFile; fileRef = 6516EBAB21EBAFBB0070D93E /* FFGLTime.bundle */; };
-		6516EBB821EBBE640070D93E /* FFGLBrightness.bundle in Copy FreeFrame Plugins */ = {isa = PBXBuildFile; fileRef = 6516EBAC21EBAFBB0070D93E /* FFGLBrightness.bundle */; };
 		6516EBBF21EBD1070070D93E /* FreeFrameHostAdapterTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6516EBBE21EBD1070070D93E /* FreeFrameHostAdapterTest.cpp */; };
 		6516EBC121EC118E0070D93E /* FFGLHeat.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6516EBA821EBAFBB0070D93E /* FFGLHeat.bundle */; };
 		6516EBC221EC118E0070D93E /* FFGLMirror.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6516EBA921EBAFBB0070D93E /* FFGLMirror.bundle */; };
@@ -83,6 +78,12 @@
 		65759E3721B73B2B006B6814 /* GUIController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3521B73B2B006B6814 /* GUIController.cpp */; };
 		65759E3D21B891FF006B6814 /* EngineController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3B21B891FF006B6814 /* EngineController.cpp */; };
 		65759E3E21B891FF006B6814 /* EngineController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65759E3B21B891FF006B6814 /* EngineController.cpp */; };
+		6578EC47220B5DE5004E7427 /* BlurX.frag in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 6578EC42220B5DC7004E7427 /* BlurX.frag */; };
+		6578EC48220B5DE5004E7427 /* BlurX.vert in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 6578EC43220B5DC7004E7427 /* BlurX.vert */; };
+		6578EC49220B5DE5004E7427 /* BlurY.frag in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 6578EC41220B5DC7004E7427 /* BlurY.frag */; };
+		6578EC4A220B5DE5004E7427 /* BlurY.vert in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 6578EC44220B5DC7004E7427 /* BlurY.vert */; };
+		6578EC4B220B5DE5004E7427 /* Displacement.frag in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 6578EC46220B5DC7004E7427 /* Displacement.frag */; };
+		6578EC4C220B5DE5004E7427 /* Displacement.vert in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 6578EC45220B5DC7004E7427 /* Displacement.vert */; };
 		657D74FF21BFF7A5004329EF /* ofxButtonGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657D74FD21BFF7A5004329EF /* ofxButtonGroup.cpp */; };
 		657D750221BFFB79004329EF /* ofxPreview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657D750021BFFB79004329EF /* ofxPreview.cpp */; };
 		657D750621C31DF6004329EF /* OSXFacade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 657D750421C31DF6004329EF /* OSXFacade.mm */; };
@@ -99,6 +100,8 @@
 		65C979312205C20C005C08E0 /* PreferencesController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C9792F2205C20C005C08E0 /* PreferencesController.cpp */; };
 		65C979322205C20C005C08E0 /* PreferencesController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C9792F2205C20C005C08E0 /* PreferencesController.cpp */; };
 		65C979352205C488005C08E0 /* PreferencesControllerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C979342205C488005C08E0 /* PreferencesControllerTest.cpp */; };
+		65C979392207A8F2005C08E0 /* GLSLEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C979372207A8F2005C08E0 /* GLSLEffect.cpp */; };
+		65C9793A2207A8F2005C08E0 /* GLSLEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C979372207A8F2005C08E0 /* GLSLEffect.cpp */; };
 		65D167E421D53141006B6163 /* ofxPanelDecorator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65D167E221D53141006B6163 /* ofxPanelDecorator.cpp */; };
 		661A1991F5CE4CCC2919D8E7 /* ofxNetworkUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE30B18B42BAF0E92CB140E5 /* ofxNetworkUtils.cpp */; };
 		66CA411C5A9664E27326BF36 /* ofxTCPServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C085E327DAB912CFA2A443D /* ofxTCPServer.cpp */; };
@@ -145,21 +148,6 @@
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6516EBB321EBBE330070D93E /* Copy FreeFrame Plugins */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = data/effects/freeframe;
-			dstSubfolderSpec = 16;
-			files = (
-				6516EBB421EBBE640070D93E /* FFGLHeat.bundle in Copy FreeFrame Plugins */,
-				6516EBB521EBBE640070D93E /* FFGLMirror.bundle in Copy FreeFrame Plugins */,
-				6516EBB621EBBE640070D93E /* FFGLTile.bundle in Copy FreeFrame Plugins */,
-				6516EBB721EBBE640070D93E /* FFGLTime.bundle in Copy FreeFrame Plugins */,
-				6516EBB821EBBE640070D93E /* FFGLBrightness.bundle in Copy FreeFrame Plugins */,
-			);
-			name = "Copy FreeFrame Plugins";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6516EBC021EC11720070D93E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -172,6 +160,35 @@
 				6516EBC421EC118E0070D93E /* FFGLTime.bundle in CopyFiles */,
 				6516EBC521EC118E0070D93E /* FFGLBrightness.bundle in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		651B09022208F0D400B861EB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = effects/glsl;
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		651B09052208F16900B861EB /* Copy GLSL shaders */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = data/effects/glsl;
+			dstSubfolderSpec = 16;
+			files = (
+				6500B0AA2210A1D90082C756 /* Layer.frag in Copy GLSL shaders */,
+				6500B0AB2210A1D90082C756 /* Layer.vert in Copy GLSL shaders */,
+				65086DC3220CA30600CB7C57 /* Invert.frag in Copy GLSL shaders */,
+				65086DC4220CA30600CB7C57 /* Invert.vert in Copy GLSL shaders */,
+				6578EC47220B5DE5004E7427 /* BlurX.frag in Copy GLSL shaders */,
+				6578EC48220B5DE5004E7427 /* BlurX.vert in Copy GLSL shaders */,
+				6578EC49220B5DE5004E7427 /* BlurY.frag in Copy GLSL shaders */,
+				6578EC4A220B5DE5004E7427 /* BlurY.vert in Copy GLSL shaders */,
+				6578EC4B220B5DE5004E7427 /* Displacement.frag in Copy GLSL shaders */,
+				6578EC4C220B5DE5004E7427 /* Displacement.vert in Copy GLSL shaders */,
+			);
+			name = "Copy GLSL shaders";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		65A59D9821A4C3B200ADEE79 /* CopyFiles */ = {
@@ -242,7 +259,11 @@
 		50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxXmlSettings.cpp; path = ../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
 		52AFA1F08C420992CAAAE648 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSlider.h; path = ../../../addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
 		63A47AC60FFAFC3BF093EC0F /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OscOutboundPacketStream.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.cpp; sourceTree = SOURCE_ROOT; };
+		6500B0A82210A1B90082C756 /* Layer.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Layer.frag; sourceTree = "<group>"; };
+		6500B0A92210A1B90082C756 /* Layer.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Layer.vert; sourceTree = "<group>"; };
 		6504536621AE027B00CAC33D /* RepositoryTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RepositoryTest.cpp; sourceTree = "<group>"; };
+		65086DC1220CA2E300CB7C57 /* Invert.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Invert.frag; sourceTree = "<group>"; };
+		65086DC2220CA2E400CB7C57 /* Invert.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Invert.vert; sourceTree = "<group>"; };
 		650C40D221C5D0090094365F /* OSXstuff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSXstuff.h; sourceTree = "<group>"; };
 		650C40D321C5D0090094365F /* OSXstuff.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = OSXstuff.m; sourceTree = "<group>"; };
 		6515454E21B49C2400880443 /* DrawableInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DrawableInterface.hpp; sourceTree = "<group>"; };
@@ -302,6 +323,12 @@
 		65759E3621B73B2B006B6814 /* GUIController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GUIController.hpp; sourceTree = "<group>"; };
 		65759E3B21B891FF006B6814 /* EngineController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EngineController.cpp; sourceTree = "<group>"; };
 		65759E3C21B891FF006B6814 /* EngineController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EngineController.hpp; sourceTree = "<group>"; };
+		6578EC41220B5DC7004E7427 /* BlurY.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BlurY.frag; sourceTree = "<group>"; };
+		6578EC42220B5DC7004E7427 /* BlurX.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BlurX.frag; sourceTree = "<group>"; };
+		6578EC43220B5DC7004E7427 /* BlurX.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BlurX.vert; sourceTree = "<group>"; };
+		6578EC44220B5DC7004E7427 /* BlurY.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BlurY.vert; sourceTree = "<group>"; };
+		6578EC45220B5DC7004E7427 /* Displacement.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Displacement.vert; sourceTree = "<group>"; };
+		6578EC46220B5DC7004E7427 /* Displacement.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Displacement.frag; sourceTree = "<group>"; };
 		657D74FD21BFF7A5004329EF /* ofxButtonGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxButtonGroup.cpp; sourceTree = "<group>"; };
 		657D74FE21BFF7A5004329EF /* ofxButtonGroup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxButtonGroup.hpp; sourceTree = "<group>"; };
 		657D750021BFFB79004329EF /* ofxPreview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxPreview.cpp; sourceTree = "<group>"; };
@@ -329,6 +356,8 @@
 		65C9792F2205C20C005C08E0 /* PreferencesController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PreferencesController.cpp; sourceTree = "<group>"; };
 		65C979302205C20C005C08E0 /* PreferencesController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PreferencesController.hpp; sourceTree = "<group>"; };
 		65C979342205C488005C08E0 /* PreferencesControllerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PreferencesControllerTest.cpp; sourceTree = "<group>"; };
+		65C979372207A8F2005C08E0 /* GLSLEffect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GLSLEffect.cpp; sourceTree = "<group>"; };
+		65C979382207A8F2005C08E0 /* GLSLEffect.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GLSLEffect.hpp; sourceTree = "<group>"; };
 		65D167E221D53141006B6163 /* ofxPanelDecorator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxPanelDecorator.cpp; sourceTree = "<group>"; };
 		65D167E321D53141006B6163 /* ofxPanelDecorator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxPanelDecorator.hpp; sourceTree = "<group>"; };
 		65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscBundle.cpp; path = ../../../addons/ofxOsc/src/ofxOscBundle.cpp; sourceTree = SOURCE_ROOT; };
@@ -774,7 +803,7 @@
 			path = ../../../addons/ofxFreeFrame/src;
 			sourceTree = "<group>";
 		};
-		6516EB9321EB51030070D93E /* Effects */ = {
+		6516EB9321EB51030070D93E /* EffectsModule */ = {
 			isa = PBXGroup;
 			children = (
 				6516EBA521EBAF4A0070D93E /* Resources */,
@@ -782,7 +811,7 @@
 				6516EB9521EB511C0070D93E /* Controller */,
 				6516EB9421EB51120070D93E /* Entity */,
 			);
-			path = Effects;
+			path = EffectsModule;
 			sourceTree = "<group>";
 		};
 		6516EB9421EB51120070D93E /* Entity */ = {
@@ -791,6 +820,8 @@
 				6516EB9A21EB51C00070D93E /* EffectBase.hpp */,
 				6516EB9B21EB542D0070D93E /* FreeFrameEffect.cpp */,
 				6516EB9C21EB542D0070D93E /* FreeFrameEffect.hpp */,
+				65C979372207A8F2005C08E0 /* GLSLEffect.cpp */,
+				65C979382207A8F2005C08E0 /* GLSLEffect.hpp */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -816,6 +847,7 @@
 		6516EBA521EBAF4A0070D93E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				65C9793B2207B0CF005C08E0 /* Shaders */,
 				6516EBA721EBAFBB0070D93E /* OSX */,
 			);
 			path = Resources;
@@ -974,7 +1006,7 @@
 				65759E2E21B73A94006B6814 /* GUIModule */,
 				65A59D8221A0D36C00ADEE79 /* VisualsModule */,
 				65A59D7A21A0D1B300ADEE79 /* LayersModule */,
-				6516EB9321EB51030070D93E /* Effects */,
+				6516EB9321EB51030070D93E /* EffectsModule */,
 			);
 			name = Modules;
 			path = src/Modules;
@@ -1144,6 +1176,23 @@
 				65C979342205C488005C08E0 /* PreferencesControllerTest.cpp */,
 			);
 			path = PreferencesModule;
+			sourceTree = "<group>";
+		};
+		65C9793B2207B0CF005C08E0 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				65086DC1220CA2E300CB7C57 /* Invert.frag */,
+				65086DC2220CA2E400CB7C57 /* Invert.vert */,
+				6578EC42220B5DC7004E7427 /* BlurX.frag */,
+				6578EC43220B5DC7004E7427 /* BlurX.vert */,
+				6578EC41220B5DC7004E7427 /* BlurY.frag */,
+				6578EC44220B5DC7004E7427 /* BlurY.vert */,
+				6578EC46220B5DC7004E7427 /* Displacement.frag */,
+				6578EC45220B5DC7004E7427 /* Displacement.vert */,
+				6500B0A82210A1B90082C756 /* Layer.frag */,
+				6500B0A92210A1B90082C756 /* Layer.vert */,
+			);
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 		6948EE371B920CB800B5AC1A /* local_addons */ = {
@@ -1678,6 +1727,7 @@
 				65A59DAB21A61E3400ADEE79 /* ShellScript */,
 				65A59DAD21A762BF00ADEE79 /* CopyFiles */,
 				6516EBC021EC11720070D93E /* CopyFiles */,
+				651B09022208F0D400B861EB /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1699,7 +1749,7 @@
 				8466F1851C04CA0E00918B1C /* ShellScript */,
 				6516EBB221EBBDC80070D93E /* ShellScript */,
 				6515455C21B7311F00880443 /* Copy Files */,
-				6516EBB321EBBE330070D93E /* Copy FreeFrame Plugins */,
+				651B09052208F16900B861EB /* Copy GLSL shaders */,
 			);
 			buildRules = (
 			);
@@ -1829,6 +1879,7 @@
 			files = (
 				656BD49421CC4EB6000463B3 /* EngineTest.cpp in Sources */,
 				65337D1F21BD5963004FF3DA /* Layer.cpp in Sources */,
+				65C9793A2207A8F2005C08E0 /* GLSLEffect.cpp in Sources */,
 				65A59DA421A4C3C700ADEE79 /* Video.cpp in Sources */,
 				65C979352205C488005C08E0 /* PreferencesControllerTest.cpp in Sources */,
 				65337D1021BB0E8D004FF3DA /* Engine.cpp in Sources */,
@@ -1851,9 +1902,7 @@
 				6515455721B5ED4000880443 /* LayerController.cpp in Sources */,
 				65337D2121BD59BC004FF3DA /* LayerTest.cpp in Sources */,
 				65C979322205C20C005C08E0 /* PreferencesController.cpp in Sources */,
-				6516EB9E21EB542D0070D93E /* FreeFrameEffect.cpp in Sources */,
 				6516EB8621EAD54C0070D93E /* ofxFFHost.cpp in Sources */,
-				6516EBA421EBA90F0070D93E /* FreeFrameHostAdapter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1888,9 +1937,9 @@
 				49BEEB2DFA5319D55AA6899F /* tilt.c in Sources */,
 				255A7B680DC81E543C875794 /* usb_libusb10.c in Sources */,
 				7ADB04AF67C568EAFAEBA546 /* ofxKinectExtras.cpp in Sources */,
-				6516EBA321EBA90F0070D93E /* FreeFrameHostAdapter.cpp in Sources */,
 				686B0DF6249B52E1A85B39EC /* ofxKinect.cpp in Sources */,
 				661A1991F5CE4CCC2919D8E7 /* ofxNetworkUtils.cpp in Sources */,
+				65C979392207A8F2005C08E0 /* GLSLEffect.cpp in Sources */,
 				65337D0F21BB0E8D004FF3DA /* Engine.cpp in Sources */,
 				960D20B191346612D5C05A6A /* ofxTCPClient.cpp in Sources */,
 				125506CD3E5F428AAFE5CC65 /* ofxTCPManager.cpp in Sources */,
@@ -1899,7 +1948,6 @@
 				6516EB8121EAD54C0070D93E /* ofxFFGLInstance.cpp in Sources */,
 				65D167E421D53141006B6163 /* ofxPanelDecorator.cpp in Sources */,
 				65A59D7621A0D16D00ADEE79 /* main.cpp in Sources */,
-				6516EB9D21EB542D0070D93E /* FreeFrameEffect.cpp in Sources */,
 				E2564CF7DDB3713772BB682E /* ofxUDPManager.cpp in Sources */,
 				65A9F44821F375A200AFB193 /* ofxMatrix.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,

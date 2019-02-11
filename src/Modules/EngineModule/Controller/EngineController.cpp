@@ -18,6 +18,7 @@ EngineController::EngineController(shared_ptr<Orange::Preferences::PreferencesCo
     effectsController->width = engine.width;
     effectsController->height = engine.height;
 
+    
     setFbo();
 }
 
@@ -34,8 +35,10 @@ void EngineController::render()
         layerController.render();
     });
     
+    
     fbo.begin();
     ofClear(0, 0, 0);
+    
     layers.forEach([&](shared_ptr<Orange::Layers::Layer> layer) {
         layerController.setLayer(layer);
         layerController.draw(0, 0, engine.width, engine.height);
@@ -46,10 +49,14 @@ void EngineController::render()
 }
 
 void EngineController::draw(float x, float y, float w, float h) {
+    
     ofColor(255,255,255);
     ofClear(0, 0, 0);
     
     fbo.draw(x, y, w, h);
+    
+
+    
 }
 
 shared_ptr<Orange::Layers::Layer> EngineController::addLayer()

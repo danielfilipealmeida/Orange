@@ -47,6 +47,7 @@ void GUIController::setupLayerPanel() {
     
     
     // adding effects here... needs to move this somewhere else
+    /*
     engineController->effectsController->forEachEffect([&](shared_ptr<Orange::Effects::EffectBase> effect) {
         shared_ptr<Orange::Effects::FreeFrameEffect> ffEffect = dynamic_pointer_cast<Orange::Effects::FreeFrameEffect>(effect);
         if (ffEffect) {
@@ -56,7 +57,7 @@ void GUIController::setupLayerPanel() {
             });
         }
     });
-    
+    */
     
     
 }

@@ -51,8 +51,14 @@ class ofApp : public ofBaseApp{
     
     shared_ptr<Orange::Effects::FreeFrameHostAdapter> ffHostAdapter;
     shared_ptr<Orange::Effects::EffectsController> effectsController;
-    
     shared_ptr<ofAppBaseWindow> mainWindow, projectorWindow;
+    
+    
+
+    // test stuff
+    ofShader shader;
+    ofFbo fbo;
+    ofImage image;
     
 	public:
     

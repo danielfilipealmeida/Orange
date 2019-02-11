@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/LayersModule/Entity/Layer.cpp"
-            timestampString = "570926332.142855"
+            timestampString = "571099361.176929"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
@@ -80,6 +80,22 @@
             startingLineNumber = "200"
             endingLineNumber = "200"
             landmarkName = "ofVideoPlayer::update()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Modules/EffectsModule/Entity/FreeFrameEffect.cpp"
+            timestampString = "571609266.857627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "FreeFrameEffect::updateParameters()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

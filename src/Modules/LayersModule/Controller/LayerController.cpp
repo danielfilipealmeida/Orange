@@ -57,3 +57,7 @@ void LayerController::draw(float x, float y, float w, float h) {
 }
 
 
+ofTexture& LayerController::getTexture()
+{
+    return layer->fbo.getTexture();
+}

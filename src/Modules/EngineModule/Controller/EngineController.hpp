@@ -32,6 +32,8 @@ namespace Orange {
             
             Engine engine;
             
+           
+            
         public:
             ofFbo fbo;
             shared_ptr<Orange::Effects::EffectsController> effectsController;
@@ -123,6 +125,7 @@ namespace Orange {
              \return Orange::Visuals::Video*
              */
             shared_ptr<Visuals::Video> loadVideo(string path);
+        
 
 #pragma mark File methods
             

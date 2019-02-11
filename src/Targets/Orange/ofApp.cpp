@@ -10,16 +10,13 @@ void ofApp::setup() {
     ofSetEscapeQuitsApp(false);
     ofSetFrameRate(30);
     ofSetWindowTitle("OrangeVJ");
-    
     ofEnableSetupScreen();
-  
-    preferencesController = make_shared<Orange::Preferences::PreferencesController>("OrangeVJ");
-    ffHostAdapter = make_shared<Orange::Effects::FreeFrameHostAdapter>();
-    effectsController = make_shared<Orange::Effects::EffectsController>(ffHostAdapter);
     
+    preferencesController = make_shared<Orange::Preferences::PreferencesController>("OrangeVJ");
+    effectsController = make_shared<Orange::Effects::EffectsController>();
     engineController = make_shared<Orange::Engine::EngineController>(preferencesController, effectsController);
     
-    effectsController->newFreeFameEffect("FFGLHeat");
+    effectsController->newGLSLEffect("Invert");
     
     guiFacade = new Orange::GUI::ofxGuiFacade();
     os = new Orange::GUI::OSXFacade();
@@ -61,21 +58,35 @@ void ofApp::setAppTitle()
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
-    
+void ofApp::update()
+{
+   
     engineController->render();
     guiController->update();
 }
 
 //--------------------------------------------------------------
-void ofApp::draw(){
+void ofApp::draw()
+{
     ofClear(0, 0, 0);
     guiController->draw();
+
+    
+    fbo.begin();
+    shader.begin();
+    image.draw(0,0);
+    shader.end();
+    fbo.end();
+    
+    fbo.draw(0,0, ofGetWidth(), ofGetHeight());
+
+
 }
 
 void ofApp::drawProjector(ofEventArgs & args)
 {
     //ofSetColor(255,255,255, 0);
+
     engineController->draw(0, 0, ofGetWidth(), ofGetHeight());
 }
 

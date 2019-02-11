@@ -30,8 +30,6 @@ namespace Orange {
              */
              shared_ptr<Orange::Visuals::BaseVisual> getVisual();
             
-            
-        
         public:
             
             /*!
@@ -59,7 +57,11 @@ namespace Orange {
              */
             void render();
             
-            
+            /*!
+             Returns the Layer's texture
+             \returns ofTexture&
+             */
+            ofTexture& getTexture();
         };
     }
 }
