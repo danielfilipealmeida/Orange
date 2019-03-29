@@ -4,6 +4,8 @@
 //
 //  Created by Daniel Almeida on 13/01/2019.
 //
+// IMPORTANT: this test is no longer in use because FF effects are not working
+//
 
 #include <stdio.h>
 #include "catch.hpp"

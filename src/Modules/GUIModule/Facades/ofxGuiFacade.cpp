@@ -44,6 +44,11 @@ void ofxGuiFacade::setName(ofParameter<string> name)
     currentPanel->setName(name);
 }
 
+void ofxGuiFacade::createParameterGroup(ofParameterGroup parameters)
+{
+    currentPanel->add(parameters);
+}
+
 void ofxGuiFacade::createSlider(ofParameter<float> parameter,
                                 string name)
 {

@@ -32,6 +32,16 @@ void GUIController::setupPreviewsPanel() {
     });
 }
 
+void GUIController::setupEffectPanel() {
+    engineController->effectsController->forEachEffect([&](shared_ptr<Orange::Effects::EffectBase> effect) {
+        shared_ptr<Orange::Effects::GLSLEffect> glslEffect = dynamic_pointer_cast<Orange::Effects::GLSLEffect>(effect);
+        
+        if (glslEffect) {
+            facade->createParameterGroup(glslEffect->parameters);
+        }
+    });
+}
+
 void GUIController::setupLayerPanel() {
     facade->setCurrentPanel(LayerPanel);
     facade->clear();
@@ -45,21 +55,7 @@ void GUIController::setupLayerPanel() {
         setupVisualsMatrixForLayer(layer);
     });
     
-    
-    // adding effects here... needs to move this somewhere else
-    /*
-    engineController->effectsController->forEachEffect([&](shared_ptr<Orange::Effects::EffectBase> effect) {
-        shared_ptr<Orange::Effects::FreeFrameEffect> ffEffect = dynamic_pointer_cast<Orange::Effects::FreeFrameEffect>(effect);
-        if (ffEffect) {
-            facade->createLabel(std::string(ffEffect->name));
-            ffEffect->forEachParameter([&](ofParameter<float> parameter) {
-                facade->createSlider(parameter, parameter.getName());
-            });
-        }
-    });
-    */
-    
-    
+    setupEffectPanel();
 }
 
 void GUIController::setupVisualPanel() {
@@ -93,8 +89,6 @@ void GUIController::update()
     currentFrame.removeListener(this, &GUIController::currentFrameChanged);
     currentFrame.set(currentVideo->getCurrentFrame());
     currentFrame.addListener(this, &GUIController::currentFrameChanged);
-    
-    //cout << "number of listeners " << ofToString(currentFrame.getNumListeners()) << endl;
 }
 
 void GUIController::draw()

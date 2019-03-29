@@ -36,9 +36,8 @@ namespace Orange {
             shared_ptr<FreeFrameEffect>newFreeFrameEffectByName(string name,
                                                       float width,
                                                       float height);
-            
+
         private:
-            
             
             FreeFrameEffect getFreeFameEffectByName(string name);
             ofxFFPlugin* getFreeFramePluginByName(string name);

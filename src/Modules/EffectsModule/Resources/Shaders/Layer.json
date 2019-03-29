@@ -1,0 +1,61 @@
+{
+    "name": "Layer FX",
+    "uniforms": [
+        {
+            "name": "contrast",
+            "type": "float",
+            "minimum": 0.0,
+            "maximum": 2.0,
+            "value": 1.0
+        },
+        {
+            "name": "brightness",
+            "type": "float",
+            "minimum": 0.0,
+            "maximum": 2.0,
+            "value": 1.0
+        },
+        {
+            "name": "saturation",
+            "type": "float",
+            "minimum": 0.0,
+            "maximum": 2.0,
+            "value": 1.0
+        },
+        {
+            "name": "blurH",
+            "type": "float",
+            "minimum": 0.0,
+            "maximum": 32.0,
+            "value": 0.0
+        },
+        {
+            "name": "blurV",
+            "type": "float",
+            "minimum": 0.0,
+            "maximum": 32.0,
+            "value": 0.0
+        },
+        {
+            "name": "redTint",
+            "type": "float",
+            "minimum": 0.0,
+            "maximum": 2.0,
+            "value": 1.0
+        },
+        {
+            "name": "greenTint",
+            "type": "float",
+            "minimum": 0.0,
+            "maximum": 2.0,
+            "value": 1.0
+        },
+        {
+            "name": "blueTint",
+            "type": "float",
+            "minimum": 0.0,
+            "maximum": 2.0,
+            "value": 1.0
+        }
+    ]
+}

@@ -71,6 +71,8 @@ void Video::open(string filePath)
 void Video::loadThumbnail() {
     ofPixels pixels;
     
+    if (!preferencesController) return;
+    
     try {
         pixels = preferencesController->loadThumbnail(player.getMoviePath());
     }

@@ -41,6 +41,11 @@ namespace Orange {
             void setupPreviewsPanel();
             
             /*!
+             Sets up the effects panel for all efects on the current layer
+             */
+            void setupEffectPanel();
+            
+            /*!
              Sets up the Layer Panel
              */
             void setupLayerPanel();
@@ -51,7 +56,7 @@ namespace Orange {
             void setupVisualPanel();
             
             /*!
-             
+             [Add definition here]
              */
             void setupVisualsMatrixForLayer(shared_ptr<Orange::Layers::Layer> layer);
             

@@ -16,7 +16,7 @@ void ofApp::setup() {
     effectsController = make_shared<Orange::Effects::EffectsController>();
     engineController = make_shared<Orange::Engine::EngineController>(preferencesController, effectsController);
     
-    effectsController->newGLSLEffect("Invert");
+    effectsController->newGLSLEffect("Layer");
     
     guiFacade = new Orange::GUI::ofxGuiFacade();
     os = new Orange::GUI::OSXFacade();
@@ -60,7 +60,6 @@ void ofApp::setAppTitle()
 //--------------------------------------------------------------
 void ofApp::update()
 {
-   
     engineController->render();
     guiController->update();
 }
@@ -70,17 +69,6 @@ void ofApp::draw()
 {
     ofClear(0, 0, 0);
     guiController->draw();
-
-    
-    fbo.begin();
-    shader.begin();
-    image.draw(0,0);
-    shader.end();
-    fbo.end();
-    
-    fbo.draw(0,0, ofGetWidth(), ofGetHeight());
-
-
 }
 
 void ofApp::drawProjector(ofEventArgs & args)

@@ -19,12 +19,11 @@ using namespace Orange;
 TEST_CASE("EngineController sets the FBO on construction", "" ) {
     Engine::EngineController *engineController;
     shared_ptr<Effects::EffectsController> effectsController;
-    shared_ptr<Effects::FreeFrameHostAdapter> ffAdapter;
-
-    ffAdapter = make_shared<Effects::FreeFrameHostAdapter>();
-    effectsController = make_shared<Effects::EffectsController>(ffAdapter);
+    shared_ptr<Orange::Preferences::PreferencesController> preferencesController;
     
-    engineController = new Engine::EngineController(effectsController);
+    preferencesController = make_shared<Orange::Preferences::PreferencesController>("OrangeVJ");
+    effectsController = make_shared<Orange::Effects::EffectsController>();
+    engineController = new Engine::EngineController(preferencesController, effectsController);
     
     ofFbo fbo = engineController->fbo;
     
@@ -35,12 +34,11 @@ TEST_CASE("EngineController sets the FBO on construction", "" ) {
 TEST_CASE("EngineController can add layer", "" ) {
     Engine::EngineController *engineController;
     shared_ptr<Effects::EffectsController> effectsController;
-    shared_ptr<Effects::FreeFrameHostAdapter> ffAdapter;
+    shared_ptr<Orange::Preferences::PreferencesController> preferencesController;
     
-    ffAdapter = make_shared<Effects::FreeFrameHostAdapter>();
-    effectsController = make_shared<Effects::EffectsController>(ffAdapter);
-    
-    engineController = new Engine::EngineController(effectsController);
+    preferencesController = make_shared<Orange::Preferences::PreferencesController>("OrangeVJ");
+    effectsController = make_shared<Orange::Effects::EffectsController>();
+    engineController = new Engine::EngineController(preferencesController, effectsController);
     
     engineController->addLayer();
     REQUIRE_THROWS(engineController->getCurrentLayer());
@@ -54,14 +52,15 @@ TEST_CASE("EngineController can add layer", "" ) {
 TEST_CASE("Can Load Set", "load" ) {
     Engine::EngineController *engineController;
     shared_ptr<Effects::EffectsController> effectsController;
-    shared_ptr<Effects::FreeFrameHostAdapter> ffAdapter;
+    shared_ptr<Orange::Preferences::PreferencesController> preferencesController;
     
     ofSetDataPathRoot("");
     
-    ffAdapter = make_shared<Effects::FreeFrameHostAdapter>();
-    effectsController = make_shared<Effects::EffectsController>(ffAdapter);
+    preferencesController = make_shared<Orange::Preferences::PreferencesController>("OrangeVJ");
+    effectsController = make_shared<Orange::Effects::EffectsController>();
     
-    engineController = new Engine::EngineController(effectsController);
+    
+    engineController = new Engine::EngineController(preferencesController, effectsController);
     engineController->openSet("data/TestSet01.vjs");
     
     ofJson json = engineController->toJson();

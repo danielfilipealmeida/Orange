@@ -36,14 +36,6 @@ void EffectsController::process(ofFbo &fbo)
         }
     });
     fbo.end();
-    
-    // only process GLSL effects
-    /*
-    effects.forEach([&tex](shared_ptr<EffectBase> effect) {
-        if (!dynamic_pointer_cast<GLSLEffect>(effect)) return;
-        effect->process(tex);
-    });
-     */
 }
 
 

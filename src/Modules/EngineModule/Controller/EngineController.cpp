@@ -35,7 +35,6 @@ void EngineController::render()
         layerController.render();
     });
     
-    
     fbo.begin();
     ofClear(0, 0, 0);
     
@@ -48,15 +47,11 @@ void EngineController::render()
     effectsController->process(fbo);
 }
 
-void EngineController::draw(float x, float y, float w, float h) {
-    
+void EngineController::draw(float x, float y, float w, float h)
+{
     ofColor(255,255,255);
     ofClear(0, 0, 0);
-    
     fbo.draw(x, y, w, h);
-    
-
-    
 }
 
 shared_ptr<Orange::Layers::Layer> EngineController::addLayer()
@@ -64,7 +59,6 @@ shared_ptr<Orange::Layers::Layer> EngineController::addLayer()
     shared_ptr<Layers::Layer> layer = std::make_shared<Layers::Layer>();
     layer->setPreferencesController(preferencesController);
     layer->setFbo(engine.width, engine.height);
-    
     layers.add(layer);
     
     return layer;

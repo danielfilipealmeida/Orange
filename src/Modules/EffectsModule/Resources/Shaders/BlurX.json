@@ -1,0 +1,12 @@
+{
+    "name": "Blur X",
+    "uniforms": [
+        {
+            "name": "blurAmnt",
+            "type": "float",
+            "minimum": 0.0,
+            "maximum": 20.0,
+            "value": 0.0
+        }
+    ]
+}

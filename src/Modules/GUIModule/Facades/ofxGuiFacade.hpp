@@ -46,6 +46,12 @@ namespace Orange {
             void setName(ofParameter<string> name);
             
             /*!
+             Creates a parameter group
+             \param ofParameterGroup parameters
+             */
+            void createParameterGroup(ofParameterGroup parameters);
+            
+            /*!
              Creates a float Slider in the GUI
              \param string title
              \param string name
