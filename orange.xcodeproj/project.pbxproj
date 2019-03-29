@@ -28,11 +28,15 @@
 		65086DC3220CA30600CB7C57 /* Invert.frag in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 65086DC1220CA2E300CB7C57 /* Invert.frag */; };
 		65086DC4220CA30600CB7C57 /* Invert.vert in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 65086DC2220CA2E400CB7C57 /* Invert.vert */; };
 		650C40D421C5D0090094365F /* OSXstuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C40D321C5D0090094365F /* OSXstuff.m */; };
-		650CC8CB224D8F6600AA553F /* BlurY.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 650CC8CA224D8ED200AA553F /* BlurY.json */; };
+		650CC8CB224D8F6600AA553F /* BlurY.json in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 650CC8CA224D8ED200AA553F /* BlurY.json */; };
 		650CC8CC224D901C00AA553F /* BlurY.json in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 650CC8CA224D8ED200AA553F /* BlurY.json */; };
 		650CC8CE224D90AD00AA553F /* Invert.json in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 650CC8CD224D908800AA553F /* Invert.json */; };
 		650CC8D0224D91F200AA553F /* Displacement.json in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 650CC8CF224D917500AA553F /* Displacement.json */; };
 		650CC8D2224E832400AA553F /* Layer.json in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 650CC8D1224E628000AA553F /* Layer.json */; };
+		650CC8D4224EC97200AA553F /* EffectsControllerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650CC8D3224EC97200AA553F /* EffectsControllerTest.cpp */; };
+		650CC8D5224ED4A500AA553F /* Invert.json in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 650CC8CD224D908800AA553F /* Invert.json */; };
+		650CC8D6224ED4A500AA553F /* Displacement.json in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 650CC8CF224D917500AA553F /* Displacement.json */; };
+		650CC8D7224ED4A500AA553F /* Layer.json in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 650CC8D1224E628000AA553F /* Layer.json */; };
 		6515455221B4A25200880443 /* BaseVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455021B4A25200880443 /* BaseVisual.cpp */; };
 		6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455021B4A25200880443 /* BaseVisual.cpp */; };
 		6515455621B5ED4000880443 /* LayerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455421B5ED4000880443 /* LayerController.cpp */; };
@@ -104,17 +108,17 @@
 		65D167E421D53141006B6163 /* ofxPanelDecorator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65D167E221D53141006B6163 /* ofxPanelDecorator.cpp */; };
 		65E5E5A42245A84B00E00EB9 /* GLSLEffectTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E5E5A32245A84B00E00EB9 /* GLSLEffectTest.cpp */; };
 		65E5E5A52245B40D00E00EB9 /* BlurX.json in Copy GLSL shaders */ = {isa = PBXBuildFile; fileRef = 65E5E5A222459E0C00E00EB9 /* BlurX.json */; };
-		65E5E5A62245B42700E00EB9 /* Invert.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65086DC1220CA2E300CB7C57 /* Invert.frag */; };
-		65E5E5A72245B42700E00EB9 /* Invert.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65086DC2220CA2E400CB7C57 /* Invert.vert */; };
-		65E5E5A82245B42700E00EB9 /* BlurX.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6578EC42220B5DC7004E7427 /* BlurX.frag */; };
-		65E5E5A92245B42700E00EB9 /* BlurX.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6578EC43220B5DC7004E7427 /* BlurX.vert */; };
-		65E5E5AA2245B42700E00EB9 /* BlurY.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6578EC41220B5DC7004E7427 /* BlurY.frag */; };
-		65E5E5AB2245B42700E00EB9 /* BlurY.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6578EC44220B5DC7004E7427 /* BlurY.vert */; };
-		65E5E5AC2245B42700E00EB9 /* Displacement.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6578EC46220B5DC7004E7427 /* Displacement.frag */; };
-		65E5E5AD2245B42700E00EB9 /* Displacement.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6578EC45220B5DC7004E7427 /* Displacement.vert */; };
-		65E5E5AE2245B42700E00EB9 /* Layer.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6500B0A82210A1B90082C756 /* Layer.frag */; };
-		65E5E5AF2245B42700E00EB9 /* Layer.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6500B0A92210A1B90082C756 /* Layer.vert */; };
-		65E5E5B02245B42700E00EB9 /* BlurX.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65E5E5A222459E0C00E00EB9 /* BlurX.json */; };
+		65E5E5A62245B42700E00EB9 /* Invert.frag in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 65086DC1220CA2E300CB7C57 /* Invert.frag */; };
+		65E5E5A72245B42700E00EB9 /* Invert.vert in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 65086DC2220CA2E400CB7C57 /* Invert.vert */; };
+		65E5E5A82245B42700E00EB9 /* BlurX.frag in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 6578EC42220B5DC7004E7427 /* BlurX.frag */; };
+		65E5E5A92245B42700E00EB9 /* BlurX.vert in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 6578EC43220B5DC7004E7427 /* BlurX.vert */; };
+		65E5E5AA2245B42700E00EB9 /* BlurY.frag in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 6578EC41220B5DC7004E7427 /* BlurY.frag */; };
+		65E5E5AB2245B42700E00EB9 /* BlurY.vert in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 6578EC44220B5DC7004E7427 /* BlurY.vert */; };
+		65E5E5AC2245B42700E00EB9 /* Displacement.frag in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 6578EC46220B5DC7004E7427 /* Displacement.frag */; };
+		65E5E5AD2245B42700E00EB9 /* Displacement.vert in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 6578EC45220B5DC7004E7427 /* Displacement.vert */; };
+		65E5E5AE2245B42700E00EB9 /* Layer.frag in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 6500B0A82210A1B90082C756 /* Layer.frag */; };
+		65E5E5AF2245B42700E00EB9 /* Layer.vert in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 6500B0A92210A1B90082C756 /* Layer.vert */; };
+		65E5E5B02245B42700E00EB9 /* BlurX.json in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 65E5E5A222459E0C00E00EB9 /* BlurX.json */; };
 		661A1991F5CE4CCC2919D8E7 /* ofxNetworkUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE30B18B42BAF0E92CB140E5 /* ofxNetworkUtils.cpp */; };
 		66CA411C5A9664E27326BF36 /* ofxTCPServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C085E327DAB912CFA2A443D /* ofxTCPServer.cpp */; };
 		67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361208CD4107E479F04E7B /* NetworkingUtils.cpp */; };
@@ -160,25 +164,29 @@
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		651B09022208F0D400B861EB /* CopyFiles */ = {
+		651B09022208F0D400B861EB /* Copy GLSL shader filters */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = data/effects/glsl;
 			dstSubfolderSpec = 16;
 			files = (
-				65E5E5A62245B42700E00EB9 /* Invert.frag in CopyFiles */,
-				65E5E5A72245B42700E00EB9 /* Invert.vert in CopyFiles */,
-				65E5E5A82245B42700E00EB9 /* BlurX.frag in CopyFiles */,
-				65E5E5A92245B42700E00EB9 /* BlurX.vert in CopyFiles */,
-				65E5E5AA2245B42700E00EB9 /* BlurY.frag in CopyFiles */,
-				65E5E5AB2245B42700E00EB9 /* BlurY.vert in CopyFiles */,
-				65E5E5AC2245B42700E00EB9 /* Displacement.frag in CopyFiles */,
-				65E5E5AD2245B42700E00EB9 /* Displacement.vert in CopyFiles */,
-				65E5E5AE2245B42700E00EB9 /* Layer.frag in CopyFiles */,
-				65E5E5AF2245B42700E00EB9 /* Layer.vert in CopyFiles */,
-				650CC8CB224D8F6600AA553F /* BlurY.json in CopyFiles */,
-				65E5E5B02245B42700E00EB9 /* BlurX.json in CopyFiles */,
+				650CC8D5224ED4A500AA553F /* Invert.json in Copy GLSL shader filters */,
+				650CC8D6224ED4A500AA553F /* Displacement.json in Copy GLSL shader filters */,
+				650CC8D7224ED4A500AA553F /* Layer.json in Copy GLSL shader filters */,
+				65E5E5A62245B42700E00EB9 /* Invert.frag in Copy GLSL shader filters */,
+				65E5E5A72245B42700E00EB9 /* Invert.vert in Copy GLSL shader filters */,
+				65E5E5A82245B42700E00EB9 /* BlurX.frag in Copy GLSL shader filters */,
+				65E5E5A92245B42700E00EB9 /* BlurX.vert in Copy GLSL shader filters */,
+				65E5E5AA2245B42700E00EB9 /* BlurY.frag in Copy GLSL shader filters */,
+				65E5E5AB2245B42700E00EB9 /* BlurY.vert in Copy GLSL shader filters */,
+				65E5E5AC2245B42700E00EB9 /* Displacement.frag in Copy GLSL shader filters */,
+				65E5E5AD2245B42700E00EB9 /* Displacement.vert in Copy GLSL shader filters */,
+				65E5E5AE2245B42700E00EB9 /* Layer.frag in Copy GLSL shader filters */,
+				65E5E5AF2245B42700E00EB9 /* Layer.vert in Copy GLSL shader filters */,
+				650CC8CB224D8F6600AA553F /* BlurY.json in Copy GLSL shader filters */,
+				65E5E5B02245B42700E00EB9 /* BlurX.json in Copy GLSL shader filters */,
 			);
+			name = "Copy GLSL shader filters";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		651B09052208F16900B861EB /* Copy GLSL shaders */ = {
@@ -285,6 +293,7 @@
 		650CC8CD224D908800AA553F /* Invert.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Invert.json; sourceTree = "<group>"; };
 		650CC8CF224D917500AA553F /* Displacement.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Displacement.json; sourceTree = "<group>"; };
 		650CC8D1224E628000AA553F /* Layer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Layer.json; sourceTree = "<group>"; };
+		650CC8D3224EC97200AA553F /* EffectsControllerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EffectsControllerTest.cpp; sourceTree = "<group>"; };
 		6515454E21B49C2400880443 /* DrawableInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DrawableInterface.hpp; sourceTree = "<group>"; };
 		6515454F21B4A22100880443 /* PlayableInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PlayableInterface.hpp; sourceTree = "<group>"; };
 		6515455021B4A25200880443 /* BaseVisual.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BaseVisual.cpp; sourceTree = "<group>"; };
@@ -891,6 +900,7 @@
 			children = (
 				6516EBBE21EBD1070070D93E /* FreeFrameHostAdapterTest.cpp */,
 				65E5E5A32245A84B00E00EB9 /* GLSLEffectTest.cpp */,
+				650CC8D3224EC97200AA553F /* EffectsControllerTest.cpp */,
 			);
 			path = EffectsModule;
 			sourceTree = "<group>";
@@ -1753,7 +1763,7 @@
 				65A59D9821A4C3B200ADEE79 /* CopyFiles */,
 				65A59DAB21A61E3400ADEE79 /* ShellScript */,
 				65A59DAD21A762BF00ADEE79 /* CopyFiles */,
-				651B09022208F0D400B861EB /* CopyFiles */,
+				651B09022208F0D400B861EB /* Copy GLSL shader filters */,
 			);
 			buildRules = (
 			);
@@ -1923,6 +1933,7 @@
 				65A59DAA21A6198500ADEE79 /* VideoTest.cpp in Sources */,
 				6516EB8021EAD54C0070D93E /* FFGLPlugin.cpp in Sources */,
 				6516EB8421EAD54C0070D93E /* ofxFFInstance.cpp in Sources */,
+				650CC8D4224EC97200AA553F /* EffectsControllerTest.cpp in Sources */,
 				65337D2421BDCD20004FF3DA /* LayerControllerTest.cpp in Sources */,
 				6515455721B5ED4000880443 /* LayerController.cpp in Sources */,
 				65337D2121BD59BC004FF3DA /* LayerTest.cpp in Sources */,

@@ -15,7 +15,7 @@ namespace Orange {
     namespace Effects {
         class EffectBase {
         public:
-            virtual void load(std::string shaderName) = 0;
+            virtual void load(std::string shaderName, std::string basePath="") = 0;
             virtual void process(ofFbo &fbo) = 0;
         };
     }

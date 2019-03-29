@@ -17,6 +17,7 @@ void ofApp::setup() {
     engineController = make_shared<Orange::Engine::EngineController>(preferencesController, effectsController);
     
     effectsController->newGLSLEffect("Layer");
+    effectsController->newGLSLEffect("BlurX");
     
     guiFacade = new Orange::GUI::ofxGuiFacade();
     os = new Orange::GUI::OSXFacade();

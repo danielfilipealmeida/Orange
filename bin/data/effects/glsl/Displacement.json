@@ -1,0 +1,12 @@
+{
+    "name": "Displacement",
+    "uniforms": [
+        {
+            "name": "texCoordVarying",
+            "type": "vec2",
+            "minimum": [-10.0, -10.0],
+            "maximum":  [10.0, 10.0],
+            "value":  [0.0, 0.0]
+        }
+    ]
+}

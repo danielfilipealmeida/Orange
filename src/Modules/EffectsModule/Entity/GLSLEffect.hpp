@@ -75,8 +75,9 @@ namespace Orange {
             /*!
              Load a shader
              \param shaderName
+             todo:: implement base path
              */
-            void load(std::string shaderName);
+            void load(std::string shaderName, std::string basePath="");
  
             /*!
              Proccess an fbo using the current parameters of the effect

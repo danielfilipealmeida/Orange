@@ -17,8 +17,11 @@
 namespace Orange {
     namespace Effects {
         class EffectsController {
+        private:
             Orange::Base::Repository<shared_ptr<Orange::Effects::EffectBase>> effects;
-          
+            std::vector<std::filesystem::path> searchPaths;
+            std::map<string,std::filesystem::path> foundFilters;
+            
         public:
             float width, height;
             
@@ -46,6 +49,21 @@ namespace Orange {
              \param std::function<void (Orange::Effects::EffectBase)> lambda
              */
             void forEachEffect(std::function<void (shared_ptr<Orange::Effects::EffectBase>)> lambda);
+            
+            /*!
+             */
+            void addSearchPath(string path);
+            
+            /*!
+            */
+            void scanEffects();
+            
+            /*!
+             */
+            std::vector<string> getEffectsNames();
+            
+        private:
+            std::vector<ofFile> filterJsonFiles(std::vector<ofFile> inputFiles);
         };
     }
 }
