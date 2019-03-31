@@ -13,6 +13,10 @@
 
 namespace Orange {
     namespace Effects {
+        
+        const std::string GLSL_DEFAULT_BASE_PATH = "effects/glsl/";
+        
+        
         class GLSLEffect : public  EffectBase {
             ofShader shader;
             ofFbo internalFbo;
@@ -77,7 +81,7 @@ namespace Orange {
              \param shaderName
              todo:: implement base path
              */
-            void load(std::string shaderName, std::string basePath="");
+            void load(std::string shaderName, std::string basePath=GLSL_DEFAULT_BASE_PATH);
  
             /*!
              Proccess an fbo using the current parameters of the effect

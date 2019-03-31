@@ -13,6 +13,7 @@
 #include "DrawableInterface.hpp"
 #include "ofMain.h"
 #include "PreferencesController.hpp"
+#include "EffectsController.hpp"
 
 namespace Orange {
     namespace Layers {
@@ -28,7 +29,7 @@ namespace Orange {
             /*!
              Fetches the current selected visual.
              */
-             shared_ptr<Orange::Visuals::BaseVisual> getVisual();
+             shared_ptr<Visuals::BaseVisual> getVisual();
             
         public:
             
@@ -36,6 +37,11 @@ namespace Orange {
              Constructor
              */
             LayerController();
+            
+            LayerController(shared_ptr<Effects::EffectsController> _effectsController);
+            
+            
+            
             
             /*!
              Sets the layer that will be affected by the controller actions

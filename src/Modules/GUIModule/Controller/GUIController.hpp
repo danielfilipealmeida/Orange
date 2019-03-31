@@ -41,6 +41,11 @@ namespace Orange {
             void setupPreviewsPanel();
             
             /*!
+             Creates all the controls for all the effects in a Effects Controller
+             */
+            void setupEffectsInTarget(Orange::Effects::Target target);
+            
+            /*!
              Sets up the effects panel for all efects on the current layer
              */
             void setupEffectPanel();

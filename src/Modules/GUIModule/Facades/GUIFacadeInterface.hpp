@@ -19,7 +19,8 @@ namespace Orange {
         typedef enum {
             PreviewsPanel = 0,
             LayerPanel,
-            VisualPanel
+            VisualPanel,
+            EffectsPanel
         } PanelNames;
         
         class GUIFacadeInterface {
@@ -35,7 +36,7 @@ namespace Orange {
             /*!
              
              */
-            virtual void setupPanel() = 0;
+            virtual void setupPanels() = 0;
         
             /*!
              Creates a parameter group

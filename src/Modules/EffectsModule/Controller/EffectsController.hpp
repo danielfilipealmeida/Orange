@@ -16,9 +16,18 @@
 
 namespace Orange {
     namespace Effects {
+        
+        typedef enum {
+            Output = 0,
+            Layer1,
+            Layer2,
+            Layer3,
+            Layer4
+        } Target;
+        
         class EffectsController {
         private:
-            Orange::Base::Repository<shared_ptr<Orange::Effects::EffectBase>> effects;
+            std::map<Target, Orange::Base::Repository<shared_ptr<Orange::Effects::EffectBase>>> effects;
             std::vector<std::filesystem::path> searchPaths;
             std::map<string,std::filesystem::path> foundFilters;
             
@@ -32,23 +41,28 @@ namespace Orange {
             EffectsController();
             
             /*!
+             
+             */
+            Base::Repository<shared_ptr<Orange::Effects::EffectBase>> *getEffectsRepositoryFromTarget(Target target);
+            
+            /*!
              Adds a new GLSL effect
              \param string the vert shader
              \param string the frag shader
              */
-            void newGLSLEffect(std::string shaderName);
+            void newGLSLEffect(std::string shaderName, Target target);
             
             /*!
              Proccess all the fbo using all the effects
              \param ofFbo &fbo
              */
-            void process(ofFbo &fbo);
+            void process(ofFbo &fbo, Target target);
             
             /*!
              Apply a lambda to all effects
              \param std::function<void (Orange::Effects::EffectBase)> lambda
              */
-            void forEachEffect(std::function<void (shared_ptr<Orange::Effects::EffectBase>)> lambda);
+            void forEachEffect(Target target, std::function<void (shared_ptr<Orange::Effects::EffectBase>)> lambda);
             
             /*!
              */

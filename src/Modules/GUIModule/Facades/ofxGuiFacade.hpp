@@ -23,9 +23,9 @@ namespace Orange {
     namespace GUI {
         
         class ofxGuiFacade : public GUIFacadeInterface {
-            ofxPanel previewsPanel, layerPanel, visualPanel;
+            ofxPanel previewsPanel, layerPanel, visualPanel, effectsPanel;
             ofxPanel *currentPanel;
-            
+            std::map<PanelNames, ofxPanel*> panelsMap;
         public:
             
             
@@ -35,9 +35,29 @@ namespace Orange {
             ofxGuiFacade();
             
             /*!
-             Sets the currently selected panel
+             Sets up the Panel used for all previews (output and layers)
              */
-            void setupPanel();
+            void setupPreviewPanel();
+            
+            /*!
+             Sets up the panel that gather all layers controls
+             */
+            void setupLayersPanel();
+            
+            /*!
+             Sets up the panel of the currently selected visual
+             */
+            void setupVisualPanel();
+            
+            /*!
+             Sets up the panel with all the effects for the output and layers
+             */
+            void setupEffectsPanel();
+            
+            /*!
+             Sets all panels
+             */
+            void setupPanels();
             
             /*!
              Sets the name of the current panel

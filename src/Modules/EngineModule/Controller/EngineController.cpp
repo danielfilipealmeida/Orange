@@ -30,21 +30,25 @@ void EngineController::setFbo()
 void EngineController::render()
 {
     ofFill();
+    
+    unsigned int layerCount = 1;
     layers.forEach([&](shared_ptr<Orange::Layers::Layer> layer) {
         layerController.setLayer(layer);
         layerController.render();
+        effectsController->process(layer->fbo, (Effects::Target)  layerCount);
+        layerCount++;
     });
     
     fbo.begin();
     ofClear(0, 0, 0);
-    
     layers.forEach([&](shared_ptr<Orange::Layers::Layer> layer) {
         layerController.setLayer(layer);
+        
         layerController.draw(0, 0, engine.width, engine.height);
     });
     fbo.end();
     
-    effectsController->process(fbo);
+    effectsController->process(fbo, Effects::Target::Output);
 }
 
 void EngineController::draw(float x, float y, float w, float h)

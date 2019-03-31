@@ -93,7 +93,7 @@ void GLSLEffect::setParameters(ofJson uniforms, ofParameterGroup &_parameters) {
 void GLSLEffect::load(std::string shaderName, std::string basePath)
 {
     config = loadConfiguration(shaderName);
-    isLoaded = shader.load("effects/glsl/" + shaderName);
+    isLoaded = shader.load(basePath + shaderName);
 
     GLSLEffect::setParameters(config["uniforms"], parameters);
     

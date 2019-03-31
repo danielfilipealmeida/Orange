@@ -13,25 +13,42 @@ using namespace Orange::Effects;
 EffectsController::EffectsController()
 {
     addSearchPath("effects/glsl");
+    
+    Orange::Base::Repository<shared_ptr<Orange::Effects::EffectBase>> outputEffectsRepository;
+    
+    effects[Target::Output] = outputEffectsRepository;
+    
+    for(unsigned int layerNumber = Target::Layer1;
+        layerNumber <= Target::Layer4;
+        layerNumber++) {
+        Orange::Base::Repository<shared_ptr<Orange::Effects::EffectBase>> layerEffectsRepository;
+        
+        effects[(Target) layerNumber] = layerEffectsRepository;
+    }
 }
 
-void EffectsController::newGLSLEffect(std::string shaderName)
+Orange::Base::Repository<shared_ptr<Orange::Effects::EffectBase>> *EffectsController::getEffectsRepositoryFromTarget(Target target)
+{
+    return &effects.at(target);
+}
+
+void EffectsController::newGLSLEffect(std::string shaderName, Target target)
 {
     shared_ptr<Orange::Effects::GLSLEffect> effect;
     
     effect = make_shared<Orange::Effects::GLSLEffect>();
     effect->load(shaderName);
     
-    effects.add(effect);
+    getEffectsRepositoryFromTarget(target)->add(effect);
 }
 
-void EffectsController::process(ofFbo &fbo)
+void EffectsController::process(ofFbo &fbo, Target target)
 {
     ofTexture &tex = fbo.getTexture();
 
     // only process free frame effects
     fbo.begin();
-    effects.forEach([&tex, &fbo](shared_ptr<EffectBase> effect) {
+    getEffectsRepositoryFromTarget(target)->forEach([&tex, &fbo](shared_ptr<EffectBase> effect) {
         if (dynamic_pointer_cast<GLSLEffect>(effect)) {
             effect->process(fbo);
         }
@@ -40,9 +57,9 @@ void EffectsController::process(ofFbo &fbo)
 }
 
 
-void EffectsController::forEachEffect(std::function<void (shared_ptr<Orange::Effects::EffectBase>)> lambda)
+void EffectsController::forEachEffect(Target target, std::function<void (shared_ptr<Orange::Effects::EffectBase>)> lambda)
 {
-    effects.forEach(lambda);
+    getEffectsRepositoryFromTarget(target)->forEach(lambda);
 }
 
 

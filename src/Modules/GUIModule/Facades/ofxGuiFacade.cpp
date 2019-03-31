@@ -18,25 +18,48 @@ using namespace Orange::GUI;
 
 ofxGuiFacade::ofxGuiFacade()
 {
+    panelsMap[PreviewsPanel] = &previewsPanel;
+    panelsMap[LayerPanel] = &layerPanel;
+    panelsMap[VisualPanel] = &visualPanel;
+    panelsMap[EffectsPanel] = &effectsPanel;
+    
     setCurrentPanel(PreviewsPanel);
 }
 
-void ofxGuiFacade::setupPanel()
-{
+void ofxGuiFacade::setupPreviewPanel() {
     previewsPanel.setWidthElements(PANEL_WIDTH);
     previewsPanel.setup("Previews");
     previewsPanel.setPosition(0, 0);
     previewsPanel.setUseTTF(true);
-    
+}
+
+void ofxGuiFacade::setupLayersPanel() {
     layerPanel.setWidthElements(PANEL_WIDTH);
     layerPanel.setup("Layer");
     layerPanel.setPosition(PANEL_WIDTH, 0);
     layerPanel.setUseTTF(true);
-    
+}
+
+void ofxGuiFacade::setupVisualPanel() {
     visualPanel.setWidthElements(PANEL_WIDTH);
     visualPanel.setup("Visual");
     visualPanel.setPosition(PANEL_WIDTH * 2, 0);
     visualPanel.setUseTTF(true);
+}
+
+void ofxGuiFacade::setupEffectsPanel() {
+    effectsPanel.setWidthElements(PANEL_WIDTH);
+    effectsPanel.setup("Effects");
+    effectsPanel.setPosition(PANEL_WIDTH * 3, 0);
+    effectsPanel.setUseTTF(true);
+}
+
+void ofxGuiFacade::setupPanels()
+{
+    setupPreviewPanel();
+    setupLayersPanel();
+    setupVisualPanel();
+    setupEffectsPanel();
 }
 
 void ofxGuiFacade::setName(ofParameter<string> name)
@@ -107,7 +130,7 @@ void ofxGuiFacade::createLabel(string text)
     ofxLabel* label;
     label = new ofxLabel();
     label->setup(text, PANEL_WIDTH, PANEL_HEIGHT);
-    label->setName(text);
+    //label->setName(text);
     
     currentPanel->add(label);
 }
@@ -153,6 +176,7 @@ void ofxGuiFacade::draw()
     previewsPanel.draw();
     layerPanel.draw();
     visualPanel.draw();
+    effectsPanel.draw();
 }
 
 
@@ -161,24 +185,11 @@ void ofxGuiFacade::clear()
     for (auto controlName : currentPanel->getControlNames())
     {
         ofxBaseGui *control = currentPanel->getControl(controlName);
-        //control->getParameter().
     }
     currentPanel->clear();
 }
 
 void ofxGuiFacade::setCurrentPanel(PanelNames panelName)
 {
-    switch (panelName) {
-        case PreviewsPanel:
-            currentPanel = &previewsPanel;
-            break;
-            
-        case LayerPanel:
-            currentPanel = &layerPanel;
-            break;
-            
-        case VisualPanel:
-            currentPanel = &visualPanel;
-            break;
-    }
+    currentPanel = panelsMap.at(panelName);
 }

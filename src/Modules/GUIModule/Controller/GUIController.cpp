@@ -16,7 +16,7 @@ GUIController::GUIController(GUIFacadeInterface *_facade, OSFacadeInterface *_os
 {
     facade = _facade;
     os = _os;
-    facade->setupPanel();
+    facade->setupPanels();
     setupMenu();
     
     currentFrame.addListener(this, &GUIController::currentFrameChanged);
@@ -32,13 +32,30 @@ void GUIController::setupPreviewsPanel() {
     });
 }
 
-void GUIController::setupEffectPanel() {
-    engineController->effectsController->forEachEffect([&](shared_ptr<Orange::Effects::EffectBase> effect) {
+void GUIController::setupEffectsInTarget(Orange::Effects::Target target) {
+    engineController->effectsController->forEachEffect(target, [&](shared_ptr<Orange::Effects::EffectBase> effect) {
         shared_ptr<Orange::Effects::GLSLEffect> glslEffect = dynamic_pointer_cast<Orange::Effects::GLSLEffect>(effect);
         
         if (glslEffect) {
             facade->createParameterGroup(glslEffect->parameters);
         }
+    });
+}
+
+void GUIController::setupEffectPanel() {
+    facade->setCurrentPanel(EffectsPanel);
+    facade->clear();
+    
+    facade->setName(std::string("Effects"));
+    
+    facade->createLabel(std::string("Output"));
+    setupEffectsInTarget(Orange::Effects::Target::Output);
+    
+    unsigned int layerCount = 1;
+    engineController->forEachLayer([&](shared_ptr<Layers::Layer> layer) {
+        facade->createLabel(std::string("Layer ") + ofToString(layerCount));
+        setupEffectsInTarget((Effects::Target) layerCount);
+        layerCount++;
     });
 }
 
@@ -54,8 +71,6 @@ void GUIController::setupLayerPanel() {
         
         setupVisualsMatrixForLayer(layer);
     });
-    
-    setupEffectPanel();
 }
 
 void GUIController::setupVisualPanel() {
@@ -73,6 +88,7 @@ void GUIController::setup()
     setupPreviewsPanel();
     setupLayerPanel();
     setupVisualPanel();
+    setupEffectPanel();
 }
 
 void GUIController::update()
