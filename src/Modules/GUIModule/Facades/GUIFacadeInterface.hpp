@@ -12,6 +12,9 @@
 #include "ofMain.h"
 #include "ofxPreview.hpp"
 #include "ofxMatrix.hpp"
+#include "ofxButton.h"
+#include "ofxList.hpp"
+#include <functional>
 
 namespace Orange {
     namespace GUI {
@@ -20,7 +23,8 @@ namespace Orange {
             PreviewsPanel = 0,
             LayerPanel,
             VisualPanel,
-            EffectsPanel
+            EffectsPanel,
+            EffectsListPanel
         } PanelNames;
         
         class GUIFacadeInterface {
@@ -38,6 +42,13 @@ namespace Orange {
              */
             virtual void setupPanels() = 0;
         
+            /*!
+             Creates a button
+             \param string the caption of the button
+             */
+            virtual void createButton(std::string caption, std::function<void()> callback) = 0;
+            
+            
             /*!
              Creates a parameter group
              \param ofParameterGroup parameters
@@ -96,6 +107,13 @@ namespace Orange {
             virtual ofxMatrix<ofImage *>* createImageMatrix(ofParameter<vector<ofImage *>> value, string name = "") = 0;
             
             /*!
+             Creates a list of strings
+             \param ofParameter<vector<std::string>>
+             \return ofxList<std::string>*
+             */
+            virtual ofxList<std::string>* createStringList(ofParameter<vector<std::string>> value, string name = "") = 0;
+            
+            /*!
              
              */
             virtual void createNavigator(ofParameter<ofxPaginatedInterface *> element, string name = "") = 0;
@@ -103,6 +121,12 @@ namespace Orange {
              Draws the ofxGui
              */
             virtual void draw() = 0;
+            
+            /*!
+             Draws a specific panel
+             \param panelNames the panel to draw
+             */
+            virtual void drawPanel(PanelNames panel) = 0;
             
             /*!
              Clears the gui
@@ -115,6 +139,10 @@ namespace Orange {
              */
             virtual void setCurrentPanel(PanelNames panelName) = 0;
             
+            /*!
+             */
+            virtual void mouseEventOnPanel(PanelNames panelName, ofMouseEventArgs & args) = 0;
+
             
 
         };

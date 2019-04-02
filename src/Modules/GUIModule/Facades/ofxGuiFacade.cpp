@@ -7,10 +7,24 @@
 
 #include "ofxGuiFacade.hpp"
 #include <string>
+#include "ofxButton.h"
+#include "functional"
+#include "ofxPreview.hpp"
 
 using namespace Orange::GUI;
 
-#include "ofxPreview.hpp"
+
+class CallbackClass {
+    std::function<void()> callback;
+public:
+    CallbackClass(std::function<void()> _callback) : callback(_callback){};
+    
+    void callbackMethod(){
+        callback();
+    };
+};
+
+
 
 #define USE_DEFINED_STRING(str1, str2) !str1.empty() ? str1 : str2
 
@@ -22,6 +36,7 @@ ofxGuiFacade::ofxGuiFacade()
     panelsMap[LayerPanel] = &layerPanel;
     panelsMap[VisualPanel] = &visualPanel;
     panelsMap[EffectsPanel] = &effectsPanel;
+    panelsMap[EffectsListPanel] = &effectsListPanel;
     
     setCurrentPanel(PreviewsPanel);
 }
@@ -54,18 +69,45 @@ void ofxGuiFacade::setupEffectsPanel() {
     effectsPanel.setUseTTF(true);
 }
 
+void ofxGuiFacade::setupEffectsListPanel()
+{
+    effectsListPanel.setWidthElements(PANEL_WIDTH);
+    effectsListPanel.setup("Effects List");
+    effectsListPanel.setPosition(0,0);
+    effectsListPanel.setUseTTF(true);
+}
+
 void ofxGuiFacade::setupPanels()
 {
     setupPreviewPanel();
     setupLayersPanel();
     setupVisualPanel();
     setupEffectsPanel();
+    setupEffectsListPanel();
 }
 
 void ofxGuiFacade::setName(ofParameter<string> name)
 {
     currentPanel->setName(name);
 }
+
+
+void ofxGuiFacade::createButton(std::string caption, std::function<void()> callback)
+{
+    ofxButton *button;
+    
+    button = new ofxButton();
+    button->setup(caption);
+    button->setName(caption);
+    
+    if (callback!=NULL) {
+        CallbackClass *callbackObj = new CallbackClass(callback);
+        button->addListener(callbackObj, &CallbackClass::callbackMethod);
+    }
+    
+    currentPanel->add(button);
+}
+
 
 void ofxGuiFacade::createParameterGroup(ofParameterGroup parameters)
 {
@@ -119,8 +161,11 @@ void ofxGuiFacade::createLabel(ofParameter<string> parameter)
     ofxLabel* label;
    
     label = new ofxLabel();
-    label->setup(parameter, PANEL_WIDTH, PANEL_HEIGHT);
+    label->setup(ofToString(""), PANEL_WIDTH, PANEL_HEIGHT);
     label->setName(parameter.get());
+    label->setBackgroundColor(ofColor::orangeRed);
+    label->setFillColor(ofColor::black);
+    label->setTextColor(ofColor::black);
     
     currentPanel->add(label);
 }
@@ -129,9 +174,8 @@ void ofxGuiFacade::createLabel(string text)
 {
     ofxLabel* label;
     label = new ofxLabel();
-    label->setup(text, PANEL_WIDTH, PANEL_HEIGHT);
-    //label->setName(text);
-    
+    label->setup(NULL, NULL, PANEL_WIDTH, PANEL_HEIGHT);
+
     currentPanel->add(label);
 }
 
@@ -147,6 +191,18 @@ ofxMatrix<ofImage *>* ofxGuiFacade::createImageMatrix(ofParameter<vector<ofImage
     currentPanel->add(matrix);
     
     return matrix;
+}
+
+ofxList<std::string>* ofxGuiFacade::createStringList(ofParameter<vector<std::string>> value, string name)
+{
+    ofxList<std::string>* list;
+    
+    list = new ofxList<std::string>();
+    list->setup(value, PANEL_WIDTH, PANEL_WIDTH * 3.0 / 4.0);
+    list->setName(NAME_OR_RANDOM(name));
+    currentPanel->add(list);
+    
+    return list;
 }
 
 ofxPreview* ofxGuiFacade::createPreview(ofFbo *fbo, string name)
@@ -171,12 +227,17 @@ void ofxGuiFacade::createNavigator(ofParameter<ofxPaginatedInterface *> element,
     currentPanel->add(navigator);
     
 }
+
 void ofxGuiFacade::draw()
 {
     previewsPanel.draw();
     layerPanel.draw();
     visualPanel.draw();
     effectsPanel.draw();
+}
+
+void ofxGuiFacade::drawPanel(PanelNames panel) {
+    panelsMap[panel]->draw();
 }
 
 
@@ -192,4 +253,20 @@ void ofxGuiFacade::clear()
 void ofxGuiFacade::setCurrentPanel(PanelNames panelName)
 {
     currentPanel = panelsMap.at(panelName);
+}
+
+
+void ofxGuiFacade::mouseEventOnPanel(PanelNames panelName, ofMouseEventArgs & args)
+{
+    ofxPanel* panel = panelsMap.at(panelName);
+    
+    switch (args.type) {
+        case ofMouseEventArgs::Pressed:
+            panel->mousePressed(args);
+            break;
+            
+        default:
+            break;
+    }
+
 }

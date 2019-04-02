@@ -10,6 +10,7 @@
 #include "OSXstuff.h"
 #include "Engine.hpp"
 
+
 #include <string>
 
 using namespace Orange::GUI;
@@ -55,3 +56,32 @@ void OSXFacade::setupMenuBar()
     [osxStuff setMenu: window];
 }
 
+ofRectangle OSXFacade::getMainScreenAvailableRect() {
+    ofRectangle rect;
+    
+    CGFloat menuBarHeight = [[NSApplication sharedApplication] mainMenu].menuBarHeight;
+    
+    NSScreen *mainScreen = [NSScreen mainScreen];
+    NSRect frame = [mainScreen visibleFrame];
+    
+    rect.setSize(frame.size.width, frame.size.height- menuBarHeight);
+    rect.setPosition(frame.origin.x, menuBarHeight);
+    
+    return rect;
+}
+
+ofRectangle OSXFacade::getWindowFrame(void *window)
+{
+    ofRectangle rect;
+    
+    NSRect frame = [(NSWindow *) window frame];
+    
+    rect.set(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
+    
+    return rect;
+}
+
+float OSXFacade::getWindowTitleSize()
+{
+    return 22.0;
+}

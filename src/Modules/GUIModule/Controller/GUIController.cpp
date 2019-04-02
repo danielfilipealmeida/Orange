@@ -56,6 +56,12 @@ void GUIController::setupEffectPanel() {
         facade->createLabel(std::string("Layer ") + ofToString(layerCount));
         setupEffectsInTarget((Effects::Target) layerCount);
         layerCount++;
+        
+        /*
+        facade->createButton("Add Effect", [&]() {
+            cout << "HERE!" <<endl;
+        });
+         */
     });
 }
 
@@ -83,12 +89,24 @@ void GUIController::setupVisualPanel() {
     }
 }
 
+void GUIController::setupEffectListPanel() {
+    
+    facade->setCurrentPanel(EffectsListPanel);
+    facade->clear();
+    
+    vector<std::string> values = {"Ipsum", "Lorem"};
+    ofParameter<vector<std::string>> parameter = values;
+    facade->createStringList(parameter, ofToString("effectsList"));
+    
+}
+
 void GUIController::setup()
 {
     setupPreviewsPanel();
     setupLayerPanel();
     setupVisualPanel();
     setupEffectPanel();
+    setupEffectListPanel();
 }
 
 void GUIController::update()
@@ -113,6 +131,15 @@ void GUIController::draw()
     
     ofSetColor(255,255,255,0);
     facade->draw();
+}
+
+void GUIController::drawEffectsWindowView() {
+    facade->drawPanel(PanelNames::EffectsListPanel);
+}
+
+void GUIController::mousePressedEffectsWindow(ofMouseEventArgs & args)
+{
+    facade->mouseEventOnPanel(PanelNames::EffectsListPanel, args);
 }
 
 

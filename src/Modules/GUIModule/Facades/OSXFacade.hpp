@@ -60,6 +60,13 @@ namespace Orange {
              Creates a new set by removing the current set from memory.
              */
             void newFile();
+            
+            static ofRectangle getMainScreenAvailableRect();
+            
+            static ofRectangle getWindowFrame(void *window);
+            
+            static float getWindowTitleSize();
+
         };
     }
 }

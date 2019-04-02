@@ -15,6 +15,8 @@
 #include "ofxPreview.hpp"
 #include "ofxMatrix.hpp"
 #include "ofxNavigator.hpp"
+#include "ofxList.hpp"
+#include <functional>
 
 #define PANEL_WIDTH 200
 #define PANEL_HEIGHT 16
@@ -23,7 +25,7 @@ namespace Orange {
     namespace GUI {
         
         class ofxGuiFacade : public GUIFacadeInterface {
-            ofxPanel previewsPanel, layerPanel, visualPanel, effectsPanel;
+            ofxPanel previewsPanel, layerPanel, visualPanel, effectsPanel, effectsListPanel;
             ofxPanel *currentPanel;
             std::map<PanelNames, ofxPanel*> panelsMap;
         public:
@@ -54,6 +56,8 @@ namespace Orange {
              */
             void setupEffectsPanel();
             
+            void setupEffectsListPanel();
+            
             /*!
              Sets all panels
              */
@@ -70,6 +74,11 @@ namespace Orange {
              \param ofParameterGroup parameters
              */
             void createParameterGroup(ofParameterGroup parameters);
+            
+            /*!
+             Creates a button
+             */
+            void createButton(std::string caption, std::function<void()> callback);
             
             /*!
              Creates a float Slider in the GUI
@@ -132,6 +141,8 @@ namespace Orange {
              \return ofxMatrix<ofTexture *>*
              */
             ofxMatrix<ofImage *>* createImageMatrix(ofParameter<vector<ofImage *>> value, string name = "");
+            
+            ofxList<std::string>* createStringList(ofParameter<vector<std::string>> value, string name = "");
 
             /*!
              */
@@ -141,6 +152,8 @@ namespace Orange {
              Draws the ofxGui
              */
             void draw();
+            
+            void drawPanel(PanelNames panel);
             
             /*!
              Clears the current GUI
@@ -152,6 +165,8 @@ namespace Orange {
              \param PanelNames panelName
              */
             void setCurrentPanel(PanelNames panelName);
+            
+            void mouseEventOnPanel(PanelNames panelName, ofMouseEventArgs & args);
         };
     }
 }

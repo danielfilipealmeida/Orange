@@ -24,8 +24,10 @@ namespace Orange {
             
             shared_ptr<Engine::EngineController> engineController;
             shared_ptr<Visuals::BaseVisual> currentVisual;
+  
         public:
             
+           
             ofParameter<int> currentFrame;
             
             GUIController(GUIFacadeInterface *_facade, OSFacadeInterface *_os);
@@ -51,6 +53,10 @@ namespace Orange {
             void setupEffectPanel();
             
             /*!
+             */
+            void setupEffectListPanel();
+            
+            /*!
              Sets up the Layer Panel
              */
             void setupLayerPanel();
@@ -65,7 +71,6 @@ namespace Orange {
              */
             void setupVisualsMatrixForLayer(shared_ptr<Orange::Layers::Layer> layer);
             
-            
             /*!
              Updates the GUI
              */
@@ -75,6 +80,14 @@ namespace Orange {
              Draws the GUI
              */
             void draw();
+            
+            /*!
+             */
+            void drawEffectsWindowView();
+            
+            /*!
+             */
+            void mousePressedEffectsWindow(ofMouseEventArgs & args);
             
             /*!
              Sets the current selected layer and updates the GUI
