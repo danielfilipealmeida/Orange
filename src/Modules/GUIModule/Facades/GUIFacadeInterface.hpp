@@ -144,7 +144,12 @@ namespace Orange {
             virtual void mouseEventOnPanel(PanelNames panelName, ofMouseEventArgs & args) = 0;
 
             
-
+            /*!
+             Returns a ofxGui object by it's name
+             \param std::string the name
+             \returns ofxBaseGui*
+             */
+            virtual ofxBaseGui* getControl(std::string name) = 0;
         };
     }
 }

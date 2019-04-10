@@ -82,14 +82,6 @@ namespace Orange {
             void draw();
             
             /*!
-             */
-            void drawEffectsWindowView();
-            
-            /*!
-             */
-            void mousePressedEffectsWindow(ofMouseEventArgs & args);
-            
-            /*!
              Sets the current selected layer and updates the GUI
              \param shared_ptr<Orange::Layers::Layer> _layer
              */

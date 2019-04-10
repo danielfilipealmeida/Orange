@@ -73,7 +73,7 @@ void ofxGuiFacade::setupEffectsListPanel()
 {
     effectsListPanel.setWidthElements(PANEL_WIDTH);
     effectsListPanel.setup("Effects List");
-    effectsListPanel.setPosition(0,0);
+    effectsListPanel.setPosition(PANEL_WIDTH * 4,0);
     effectsListPanel.setUseTTF(true);
 }
 
@@ -234,6 +234,7 @@ void ofxGuiFacade::draw()
     layerPanel.draw();
     visualPanel.draw();
     effectsPanel.draw();
+    effectsListPanel.draw();
 }
 
 void ofxGuiFacade::drawPanel(PanelNames panel) {
@@ -269,4 +270,10 @@ void ofxGuiFacade::mouseEventOnPanel(PanelNames panelName, ofMouseEventArgs & ar
             break;
     }
 
+}
+
+
+ofxBaseGui* ofxGuiFacade::getControl(std::string name)
+{
+    return currentPanel->getControl(name);
 }

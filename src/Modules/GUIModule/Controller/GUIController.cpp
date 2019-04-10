@@ -8,6 +8,7 @@
 #include "GUIController.hpp"
 #include "ofMain.h"
 #include "ofxGui.h"
+#include "EffectsController.hpp"
 
 
 using namespace Orange::GUI;
@@ -90,14 +91,40 @@ void GUIController::setupVisualPanel() {
 }
 
 void GUIController::setupEffectListPanel() {
-    
+    static std::string controlName = ofToString("effectsList");
     facade->setCurrentPanel(EffectsListPanel);
     facade->clear();
     
-    vector<std::string> values = {"Ipsum", "Lorem"};
+    vector<std::string> values = engineController->effectsController->getEffectsNames();
     ofParameter<vector<std::string>> parameter = values;
-    facade->createStringList(parameter, ofToString("effectsList"));
     
+    ofxList<std::string>* stringList = facade->createStringList(parameter, controlName);
+    
+    facade->createNavigator(stringList, ofToString("Effects List Navigator"));
+    facade->createButton("Add to Output", [&]() {
+        this->facade->setCurrentPanel(EffectsListPanel);
+        ofxList<std::string>* control = (ofxList<std::string>*) this->facade->getControl(controlName);
+        std::string shaderName = control->getSelectedValue();
+        if (shaderName.empty()) return;
+        engineController->effectsController->newGLSLEffect(shaderName, Orange::Effects::Target::Output);
+        this->setupEffectPanel();
+    });
+    
+    unsigned int counter = 1;
+    this->engineController->forEachLayer([&](shared_ptr<Orange::Layers::Layer> layer) {
+        std::string title = ofToString("Add to Output") + layer->name.get();
+       
+        
+        facade->createButton(title, [&, counter]() {
+             this->facade->setCurrentPanel(EffectsListPanel);
+             ofxList<std::string>* control = (ofxList<std::string>*) this->facade->getControl(controlName);
+             std::string shaderName = control->getSelectedValue();
+             if (shaderName.empty()) return;
+             engineController->effectsController->newGLSLEffect(shaderName, (Orange::Effects::Target) counter);
+             this->setupEffectPanel();
+         });
+        counter++;
+    });
 }
 
 void GUIController::setup()
@@ -128,25 +155,13 @@ void GUIController::update()
 void GUIController::draw()
 {
     ofDisableAlphaBlending();
-    
     ofSetColor(255,255,255,0);
     facade->draw();
 }
 
-void GUIController::drawEffectsWindowView() {
-    facade->drawPanel(PanelNames::EffectsListPanel);
-}
-
-void GUIController::mousePressedEffectsWindow(ofMouseEventArgs & args)
-{
-    facade->mouseEventOnPanel(PanelNames::EffectsListPanel, args);
-}
-
-
 void GUIController::setLayer(shared_ptr<Orange::Layers::Layer> _layer)
 {
     layer = _layer;
- 
     setup();
 }
 

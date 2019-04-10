@@ -37,6 +37,7 @@
 		650CC8D5224ED4A500AA553F /* Invert.json in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 650CC8CD224D908800AA553F /* Invert.json */; };
 		650CC8D6224ED4A500AA553F /* Displacement.json in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 650CC8CF224D917500AA553F /* Displacement.json */; };
 		650CC8D7224ED4A500AA553F /* Layer.json in Copy GLSL shader filters */ = {isa = PBXBuildFile; fileRef = 650CC8D1224E628000AA553F /* Layer.json */; };
+		650EED8D2253CD0E0055D3B0 /* ofxList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650EED8B2253CD0E0055D3B0 /* ofxList.cpp */; };
 		6515455221B4A25200880443 /* BaseVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455021B4A25200880443 /* BaseVisual.cpp */; };
 		6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455021B4A25200880443 /* BaseVisual.cpp */; };
 		6515455621B5ED4000880443 /* LayerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6515455421B5ED4000880443 /* LayerController.cpp */; };
@@ -294,6 +295,8 @@
 		650CC8CF224D917500AA553F /* Displacement.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Displacement.json; sourceTree = "<group>"; };
 		650CC8D1224E628000AA553F /* Layer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Layer.json; sourceTree = "<group>"; };
 		650CC8D3224EC97200AA553F /* EffectsControllerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EffectsControllerTest.cpp; sourceTree = "<group>"; };
+		650EED8B2253CD0E0055D3B0 /* ofxList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxList.cpp; sourceTree = "<group>"; };
+		650EED8C2253CD0E0055D3B0 /* ofxList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxList.hpp; sourceTree = "<group>"; };
 		6515454E21B49C2400880443 /* DrawableInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DrawableInterface.hpp; sourceTree = "<group>"; };
 		6515454F21B4A22100880443 /* PlayableInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PlayableInterface.hpp; sourceTree = "<group>"; };
 		6515455021B4A25200880443 /* BaseVisual.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BaseVisual.cpp; sourceTree = "<group>"; };
@@ -1001,6 +1004,8 @@
 				65D167E221D53141006B6163 /* ofxPanelDecorator.cpp */,
 				65D167E321D53141006B6163 /* ofxPanelDecorator.hpp */,
 				65182DCB21F9140200BD281C /* ofxPaginatedInterface.h */,
+				650EED8B2253CD0E0055D3B0 /* ofxList.cpp */,
+				650EED8C2253CD0E0055D3B0 /* ofxList.hpp */,
 				65A9F44A21F3775500AFB193 /* ofxMatrix.hpp */,
 				65A9F44621F375A200AFB193 /* ofxMatrix.cpp */,
 				65182DC821F89C5800BD281C /* ofxNavigator.cpp */,
@@ -1995,6 +2000,7 @@
 				6516EB9821EB51440070D93E /* EffectsController.cpp in Sources */,
 				6516EB8721EAD54C0070D93E /* ofxFFBaseInstance.cpp in Sources */,
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
+				650EED8D2253CD0E0055D3B0 /* ofxList.cpp in Sources */,
 				6516EB7D21EAD54C0070D93E /* FFPlugin.cpp in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,

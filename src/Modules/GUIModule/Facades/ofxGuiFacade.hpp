@@ -56,6 +56,8 @@ namespace Orange {
              */
             void setupEffectsPanel();
             
+            /*!
+             */
             void setupEffectsListPanel();
             
             /*!
@@ -167,6 +169,13 @@ namespace Orange {
             void setCurrentPanel(PanelNames panelName);
             
             void mouseEventOnPanel(PanelNames panelName, ofMouseEventArgs & args);
+            
+            /*!
+             Returns a ofxGui object by it's name
+             \param std::string the name
+             \returns ofxBaseGui*
+             */
+            ofxBaseGui* getControl(std::string name);
         };
     }
 }

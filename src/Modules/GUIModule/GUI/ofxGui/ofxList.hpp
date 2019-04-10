@@ -16,7 +16,7 @@
 #include "ofxInputField.h"
 #include "ofxPaginatedInterface.h"
 
-#define OFX_LIST_HEIGHT 22
+#define OFX_LIST_HEIGHT 18
 
 template <class T>
 class ofxList : public ofxBaseGui, public ofxPaginatedInterface {
@@ -129,6 +129,18 @@ public:
     unsigned int getPage()
     {
         return page;
+    }
+    
+    T getSelectedValue() {
+        std::string result;
+        
+        if (value.get().empty()) return result;
+        if ((int) selectedItem < 0) return result;
+        if (this->selectedItem >= value.get().size()) return result;
+        
+        result = value.get().at(selectedItem);
+        
+        return result;
     }
     
 };

@@ -71,7 +71,7 @@ void EffectsController::addSearchPath(string path)
     searchPaths.push_back(searchPath);
 }
 
-void EffectsController::scanEffects()
+void EffectsController::scan()
 {
     foundFilters.empty();
     

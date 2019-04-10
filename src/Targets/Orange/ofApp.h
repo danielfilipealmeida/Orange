@@ -13,6 +13,7 @@
 #include "EffectsController.hpp"
 #include "PreferencesController.hpp"
 
+
 class ofApp : public ofBaseApp{
     /* Keys constants */
     enum KEYCODES {
@@ -53,7 +54,7 @@ class ofApp : public ofBaseApp{
     shared_ptr<Orange::Effects::EffectsController> effectsController;
     shared_ptr<ofAppBaseWindow> mainWindow, projectorWindow;
 
-    
+
 	public:
     
     /*!
@@ -68,7 +69,9 @@ class ofApp : public ofBaseApp{
 		void update();
 		void draw();
     void drawProjector(ofEventArgs & args);
+    void drawEffectsWindow(ofEventArgs & args);
     void keyPressedProjector(ofKeyEventArgs & args);
+    void mousePressedEffectsWindow(ofMouseEventArgs & args);
     
     
     

@@ -70,7 +70,7 @@ namespace Orange {
             
             /*!
             */
-            void scanEffects();
+            void scan();
             
             /*!
              */
