@@ -34,12 +34,17 @@ void GUIController::setupPreviewsPanel() {
 }
 
 void GUIController::setupEffectsInTarget(Orange::Effects::Target target) {
+    unsigned int effectCounter = 0;
     engineController->effectsController->forEachEffect(target, [&](shared_ptr<Orange::Effects::EffectBase> effect) {
         shared_ptr<Orange::Effects::GLSLEffect> glslEffect = dynamic_pointer_cast<Orange::Effects::GLSLEffect>(effect);
-        
         if (glslEffect) {
             facade->createParameterGroup(glslEffect->parameters);
+             facade->createButton("Remove", [&, target, effectCounter]() {
+                 this->engineController->effectsController->removeEffect(effectCounter, target);
+                 setupEffectPanel();
+             });
         }
+        ++effectCounter;
     });
 }
 
@@ -57,12 +62,6 @@ void GUIController::setupEffectPanel() {
         facade->createLabel(std::string("Layer ") + ofToString(layerCount));
         setupEffectsInTarget((Effects::Target) layerCount);
         layerCount++;
-        
-        /*
-        facade->createButton("Add Effect", [&]() {
-            cout << "HERE!" <<endl;
-        });
-         */
     });
 }
 

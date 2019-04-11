@@ -55,6 +55,15 @@ namespace Orange {
             }
             
             /*!
+             \brief Removes an entity in the Repository
+             \param unsigned int the position to remove. starts at 0.
+             */
+            void remove(unsigned int position) {
+                entities.erase(entities.begin() + position);
+            }
+            
+            
+            /*!
              \brief Traverse all stored entities and to each, run a lambda function with the entity as input
              \param std::function<void (T)> the lambda
              */

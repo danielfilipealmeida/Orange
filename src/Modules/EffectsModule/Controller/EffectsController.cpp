@@ -42,6 +42,11 @@ void EffectsController::newGLSLEffect(std::string shaderName, Target target)
     getEffectsRepositoryFromTarget(target)->add(effect);
 }
 
+void EffectsController::removeEffect(unsigned int effectIndex, Target target)
+{
+    getEffectsRepositoryFromTarget(target)->remove(effectIndex);
+}
+
 void EffectsController::process(ofFbo &fbo, Target target)
 {
     ofTexture &tex = fbo.getTexture();

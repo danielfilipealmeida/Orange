@@ -53,6 +53,11 @@ namespace Orange {
             void newGLSLEffect(std::string shaderName, Target target);
             
             /*!
+             Removes the effect
+             */
+            void removeEffect(unsigned int effectIndex, Target target);
+            
+            /*!
              Proccess all the fbo using all the effects
              \param ofFbo &fbo
              */
