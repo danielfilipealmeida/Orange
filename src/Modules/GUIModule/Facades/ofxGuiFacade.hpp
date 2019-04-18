@@ -18,9 +18,6 @@
 #include "ofxList.hpp"
 #include <functional>
 
-#define PANEL_WIDTH 200
-#define PANEL_HEIGHT 16
-
 namespace Orange {
     namespace GUI {
         
@@ -142,7 +139,10 @@ namespace Orange {
              \param ofParameter<vector<ofTexture *>>
              \return ofxMatrix<ofTexture *>*
              */
-            ofxMatrix<ofImage *>* createImageMatrix(ofParameter<vector<ofImage *>> value, string name = "");
+            ofxMatrix<ofImage *>* createImageMatrix(ofParameter<vector<ofImage *>> value,
+                                                    string name = "",
+                                                    unsigned int rows = 2,
+                                                    unsigned int columns = 2);
             
             ofxList<std::string>* createStringList(ofParameter<vector<std::string>> value, string name = "");
 
@@ -168,6 +168,9 @@ namespace Orange {
              */
             void setCurrentPanel(PanelNames panelName);
             
+            /*!
+             
+             */
             void mouseEventOnPanel(PanelNames panelName, ofMouseEventArgs & args);
             
             /*!

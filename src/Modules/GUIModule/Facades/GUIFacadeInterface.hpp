@@ -16,6 +16,9 @@
 #include "ofxList.hpp"
 #include <functional>
 
+#define PANEL_WIDTH 200
+#define PANEL_HEIGHT 16
+
 namespace Orange {
     namespace GUI {
         
@@ -104,7 +107,10 @@ namespace Orange {
              \param ofParameter<vector<ofFbo *>>
              \return ofxMatrix<ofFbo *>*
              */
-            virtual ofxMatrix<ofImage *>* createImageMatrix(ofParameter<vector<ofImage *>> value, string name = "") = 0;
+            virtual ofxMatrix<ofImage *>* createImageMatrix(ofParameter<vector<ofImage *>> value,
+                                                            string name = "",
+                                                            unsigned int rows = 2,
+                                                            unsigned int columns = 2) = 0;
             
             /*!
              Creates a list of strings

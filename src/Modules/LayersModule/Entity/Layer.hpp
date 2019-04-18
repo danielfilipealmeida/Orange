@@ -110,6 +110,12 @@ namespace Orange {
             void add(shared_ptr<Orange::Visuals::BaseVisual> visual);
             
             /*!
+             Removes a Visual in the layer by it's index in the repository
+             \param unsigned int
+             */
+            void removeByIndex(unsigned int index);
+            
+            /*!
              Returns the total ammount of visuals in this layer
              \returns unsigned int
              */

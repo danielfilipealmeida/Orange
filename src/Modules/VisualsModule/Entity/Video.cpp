@@ -9,15 +9,13 @@
 #include <thread>
 #include <future>
 #include <functional>
+#include "AppHelpers.hpp"
 
 
 using namespace Orange::Visuals;
 
 Video::Video(){
     ofLog(OF_LOG_VERBOSE, "Creating Video");
-    
-    //thumbnail.allocate(THUMB_WIDTH, THUMB_HEIGHT);
-    
     hasThumbnail = false;
 }
 
@@ -61,6 +59,8 @@ void Video::open(string filePath)
     
     close();
     
+    hash = Orange::Base::AppHelpers::hashString(filePath);
+    
     player.load(filePath);
     ofLog(OF_LOG_VERBOSE, "Loaded video " + getPath());
     
@@ -82,12 +82,6 @@ void Video::loadThumbnail() {
     }
     
     thumbnail.setFromPixels(pixels);
-    
-    /*
-    thumbnail.begin();
-    image.draw(0,0,thumbnail.getWidth(), thumbnail.getHeight());
-    thumbnail.end();
-*/
 }
 
 void Video::generateThumbnail() {
@@ -101,14 +95,6 @@ void Video::generateThumbnail() {
     pixels.resize(THUMB_WIDTH, THUMB_HEIGHT);
     ofImage image;
     thumbnail.setFromPixels(pixels);
-    
-    /*
-    ofSetColor(255,255,255, 255);
-    thumbnail.begin();
-    //player.draw(0,0, thumbnail.getWidth(), thumbnail.getHeight());
-    image.draw(0,0,thumbnail.getWidth(), thumbnail.getHeight());
-    thumbnail.end();
-    */
     
     player.stop();
     player.setPosition(0);
@@ -150,7 +136,7 @@ ofJson Video::toJson()
 void Video::setFromJson(ofJson json)
 {
     string filePath = json["filePath"];
-    
+
     open(filePath);
 }
 

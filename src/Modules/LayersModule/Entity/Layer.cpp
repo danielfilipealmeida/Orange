@@ -8,6 +8,7 @@
 #include "Layer.hpp"
 #include "BaseVisual.hpp"
 #include "Video.hpp"
+#include "VisualsHelpers.hpp"
 
 using namespace Orange::Layers;
 
@@ -44,6 +45,12 @@ unsigned int Layer::getHeight()
 void Layer::add(shared_ptr<Orange::Visuals::BaseVisual> visual)
 {
     visuals.add(visual);
+}
+
+void Layer::removeByIndex(unsigned int index)
+{
+    currentVisualIndex = -1;
+    visuals.remove(index);
 }
 
 unsigned int Layer::getVisualsCount()
@@ -99,13 +106,7 @@ void Layer::setFromJson(ofJson json)
 
 vector<ofImage *> Layer::getVisualsThumbs()
 {
-    vector<ofImage *> visualsThumbs;
-    
-    visuals.forEach([&visualsThumbs](shared_ptr<Visuals::BaseVisual>  visual) {
-        visualsThumbs.push_back(&visual->getThumbnail());
-    });
-    
-    return visualsThumbs;
+    return Orange::Visuals::VisualsHelpers::getVisualsThumbs(visuals);
 }
 
 void Layer::setPreferencesController(shared_ptr<Orange::Preferences::PreferencesController> _preferencesController)

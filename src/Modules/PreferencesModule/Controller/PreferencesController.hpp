@@ -26,7 +26,6 @@ namespace Orange {
             ofPixels loadThumbnail(std::string filename);
             
         private:
-            std::string getHash(std::string value);
             std::string md5(std::string value);
             std::string getPreferencesPath();
             std::string getThumbnailPath(std::string filename);

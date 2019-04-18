@@ -6,6 +6,7 @@
 //
 
 #include "PreferencesController.hpp"
+#include "AppHelpers.hpp"
 
 using namespace Orange::Preferences;
 
@@ -16,13 +17,6 @@ PreferencesController::PreferencesController(std::string _appName)
 }
 
 
-std::string PreferencesController::getHash(std::string value)
-{
-    std::hash<std::string> hash_function;
-    size_t str_hash = hash_function(value);
-    
-    return ofToString(str_hash);
-}
 
 /* Maybe move this to another place */
 std::string PreferencesController::md5(std::string value) {
@@ -63,7 +57,7 @@ std::string PreferencesController::getPreferencesPath()
 std::string PreferencesController::getThumbnailPath(std::string filename) {
     std:string result;
     
-    std::string hashedFileName = getHash(filename) + ".jpg";
+    std::string hashedFileName = Orange::Base::AppHelpers::hashString(filename) + ".jpg";
     
     result = getPreferencesPath();
     result = ofFilePath::join(result, "thumbnails");

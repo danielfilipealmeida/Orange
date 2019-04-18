@@ -30,18 +30,16 @@ void LayerController::setLayer(shared_ptr<Layer> _layer) {
 }
 
 void LayerController::render() {
-   shared_ptr<Orange::Visuals::BaseVisual> currentVisual = getVisual();
-    
-    if (currentVisual == NULL) {
-        return;
-    }
-    
-    currentVisual->render();
-    
     layer->fbo.begin();
     ofClear(0, 0, 0);
     ofSetColor(255,255,255, 255);
-    currentVisual->draw(0, 0, layer->getWidth(), layer->getHeight());
+    shared_ptr<Orange::Visuals::BaseVisual> currentVisual = getVisual();
+    
+    if (currentVisual != NULL) {
+        currentVisual->render();
+        currentVisual->draw(0, 0, layer->getWidth(), layer->getHeight());
+   }
+    
     layer->fbo.end();
 }
 

@@ -27,16 +27,13 @@ namespace Orange {
         private:
             Orange::Base::Repository<shared_ptr<Orange::Layers::Layer> > layers;
             Orange::Layers::LayerController layerController;
-            
             shared_ptr<Orange::Preferences::PreferencesController> preferencesController;
-            
             Engine engine;
-            
-           
             
         public:
             ofFbo fbo;
             shared_ptr<Orange::Effects::EffectsController> effectsController;
+            Base::Repository<shared_ptr<Visuals::BaseVisual> > loadedVisuals;
             
             /*!
              Constructor
@@ -139,6 +136,11 @@ namespace Orange {
              \param string filepath
              */
             void saveSet(std::string filepath);
+            
+            /*!
+             Syncs the repository of visuals with all the unique loaded visuals on all the layers
+             */
+            void updateLoadedVisuals();
             
             /*!
              Open the file stored in the given path

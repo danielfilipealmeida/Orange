@@ -47,19 +47,13 @@ bool  ofxPreview::mousePressed(ofMouseEventArgs & args)
 }
 
 bool  ofxPreview::mouseDragged(ofMouseEventArgs & args)
-{
-    
-}
+{}
 
 bool  ofxPreview::mouseReleased(ofMouseEventArgs & args)
-{
-    
-}
+{}
 
 bool  ofxPreview::mouseScrolled(ofMouseEventArgs & args)
-{
-    
-}
+{}
 
 void ofxPreview::drawTitle() {
     if (title.empty()) {
@@ -72,6 +66,7 @@ void ofxPreview::drawTitle() {
     
     ofSetColor(textColor);
     bindFontTexture();
+    textMesh = getTextMesh(title, b.x + textPadding, b.y + 12);
     textMesh.draw();
     unbindFontTexture();
     ofSetColor(255, 255, 255, 0);
@@ -100,5 +95,4 @@ void ofxPreview::generateDraw()
 void ofxPreview::setTitle(std::string _title)
 {
     title = _title;
-    textMesh = getTextMesh(title, b.x + textPadding, b.y + 12);
 }

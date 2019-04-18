@@ -27,14 +27,18 @@ public:
     ofxMatrix() {};
     ~ofxMatrix() {}
     
-    void setup(ofParameter<vector<T>> _value, float width, float height)
+    void setup(ofParameter<vector<T>> _value,
+               float width,
+               unsigned int _rows,
+               unsigned int _columns)
     {
         value = _value;
-        columns = rows = 2;
+        columns = _columns;
+        rows = _rows;
         page = 0;
         b.x = b.y = 0;
         b.width = width;
-        b.height = height;
+        b.height = width * rows / columns;
         setNeedsRedraw();
     }
     
@@ -103,7 +107,7 @@ public:
         float w = b.getWidth() / columns;
         float h = b.getHeight() / rows;
         
-        selectedCell = ((unsigned int) floor(y / h)) * rows + (unsigned int) floor(x / w) + (columns * rows * page);
+        selectedCell = ((unsigned int) floor(y / h)) * columns + (unsigned int) floor(x / w) + (columns * rows * page);
     };
     bool mouseDragged(ofMouseEventArgs & args) {};
     bool mouseReleased(ofMouseEventArgs & args) {};
@@ -138,6 +142,9 @@ public:
         return page;
     }
 
+    int getSelectedCell() {
+        return selectedCell;
+    }
 };
 
 #endif /* ofxMatrix_hpp */

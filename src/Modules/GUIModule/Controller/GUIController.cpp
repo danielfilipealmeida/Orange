@@ -9,6 +9,7 @@
 #include "ofMain.h"
 #include "ofxGui.h"
 #include "EffectsController.hpp"
+#include "VisualsHelpers.hpp"
 
 
 using namespace Orange::GUI;
@@ -30,6 +31,25 @@ void GUIController::setupPreviewsPanel() {
     facade->createPreview(&(engineController->fbo))->setTitle(std::string("Output"));
     engineController->forEachLayer([&](shared_ptr<Orange::Layers::Layer> layer) {
         facade->createPreview(&(layer->fbo),std::string(layer->name))->setTitle(std::string(layer->name));
+    });
+
+    // this needs to go to another panel
+    vector<ofImage *> thumbnails = Orange::Visuals::VisualsHelpers::getVisualsThumbs(this->engineController->loadedVisuals);
+    ofParameter<vector<ofImage *>> parameter = thumbnails;
+    
+    ofxMatrix<ofImage *> *matrix = facade->createImageMatrix(parameter, "Loaded Visuals", 4,3);
+    facade->createNavigator(matrix, std::string(layer->name) + " Visual Matrix Navigator");
+    
+    facade->createButton("Add to Output", [&]() {
+    });
+    
+    unsigned int counter = 1;
+    this->engineController->forEachLayer([&](shared_ptr<Orange::Layers::Layer> layer) {
+        std::string title = ofToString("Add to ") + layer->name.get();
+        
+        facade->createButton(title, [&, counter]() {
+        });
+        counter++;
     });
 }
 
@@ -87,6 +107,15 @@ void GUIController::setupVisualPanel() {
         shared_ptr<Visuals::Video> currentVideo = std::dynamic_pointer_cast<Visuals::Video>(currentVisual);
         facade->createSlider(currentFrame, "Current Frame", 0, currentVideo->getNumberOfFrames());
     }
+    
+    /*
+    facade->createButton("Remove Selected", [&]() {
+        layer->visuals.remove(layer->currentVisualIndex);
+        layer->currentVisualIndex = -1;
+        this->setupLayerPanel();
+        this->setupVisualPanel();
+    });
+     */
 }
 
 void GUIController::setupEffectListPanel() {
@@ -111,7 +140,7 @@ void GUIController::setupEffectListPanel() {
     
     unsigned int counter = 1;
     this->engineController->forEachLayer([&](shared_ptr<Orange::Layers::Layer> layer) {
-        std::string title = ofToString("Add to Output") + layer->name.get();
+        std::string title = ofToString("Add to") + layer->name.get();
        
         
         facade->createButton(title, [&, counter]() {
@@ -211,7 +240,23 @@ void GUIController::setupVisualsMatrixForLayer(shared_ptr<Orange::Layers::Layer>
     vector<ofImage *> thumbnails = layer->getVisualsThumbs();
     ofParameter<vector<ofImage *>> parameter = thumbnails;
     
-    ofxMatrix<ofImage *> *matrix = facade->createImageMatrix(parameter, std::string(layer->name) + " Visual Matrix");
+    std::string matrixName = std::string(layer->name) + " Visual Matrix";
+    
+    ofxMatrix<ofImage *> *matrix = facade->createImageMatrix(parameter, matrixName);
     facade->createNavigator(matrix, std::string(layer->name) + " Visual Matrix Navigator");
     
+    shared_ptr<Orange::Layers::Layer> localLayer = layer;
+    facade->createButton("Remove Selected", [&, matrixName, localLayer]() {
+        facade->setCurrentPanel(PanelNames::LayerPanel);
+        ofxMatrix<ofImage *> *matrix = (ofxMatrix<ofImage *>*) facade->getControl(matrixName);
+        if (matrix == NULL) return;
+        unsigned int selectedVisual = matrix->getSelectedCell();
+        if (selectedVisual < 0 ) return;
+        localLayer->removeByIndex(selectedVisual);
+        //localLayer->currentVisualIndex = -1;
+        //localLayer->visuals.remove(selectedVisual);
+        
+        this->setupVisualPanel();
+        this->setupLayerPanel();
+    });
 }

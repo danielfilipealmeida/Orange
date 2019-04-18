@@ -17,8 +17,6 @@ namespace Orange {
     namespace Engine {
         
         class Engine : public Base::EntityInterface {
-            
-            
         public:
             /*!
              The index in the Layer Repository of the currently selecter Layer. There should always be a selected layer when there are layers ser
@@ -38,6 +36,9 @@ namespace Orange {
              */
             Engine();
             
+            /*!
+             \param ofJson json
+             */
             Engine(ofJson json);
             
             /*!

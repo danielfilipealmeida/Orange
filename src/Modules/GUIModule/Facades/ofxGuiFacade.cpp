@@ -181,12 +181,15 @@ void ofxGuiFacade::createLabel(string text)
 
 
 
-ofxMatrix<ofImage *>* ofxGuiFacade::createImageMatrix(ofParameter<vector<ofImage *>> value, string name)
+ofxMatrix<ofImage *>* ofxGuiFacade::createImageMatrix(ofParameter<vector<ofImage *>> value,
+                                                      string name,
+                                                      unsigned int rows,
+                                                      unsigned int columns)
 {
     ofxMatrix<ofImage *> *matrix;
     
     matrix = new ofxMatrix<ofImage *>();
-    matrix->setup(value, PANEL_WIDTH, PANEL_WIDTH * 3.0 / 4.0);
+    matrix->setup(value, PANEL_WIDTH, rows, columns);
     matrix->setName(NAME_OR_RANDOM(name));
     currentPanel->add(matrix);
     

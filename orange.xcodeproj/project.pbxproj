@@ -99,8 +99,6 @@
 		65A59DA421A4C3C700ADEE79 /* Video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59D8721A0D3CF00ADEE79 /* Video.cpp */; };
 		65A59DAA21A6198500ADEE79 /* VideoTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A59DA921A6198500ADEE79 /* VideoTest.cpp */; };
 		65A59DB021A767AD00ADEE79 /* red.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65A59DAF21A7679100ADEE79 /* red.mp4 */; };
-		65A9F44821F375A200AFB193 /* ofxMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A9F44621F375A200AFB193 /* ofxMatrix.cpp */; };
-		65A9F44921F375A200AFB193 /* ofxMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A9F44621F375A200AFB193 /* ofxMatrix.cpp */; };
 		65C979312205C20C005C08E0 /* PreferencesController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C9792F2205C20C005C08E0 /* PreferencesController.cpp */; };
 		65C979322205C20C005C08E0 /* PreferencesController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C9792F2205C20C005C08E0 /* PreferencesController.cpp */; };
 		65C979352205C488005C08E0 /* PreferencesControllerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C979342205C488005C08E0 /* PreferencesControllerTest.cpp */; };
@@ -295,6 +293,9 @@
 		650CC8CF224D917500AA553F /* Displacement.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Displacement.json; sourceTree = "<group>"; };
 		650CC8D1224E628000AA553F /* Layer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Layer.json; sourceTree = "<group>"; };
 		650CC8D3224EC97200AA553F /* EffectsControllerTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EffectsControllerTest.cpp; sourceTree = "<group>"; };
+		650DCFEC225FFB1B008F8824 /* VisualsHelpers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VisualsHelpers.hpp; sourceTree = "<group>"; };
+		650DCFF02260B1C3008F8824 /* PanelsInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanelsInterface.h; sourceTree = "<group>"; };
+		650DCFF42260D4B7008F8824 /* AppHelpers.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AppHelpers.hpp; path = src/Modules/BaseModule/Helpers/AppHelpers.hpp; sourceTree = SOURCE_ROOT; };
 		650EED8B2253CD0E0055D3B0 /* ofxList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxList.cpp; sourceTree = "<group>"; };
 		650EED8C2253CD0E0055D3B0 /* ofxList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ofxList.hpp; sourceTree = "<group>"; };
 		6515454E21B49C2400880443 /* DrawableInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DrawableInterface.hpp; sourceTree = "<group>"; };
@@ -382,7 +383,6 @@
 		65A59DA921A6198500ADEE79 /* VideoTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VideoTest.cpp; path = src/UnitTests/VisualsModule/VideoTest.cpp; sourceTree = SOURCE_ROOT; };
 		65A59DAF21A7679100ADEE79 /* red.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = red.mp4; sourceTree = "<group>"; };
 		65A59DB421AB5DE500ADEE79 /* Bolas001.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Bolas001.mov; path = ../Resources/Bolas001.mov; sourceTree = "<group>"; };
-		65A9F44621F375A200AFB193 /* ofxMatrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMatrix.cpp; sourceTree = "<group>"; };
 		65A9F44A21F3775500AFB193 /* ofxMatrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ofxMatrix.hpp; sourceTree = "<group>"; };
 		65C9792F2205C20C005C08E0 /* PreferencesController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PreferencesController.cpp; sourceTree = "<group>"; };
 		65C979302205C20C005C08E0 /* PreferencesController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PreferencesController.hpp; sourceTree = "<group>"; };
@@ -778,6 +778,31 @@
 			path = OSX;
 			sourceTree = "<group>";
 		};
+		650DCFEA225FFAF3008F8824 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				650DCFEC225FFB1B008F8824 /* VisualsHelpers.hpp */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		650DCFEF2260B1B1008F8824 /* Panels */ = {
+			isa = PBXGroup;
+			children = (
+				650DCFF02260B1C3008F8824 /* PanelsInterface.h */,
+			);
+			path = Panels;
+			sourceTree = "<group>";
+		};
+		650DCFF22260D2DA008F8824 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				650DCFF42260D4B7008F8824 /* AppHelpers.hpp */,
+			);
+			name = Helpers;
+			path = src/Modules/EffectsModule/Helpers;
+			sourceTree = SOURCE_ROOT;
+		};
 		6515454D21B49C1000880443 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
@@ -938,6 +963,7 @@
 		65759E2E21B73A94006B6814 /* GUIModule */ = {
 			isa = PBXGroup;
 			children = (
+				650DCFEF2260B1B1008F8824 /* Panels */,
 				650C40D021C51F4C0094365F /* Platforms */,
 				657D74FB21BFF777004329EF /* GUI */,
 				65759E3021B73AC5006B6814 /* Facades */,
@@ -1007,7 +1033,6 @@
 				650EED8B2253CD0E0055D3B0 /* ofxList.cpp */,
 				650EED8C2253CD0E0055D3B0 /* ofxList.hpp */,
 				65A9F44A21F3775500AFB193 /* ofxMatrix.hpp */,
-				65A9F44621F375A200AFB193 /* ofxMatrix.cpp */,
 				65182DC821F89C5800BD281C /* ofxNavigator.cpp */,
 				65182DC921F89C5800BD281C /* ofxNavigator.hpp */,
 			);
@@ -1037,8 +1062,8 @@
 		65A59D7721A0D1B300ADEE79 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				65C9792D2205C00C005C08E0 /* PreferencesModule */,
 				65A59D7821A0D1B300ADEE79 /* BaseModule */,
+				65C9792D2205C00C005C08E0 /* PreferencesModule */,
 				65759E3821B891C3006B6814 /* EngineModule */,
 				65759E2E21B73A94006B6814 /* GUIModule */,
 				65A59D8221A0D36C00ADEE79 /* VisualsModule */,
@@ -1052,6 +1077,7 @@
 		65A59D7821A0D1B300ADEE79 /* BaseModule */ = {
 			isa = PBXGroup;
 			children = (
+				650DCFF22260D2DA008F8824 /* Helpers */,
 				6515454D21B49C1000880443 /* Interfaces */,
 				65A59D8A21A0D53700ADEE79 /* Repository */,
 				65A59D7921A0D1B300ADEE79 /* Entity */,
@@ -1105,6 +1131,7 @@
 		65A59D8221A0D36C00ADEE79 /* VisualsModule */ = {
 			isa = PBXGroup;
 			children = (
+				650DCFEA225FFAF3008F8824 /* Helpers */,
 				65A59D8321A0D36C00ADEE79 /* Entity */,
 				65A59D8421A0D36C00ADEE79 /* Resources */,
 			);
@@ -1934,7 +1961,6 @@
 				6516EB8821EAD54C0070D93E /* ofxFFBaseInstance.cpp in Sources */,
 				6515455321B5E57C00880443 /* BaseVisual.cpp in Sources */,
 				65759E3E21B891FF006B6814 /* EngineController.cpp in Sources */,
-				65A9F44921F375A200AFB193 /* ofxMatrix.cpp in Sources */,
 				65A59DAA21A6198500ADEE79 /* VideoTest.cpp in Sources */,
 				6516EB8021EAD54C0070D93E /* FFGLPlugin.cpp in Sources */,
 				6516EB8421EAD54C0070D93E /* ofxFFInstance.cpp in Sources */,
@@ -1991,7 +2017,6 @@
 				65D167E421D53141006B6163 /* ofxPanelDecorator.cpp in Sources */,
 				65A59D7621A0D16D00ADEE79 /* main.cpp in Sources */,
 				E2564CF7DDB3713772BB682E /* ofxUDPManager.cpp in Sources */,
-				65A9F44821F375A200AFB193 /* ofxMatrix.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
 				650C40D421C5D0090094365F /* OSXstuff.m in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,

@@ -29,8 +29,12 @@ namespace Orange {
         public Orange::Base::DrawableInterface,
         public Orange::Base::PlayableInterface
         {
+            
         public:
             
+            std::string hash;
+            
+            BaseVisual();
             
             /*!
              Draws the Visual in a given rect

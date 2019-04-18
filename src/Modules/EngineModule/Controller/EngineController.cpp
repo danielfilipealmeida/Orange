@@ -172,6 +172,23 @@ void EngineController::saveSet(std::string filepath)
     ofSavePrettyJson(filepath, json);
 }
 
+void EngineController::updateLoadedVisuals() {
+    loadedVisuals.empty();
+    layers.forEach([&](shared_ptr<Orange::Layers::Layer> layer) {
+        layer->visuals.forEach([&](shared_ptr<Orange::Visuals::BaseVisual> visual) {
+            bool alreadyLoaded = false;
+            
+            loadedVisuals.forEach([&](shared_ptr<Orange::Visuals::BaseVisual> loadedVisual) {
+                if (loadedVisual->hash.compare(visual->hash) == 0) alreadyLoaded = true;
+            });
+            
+            if (alreadyLoaded) return;
+            
+            loadedVisuals.add(visual);
+        });
+    });
+}
+
 bool EngineController::openSet(std::string filepath)
 {
     closeSet();
@@ -184,6 +201,7 @@ bool EngineController::openSet(std::string filepath)
         setFromJson(json);
         
         setLayerIndex(0);
+        updateLoadedVisuals();
     }
     catch(std::runtime_error *exception)
     {
