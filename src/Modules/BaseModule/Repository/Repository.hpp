@@ -39,6 +39,7 @@ namespace Orange {
              \return T The requested entity
              */
             T getAt(unsigned int index) {
+                if (index >= entities.size()) return nullptr;
                 return entities[index];
             }
             

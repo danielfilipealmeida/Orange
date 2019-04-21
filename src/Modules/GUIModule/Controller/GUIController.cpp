@@ -26,6 +26,7 @@ GUIController::GUIController(GUIFacadeInterface *_facade, OSFacadeInterface *_os
 
 
 void GUIController::setupPreviewsPanel() {
+    std::string loadedVisualsMatrixName = ofToString("LoadedVisuals");
     facade->setCurrentPanel(PreviewsPanel);
     facade->clear();
     facade->createPreview(&(engineController->fbo))->setTitle(std::string("Output"));
@@ -37,17 +38,31 @@ void GUIController::setupPreviewsPanel() {
     vector<ofImage *> thumbnails = Orange::Visuals::VisualsHelpers::getVisualsThumbs(this->engineController->loadedVisuals);
     ofParameter<vector<ofImage *>> parameter = thumbnails;
     
-    ofxMatrix<ofImage *> *matrix = facade->createImageMatrix(parameter, "Loaded Visuals", 4,3);
+    ofxMatrix<ofImage *> *matrix = facade->createImageMatrix(parameter, loadedVisualsMatrixName, 4,3);
     facade->createNavigator(matrix, std::string(layer->name) + " Visual Matrix Navigator");
-    
-    facade->createButton("Add to Output", [&]() {
-    });
     
     unsigned int counter = 1;
     this->engineController->forEachLayer([&](shared_ptr<Orange::Layers::Layer> layer) {
         std::string title = ofToString("Add to ") + layer->name.get();
         
-        facade->createButton(title, [&, counter]() {
+        facade->createButton(title, [&, counter, loadedVisualsMatrixName]() {
+            shared_ptr<Orange::Layers::Layer> layer = this->engineController->getLayerAtIndex(counter - 1);
+            if (layer == NULL) return;
+            
+            this->facade->setCurrentPanel(PreviewsPanel);
+            ofxMatrix<ofImage *> *matrix = (ofxMatrix<ofImage *>*) this->facade->getControl(loadedVisualsMatrixName);
+            if (matrix == NULL) return;
+            
+            int selectedCell = matrix->getSelectedCell();
+            
+            shared_ptr<Visuals::BaseVisual> selectedVisual  = this->engineController->loadedVisuals.getAt(selectedCell);
+            if (selectedVisual == nullptr) return;
+            
+            layer->add(selectedVisual);
+        
+            this->setupLayerPanel();
+            this->setupVisualPanel();
+            
         });
         counter++;
     });

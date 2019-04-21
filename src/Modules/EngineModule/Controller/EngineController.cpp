@@ -82,6 +82,11 @@ shared_ptr<Orange::Layers::Layer> EngineController::addLayer()
     return layer;
 }
 
+shared_ptr<Orange::Layers::Layer> EngineController::getLayerAtIndex(unsigned int index)
+{
+    return layers.getAt(index);
+}
+
 void EngineController::forEachLayer(std::function<void (shared_ptr<Orange::Layers::Layer>)> lambda)
 {
     layers.forEach(lambda);

@@ -66,6 +66,13 @@ namespace Orange {
              Adds a new Layer with default configuration
              */
             shared_ptr<Orange::Layers::Layer> addLayer();
+   
+            /*!
+             Gets the layer at the given index
+             \param layer
+             \return Orange::Layers::Layer
+             */
+            shared_ptr<Orange::Layers::Layer> getLayerAtIndex(unsigned int index);
             
             /*!
              Apply a lambda for each layer in the layer repository
