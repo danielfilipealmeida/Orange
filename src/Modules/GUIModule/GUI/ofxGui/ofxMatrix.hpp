@@ -14,6 +14,9 @@
 #include "ofParameter.h"
 #include "ofxInputField.h"
 #include "ofxPaginatedInterface.h"
+#include <map>
+#include <string>
+
 
 template <class T>
 class ofxMatrix : public ofxBaseGui, public ofxPaginatedInterface {
@@ -21,9 +24,13 @@ class ofxMatrix : public ofxBaseGui, public ofxPaginatedInterface {
     ofParameter<vector<T>> value;
     
     unsigned int columns, rows, page;
+    float w, h;
     int selectedCell = -1;
     
 public:
+    
+    std::map<int, std::map<int, std::string>> labels;
+    
     ofxMatrix() {};
     ~ofxMatrix() {}
     
@@ -72,8 +79,8 @@ public:
         auto iterator = value.get().begin() + page * (rows * columns);
         float x = b.getX();
         float y = b.getY();
-        float w = b.getWidth() / columns;
-        float h = b.getHeight() / rows;
+        w = b.getWidth() / columns;
+        h = b.getHeight() / rows;
         for (unsigned int row = 0; row < rows; row ++) {
             for (unsigned int column = 0; column < columns; column ++) {
                 if(iterator != value.get().end()) {
@@ -83,6 +90,7 @@ public:
                         obj->draw(rectangle);
                     }
                     
+                    drawLabel(column, row);
                     
                     if (selectedCell == (row * columns + column) + (page * rows * columns)) {
                         drawSelection(rectangle);
@@ -104,8 +112,8 @@ public:
         
         float x = args.x - b.getX();
         float y = args.y - b.getY();
-        float w = b.getWidth() / columns;
-        float h = b.getHeight() / rows;
+        w = b.getWidth() / columns;
+        h = b.getHeight() / rows;
         
         selectedCell = ((unsigned int) floor(y / h)) * columns + (unsigned int) floor(x / w) + (columns * rows * page);
     };
@@ -144,6 +152,22 @@ public:
 
     int getSelectedCell() {
         return selectedCell;
+    }
+    
+private:
+    void drawLabel(unsigned int column, unsigned int row) {
+        std::string label = labels[column][row];
+        if (label.empty()) return;
+        
+        unsigned int labelX, labelY;
+        ofVboMesh textMesh;
+        ofRectangle boundingBox;
+        
+        glm::vec2 labelPosition;
+        labelPosition.x = b.x + textPadding + column * w;
+        labelPosition.y =  b.y + 14 + row * h;
+        
+        ofDrawBitmapStringHighlight(label, labelPosition, ofColor::orangeRed, textColor);
     }
 };
 

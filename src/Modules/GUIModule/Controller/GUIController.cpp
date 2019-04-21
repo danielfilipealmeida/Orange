@@ -243,19 +243,21 @@ void GUIController::setupVisualsMatrixForLayer(shared_ptr<Orange::Layers::Layer>
     std::string matrixName = std::string(layer->name) + " Visual Matrix";
     
     ofxMatrix<ofImage *> *matrix = facade->createImageMatrix(parameter, matrixName);
+    matrix->labels = layer->labels;
     facade->createNavigator(matrix, std::string(layer->name) + " Visual Matrix Navigator");
     
     shared_ptr<Orange::Layers::Layer> localLayer = layer;
     facade->createButton("Remove Selected", [&, matrixName, localLayer]() {
         facade->setCurrentPanel(PanelNames::LayerPanel);
         ofxMatrix<ofImage *> *matrix = (ofxMatrix<ofImage *>*) facade->getControl(matrixName);
-        if (matrix == NULL) return;
-        unsigned int selectedVisual = matrix->getSelectedCell();
-        if (selectedVisual < 0 ) return;
-        localLayer->removeByIndex(selectedVisual);
-        //localLayer->currentVisualIndex = -1;
-        //localLayer->visuals.remove(selectedVisual);
         
+        if (matrix == NULL) return;
+        
+        unsigned int selectedVisual = matrix->getSelectedCell();
+        
+        if (selectedVisual < 0 ) return;
+        
+        localLayer->removeByIndex(selectedVisual);
         this->setupVisualPanel();
         this->setupLayerPanel();
     });

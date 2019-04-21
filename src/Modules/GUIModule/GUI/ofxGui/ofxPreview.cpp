@@ -60,9 +60,20 @@ void ofxPreview::drawTitle() {
         return;
     }
     
+    glm::vec2 labelPosition;
+    labelPosition.x = b.x + textPadding;
+    labelPosition.y =  b.y + 14;
+    
+    ofDrawBitmapStringHighlight(title, labelPosition, ofColor::orangeRed, textColor);
+    
+     return;
+    
     ofSetColor(0,0,0, 128);
     ofFill();
     ofDrawRectangle(b.x, b.y, b.width, 16);
+    
+    
+   
     
     ofSetColor(textColor);
     bindFontTexture();

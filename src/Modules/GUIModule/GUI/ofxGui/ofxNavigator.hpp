@@ -15,7 +15,7 @@
 #include "ofxInputField.h"
 #include "ofxPaginatedInterface.h"
 
-class ofxNavigator : public ofxBaseGui{
+class ofxNavigator : public ofxBaseGui {
     friend class ofPanel;
    
     ofParameter<ofxPaginatedInterface *> element;

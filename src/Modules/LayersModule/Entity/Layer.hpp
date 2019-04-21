@@ -33,6 +33,7 @@ namespace Orange {
 #pragma mark public attributes
    
             ofFbo fbo;
+            std::map<int, std::map<int, std::string>> labels;
             
             /*!
              Constructor that receives a json

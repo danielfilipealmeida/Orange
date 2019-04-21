@@ -30,6 +30,8 @@ namespace Orange {
             shared_ptr<Orange::Preferences::PreferencesController> preferencesController;
             Engine engine;
             
+            std::map<unsigned int, std::string> layersLabels;
+            
         public:
             ofFbo fbo;
             shared_ptr<Orange::Effects::EffectsController> effectsController;

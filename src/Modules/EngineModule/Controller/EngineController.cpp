@@ -17,9 +17,12 @@ EngineController::EngineController(shared_ptr<Orange::Preferences::PreferencesCo
     effectsController = _effectsController;
     effectsController->width = engine.width;
     effectsController->height = engine.height;
-
-    
     setFbo();
+    
+    layersLabels[0] = ofToString("qwer");
+    layersLabels[1] = ofToString("asdf");
+    layersLabels[2] = ofToString("zxcv");
+    
 }
 
 void EngineController::setFbo()
@@ -60,11 +63,22 @@ void EngineController::draw(float x, float y, float w, float h)
 
 shared_ptr<Orange::Layers::Layer> EngineController::addLayer()
 {
+    static unsigned int currentLayer = 0;
+    
     shared_ptr<Layers::Layer> layer = std::make_shared<Layers::Layer>();
     layer->setPreferencesController(preferencesController);
     layer->setFbo(engine.width, engine.height);
-    layers.add(layer);
+
+    std::string currentLayerLabels = layersLabels[currentLayer];
+    layer->labels[0][0] = currentLayerLabels[0];
+    layer->labels[1][0] = currentLayerLabels[1];
+    layer->labels[0][1] = currentLayerLabels[2];
+    layer->labels[1][1] = currentLayerLabels[3];
     
+    layers.add(layer);
+
+    currentLayer++;
+
     return layer;
 }
 
