@@ -11,7 +11,6 @@
 #include <string>
 #include "EngineController.hpp"
 
-
 namespace Orange {
     namespace GUI {
         
@@ -21,6 +20,8 @@ namespace Orange {
         class OSFacadeInterface {
             
         public:
+            
+            virtual void setGuiUpdate(std::function<void()> _guiUpdate) = 0;
 
             /*!
              Sets up the Menu Bar
@@ -34,6 +35,11 @@ namespace Orange {
              */
             virtual void setEngineController(shared_ptr<Engine::EngineController> _engineController) = 0;
             
+            /*!
+             Adds a new video to the list of loaded videos
+             \param char *filepath
+             */
+            virtual void addVideo(char *filepath) = 0;
         
         };
     }

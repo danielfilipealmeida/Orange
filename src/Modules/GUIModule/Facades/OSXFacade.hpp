@@ -25,7 +25,13 @@ namespace Orange {
         class OSXFacade : public OSFacadeInterface {
          
             shared_ptr<Engine::EngineController> engineController;
+            std::function<void()> guiUpdate;
+            
         public:
+            
+            
+            void setGuiUpdate(std::function<void()> _guiUpdate);
+
             
             /*!
              Constructor. Instatiates the on Objective-C that implements all the OSX code
@@ -61,11 +67,19 @@ namespace Orange {
              */
             void newFile();
             
+            /*!
+             Loads a Video
+             \param char *filepaeh
+             */
+            void addVideo(char *filepath);
+            
             static ofRectangle getMainScreenAvailableRect();
             
             static ofRectangle getWindowFrame(void *window);
             
             static float getWindowTitleSize();
+            
+            
 
         };
     }

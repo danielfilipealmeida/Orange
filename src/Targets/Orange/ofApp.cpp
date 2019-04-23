@@ -64,6 +64,7 @@ void ofApp::setAppTitle()
 //--------------------------------------------------------------
 void ofApp::update()
 {
+    engineController->update();
     engineController->render();
     guiController->update();
 }

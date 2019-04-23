@@ -22,6 +22,10 @@ GUIController::GUIController(GUIFacadeInterface *_facade, OSFacadeInterface *_os
     setupMenu();
     
     currentFrame.addListener(this, &GUIController::currentFrameChanged);
+    
+    os->setGuiUpdate([&]() {
+        setup();
+    });
 }
 
 
@@ -268,7 +272,7 @@ void GUIController::setupVisualsMatrixForLayer(shared_ptr<Orange::Layers::Layer>
         
         if (matrix == NULL) return;
         
-        unsigned int selectedVisual = matrix->getSelectedCell();
+        int selectedVisual = matrix->getSelectedCell();
         
         if (selectedVisual < 0 ) return;
         

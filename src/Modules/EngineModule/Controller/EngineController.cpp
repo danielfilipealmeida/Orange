@@ -54,6 +54,20 @@ void EngineController::render()
     effectsController->process(fbo, Effects::Target::Output);
 }
 
+
+void EngineController::update() {
+    /*
+     layers.forEach([&](shared_ptr<Orange::Layers::Layer> layer) {
+         layerController.setLayer(layer);
+         layerController.update();
+     });
+     */
+    visualsToGenerateThumbnails.forEach([](shared_ptr<Visuals::BaseVisual> visual){
+        
+        visual->generateThumbnail();
+    });
+}
+
 void EngineController::draw(float x, float y, float w, float h)
 {
     ofColor(255,255,255);
@@ -166,12 +180,15 @@ void EngineController::addVisualToCurrentLayer(shared_ptr<Orange::Visuals::BaseV
 
 shared_ptr<Orange::Visuals::Video> EngineController::loadVideo(string path) {
     shared_ptr<Visuals::Video> video = std::make_shared<Visuals::Video>(Visuals::Video());
+    video->setPreferencesController(preferencesController);
     try {
         video->open(path);
     }
     catch (std::runtime_error *exception) {
         cout << exception->what();
     }
+    
+    visualsToGenerateThumbnails.add(video);
     
     return video;
 }

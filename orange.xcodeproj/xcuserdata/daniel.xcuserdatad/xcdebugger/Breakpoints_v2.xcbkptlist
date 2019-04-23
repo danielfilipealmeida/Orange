@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/VisualsModule/Entity/Video.cpp"
-            timestampString = "576786679.097712"
+            timestampString = "577752100.2525899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "Video::setFromJson(ofJson json)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Modules/GUIModule/Controller/GUIController.cpp"
-            timestampString = "577560804.78799"
+            timestampString = "577662284.060752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "GUIController::setupVisualPanel()"
             landmarkType = "7">
          </BreakpointContent>

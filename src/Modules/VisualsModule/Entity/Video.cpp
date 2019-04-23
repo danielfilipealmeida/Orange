@@ -44,9 +44,20 @@ void Video::render()
 {
     player.update();
     
+    /*
     if (!hasThumbnail) {
         generateThumbnail();
     }
+     */
+}
+
+void Video::update()
+{
+    /*
+    if (hasThumbnail) return;
+    
+    generateThumbnail();
+     */
 }
 
 void Video::open(string filePath)
@@ -78,10 +89,12 @@ void Video::loadThumbnail() {
     }
     catch (std::runtime_error *exc) {
         ofLogNotice("VisualsModule::Video.cpp", "%s", exc->what());
+        generateThumbnail();
         return;
     }
     
     thumbnail.setFromPixels(pixels);
+    hasThumbnail = true;
 }
 
 void Video::generateThumbnail() {

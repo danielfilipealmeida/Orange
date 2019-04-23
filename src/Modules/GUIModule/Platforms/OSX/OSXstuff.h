@@ -26,6 +26,9 @@
 - (void) setFileMenu:(NSMenu *)bar;
 - (void) setLayersMenu: (NSMenu *)bar;
 - (void) setWindowMenu:(NSMenu *)bar;
+
+- (char *) getPathFromURL:(NSURL *)url;
+
 @end
 
 

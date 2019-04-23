@@ -24,6 +24,11 @@ OSXFacade::OSXFacade() {
     osxFacade = this;
 }
 
+void OSXFacade::setGuiUpdate(std::function<void()> _guiUpdate)
+{
+    guiUpdate = _guiUpdate;
+}
+
 void OSXFacade::setEngineController(shared_ptr<Engine::EngineController> _engineController)
 {
     engineController = _engineController;
@@ -38,12 +43,14 @@ void OSXFacade::saveFile(char *filepath)
 void OSXFacade::openFile(char *filepath)
 {
     std::string pathStr(filepath);
-    engineController->saveSet(pathStr);
+    engineController->openSet(pathStr);
+    guiUpdate();
 }
 
 void OSXFacade::newFile()
 {
     engineController->newSet();
+    guiUpdate();
 }
 
 /* check here:
@@ -84,4 +91,14 @@ ofRectangle OSXFacade::getWindowFrame(void *window)
 float OSXFacade::getWindowTitleSize()
 {
     return 22.0;
+}
+
+void OSXFacade::addVideo(char *filepath) {
+    std::string pathStr(filepath);
+    
+    
+    shared_ptr<Orange::Visuals::Video> video = engineController->loadVideo(pathStr);
+    engineController->loadedVisuals.add(video);
+    
+    guiUpdate();
 }

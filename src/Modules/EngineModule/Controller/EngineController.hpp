@@ -23,7 +23,10 @@
 namespace Orange {
     namespace Engine {
         
-        class EngineController : public Orange::Base::DrawableInterface {
+        class EngineController :
+        public Orange::Base::DrawableInterface,
+        private ofBaseUpdates
+        {
         private:
             Orange::Base::Repository<shared_ptr<Orange::Layers::Layer> > layers;
             Orange::Layers::LayerController layerController;
@@ -32,10 +35,13 @@ namespace Orange {
             
             std::map<unsigned int, std::string> layersLabels;
             
+            
+            
         public:
             ofFbo fbo;
             shared_ptr<Orange::Effects::EffectsController> effectsController;
             Base::Repository<shared_ptr<Visuals::BaseVisual> > loadedVisuals;
+            Base::Repository<shared_ptr<Visuals::BaseVisual> > visualsToGenerateThumbnails;
             
             /*!
              Constructor
@@ -61,6 +67,8 @@ namespace Orange {
              Renders a frame of the engine
              */
             void render();
+            
+            void update();
             
             /*!
              Adds a new Layer with default configuration

@@ -17,6 +17,22 @@
 
 - (IBAction) openFile:(id) sender
 {
+    NSOpenPanel *panel = [[NSOpenPanel alloc] init];
+    [panel setAllowedFileTypes:@[@"vjs"]];
+    
+     if ([panel runModal] == NSModalResponseOK) {
+         NSURL* url = [panel URL];
+         NSString *path = [[url absoluteString] stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+         
+         char *pathChar = (char *)[path cStringUsingEncoding:NSASCIIStringEncoding];
+         facade->openFile(pathChar);
+     };
+         
+    
+    [panel release];
+    
+    return;
+    /*
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel setAllowedFileTypes:@[@"vjs"]];
     
@@ -29,18 +45,24 @@
     };
     
     [panel release];
+     */
+}
+
+- (char *) getPathFromURL:(NSURL *)url {
+    NSString *path = [[url absoluteString] stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+    
+    char *pathChar = (char *)[path cStringUsingEncoding:NSASCIIStringEncoding];
+    return pathChar;
 }
 
 - (IBAction) saveFile:(id) sender
 {
-    NSSavePanel *panel = [NSSavePanel savePanel];
+    NSOpenPanel *panel = [[NSOpenPanel alloc] init];
     [panel setAllowedFileTypes:@[@"vjs"]];
    
     if ([panel runModal] == NSModalResponseOK) {
         NSURL* url = [panel URL];
-        NSString *path = [[url absoluteString] stringByReplacingOccurrencesOfString:@"file://" withString:@""];
-        
-        char *pathChar = (char *)[path cStringUsingEncoding:NSASCIIStringEncoding];
+        char * pathChar = [self getPathFromURL:url];
         facade->saveFile(pathChar);
     };
     
@@ -87,6 +109,30 @@
 {    
 }
 
+- (IBAction) importVisuals:(id) sender
+{
+    
+    NSOpenPanel *panel = [[NSOpenPanel alloc] init];
+    panel.canChooseFiles = true;
+    panel.canChooseDirectories = true;
+    panel.allowsMultipleSelection = true;
+    
+    //[panel setAllowedFileTypes:@[@"mov", @"avi", @"mkv", ]];
+    
+    if ([panel runModal] == NSModalResponseOK) {
+        NSArray<NSURL *> *URLs = [panel URLs];
+        
+        for (id url in URLs) {
+            char * pathChar = [self getPathFromURL:url];
+            facade->addVideo(pathChar);
+        }
+    };
+    
+    [panel release];
+    
+    // need to update the GUI! how?
+}
+
 - (void)setApplicationMenu:(NSMenu *)bar {
     NSMenuItem* appMenuItem = [bar addItemWithTitle:@"" action:NULL keyEquivalent:@""];
     NSMenu* appMenu = [[NSMenu alloc] init];
@@ -108,6 +154,11 @@
     [fileMenu addItem:[NSMenuItem separatorItem]];
     [fileMenu addItemWithTitle:@"Save" action:@selector(save:) keyEquivalent:@"s"];
     [[fileMenu addItemWithTitle:@"Save As..." action:@selector(saveFile:) keyEquivalent:@"S"] setTarget: self];
+    [fileMenu addItem:[NSMenuItem separatorItem]];
+    [[fileMenu addItemWithTitle:@"Import Visuals"
+                         action:@selector(importVisuals:)
+                  keyEquivalent:@""
+      ] setTarget: self];
 }
 
 - (void)setWindowMenu:(NSMenu *)bar {

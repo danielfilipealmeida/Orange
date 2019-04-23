@@ -37,4 +37,3 @@ void Engine::setFromJson(ofJson json)
     height = json["height"];
     currentLayerIndex = json["currentLayerIndex"];
 }
-

@@ -27,7 +27,8 @@ namespace Orange {
         class BaseVisual :
         public Orange::Base::EntityInterface,
         public Orange::Base::DrawableInterface,
-        public Orange::Base::PlayableInterface
+        public Orange::Base::PlayableInterface,
+        public ofBaseUpdates
         {
             
         public:
@@ -65,6 +66,8 @@ namespace Orange {
              \returns ofFbo*
              */
             virtual ofTexture& getTexture() = 0;
+            
+            virtual void generateThumbnail() = 0;
         };
     }
 }

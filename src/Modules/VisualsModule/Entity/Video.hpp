@@ -18,8 +18,7 @@
 
 namespace Orange {
     namespace Visuals {
-        
-        
+    
         class Video :
         public BaseVisual
         {
@@ -29,6 +28,8 @@ namespace Orange {
             shared_ptr<Orange::Preferences::PreferencesController> preferencesController;
             
             string ERROR_FILE_NOT_FOUND = "File '%1' not found.";
+            
+
         public:
             
 
@@ -58,6 +59,11 @@ namespace Orange {
              Prepares the video
              */
             void render();
+            
+            /*!
+             Updates the video
+             */
+            void update();
             
             /*!
              Opens a video file

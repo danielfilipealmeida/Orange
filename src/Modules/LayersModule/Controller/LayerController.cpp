@@ -43,6 +43,12 @@ void LayerController::render() {
     layer->fbo.end();
 }
 
+void LayerController::update() {
+    layer->visuals.forEach([](shared_ptr<Visuals::BaseVisual> visual) {
+        visual->update();
+    });
+}
+
 void LayerController::draw(float x, float y, float w, float h) {
     if (layer == NULL) {
         return;

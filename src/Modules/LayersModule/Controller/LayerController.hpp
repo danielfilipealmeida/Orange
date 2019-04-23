@@ -18,7 +18,10 @@
 namespace Orange {
     namespace Layers {
         
-        class LayerController : public Orange::Base::DrawableInterface {
+        class LayerController :
+        public Orange::Base::DrawableInterface,
+        public ofBaseUpdates
+        {
         private:
             
             /*!
@@ -59,9 +62,14 @@ namespace Orange {
             void draw(float x, float y, float w, float h);
             
             /*!
-             Prepares the video
+             Render the content of the layer
              */
             void render();
+            
+            /*!
+             Updates the layer and all added visuals
+             */
+            void update();
             
             /*!
              Returns the Layer's texture
