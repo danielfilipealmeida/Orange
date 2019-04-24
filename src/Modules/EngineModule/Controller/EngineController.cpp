@@ -62,10 +62,25 @@ void EngineController::update() {
          layerController.update();
      });
      */
-    visualsToGenerateThumbnails.forEach([](shared_ptr<Visuals::BaseVisual> visual){
-        
+   
+    
+    // this needs to go to another method called handleVisualThumbsGeneration
+    unsigned int count = 0;
+    std::vector<unsigned int> visualToRemoveFromList;
+    
+    visualsToGenerateThumbnails.forEach([&](shared_ptr<Visuals::BaseVisual> visual){
         visual->generateThumbnail();
+        
+        if (visual->thumbCreated()) visualToRemoveFromList.push_back(count);
+        
+        ++count;
     });
+    
+    std::reverse(visualToRemoveFromList.begin(), visualToRemoveFromList.end());
+    
+    for(auto visualIndex:visualToRemoveFromList) {
+        visualsToGenerateThumbnails.remove(visualIndex);
+    }
 }
 
 void EngineController::draw(float x, float y, float w, float h)
@@ -178,7 +193,12 @@ void EngineController::addVisualToCurrentLayer(shared_ptr<Orange::Visuals::BaseV
     getCurrentLayer()->add(visual);
 }
 
+
+
 shared_ptr<Orange::Visuals::Video> EngineController::loadVideo(string path) {
+    
+    // todo: confirmar primeiro se o video já foi aberto
+    
     shared_ptr<Visuals::Video> video = std::make_shared<Visuals::Video>(Visuals::Video());
     video->setPreferencesController(preferencesController);
     try {

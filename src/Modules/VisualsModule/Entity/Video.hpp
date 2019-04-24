@@ -160,8 +160,17 @@ namespace Orange {
              */
             void setPreferencesController(shared_ptr<Orange::Preferences::PreferencesController> _preferencesController);
             
+            /*!
+             Getter that tells if the visual has a thumbnail set or not
+             \return Boolean
+             */
+            Boolean thumbCreated() {
+                return hasThumbnail;
+            }
+            
         };
 
+        
         
     }
 }

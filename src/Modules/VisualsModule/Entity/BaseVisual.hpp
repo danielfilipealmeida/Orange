@@ -68,6 +68,14 @@ namespace Orange {
             virtual ofTexture& getTexture() = 0;
             
             virtual void generateThumbnail() = 0;
+            
+            
+            /*!
+             Getter that tells if the visual has a thumbnail set or not
+             \return Boolean
+             */
+            virtual Boolean thumbCreated() = 0;
+            
         };
     }
 }
