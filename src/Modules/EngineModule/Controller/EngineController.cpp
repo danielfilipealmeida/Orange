@@ -172,6 +172,7 @@ void EngineController::stopVisual()
 
 
 shared_ptr<Orange::Layers::Layer> EngineController::getCurrentLayer() {
+    return;
     if (engine.currentLayerIndex < 0 || engine.currentLayerIndex >= layers.count()) {
         throw new std::runtime_error("No selected Layer");
     }

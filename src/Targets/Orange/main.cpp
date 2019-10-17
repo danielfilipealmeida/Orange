@@ -1,7 +1,6 @@
 #include "ofMain.h"
 #include "ofApp.h"
 #include "ofAppGLFWWindow.h"
-#include "OSXFacade.hpp"
 
 #define _GLFW_USE_MENUBAR
 #define APP_WINDOW_WIDTH 1024
@@ -69,16 +68,6 @@ public:
         settings.shareContextWith = appWindow->getWindow();
     }
     
-    ofRectangle getFrame() {
-        ofRectangle frame;
-        void * cocoaWindow = window->getCocoaWindow();
-        frame = Orange::GUI::OSXFacade::getWindowFrame(cocoaWindow);
-        frame.setPosition(x, y);
-        
-        //frame.set(x, y, settings.getWidth(), settings.getHeight());
-        
-        return frame;
-    }
 };
 
 static void setupProjectorWindowListeners(
@@ -91,16 +80,13 @@ static void setupProjectorWindowListeners(
 
 static void setupWindowsPositions(AppWindow *mainWindow, AppWindow *projectorWindow) {
     ofRectangle visibleRect;
-#ifdef TARGET_OSX
-    visibleRect  = Orange::GUI::OSXFacade::getMainScreenAvailableRect();
-#else
+
+    
     visibleRect.setPosition(0,0);
     visibleRect.setSize(ofGetScreenWidth(), ofGetScreenHeight());
-#endif
     
     mainWindow->setSize(visibleRect.width - SUB_WINDOWS_WIDTH - WINDOW_SPACE, visibleRect.height);
     mainWindow->setPosition(0, visibleRect.y);
-    projectorWindow->setPosition(mainWindow->getFrame().width + WINDOW_SPACE, mainWindow->getFrame().y);
 }
 
 int main( ){
@@ -109,18 +95,9 @@ int main( ){
     mainWindow = new AppWindow(APP_WINDOW_WIDTH, APP_WINDOW_HEIGHT, "Orange");
     mainWindow->createWindow();
     
-    projectorWindow = new AppWindow(SUB_WINDOWS_WIDTH,PROJECTOR_WINDOW_HEIGHT, "Projector");
-    projectorWindow->shareContextWithAppWindow(mainWindow);
-    projectorWindow->createWindow();
-    
-    
     shared_ptr<ofApp> mainApp(new ofApp);
     mainApp->setMainWindow(mainWindow->getWindow());
-    mainApp->setProjectorWindow(projectorWindow->getWindow());
-    
-    setupProjectorWindowListeners(mainApp, projectorWindow->getWindow());
-    setupWindowsPositions(mainWindow, projectorWindow);
-    
+   
     /* Run the application */
     ofRunApp(mainWindow->getWindow(), mainApp);
     ofRunMainLoop();

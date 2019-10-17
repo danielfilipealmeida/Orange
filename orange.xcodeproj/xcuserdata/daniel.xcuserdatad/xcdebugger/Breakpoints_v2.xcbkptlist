@@ -1,54 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "1995A787-9217-4364-9993-EB30A34B43F6"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Modules/GUIModule/Facades/ofxGuiFacade.cpp"
-            timestampString = "577560618.248687"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
-            landmarkName = "ofxGuiFacade::mouseEventOnPanel(PanelNames panelName, ofMouseEventArgs &amp; args)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Modules/VisualsModule/Entity/Video.cpp"
-            timestampString = "577811961.8370759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "Video::setFromJson(ofJson json)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
+            uuid = "D6E56AD1-E1E3-4EA4-981B-931A2A316841"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "src/Modules/GUIModule/Controller/GUIController.cpp"
-            timestampString = "577662284.060752"
+            filePath = "src/Modules/GUIModule/GUI/ofxGui/ofxMatrix.hpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "GUIController::setupVisualPanel()"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "render()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFF4917E-22D2-4529-BE63-C6208BBC3733"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Modules/GUIModule/GUI/ofxGui/ofxMatrix.hpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "setup(_value, width, _rows, _columns)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78047AE8-A8A1-452A-A43C-7539A3B6DB85"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../libs/openFrameworks/types/ofRectangle.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "ofRectangle::set(px, py, w, h)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "78047AE8-A8A1-452A-A43C-7539A3B6DB85 - 19f98af660312e0f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofRectangle::set(float, float, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v20191004_osx_release/libs/openFrameworks/types/ofRectangle.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "78047AE8-A8A1-452A-A43C-7539A3B6DB85 - e55a746ef0b87e5f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofRectangle::ofRectangle()"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v20191004_osx_release/libs/openFrameworks/types/ofRectangle.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "39">
+               </Location>
+               <Location
+                  uuid = "78047AE8-A8A1-452A-A43C-7539A3B6DB85 - 7a1058c163624ce5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofRectangle::ofRectangle(float, float, float, float)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v20191004_osx_release/libs/openFrameworks/types/ofRectangle.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  uuid = "78047AE8-A8A1-452A-A43C-7539A3B6DB85 - c0a1aa38a3093a70"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofRectangle::ofRectangle(ofRectangle const&amp;)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v20191004_osx_release/libs/openFrameworks/types/ofRectangle.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "61">
+               </Location>
+               <Location
+                  uuid = "78047AE8-A8A1-452A-A43C-7539A3B6DB85 - d9f5e576aaae9096"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofRectangle::growToInclude(ofRectangle const&amp;)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v20191004_osx_release/libs/openFrameworks/types/ofRectangle.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "141">
+               </Location>
+               <Location
+                  uuid = "78047AE8-A8A1-452A-A43C-7539A3B6DB85 - ffd8e1f536176729"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofRectangle::getUnion(ofRectangle const&amp;) const"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v20191004_osx_release/libs/openFrameworks/types/ofRectangle.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "66">
+               </Location>
+               <Location
+                  uuid = "78047AE8-A8A1-452A-A43C-7539A3B6DB85 - 3f3cab9f083b4435"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ofRectangle::operator=(ofRectangle const&amp;)"
+                  moduleName = "orangeDebug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniel/Work/XCode/of_v20191004_osx_release/libs/openFrameworks/types/ofRectangle.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

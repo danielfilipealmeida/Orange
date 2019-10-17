@@ -6,9 +6,7 @@
 #include "Repository.hpp"
 #include "LayerController.hpp"
 #include "GUIController.hpp"
-#include "ofxGuiFacade.hpp"
 #include "EngineController.hpp"
-#include "OSFacadeInterface.hpp"
 #include "FreeFrameHostAdapter.hpp"
 #include "EffectsController.hpp"
 #include "PreferencesController.hpp"
@@ -45,8 +43,6 @@ class ofApp : public ofBaseApp{
     
     /* TODO: move these pointers to shared pointers? */
     shared_ptr<Orange::Engine::EngineController> engineController;
-    Orange::GUI::ofxGuiFacade *guiFacade;
-    Orange::GUI::OSFacadeInterface *os;
     Orange::GUI::GUIController *guiController;
     shared_ptr<Orange::Preferences::PreferencesController> preferencesController;
     

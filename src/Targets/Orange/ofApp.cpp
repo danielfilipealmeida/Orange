@@ -1,6 +1,5 @@
 #include "ofApp.h"
 #include "Video.hpp"
-#include "OSXFacade.hpp"
 #include "GLFW/glfw3.h"
 
 
@@ -22,6 +21,7 @@ void ofApp::setup() {
     */
     effectsController->scan();
     
+    /*
     guiFacade = new Orange::GUI::ofxGuiFacade();
     os = new Orange::GUI::OSXFacade();
     os->setEngineController(engineController);
@@ -32,6 +32,9 @@ void ofApp::setup() {
         return;
     };
     guiController->setLayer(engineController->getCurrentLayer());
+     */
+    
+    guiController = new Orange::GUI::GUIController();
 }
 
 void ofApp::setTestData()
@@ -45,12 +48,13 @@ void ofApp::setTestData()
     engineController->addVideoToCurrentLayer("AnemicCinema003.mp4");
 
     engineController->setLayerIndex(0);
-    guiController->setLayer(engineController->getCurrentLayer());
+    //guiController->setLayer(engineController->getCurrentLayer());
 
 }
 
 void ofApp::setAppTitle()
 {
+    return;
     std::string title = defaultAppTitleTemplate;
     
     shared_ptr<Orange::Layers::Layer> currentLayer = engineController->getCurrentLayer();
@@ -110,7 +114,7 @@ void ofApp::handleLayerSwitch(int key)
     }
     
     try {
-         guiController->setLayer(engineController->getCurrentLayer());
+         //weasd->setLayer(engineController->getCurrentLayer());
     } catch (std::runtime_error *exception) {
         cout << exception->what() << endl;
     }

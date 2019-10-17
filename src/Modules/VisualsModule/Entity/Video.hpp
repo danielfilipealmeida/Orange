@@ -16,6 +16,10 @@
 #include "PreferencesController.hpp"
 
 
+// TODO:
+//  - split methods from data.
+//  - make entity structs
+//  - have factory methods do do stuff to the data
 namespace Orange {
     namespace Visuals {
     
